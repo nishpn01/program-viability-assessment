@@ -1,0 +1,24 @@
+# --- Private planning / application materials (never publish) ---
+planning/
+*.docx
+*Cover Letter*
+*Resume*
+*Vanderbilt University*.png
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# --- Tableau large extracts (keep the .twbx workbook, drop heavy extracts) ---
+*.hyper
+*.tde
+
+# --- OS / editor junk ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
