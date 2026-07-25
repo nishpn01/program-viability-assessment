@@ -17,6 +17,10 @@ env/
 *.hyper
 *.tde
 
+# --- Firecrawl cache ---
+.firecrawl/
+data/raw/labor_raw/*.md
+
 # --- OS / editor junk ---
 .DS_Store
 Thumbs.db

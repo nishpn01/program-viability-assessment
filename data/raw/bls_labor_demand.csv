@@ -1,0 +1,13 @@
+program,occupation_title,median_pay,entry_level_education,number_of_jobs_2024,job_outlook_growth_pct,employment_change_2024_34
+cybersecurity,Information Security Analysts,"$124,910",Bachelor's degree,"182,800",29,"52,100"
+business_analytics,Management Analysts,"$101,190",Bachelor's degree,"1,075,100",9,"94,500"
+data_science,Data Scientists,"$112,590",Bachelor's degree,"245,900",34,"82,500"
+public_health,Epidemiologists,"$83,980",Master's degree,"12,300",16,"2,000"
+healthcare_admin,Medical and Health Services Managers,"$117,960",Bachelor's degree,"616,200",23,"142,900"
+social_work,Social Workers,"$61,330",Varies by specialization (no single BLS answer),"810,900",6,"44,700"
+finance,Financial Analysts,"$101,910",Bachelor's degree,"429,000",6,"25,100"
+accounting,Accountants and Auditors,"$81,680",Bachelor's degree,"1,579,800",5,"72,800"
+marketing,Market Research Analysts,"$76,950",Bachelor's degree,"941,700",7,"63,000"
+supply_chain,Logisticians,"$80,880",Bachelor's degree,"241,000",17,"40,300"
+project_management,Project Management Specialists,"$100,750",Bachelor's degree,"1,046,300",6,"58,700"
+public_administration,Social and Community Service Managers,"$78,240",Bachelor's degree,"219,800",6,"14,100"
