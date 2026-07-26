@@ -5,6 +5,9 @@ planning/
 *Resume*
 *Vanderbilt University*.png
 
+# --- Private working docs (never publish) ---
+docs/project-journal.md
+
 # --- Python ---
 __pycache__/
 *.py[cod]
