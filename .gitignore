@@ -7,6 +7,10 @@ planning/
 
 # --- Private working docs (never publish) ---
 docs/project-journal.md
+docs/decisions-log.md
+docs/landscape-scan.md
+docs/project-brief.md
+docs/START-HERE.md
 
 # --- Python ---
 __pycache__/
