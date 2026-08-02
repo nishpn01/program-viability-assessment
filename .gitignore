@@ -11,6 +11,7 @@ docs/decisions-log.md
 docs/landscape-scan.md
 docs/project-brief.md
 docs/START-HERE.md
+docs/recap/
 
 # --- Python ---
 __pycache__/
@@ -33,3 +34,4 @@ data/raw/labor_raw/*.md
 Thumbs.db
 .vscode/
 .idea/
+~$*

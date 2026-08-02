@@ -19,13 +19,21 @@ Endpoints, cube names, and URL patterns below were confirmed working, not guesse
 | Cube | What it gives | Confirmed dimensions | Use |
 |------|---------------|----------------------|-----|
 | `ipeds_completions` | Completions by CIP code, year, degree level, nationally | `CIP2/CIP4/CIP6`, `Year`, `Degree` (Masters = ID 7), `Geography`, `Sector` | **Student demand / market size** — this is the `student_demand.csv` audience-sizing signal, straight from source, no scraping |
-| `ipeds_tuition_by_cip` | Grad-student tuition & fees **by CIP by university** (in-state/out-of-state/published) | `CIP`, `University`, `Year` | Scrape-free alternative/cross-check for competitor pricing |
+| `ipeds_tuition_by_cip` | Grad-student tuition & fees **by CIP by university** (in-state/out-of-state/published) | `CIP`, `University`, `Year` | Scrape-free alternative/cross-check for competitor pricing — **but not by delivery mode** (see gotcha below) |
 | `onet_by_cip` | O\*NET skill importance linked to CIP codes | `CIP`, `Skill Element`, `Year` | Nice-to-have: ties a program's field to in-demand skills; not required for the core 3 tables |
 
 Sample verified: `?cube=ipeds_completions&drilldowns=CIP2,Year&measures=Completions` returned real multi-year national totals (e.g., Agriculture completions 2012–2021) on the first try.
 
 > IPEDS Data Center's manual CSV export is the fallback if datausa.io ever lags a data
 > refresh, but the API is clean enough that manual export shouldn't be needed.
+
+**Gotcha:** `ipeds_tuition_by_cip` gives grad tuition by CIP and university, but does
+**not** distinguish online vs. in-person delivery. It's tempting to use it as a scrape-
+free stand-in for competitor pricing, but a university's on-campus and online tuition
+for the same CIP can differ — this cube can't tell them apart, so it can't be the
+*primary* online-competitor-pricing source. Treat it as a cross-check/sanity-check
+alongside a delivery-mode-aware source (e.g. per-field online rankings), not a
+replacement for one.
 
 ## 3. Competitor pricing / program aggregators
 
