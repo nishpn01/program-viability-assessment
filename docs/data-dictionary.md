@@ -244,4 +244,25 @@ Missing years (IPEDS suppression) are left missing, not filled with 0 — see th
 
 ## Analysis marts
 
-*(not yet started — the join/derive step will produce `derived_candidates` here)*
+### `derived_candidates` (`data/derived/derived_candidates.csv`)
+
+Built 2026-08-02 by `sql/04_build_derived_candidates.sql` (Postgres; full pipeline
+`scripts/run_sql_pipeline.sh`, concept walkthrough `docs/sql-walkthrough.md`).
+**Grain: one row per CIP6 candidate program — 1,268 rows, PK-enforced.** Combines
+student demand (IPEDS) and labor demand (BLS via the crosswalk, locked top-3-SOC
+employment-weighted rule). No scoring yet — that's the next task.
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `cip2020_code` | NUMERIC(7,4) | 0 | Candidate program's CIP code (primary key) |
+| `cip2020_title` | TEXT | 0 | Official CIP 2020 title (from crosswalk) |
+| `latest_year` | INTEGER | 0 | Most recent year with IPEDS data for this CIP (2024 for most; earlier for suppressed CIPs) |
+| `completions_latest_year` | NUMERIC | 0 | National master's completions in that year |
+| `trend_earliest_year` | INTEGER | 0 | Earliest year with IPEDS data (2012 for most) |
+| `completions_trend_pct` | NUMERIC | 126 | % change in completions, earliest→latest available year; NULL when only one year exists or base year is 0 (unknown ≠ 0%) |
+| `matched_soc_codes` | TEXT | 77 | The CIP's top-≤3 matched SOCs by 2024 employment, comma-separated, biggest first |
+| `n_socs_used` | INTEGER | 0 | How many SOCs back the weighted metrics (0–3; 0 = no crosswalk match with BLS data) |
+| `employment_weighted_openings` | NUMERIC | 77 | Avg annual occupational openings 2024–34 (thousands), employment-weighted across the top-3 SOCs |
+| `employment_weighted_growth_pct` | NUMERIC | 77 | Projected employment growth % 2024–34, same weighting |
+| `in_bls_top30_flag` | BOOLEAN | 0 | TRUE if any top-3 SOC appears on BLS's fastest-growing or most-new-jobs top-30 lists (wage-adjacent signal; wages themselves never blended — only 60/832 SOCs have wage data) |
+| `already_offered_by_vanderbilt` | BOOLEAN | 0 | Exact CIP6 match against VU's **14 distinct** codes (15 programs; two M.Ed.s legitimately share 13.0401 per the Registrar PDF). Exactly 14 rows TRUE; rows flagged, never dropped |

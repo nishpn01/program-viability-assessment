@@ -329,7 +329,29 @@ looks like.*
 
 ---
 
-## Phase 3 — SQL (BigQuery or Postgres) — *placeholder*
+## Phase 3 — SQL (Postgres) — join/derive step (2026-08-02)
+
+**Context prompt that started the phase** (fresh Cowork chat, paraphrased): pasted the
+previous chat's 5-step join plan and asked Claude to (1) verify it against the repo
+before executing — the old chat's context was long enough to distrust, (2) execute it,
+and (3) explain where SQL fits, since none had been written yet.
+
+> I'm at the end of the cleaning phase and now joining the CSVs into a derived table.
+> This plan came from my previous chat, which is getting long and may be hallucinating
+> — go check the repo and verify it before doing anything. Also: I thought once tables
+> are clean you load them into Postgres and use SQL for insights — I haven't written
+> any SQL yet. When do I actually do that?
+
+*Why this worked / what to reuse:* asking for **verification before execution** caught
+three real gaps in the old plan (14-vs-15 distinct VU CIPs, float join keys,
+suppressed-year trend handling) while confirming the rest was sound — cheap insurance
+against long-context drift, worth doing at every phase handoff. The follow-up
+questions ("what am I actually getting into, when does the analysis happen, why is
+scoring parked?") turned the plan review into the learning session the project is for.
+Decisions locked from this exchange (Postgres over pandas; CIP6 grain; wage flag only;
+exact VU match; explain-as-we-go pacing) are in `decisions-log.md` 2026-08-02.
+Artifacts: `sql/01`–`05`, `scripts/run_sql_pipeline.sh`, `docs/sql-walkthrough.md`,
+`data/derived/derived_candidates.csv`.
 ## Phase 4 — Tableau dashboard — *placeholder*
 ## Phase 5 — One-page recommendation — *placeholder*
 ## Phase 6 — Rehearse the project story — *placeholder*

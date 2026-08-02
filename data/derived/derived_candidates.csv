@@ -1,0 +1,1269 @@
+cip2020_code,cip2020_title,latest_year,completions_latest_year,trend_earliest_year,completions_trend_pct,matched_soc_codes,n_socs_used,employment_weighted_openings,employment_weighted_growth_pct,in_bls_top30_flag,already_offered_by_vanderbilt
+1.0000,"Agriculture, General",2024,360.0,2012,13.9,"19-1013, 19-4012, 19-1012",3,1.97,5.33,f,f
+1.0101,"Agricultural Business and Management, General",2024,97.0,2012,61.7,"11-9013, 45-1011, 25-1041",3,78.99,-0.96,f,f
+1.0102,Agribusiness/Agricultural Business Operations,2024,35.0,2012,16.7,"11-9013, 25-1041",2,84.43,-1.23,f,f
+1.0103,Agricultural Economics,2024,184.0,2012,-57.7,"19-3011, 25-1063, 25-1041",3,0.98,2.23,f,f
+1.0104,Farm/Farm and Ranch Management,2024,3.0,2012,-62.5,"11-9013, 45-1011, 25-9021",3,78.84,-1.04,f,f
+1.0106,Agricultural Business Technology/Technician,2022,0.0,2018,-100.0,"43-1011, 15-1232",2,111.44,-1.38,f,f
+1.0199,"Agricultural Business and Management, Other",2024,9.0,2012,125.0,"11-9013, 45-1011, 25-1041",3,78.99,-0.96,f,f
+1.0201,"Agricultural Mechanization, General",2021,0.0,2012,,"49-3041, 25-1041",2,3.08,9.51,f,f
+1.0301,"Agricultural Production Operations, General",2024,11.0,2012,-21.4,"11-9013, 45-1011, 25-1041",3,78.99,-0.96,f,f
+1.0302,Animal/Livestock Husbandry and Production,2024,2.0,2015,100.0,"11-9013, 45-1011, 25-9021",3,78.84,-1.04,f,f
+1.0303,Aquaculture,2024,29.0,2012,-6.5,"11-9013, 45-1011, 25-1041",3,78.99,-0.96,f,f
+1.0304,Crop Production,2018,0.0,2012,-100.0,"11-9013, 45-1011, 25-9021",3,78.84,-1.04,f,f
+1.0307,Horse Husbandry/Equine Science and Management,2024,0.0,2013,-100.0,"11-9013, 45-1011, 25-9021",3,78.84,-1.04,f,f
+1.0308,Agroecology and Sustainable Agriculture,2024,120.0,2012,500.0,"11-9013, 45-1011, 19-1031",3,77.54,-0.89,f,f
+1.0401,Agricultural and Food Products Processing,2021,0.0,2012,-100.0,"45-1011, 19-4013, 45-2011",3,6.50,2.82,f,f
+1.0505,Animal Training,2024,101.0,2022,10000.0,"39-2011, 25-1041",2,5.94,4.92,f,f
+1.0601,"Applied Horticulture/Horticulture Operations, General",2024,0.0,2012,-100.0,"37-3011, 11-9013, 37-1012",3,117.76,1.65,f,f
+1.0603,Ornamental Horticulture,2024,0.0,2012,-100.0,"37-3011, 11-9013, 37-1012",3,117.76,1.65,f,f
+1.0605,Landscaping and Groundskeeping,2022,0.0,2012,-100.0,"37-3011, 37-1012, 37-3012",3,134.08,3.40,f,f
+1.0607,Turf and Turfgrass Management,2024,4.0,2012,33.3,"37-3011, 37-1012, 37-3012",3,134.08,3.40,f,f
+1.0609,Public Horticulture,2024,0.0,2021,,"11-9013, 25-9021",2,84.27,-1.32,f,f
+1.0701,International Agriculture,2024,22.0,2012,-21.4,"19-1012, 25-1041",2,1.03,5.51,f,f
+1.0801,Agricultural and Extension Education Services,2024,177.0,2012,181.0,25-9021,1,1.10,-2.50,f,f
+1.0802,Agricultural Communication/Journalism,2024,30.0,2012,-6.3,"27-4011, 27-3023",2,6.19,0.79,f,f
+1.0899,"Agricultural Public Services, Other",2024,15.0,2013,,,0,,,f,f
+1.0901,"Animal Sciences, General",2024,452.0,2012,18.0,"11-9013, 45-1011, 19-4012",3,78.36,-0.92,f,f
+1.0902,Agricultural Animal Breeding,2024,8.0,2012,-27.3,"11-9013, 25-9021, 25-1041",3,83.23,-1.25,f,f
+1.0903,Animal Health,2024,32.0,2012,300.0,"11-9013, 25-1041, 19-1011",3,84.15,-1.21,f,f
+1.0905,Dairy Science,2024,10.0,2012,-33.3,"11-9013, 45-1011, 19-4012",3,78.36,-0.92,f,f
+1.0906,Livestock Management,2024,3.0,2012,200.0,"11-9013, 45-1011, 25-9021",3,78.84,-1.04,f,f
+1.0907,Poultry Science,2024,25.0,2012,47.1,"11-9013, 45-1011, 19-4012",3,78.36,-0.92,f,f
+1.0999,"Animal Sciences, Other",2024,1.0,2012,-66.7,"11-9013, 45-1011, 25-9021",3,78.84,-1.04,f,f
+1.1001,Food Science,2024,438.0,2012,24.8,"19-4013, 19-1012, 25-1041",3,1.99,5.20,f,f
+1.1002,Food Technology and Processing,2024,21.0,2012,600.0,"19-4013, 19-1012",2,2.35,5.53,f,f
+1.1003,Brewing Science,2024,11.0,2024,,"51-3092, 51-9012, 19-4013",3,18.36,4.27,f,f
+1.1004,Viticulture and Enology,2024,0.0,2020,,"11-9013, 45-1011, 51-9012",3,75.67,-1.21,f,f
+1.1099,"Food Science and Technology, Other",2024,52.0,2012,30.0,"19-4013, 19-1012, 25-1041",3,1.99,5.20,f,f
+1.1101,"Plant Sciences, General",2024,96.0,2012,33.3,"11-9013, 45-1011, 19-1013",3,78.16,-0.88,f,f
+1.1102,Agronomy and Crop Science,2024,223.0,2012,10.4,"11-9013, 45-1011, 19-1013",3,78.16,-0.88,f,f
+1.1103,Horticultural Science,2024,167.0,2012,68.7,"11-9013, 19-1013, 25-9021",3,82.30,-1.16,f,f
+1.1104,Agricultural and Horticultural Plant Breeding,2024,16.0,2012,-56.8,"19-1013, 25-1041",2,1.39,4.96,f,f
+1.1105,Plant Protection and Integrated Pest Management,2024,36.0,2012,89.5,"11-9013, 19-1013, 25-9021",3,82.30,-1.16,f,f
+1.1106,Range Science and Management,2024,15.0,2012,-66.7,"11-9013, 19-1031, 19-1013",3,80.87,-0.99,f,f
+1.1199,"Plant Sciences, Other",2024,64.0,2012,33.3,"19-1013, 25-1041",2,1.39,4.96,f,f
+1.1201,"Soil Science and Agronomy, General",2024,104.0,2012,-18.1,"19-1013, 19-4012, 25-1041",3,1.95,4.71,f,f
+1.1202,Soil Chemistry and Physics,2024,2.0,2012,-60.0,"19-1013, 25-1041",2,1.39,4.96,f,f
+1.1299,"Soil Sciences, Other",2024,14.0,2012,16.7,"19-1013, 25-1041",2,1.39,4.96,f,f
+1.1302,Pre-Veterinary Studies,2024,0.0,2022,,,0,,,f,f
+1.8101,"Veterinary Sciences/Veterinary Clinical Sciences, General",2024,175.0,2020,34.6,"25-1071, 29-1131",2,21.79,15.53,t,f
+1.8102,Comparative and Laboratory Animal Medicine,2024,49.0,2020,2.1,"25-1071, 29-1131",2,21.79,15.53,t,f
+1.8103,Large Animal/Food Animal and Equine Surgery and Medicine,2024,0.0,2020,-100.0,"25-1071, 29-1131, 19-1011",3,21.63,15.46,t,f
+1.8104,Small/Companion Animal Surgery and Medicine,2024,3.0,2020,-40.0,"25-1071, 29-1131",2,21.79,15.53,t,f
+1.8106,Veterinary Infectious Diseases,2024,19.0,2020,-5.0,"25-1071, 29-1131, 19-1011",3,21.63,15.46,t,f
+1.8107,Veterinary Microbiology and Immunobiology,2024,4.0,2020,33.3,"25-1071, 29-1131, 19-1011",3,21.63,15.46,t,f
+1.8108,Veterinary Pathology and Pathobiology,2024,18.0,2020,50.0,"25-1071, 29-1131, 19-1011",3,21.63,15.46,t,f
+1.8110,"Veterinary Preventive Medicine, Epidemiology, and Public Health",2024,25.0,2020,47.1,"25-1071, 29-1131, 19-1011",3,21.63,15.46,t,f
+1.8199,"Veterinary Biomedical and Clinical Sciences, Other",2024,0.0,2024,,"25-1071, 29-1131, 19-1011",3,21.63,15.46,t,f
+1.8301,Veterinary/Animal Health Technology/Technician and Veterinary Assistant,2022,0.0,2020,,"25-1071, 29-2056, 31-9096",3,23.02,13.40,t,f
+1.9999,"Agricultural/Animal/Plant/Veterinary Science and Related Fields, Other",2024,122.0,2012,293.5,,0,,,f,f
+3.0101,"Natural Resources/Conservation, General",2024,765.0,2012,30.1,"19-4071, 19-1031, 19-1032",3,2.87,0.07,f,f
+3.0103,Environmental Studies,2024,1527.0,2012,93.5,"13-1041, 19-2041, 25-1053",3,28.40,3.24,f,f
+3.0104,Environmental Science,2024,1238.0,2012,28.3,"13-1041, 19-2041, 19-4042",3,27.18,3.30,f,f
+3.0199,"Natural Resources Conservation and Research, Other",2024,97.0,2012,120.5,,0,,,f,f
+3.0201,"Environmental/Natural Resources Management and Policy, General",2024,684.0,2012,17.9,"19-1031, 19-1032, 25-1043",3,1.97,2.73,f,f
+3.0204,Environmental/Natural Resource Economics,2024,9.0,2012,-50.0,"11-9199, 19-4061, 19-3011",3,102.40,4.46,t,f
+3.0205,"Water, Wetlands, and Marine Resources Management",2024,187.0,2012,201.6,"19-1031, 25-1043",2,2.37,3.43,f,f
+3.0206,Land Use Planning and Management/Development,2024,10.0,2012,-87.2,"19-1031, 25-1043",2,2.37,3.43,f,f
+3.0207,Environmental/Natural Resource Recreation and Tourism,2024,66.0,2013,842.9,11-9072,1,5.50,7.70,f,f
+3.0208,Environmental/Natural Resources Law Enforcement and Protective Services,2024,4.0,2017,,"33-3051, 13-1041, 33-2011",3,41.59,3.14,f,f
+3.0209,Energy and Environmental Policy,2024,8.0,2020,300.0,"13-1041, 19-3099",2,30.62,2.58,f,f
+3.0299,"Environmental/Natural Resources Management and Policy, Other",2024,14.0,2012,-44.0,25-1043,1,0.10,4.00,f,f
+3.0301,Fishing and Fisheries Sciences and Management,2024,48.0,2012,-29.4,"45-1011, 45-3031",2,7.07,0.72,f,f
+3.0501,"Forestry, General",2024,155.0,2012,-47.6,"45-1011, 19-4071, 19-1031",3,5.94,1.19,f,f
+3.0502,Forest Sciences and Biology,2024,135.0,2012,31.1,"19-1031, 19-1032, 25-1043",3,1.97,2.73,f,f
+3.0506,Forest Management/Forest Resources Management,2024,22.0,2012,-53.2,"19-1031, 19-1032, 25-1043",3,1.97,2.73,f,f
+3.0508,Urban Forestry,2024,4.0,2012,100.0,"19-1032, 25-1043",2,1.00,1.49,f,f
+3.0509,Wood Science and Wood Products/Pulp and Paper Technology/Technician,2024,12.0,2012,-40.0,"19-1032, 25-1043",2,1.00,1.49,f,f
+3.0510,Forest Resources Production and Management,2024,18.0,2012,-5.3,"45-1011, 19-4071, 19-1032",3,6.22,0.64,f,f
+3.0599,"Forestry, Other",2024,5.0,2012,-80.8,"19-4071, 19-1032, 45-4011",3,2.89,-2.44,f,f
+3.0601,"Wildlife, Fish and Wildlands Science and Management",2024,226.0,2012,48.7,"19-1031, 19-1023, 25-1043",3,2.01,2.74,f,f
+3.9999,"Natural Resources and Conservation, Other",2024,11.0,2012,10.0,25-1043,1,0.10,4.00,f,f
+4.0201,Architecture,2024,661.0,2012,-85.6,"11-9041, 17-1011, 25-1031",3,11.66,3.78,f,f
+4.0202,Architectural Design,2024,5.0,2020,-58.3,"11-9041, 17-1011, 25-1031",3,11.66,3.78,f,f
+4.0301,"City/Urban, Community, and Regional Planning",2024,1433.0,2012,-42.0,"11-9041, 19-3051, 25-1069",3,11.75,3.58,f,f
+4.0401,Environmental Design/Architecture,2024,22.0,2012,-84.5,"11-9041, 17-1011, 17-1012",3,11.41,3.82,f,f
+4.0402,Healthcare Environment Design/Architecture,2024,4.0,2020,100.0,"11-9041, 27-1025, 25-1031",3,12.12,3.56,f,f
+4.0403,Sustainable Design/Architecture,2024,2.0,2020,100.0,"19-3051, 25-1031",2,2.88,3.11,f,f
+4.0501,Interior Architecture,2024,96.0,2012,-47.8,"11-9041, 27-1025, 25-1031",3,12.12,3.56,f,f
+4.0601,Landscape Architecture,2024,329.0,2012,-55.2,"11-9041, 17-1012, 25-1031",3,12.72,3.69,f,f
+4.0801,"Architectural History and Criticism, General",2024,19.0,2012,-51.3,"17-1011, 19-3093",2,7.60,3.85,f,f
+4.0802,Architectural Conservation,2024,7.0,2020,40.0,"25-1031, 19-3093",2,0.76,2.05,f,f
+4.0803,Architectural Studies,2024,2.0,2020,100.0,25-1031,1,0.90,2.00,f,f
+4.0901,Architectural Technology/Technician,2024,9.0,2017,125.0,17-3011,1,10.00,4.10,f,f
+4.0902,Architectural and Building Sciences/Technology,2024,4482.0,2012,6212.7,"11-9041, 17-3011, 25-1031",3,12.54,3.84,f,f
+4.0999,"Architectural Sciences and Technology, Other",2013,15.0,2012,-6.3,"17-3011, 25-1031",2,9.14,3.90,f,f
+4.1001,Real Estate Development,2024,298.0,2012,104.1,"11-9141, 41-9022, 41-9021",3,34.72,3.36,f,f
+4.9999,"Architecture and Related Services, Other",2024,13.0,2012,-88.9,,0,,,f,f
+5.0101,African Studies,2024,21.0,2012,-50.0,25-1062,1,1.10,2.40,f,f
+5.0102,American/United States Studies/Civilization,2024,165.0,2012,-30.4,25-1062,1,1.10,2.40,f,f
+5.0103,Asian Studies/Civilization,2024,69.0,2012,-33.7,25-1062,1,1.10,2.40,f,f
+5.0104,East Asian Studies,2024,166.0,2012,13.7,25-1062,1,1.10,2.40,f,f
+5.0105,"Russian, Central European, East European and Eurasian Studies",2024,36.0,2012,20.0,25-1062,1,1.10,2.40,f,f
+5.0106,European Studies/Civilization,2024,11.0,2012,-69.4,25-1062,1,1.10,2.40,f,f
+5.0107,Latin American Studies,2024,148.0,2012,-46.4,25-1062,1,1.10,2.40,f,f
+5.0108,Near and Middle Eastern Studies,2024,98.0,2012,-43.4,25-1062,1,1.10,2.40,f,f
+5.0109,Pacific Area/Pacific Rim Studies,2024,6.0,2012,0.0,25-1062,1,1.10,2.40,f,f
+5.0110,Russian Studies,2024,27.0,2012,-44.9,25-1062,1,1.10,2.40,f,f
+5.0111,Scandinavian Studies,2024,1.0,2012,-66.7,25-1062,1,1.10,2.40,f,f
+5.0112,South Asian Studies,2024,11.0,2012,37.5,25-1062,1,1.10,2.40,f,f
+5.0113,Southeast Asian Studies,2024,7.0,2012,-58.8,25-1062,1,1.10,2.40,f,f
+5.0114,Western European Studies,2024,44.0,2012,-26.7,25-1062,1,1.10,2.40,f,f
+5.0115,Canadian Studies,2024,0.0,2016,-100.0,25-1062,1,1.10,2.40,f,f
+5.0118,Slavic Studies,2024,0.0,2012,-100.0,25-1062,1,1.10,2.40,f,f
+5.0120,Ural-Altaic and Central Asian Studies,2024,7.0,2012,-36.4,25-1062,1,1.10,2.40,f,f
+5.0122,"Regional Studies (U.S., Canadian, Foreign)",2024,371.0,2012,1274.1,25-1062,1,1.10,2.40,f,f
+5.0123,Chinese Studies,2024,7.0,2012,-61.1,25-1062,1,1.10,2.40,f,f
+5.0124,French Studies,2024,27.0,2012,575.0,25-1062,1,1.10,2.40,f,f
+5.0125,German Studies,2024,6.0,2012,-25.0,25-1062,1,1.10,2.40,f,f
+5.0126,Italian Studies,2024,6.0,2012,-60.0,25-1062,1,1.10,2.40,f,f
+5.0127,Japanese Studies,2024,3.0,2012,-57.1,25-1062,1,1.10,2.40,f,f
+5.0128,Korean Studies,2024,3.0,2012,-25.0,25-1062,1,1.10,2.40,f,f
+5.0130,Spanish and Iberian Studies,2024,0.0,2014,,25-1062,1,1.10,2.40,f,f
+5.0133,Irish Studies,2024,5.0,2012,,25-1062,1,1.10,2.40,f,f
+5.0134,Latin American and Caribbean Studies,2024,11.0,2012,83.3,25-1062,1,1.10,2.40,f,f
+5.0135,Appalachian Studies,2024,2.0,2023,-60.0,25-1062,1,1.10,2.40,f,f
+5.0199,"Area Studies, Other",2024,24.0,2012,-66.2,25-1062,1,1.10,2.40,f,f
+5.0200,Ethnic Studies,2024,12.0,2012,20.0,25-1062,1,1.10,2.40,f,f
+5.0201,African-American/Black Studies,2024,76.0,2012,-20.0,25-1062,1,1.10,2.40,f,f
+5.0202,American Indian/Native American Studies,2024,65.0,2012,32.7,25-1062,1,1.10,2.40,f,f
+5.0203,"Hispanic-American, Puerto Rican, and Mexican-American/Chicano Studies",2024,42.0,2012,-25.0,25-1062,1,1.10,2.40,f,f
+5.0206,Asian-American Studies,2024,17.0,2012,-15.0,25-1062,1,1.10,2.40,f,f
+5.0207,Women's Studies,2024,180.0,2012,-2.2,25-1062,1,1.10,2.40,f,f
+5.0209,Folklore Studies,2024,22.0,2012,37.5,25-1062,1,1.10,2.40,f,f
+5.0210,Disability Studies,2024,53.0,2012,43.2,25-1062,1,1.10,2.40,f,f
+5.0211,Deaf Studies,2024,4.0,2015,-42.9,"27-3091, 25-1062",2,5.96,1.81,f,f
+5.0212,Comparative Group Studies,2024,1.0,2020,0.0,25-1062,1,1.10,2.40,f,f
+5.0299,"Ethnic, Cultural Minority, Gender, and Group Studies, Other",2024,74.0,2012,-40.3,25-1062,1,1.10,2.40,f,f
+5.9999,"Area, Ethnic, Cultural, Gender, and Group Studies, Other",2024,7.0,2023,-50.0,25-1062,1,1.10,2.40,f,f
+9.0100,"Communication, General",2024,665.0,2012,35.7,"27-3031, 27-3043, 13-1131",3,20.32,4.41,f,f
+9.0101,Speech Communication and Rhetoric,2024,1960.0,2012,-9.6,"27-3031, 27-3043, 11-2032",3,20.73,4.53,f,f
+9.0102,Mass Communication/Media Studies,2024,1100.0,2012,-0.9,"27-3043, 27-3041, 11-2032",3,10.46,2.91,f,f
+9.0199,"Communication and Media Studies, Other",2024,480.0,2012,-24.8,,0,,,f,f
+9.0401,Journalism,2024,708.0,2012,-59.1,"27-3043, 27-3041, 27-3023",3,10.49,1.21,f,f
+9.0402,Broadcast Journalism,2024,25.0,2012,-69.5,"27-3043, 27-3041, 27-3023",3,10.49,1.21,f,f
+9.0404,Photojournalism,2024,18.0,2012,100.0,"27-4021, 27-3023, 27-4032",3,9.34,1.04,f,f
+9.0407,Science/Health/Environmental Journalism,2024,9.0,2020,,"27-3023, 25-1122",2,3.51,-1.38,f,f
+9.0499,"Journalism, Other",2024,427.0,2012,120.1,"27-3023, 25-1122",2,3.51,-1.38,f,f
+9.0701,Radio and Television,2024,141.0,2012,-32.9,"27-2012, 27-3023, 27-4032",3,9.61,3.08,f,f
+9.0702,Digital Communication and Media/Multimedia,2024,2968.0,2012,902.7,"11-9199, 15-1255, 25-1122",3,95.82,4.66,t,f
+9.0799,"Radio, Television, and Digital Communication, Other",2024,0.0,2012,-100.0,,0,,,f,f
+9.0900,"Public Relations, Advertising, and Applied Communication",2024,802.0,2012,5628.6,"27-3031, 13-1131, 11-2032",3,19.94,4.71,f,f
+9.0901,"Organizational Communication, General",2024,336.0,2012,114.0,"13-1151, 11-3121, 11-3131",3,33.31,8.69,f,f
+9.0902,Public Relations/Image Management,2024,399.0,2012,-21.5,"27-3031, 13-1131, 11-2032",3,19.94,4.71,f,f
+9.0903,Advertising,2024,242.0,2012,-31.8,"25-1122, 11-2011",2,2.44,0.25,f,f
+9.0904,Political Communication,2024,83.0,2014,277.3,"27-3031, 13-1131, 11-2032",3,19.94,4.71,f,f
+9.0905,Health Communication,2024,85.0,2012,-35.6,"27-3031, 21-1091, 21-1094",3,21.63,5.69,f,f
+9.0906,Sports Communication,2024,86.0,2012,330.0,"27-3031, 27-3023, 25-1122",3,22.49,3.49,f,f
+9.0907,International and Intercultural Communication,2024,92.0,2012,100.0,"27-3031, 11-2032, 27-3023",3,21.12,3.88,f,f
+9.0908,Technical and Scientific Communication,2024,51.0,2012,104.0,"27-3041, 27-3042, 25-1122",3,7.14,0.94,f,f
+9.0909,Communication Management and Strategic Communications,2024,343.0,2020,289.8,"11-2032, 11-2033",2,5.54,4.72,f,f
+9.0999,"Public Relations, Advertising, and Applied Communication, Other",2024,234.0,2012,20.6,,0,,,f,f
+9.1001,Publishing,2024,189.0,2012,9.9,27-3041,1,9.80,0.60,f,f
+9.9999,"Communication, Journalism, and Related Programs, Other",2024,382.0,2012,-25.5,"27-3043, 27-3041, 25-1122",3,10.61,2.20,f,f
+10.0105,Communications Technology/Technician,2024,7.0,2012,-77.4,"27-4032, 27-3099, 27-4012",3,2.96,1.92,f,f
+10.0202,Radio and Television Broadcasting Technology/Technician,2024,5.0,2012,-94.7,"27-4032, 27-4031, 27-4012",3,2.93,1.42,f,f
+10.0203,Recording Arts Technology/Technician,2024,69.0,2012,176.0,"27-4011, 27-4014, 27-2091",3,5.76,2.68,f,f
+10.0301,"Graphic Communications, General",2024,0.0,2012,,51-5111,1,2.80,-14.60,f,f
+10.0302,Printing Management,2017,0.0,2012,-100.0,"51-5112, 51-5111",2,12.08,-9.07,f,f
+10.0303,Prepress/Desktop Publishing and Digital Imaging Design,2022,0.0,2019,-100.0,"51-5111, 43-9031",2,2.42,-14.25,f,f
+10.0304,"Animation, Interactive Technology, Video Graphics, and Special Effects",2024,519.0,2012,90.8,27-1014,1,5.00,1.60,f,f
+10.0399,"Graphic Communications, Other",2017,2.0,2012,-75.0,"51-5112, 51-5111, 51-9194",3,11.56,-8.68,f,f
+10.9999,"Communications Technologies/Technicians and Support Services, Other",2024,18.0,2012,-71.9,,0,,,f,f
+11.0101,"Computer and Information Sciences, General",2024,21233.0,2012,339.0,"11-3021, 15-1211, 15-1299",3,41.97,11.17,t,f
+11.0102,Artificial Intelligence,2024,1123.0,2012,1459.7,"15-1252, 15-2051, 25-1021",3,101.30,17.76,t,t
+11.0103,Information Technology,2024,10351.0,2012,327.6,"15-1252, 11-3021, 15-1211",3,86.76,14.38,t,f
+11.0104,Informatics,2024,1358.0,2012,2241.4,"15-1252, 15-1253, 15-1255",3,98.36,14.66,t,f
+11.0105,Human-Centered Technology Design,2024,271.0,2020,,15-1255,1,9.10,7.00,f,f
+11.0199,"Computer and Information Sciences,  Other",2024,680.0,2012,700.0,"25-1021, 15-1221",2,3.36,12.12,t,f
+11.0201,"Computer Programming/Programmer, General",2024,352.0,2012,496.6,"15-1252, 15-1253, 15-1231",3,97.36,14.19,t,f
+11.0202,"Computer Programming, Specific Applications",2024,54.0,2012,350.0,"15-1252, 15-1253, 15-1251",3,98.49,13.91,t,f
+11.0204,Computer Game Programming,2024,0.0,2020,-100.0,"15-1252, 15-1253, 15-1251",3,98.49,13.91,t,f
+11.0205,"Computer Programming, Specific Platforms",2023,0.0,2022,,"15-1252, 15-1253, 15-1251",3,98.49,13.91,t,f
+11.0299,"Computer Programming, Other",2024,74.0,2017,428.6,15-1251,1,5.50,-6.00,f,f
+11.0301,Data Processing and Data Processing Technology/Technician,2024,331.0,2017,33000.0,15-1299,1,31.30,8.20,f,f
+11.0401,Information Science/Studies,2024,10368.0,2012,164.4,"15-1252, 11-3021, 15-1299",3,87.19,14.39,t,f
+11.0501,Computer Systems Analysis/Analyst,2024,1206.0,2012,396.3,"15-1211, 15-1253, 15-1241",3,25.11,9.63,f,f
+11.0601,"Data Entry/Microcomputer Applications, General",2019,0.0,2018,-100.0,43-9021,1,9.50,-25.90,f,f
+11.0701,Computer Science,2024,25590.0,2012,312.6,"15-1252, 11-3021, 15-1299",3,87.19,14.39,t,t
+11.0801,"Web Page, Digital/Multimedia and Information Resources Design",2024,488.0,2012,122.8,"27-1024, 15-1255, 25-1194",3,14.64,2.99,f,f
+11.0802,Data Modeling/Warehousing and Database Administration,2024,2822.0,2012,5433.3,"11-3021, 15-2051, 25-1194",3,42.43,17.84,t,f
+11.0803,Computer Graphics,2024,259.0,2012,52.4,"27-1024, 25-1194, 15-1251",3,13.86,-0.16,f,f
+11.0804,"Modeling, Virtual Environments and Simulation",2024,195.0,2012,413.2,"15-1252, 15-2051, 15-1251",3,97.80,16.63,t,f
+11.0899,"Computer Software and Media Applications, Other",2024,374.0,2012,513.1,,0,,,f,f
+11.0901,Computer Systems Networking and Telecommunications,2024,488.0,2012,-0.8,"11-3021, 15-1211, 15-1212",3,42.19,14.50,t,f
+11.0902,Cloud Computing,2024,43.0,2023,138.9,"15-1252, 15-1241, 15-1231",3,98.04,14.40,t,f
+11.1001,Network and System Administration/Administrator,2024,47.0,2012,571.4,"11-3021, 15-1244, 15-1212",3,37.88,11.81,t,f
+11.1002,"System, Networking, and LAN/WAN Management/Manager",2024,73.0,2012,711.1,"11-3021, 15-1212, 15-1231",3,41.37,15.58,t,f
+11.1003,Computer and Information Systems Security/Auditing/Information Assurance,2024,8513.0,2012,994.2,"11-3021, 15-1244, 15-1212",3,37.88,11.81,t,f
+11.1004,Web/Multimedia Management and Webmaster,2024,4.0,2012,-66.7,"15-1255, 15-1254",2,7.62,7.20,f,f
+11.1005,Information Technology Project Management,2024,1607.0,2012,1039.7,"11-9199, 13-1082, 11-3021",3,85.73,7.22,t,f
+11.1099,"Computer/Information Technology Services Administration and Management, Other",2024,3329.0,2012,1386.2,,0,,,f,f
+11.9999,"Computer and Information Sciences and Support Services, Other",2024,162.0,2012,-56.6,,0,,,f,f
+12.0503,Culinary Arts/Chef Training,2024,0.0,2022,,"35-2014, 35-1012, 35-1011",3,206.90,10.60,t,f
+12.0504,"Restaurant, Culinary, and Catering Management/Manager",2024,1.0,2021,,"35-1012, 11-9051, 35-1011",3,137.71,6.20,t,f
+12.0509,Culinary Science/Culinology,2024,0.0,2019,-100.0,"11-9051, 35-1011, 25-1199",3,30.14,5.44,f,f
+12.0599,"Culinary Arts and Related Services, Other",2024,17.0,2012,-57.5,,0,,,f,f
+13.0101,"Education, General",2024,13021.0,2012,-50.6,25-1081,1,5.60,2.10,f,f
+13.0201,Bilingual and Multilingual Education,2024,447.0,2012,-45.6,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.0202,Multicultural Education,2024,87.0,2012,-13.0,"25-3099, 25-1081, 25-3011",3,12.42,-1.55,f,f
+13.0203,Indian/Native American Education,2024,9.0,2019,,"25-3099, 25-1081",2,13.94,0.62,f,f
+13.0299,"Bilingual, Multilingual, and Multicultural Education, Other",2024,169.0,2012,2716.7,"25-1081, 25-3011",2,5.00,-3.48,f,f
+13.0301,Curriculum and Instruction,2024,18417.0,2012,3.3,"25-9031, 25-1081",2,17.93,1.49,f,f
+13.0401,"Educational Leadership and Administration, General",2024,16637.0,2012,-12.2,"11-9032, 11-9033, 11-9031",3,16.69,-0.52,f,t
+13.0402,Administration of Special Education,2024,110.0,2012,205.6,11-9039,1,4.10,2.50,f,f
+13.0403,Adult and Continuing Education Administration,2024,249.0,2012,63.8,"11-9039, 11-3131",2,3.97,3.94,f,f
+13.0404,"Educational, Instructional, and Curriculum Supervision",2024,1112.0,2012,11.4,"11-9032, 11-9033, 11-9031",3,16.69,-0.52,f,f
+13.0406,Higher Education/Higher Education Administration,2024,2983.0,2012,27.0,"11-9033, 11-9039",2,12.79,1.87,f,f
+13.0407,Community College Administration,2024,121.0,2012,227.0,11-9033,1,15.10,1.70,f,f
+13.0408,Elementary and Middle School Administration/Principalship,2024,375.0,2012,-67.1,11-9032,1,20.80,-1.50,f,f
+13.0409,Secondary School Administration/Principalship,2024,301.0,2012,-44.2,11-9032,1,20.80,-1.50,f,f
+13.0410,Urban Education and Leadership,2024,384.0,2012,5.2,11-9039,1,4.10,2.50,f,f
+13.0411,Superintendency and Educational System Administration,2024,232.0,2012,-72.8,"11-9032, 11-9031, 11-9039",3,15.87,-1.19,f,f
+13.0412,International School Administration/Leadership,2024,5.0,2020,150.0,"11-9032, 11-9033, 11-9031",3,16.69,-0.52,f,f
+13.0413,Education Entrepreneurship,2024,0.0,2022,,11-9039,1,4.10,2.50,f,f
+13.0414,Early Childhood Program Administration,2024,6.0,2020,-14.3,"11-9032, 11-9031",2,17.54,-1.71,f,f
+13.0499,"Educational Administration and Supervision, Other",2024,911.0,2012,-40.0,11-9039,1,4.10,2.50,f,f
+13.0501,Educational/Instructional Technology,2024,6832.0,2012,64.5,"13-1151, 25-9031, 25-4022",3,32.49,6.56,f,t
+13.0601,Educational Evaluation and Research,2024,473.0,2012,846.0,"13-1111, 25-1081, 19-3099",3,89.03,8.02,t,f
+13.0603,Educational Statistics and Research Methods,2024,169.0,2012,201.8,"13-1111, 25-1081, 19-3099",3,89.03,8.02,t,f
+13.0604,"Educational Assessment, Testing, and Measurement",2024,139.0,2012,124.2,"13-1111, 25-1081, 19-3099",3,89.03,8.02,t,f
+13.0607,Learning Sciences,2024,937.0,2012,4831.6,"25-9099, 25-1081, 11-3131",3,8.87,2.47,f,f
+13.0699,"Educational Assessment, Evaluation, and Research, Other",2024,125.0,2012,-15.0,"13-1111, 25-1081, 19-3099",3,89.03,8.02,t,f
+13.0701,International and Comparative Education,2024,193.0,2012,-30.1,,0,,,f,f
+13.0901,Social and Philosophical Foundations of Education,2024,259.0,2012,-59.8,25-1081,1,5.60,2.10,f,f
+13.1001,"Special Education and Teaching, General",2024,13894.0,2012,-0.6,"25-2058, 25-2057, 25-2059",3,8.46,-1.33,f,f
+13.1003,Education/Teaching of Individuals with Hearing Impairments Including Deafness,2024,96.0,2012,-37.7,"25-2058, 25-2057, 27-3091",3,8.79,-0.94,f,f
+13.1004,Education/Teaching of the Gifted and Talented,2024,210.0,2012,-33.8,,0,,,f,f
+13.1005,Education/Teaching of Individuals with Emotional Disturbances,2024,36.0,2012,-62.9,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1006,Education/Teaching of Individuals with Intellectual Disabilities,2024,25.0,2012,-89.0,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1007,Education/Teaching of Individuals with Multiple Disabilities,2024,1078.0,2012,85.5,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1008,Education/Teaching of Individuals with Orthopedic and Other Physical Health Impairments,2024,0.0,2012,-100.0,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1009,Education/Teaching of Individuals with Vision Impairments Including Blindness,2024,88.0,2012,-30.2,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1011,Education/Teaching of Individuals with Specific Learning Disabilities,2024,154.0,2012,-51.3,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1012,Education/Teaching of Individuals with Speech or Language Impairments,2024,106.0,2012,-59.1,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1013,Education/Teaching of Individuals with Autism,2024,261.0,2012,54.4,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1014,Education/Teaching of Individuals Who are Developmentally Delayed,2024,53.0,2012,-67.7,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1015,Education/Teaching of Individuals in Early Childhood Special Education Programs,2024,900.0,2012,-12.4,"25-1081, 25-2051",2,4.62,1.90,f,f
+13.1016,Education/Teaching of Individuals with Traumatic Brain Injuries,2024,31.0,2022,34.8,"25-2058, 25-2057, 25-1081",3,8.50,-0.86,f,f
+13.1017,Education/Teaching of Individuals in Elementary Special Education Programs,2024,1381.0,2012,219.7,25-1081,1,5.60,2.10,f,f
+13.1018,Education/Teaching of Individuals in Junior High/Middle School Special Education Programs,2024,83.0,2012,-58.5,"25-2057, 25-1081",2,5.99,-0.13,f,f
+13.1019,Education/Teaching of Individuals in Secondary Special Education Programs,2024,621.0,2012,237.5,"25-2058, 25-1081",2,9.38,-0.44,f,f
+13.1099,"Special Education and Teaching, Other",2024,529.0,2012,-5.0,"25-1081, 25-2059",2,4.64,1.75,f,f
+13.1101,Counselor Education/School Counseling and Guidance Services,2024,11025.0,2012,-15.6,21-1012,1,31.00,3.50,f,f
+13.1102,College Student Counseling and Personnel Services,2024,770.0,2012,-26.2,"21-1012, 39-9041",2,28.35,3.56,f,f
+13.1199,"Student Counseling and Personnel Services, Other",2024,311.0,2012,28.5,"21-1012, 39-9041",2,28.35,3.56,f,f
+13.1201,Adult and Continuing Education and Teaching,2024,642.0,2012,-47.0,"13-1151, 25-3021, 25-3011",3,45.54,6.44,f,f
+13.1202,Elementary Education and Teaching,2024,9057.0,2012,-31.6,"25-2021, 25-1081",2,86.73,-1.79,f,f
+13.1203,Junior High/Intermediate/Middle School Education and Teaching,2024,600.0,2012,-36.0,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1205,Secondary Education and Teaching,2024,5395.0,2012,-33.6,"25-2031, 25-1081",2,62.32,-1.36,f,f
+13.1206,"Teacher Education, Multiple Levels",2024,4013.0,2012,-11.6,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1207,Montessori Teacher Education,2024,193.0,2012,4.9,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1208,Waldorf/Steiner Teacher Education,2018,0.0,2012,-100.0,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1209,Kindergarten/Preschool Education and Teaching,2024,100.0,2012,-72.4,"25-2011, 25-2012, 25-1081",3,51.23,3.01,f,f
+13.1210,Early Childhood Education and Teaching,2024,3437.0,2012,18.0,"25-2021, 25-2011, 25-2012",3,79.87,-0.36,f,f
+13.1211,Online Educator/Online Teaching,2024,24.0,2020,-20.0,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1213,"Science, Technology, Engineering, and Mathematics (STEM) Educational Methods",2024,327.0,2020,84.7,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1214,College/Postsecondary/University Teaching,2024,6.0,2021,,25-1081,1,5.60,2.10,f,f
+13.1299,"Teacher Education and Professional Development, Specific Levels and Methods, Other",2024,4671.0,2012,22.0,,0,,,f,f
+13.1301,Agricultural Teacher Education,2024,318.0,2012,-0.9,"25-1194, 25-2032, 25-1081",3,7.11,0.19,f,f
+13.1302,Art Teacher Education,2024,666.0,2012,-40.9,"25-2031, 25-2022, 25-1121",3,53.61,-1.52,f,f
+13.1303,Business and Innovation/Entrepreneurship Teacher Education,2024,86.0,2012,-55.9,"25-1194, 25-2032, 25-1011",3,7.76,1.48,f,f
+13.1304,Driver and Safety Teacher Education,2024,0.0,2012,-100.0,"25-2031, 25-3099, 25-1081",3,57.17,-1.22,f,f
+13.1305,English/Language Arts Teacher Education,2024,967.0,2012,-9.5,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1306,Foreign Language Teacher  Education,2024,206.0,2012,-13.1,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1307,Health Teacher Education,2024,487.0,2012,-10.5,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1308,Family and Consumer Sciences/Home Economics Teacher Education,2024,59.0,2012,-31.4,"25-2031, 25-2022, 25-2032",3,53.92,-1.75,f,f
+13.1309,Technology Teacher Education/Industrial Arts Teacher Education,2024,184.0,2012,-45.6,"25-2031, 25-2022, 25-1194",3,53.61,-1.59,f,f
+13.1310,Sales and Marketing Operations/Marketing and Distribution   Teacher Education,2024,0.0,2012,-100.0,"25-1194, 25-2032, 25-1011",3,7.76,1.48,f,f
+13.1311,Mathematics Teacher Education,2024,1592.0,2012,-18.2,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1312,Music Teacher Education,2024,1075.0,2012,-14.8,"25-2031, 25-2022, 25-1121",3,53.61,-1.52,f,f
+13.1314,Physical Education Teaching and Coaching,2024,1613.0,2012,-27.9,"25-2031, 25-2022, 39-9031",3,59.85,0.66,f,f
+13.1315,Reading Teacher Education,2024,4871.0,2012,-39.0,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1316,Science Teacher Education/General Science Teacher Education,2024,586.0,2012,-33.0,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1317,Social Science Teacher Education,2024,111.0,2012,-27.0,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1318,Social Studies Teacher Education,2024,477.0,2012,-36.0,"25-2031, 25-2022",2,56.78,-1.75,f,f
+13.1319,Technical Teacher Education,2024,111.0,2012,-52.4,"25-1194, 25-2032, 25-1081",3,7.11,0.19,f,f
+13.1320,Trade and Industrial Teacher Education,2024,263.0,2012,-5.7,"25-1194, 25-2032, 25-1081",3,7.11,0.19,f,f
+13.1321,Computer Teacher Education,2024,43.0,2012,-93.2,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1322,Biology Teacher Education,2024,326.0,2012,-3.8,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1323,Chemistry Teacher Education,2024,120.0,2012,44.6,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1324,Drama and Dance Teacher Education,2024,106.0,2012,47.2,"25-2031, 25-2022, 25-1121",3,53.61,-1.52,f,f
+13.1325,French Language Teacher Education,2024,13.0,2012,-67.5,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1326,German Language Teacher Education,2024,0.0,2012,-100.0,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1327,Health Occupations Teacher Education,2024,75.0,2012,177.8,"25-2022, 25-1071, 25-1194",3,33.17,3.66,t,f
+13.1328,History Teacher Education,2024,237.0,2012,121.5,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1329,Physics Teacher Education,2024,57.0,2012,-1.7,"25-2031, 25-1081, 25-1054",3,61.44,-1.31,f,f
+13.1330,Spanish Language Teacher Education,2024,118.0,2012,-32.6,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1331,Speech Teacher Education,2024,17.0,2012,-72.6,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1332,Geography Teacher Education,2024,0.0,2012,-100.0,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1333,Latin Teacher Education,2024,2.0,2012,-75.0,"25-2031, 25-2022, 25-1124",3,55.95,-1.72,f,f
+13.1334,School Librarian/School Library Media Specialist,2024,305.0,2012,79.4,25-4022,1,13.50,1.70,f,f
+13.1335,Psychology Teacher Education,2024,0.0,2012,,"25-2031, 25-1066",2,63.35,-1.36,f,f
+13.1337,Earth Science Teacher Education,2024,98.0,2012,81.5,"25-2031, 25-2022, 25-1081",3,54.65,-1.59,f,f
+13.1338,Environmental Education,2024,29.0,2012,190.0,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1399,"Teacher Education and Professional Development, Specific Subject Areas, Other",2024,918.0,2012,-57.9,"25-3099, 25-1081",2,13.94,0.62,f,f
+13.1401,Teaching English as a Second or Foreign Language/ESL Language Instructor,2024,2742.0,2012,-15.2,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,t
+13.1402,Teaching French as a Second or Foreign Language,2016,0.0,2012,-100.0,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1499,"Teaching English or French as a Second or Foreign Language, Other",2024,2.0,2015,-60.0,"25-2021, 25-2031, 25-2022",3,72.23,-1.86,f,f
+13.1501,Teacher Assistant/Aide,2024,0.0,2012,-100.0,,0,,,f,f
+13.1502,Adult Literacy Tutor/Instructor,2024,8.0,2012,-69.2,25-3011,1,3.90,-13.70,f,f
+13.1599,"Teaching Assistants/Aides, Other",2014,0.0,2012,,"25-9044, 25-9099",2,19.69,2.45,f,f
+13.9999,"Education, Other",2024,1148.0,2012,-68.0,"25-3099, 25-1081",2,13.94,0.62,f,f
+14.0101,"Engineering, General",2024,3868.0,2012,79.6,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,t
+14.0103,Applied Engineering,2024,213.0,2020,156.6,17-2199,1,9.30,2.10,f,f
+14.0201,"Aerospace, Aeronautical, and Astronautical/Space Engineering, General",2024,2504.0,2012,66.6,"11-9041, 17-2011, 25-1032",3,10.79,4.94,f,f
+14.0202,Astronautical Engineering,2024,8.0,2021,60.0,"11-9041, 17-2011, 25-1032",3,10.79,4.94,f,f
+14.0299,"Aerospace, Aeronautical, and Astronautical/Space Engineering, Other",2024,0.0,2024,,"11-9041, 17-2011, 25-1032",3,10.79,4.94,f,f
+14.0301,Agricultural Engineering,2024,202.0,2012,-25.7,"11-9041, 25-1032, 17-2021",3,12.43,4.63,f,f
+14.0401,Architectural Engineering,2024,197.0,2012,38.7,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.0501,Bioengineering and Biomedical Engineering,2024,3716.0,2012,102.5,"11-9041, 25-1032, 17-2031",3,11.64,4.67,f,f
+14.0601,Ceramic Sciences and Engineering,2024,19.0,2012,171.4,"11-9041, 25-1032, 17-2131",3,11.62,4.71,f,f
+14.0701,Chemical Engineering,2024,1567.0,2012,14.5,"11-9041, 25-1032, 17-2041",3,11.64,4.47,f,f
+14.0702,Chemical and Biomolecular Engineering,2024,80.0,2012,566.7,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.0799,"Chemical Engineering, Other",2024,8.0,2012,,"11-9041, 25-1032, 17-2041",3,11.64,4.47,f,f
+14.0801,"Civil Engineering, General",2024,4565.0,2012,-8.6,"17-2051, 11-9041, 25-1032",3,18.99,4.84,f,f
+14.0802,Geotechnical and Geoenvironmental Engineering,2024,14.0,2012,,"17-2051, 11-9041, 17-2199",3,17.92,4.03,f,f
+14.0803,Structural Engineering,2024,147.0,2012,-26.5,"17-2051, 11-9041, 25-1032",3,18.99,4.84,f,f
+14.0804,Transportation and Highway Engineering,2024,82.0,2012,20.6,"17-2051, 11-9041, 25-1032",3,18.99,4.84,f,f
+14.0805,Water Resources Engineering,2024,29.0,2012,-54.0,"17-2051, 11-9041, 17-2199",3,17.92,4.03,f,f
+14.0899,"Civil Engineering, Other",2024,103.0,2012,312.0,"17-2051, 11-9041, 25-1032",3,18.99,4.84,f,f
+14.0901,"Computer Engineering, General",2024,3575.0,2012,97.4,"15-1252, 11-9041, 15-1253",3,95.37,14.04,t,f
+14.0902,Computer Hardware Engineering,2024,57.0,2012,-59.9,"11-9041, 17-2061, 25-1032",3,10.74,5.23,f,f
+14.0903,Computer Software Engineering,2024,2852.0,2012,142.1,"15-1252, 11-9041, 15-1253",3,95.37,14.04,t,f
+14.0999,"Computer Engineering, Other",2024,243.0,2012,1250.0,"11-9041, 15-1241, 25-1032",3,11.98,7.57,f,f
+14.1001,Electrical and Electronics Engineering,2024,8356.0,2012,-11.5,"11-9041, 17-2071, 17-2072",3,11.74,5.56,f,f
+14.1003,Laser and Optical Engineering,2024,42.0,2012,23.5,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.1004,Telecommunications Engineering,2024,111.0,2012,-35.8,"11-9041, 17-2199, 17-2072",3,10.93,3.71,f,f
+14.1099,"Electrical, Electronics, and Communications Engineering, Other",2024,257.0,2012,446.8,"11-9041, 17-2071, 17-2072",3,11.74,5.56,f,f
+14.1101,Engineering Mechanics,2024,62.0,2012,-47.9,"17-2141, 11-9041, 17-2199",3,14.85,5.73,f,f
+14.1201,Engineering Physics/Applied Physics,2024,186.0,2012,60.3,"11-9041, 17-2199, 11-9121",3,11.45,3.21,f,f
+14.1301,Engineering Science,2024,362.0,2012,16.8,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.1401,Environmental/Environmental Health Engineering,2024,757.0,2012,2.4,"11-9041, 25-1032, 17-2081",3,11.27,4.53,f,f
+14.1801,Materials Engineering,2024,1101.0,2012,44.5,"13-1051, 11-9041, 25-1032",3,14.52,0.59,f,f
+14.1901,Mechanical Engineering,2024,7288.0,2012,24.3,"17-2141, 13-1051, 11-9041",3,16.68,3.50,f,f
+14.2001,Metallurgical Engineering,2024,29.0,2012,-29.3,"11-9041, 25-1032, 17-2131",3,11.62,4.71,f,f
+14.2101,Mining and Mineral Engineering,2024,85.0,2012,60.4,"11-9041, 25-1032, 17-2151",3,12.20,4.52,f,f
+14.2201,Naval Architecture and Marine Engineering,2024,35.0,2012,-40.7,"11-9041, 25-1032, 17-2121",3,12.14,4.66,f,f
+14.2301,Nuclear Engineering,2024,311.0,2012,-5.5,"11-9041, 25-1032, 17-2161",3,11.86,4.31,f,f
+14.2401,Ocean Engineering,2024,69.0,2012,7.8,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.2501,Petroleum Engineering,2024,150.0,2012,-65.3,"11-9041, 25-1032, 17-2171",3,11.72,4.39,f,f
+14.2701,Systems Engineering,2024,2163.0,2012,3.8,"17-2112, 11-9041, 17-2199",3,18.56,6.93,f,f
+14.2801,Textile Sciences and Engineering,2024,49.0,2012,-15.5,"11-9041, 25-1032, 17-2131",3,11.62,4.71,f,f
+14.3201,Polymer/Plastics Engineering,2024,79.0,2012,-6.0,"11-9041, 25-1032, 17-2131",3,11.62,4.71,f,f
+14.3301,Construction Engineering,2024,632.0,2012,643.5,"17-2051, 13-1051, 11-9041",3,19.34,2.15,f,f
+14.3401,Forest Engineering,2024,0.0,2012,-100.0,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.3501,Industrial Engineering,2024,2811.0,2012,35.4,"17-2112, 11-3051, 11-9041",3,19.94,6.37,f,f
+14.3601,Manufacturing Engineering,2024,343.0,2012,4.3,"17-2112, 13-1051, 11-9041",3,19.96,4.76,f,f
+14.3701,Operations Research,2024,1047.0,2012,55.3,"15-2031, 11-9121, 25-1032",3,8.13,12.01,t,f
+14.3801,Surveying Engineering,2024,12.0,2012,100.0,"11-9041, 17-2199, 17-1022",3,11.18,3.25,f,f
+14.3901,Geological/Geophysical Engineering,2024,125.0,2012,2.5,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4001,Paper Science and Engineering,2024,3.0,2012,200.0,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4201,"Mechatronics, Robotics, and Automation Engineering",2024,1016.0,2012,3403.4,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4301,Biochemical Engineering,2024,32.0,2012,1500.0,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4401,Engineering Chemistry,2024,23.0,2022,-23.3,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4501,Biological/Biosystems Engineering,2024,87.0,2012,625.0,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4701,Electrical and Computer Engineering,2024,1053.0,2020,963.6,"11-9041, 17-2071, 17-2199",3,12.08,4.48,f,f
+14.4801,"Energy Systems Engineering, General",2024,74.0,2020,252.4,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.4899,"Energy Systems Engineering, Other",2024,2.0,2022,-60.0,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+14.9999,"Engineering, Other",2024,1922.0,2012,86.4,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+15.0000,"Engineering Technologies/Technicians, General",2024,221.0,2012,-33.0,"17-3023, 17-3022, 17-3024",3,6.70,1.20,f,f
+15.0101,Architectural Engineering Technologies/Technicians,2024,64.0,2012,,"17-3011, 17-3029, 17-3022",3,7.60,2.84,f,f
+15.0201,Civil Engineering Technologies/Technicians,2024,5.0,2021,0.0,"17-3022, 53-6041",2,4.99,2.27,f,f
+15.0303,"Electrical, Electronic, and Communications Engineering Technology/Technician",2024,6.0,2012,-76.9,"17-3023, 49-2095, 17-3012",3,6.28,0.46,f,f
+15.0305,Telecommunications Technology/Technician,2024,11.0,2012,-87.6,17-3023,1,8.40,0.60,f,f
+15.0306,Integrated Circuit Design Technology/Technician,2013,0.0,2012,,"17-3023, 17-3012",2,7.14,-0.56,f,f
+15.0307,Audio Engineering Technology/Technician,2024,9.0,2023,,"17-3029, 27-4014, 27-2091",3,4.29,1.31,f,f
+15.0399,"Electrical/Electronic Engineering Technologies/Technicians, Other",2024,2.0,2012,100.0,17-3023,1,8.40,0.60,f,f
+15.0401,Biomedical Technology/Technician,2024,4.0,2012,300.0,"49-9062, 17-3029, 17-3028",3,5.97,6.96,f,f
+15.0403,Electromechanical/Electromechanical Engineering Technology/Technician,2024,8.0,2012,700.0,"17-3012, 17-3024",2,1.54,-2.85,f,f
+15.0405,Robotics Technology/Technician,2024,41.0,2016,192.9,17-3024,1,1.30,1.10,f,f
+15.0406,Automation Engineer Technology/Technician,2024,5.0,2022,150.0,"17-3023, 17-3024",2,7.42,0.67,f,f
+15.0501,"Heating, Ventilation, Air Conditioning and Refrigeration Engineering Technology/Technician",2013,0.0,2012,,"49-9021, 17-3029",2,35.40,7.20,f,f
+15.0507,Environmental/Environmental Engineering Technology/Technician,2024,51.0,2012,-27.1,"19-4042, 17-3025",2,4.51,3.32,f,f
+15.0599,"Environmental Control Technologies/Technicians, Other",2024,1.0,2012,-98.3,17-3029,1,5.70,1.50,f,f
+15.0607,Plastics and Polymer Engineering Technology/Technician,2024,5.0,2012,-16.7,17-3029,1,5.70,1.50,f,f
+15.0612,Industrial Technology/Technician,2024,625.0,2012,59.0,17-3026,1,6.30,1.70,f,f
+15.0613,Manufacturing Engineering Technology/Technician,2024,89.0,2012,15.6,17-3026,1,6.30,1.70,f,f
+15.0699,"Industrial Production Technologies/Technicians, Other",2024,13.0,2012,-31.6,17-3026,1,6.30,1.70,f,f
+15.0701,Occupational Safety and Health Technology/Technician,2024,737.0,2012,82.0,19-5011,1,14.90,12.50,f,f
+15.0702,Quality Control Technology/Technician,2024,52.0,2012,-21.2,51-9061,1,69.90,0.00,f,f
+15.0703,Industrial Safety Technology/Technician,2024,7.0,2012,-72.0,"19-5011, 17-3026",2,11.79,8.60,f,f
+15.0799,"Quality Control and Safety Technologies/Technicians, Other",2024,0.0,2012,-100.0,,0,,,f,f
+15.0801,Aeronautical/Aerospace Engineering Technology/Technician,2024,74.0,2014,60.9,"17-3013, 17-3021",2,2.87,-3.90,f,f
+15.0803,Automotive Engineering Technology/Technician,2024,12.0,2012,-25.0,"49-3023, 17-3013, 17-3027",3,63.89,3.50,f,f
+15.0805,Mechanical/Mechanical Engineering Technology/Technician,2024,20.0,2012,185.7,"17-3013, 17-3027, 17-3024",3,2.95,-2.73,f,f
+15.0899,"Mechanical Engineering Related Technologies/Technicians, Other",2024,12.0,2023,9.1,17-3027,1,3.20,0.00,f,f
+15.1001,Construction Engineering Technology/Technician,2024,711.0,2012,333.5,"11-9021, 13-1051, 17-3022",3,35.68,4.77,f,f
+15.1102,Surveying Technology/Surveying,2024,1.0,2012,-91.7,"17-3031, 17-1022, 17-3019",3,5.22,2.99,f,f
+15.1199,"Engineering-Related Technologies/Technicians, Other",2024,0.0,2019,,,0,,,f,f
+15.1201,Computer Engineering Technology/Technician,2015,0.0,2012,,"15-1253, 17-3023, 17-3029",3,11.01,5.99,f,f
+15.1202,Computer/Computer Systems Technology/Technician,2024,84.0,2012,1100.0,"15-1253, 17-3023, 17-3029",3,11.01,5.99,f,f
+15.1204,Computer Software Technology/Technician,2024,10.0,2023,42.9,"15-1252, 15-1253, 15-1251",3,98.49,13.91,t,f
+15.1299,"Computer Engineering Technologies/Technicians, Other",2024,0.0,2022,-100.0,17-3029,1,5.70,1.50,f,f
+15.1301,"Drafting and Design Technology/Technician, General",2024,145.0,2017,173.6,"17-3011, 17-3013, 17-3012",3,7.33,0.30,f,f
+15.1302,CAD/CADD Drafting and/or Design Technology/Technician,2024,43.0,2012,616.7,"17-3011, 17-3013, 17-3012",3,7.33,0.30,f,f
+15.1303,Architectural Drafting and Architectural CAD/CADD,2024,64.0,2017,88.2,17-3011,1,10.00,4.10,f,f
+15.1307,3-D Modeling and Design Technology/Technician,2024,3.0,2021,,"17-3011, 17-3013, 17-3012",3,7.33,0.30,f,f
+15.1401,Nuclear Engineering Technology/Technician,2024,0.0,2016,,"17-3029, 19-4051",2,5.29,0.75,f,f
+15.1501,Engineering/Industrial Management,2024,5539.0,2012,96.8,"17-2112, 11-3051, 11-9041",3,19.94,6.37,f,f
+15.1502,Engineering Design,2024,150.0,2013,368.8,"11-9041, 17-2199, 25-1032",3,11.30,3.67,f,f
+15.1503,Packaging Science,2024,87.0,2012,190.0,"17-2112, 11-9041, 25-1199",3,19.28,6.69,f,f
+15.1599,"Engineering-Related Fields, Other",2024,96.0,2013,2300.0,,0,,,f,f
+15.1601,Nanotechnology,2024,41.0,2012,412.5,17-2199,1,9.30,2.10,f,f
+15.1701,Energy Systems Technology/Technician,2024,44.0,2020,-38.9,"17-3029, 27-1021",2,4.70,2.03,f,f
+15.1703,Solar Energy Technology/Technician,2022,3.0,2020,-75.0,"17-3029, 47-2231",2,5.22,13.61,t,f
+15.9999,"Engineering/Engineering-Related Technologies/Technicians, Other",2024,336.0,2012,229.4,,0,,,f,f
+16.0101,"Foreign Languages and Literatures, General",2024,170.0,2012,-30.3,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0102,Linguistics,2024,499.0,2012,-34.3,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0103,Language Interpretation and Translation,2024,195.0,2012,15.4,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0104,Comparative Literature,2024,122.0,2012,-16.4,25-1123,1,5.10,0.00,f,f
+16.0105,Applied Linguistics,2024,98.0,2012,366.7,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0199,"Linguistic, Comparative, and Related Language Studies and Services, Other",2024,22.0,2012,83.3,19-3099,1,3.20,-1.70,f,f
+16.0201,"African Languages, Literatures, and Linguistics",2024,1.0,2012,0.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0300,"East Asian Languages, Literatures, and Linguistics, General",2024,76.0,2012,-20.8,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0301,Chinese Language and Literature,2024,28.0,2012,-39.1,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0302,Japanese Language and Literature,2024,14.0,2012,-61.1,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0303,Korean Language and Literature,2024,2.0,2012,-75.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0399,"East Asian Languages, Literatures, and Linguistics, Other",2024,16.0,2012,-48.4,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0400,"Slavic Languages, Literatures, and Linguistics, General",2024,43.0,2012,-21.8,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0402,Russian Language and Literature,2024,8.0,2012,-52.9,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0499,"Slavic, Baltic, and Albanian Languages, Literatures, and Linguistics, Other",2017,0.0,2012,,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0500,"Germanic Languages, Literatures, and Linguistics, General",2024,12.0,2012,-60.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0501,German Language and Literature,2024,64.0,2012,-51.1,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0502,"Scandinavian Languages, Literatures, and Linguistics",2024,3.0,2012,50.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0601,Modern Greek Language and Literature,2024,0.0,2012,,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0700,"South Asian Languages, Literatures, and Linguistics, General",2024,1.0,2012,-50.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0702,"Sanskrit and Classical Indian Languages, Literatures, and Linguistics",2024,0.0,2017,-100.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0799,"South Asian Languages, Literatures, and Linguistics, Other",2024,15.0,2022,,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0801,"Iranian Languages, Literatures, and Linguistics",2024,0.0,2012,,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0900,"Romance Languages, Literatures, and Linguistics, General",2024,77.0,2012,-7.2,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0901,French Language and Literature,2024,178.0,2012,-47.8,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0902,Italian Language and Literature,2024,38.0,2012,-47.2,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0904,Portuguese Language and Literature,2024,10.0,2012,-28.6,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0905,Spanish Language and Literature,2024,576.0,2012,-42.5,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.0908,"Hispanic and Latin American Languages, Literatures, and Linguistics, General",2024,35.0,2012,75.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.0999,"Romance Languages, Literatures, and Linguistics, Other",2024,20.0,2012,-68.8,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1001,"American Indian/Native American Languages, Literatures, and Linguistics",2024,7.0,2012,75.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1100,"Middle/Near Eastern and Semitic Languages, Literatures, and Linguistics, General",2024,5.0,2012,-50.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.1101,Arabic Language and Literature,2024,36.0,2012,350.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1102,Hebrew Language and Literature,2024,15.0,2012,-42.3,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1103,"Ancient Near Eastern and Biblical Languages, Literatures, and Linguistics",2024,37.0,2012,85.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.1199,"Middle/Near Eastern and Semitic Languages, Literatures, and Linguistics, Other",2024,18.0,2012,-64.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.1200,"Classics and Classical Languages, Literatures, and Linguistics, General",2024,142.0,2012,-39.3,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1202,Ancient/Classical Greek Language and Literature,2024,1.0,2012,-91.7,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1203,Latin Language and Literature,2024,5.0,2012,-72.2,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1299,"Classics and Classical Languages, Literatures, and Linguistics, Other",2024,49.0,2012,250.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1301,"Celtic Languages, Literatures, and Linguistics",2024,4.0,2012,300.0,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.1409,Hawaiian Language and Literature,2024,6.0,2021,500.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1501,Turkish Language and Literature,2024,0.0,2012,,"27-3091, 25-1124",2,5.60,1.21,f,f
+16.1601,American Sign Language (ASL),2024,20.0,2012,900.0,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+16.1602,Linguistics of ASL and Other Sign Languages,2024,10.0,2016,25.0,"25-2031, 25-1199, 27-3091",3,55.76,-0.96,f,f
+16.1603,Sign Language Interpretation and Translation,2024,70.0,2012,311.8,27-3091,1,6.90,1.70,f,f
+16.1701,English as a Second Language,2024,6.0,2020,-73.9,,0,,,f,f
+16.9999,"Foreign Languages, Literatures, and Linguistics, Other",2024,23.0,2012,-65.7,"25-2031, 27-3091, 25-1124",3,61.05,-1.36,f,f
+19.0101,"Family and Consumer Sciences/Human Sciences, General",2024,202.0,2012,-64.0,"25-2031, 25-9021, 25-1192",3,65.28,-1.60,f,f
+19.0201,Business Family and Consumer Sciences/Human Sciences,2024,47.0,2012,840.0,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0203,Consumer Merchandising/Retailing Management,2024,18.0,2012,260.0,"41-1011, 13-1161, 11-2022",3,97.43,0.69,t,f
+19.0401,"Family Resource Management Studies, General",2024,157.0,2012,84.7,"13-2052, 25-9021, 25-1192",3,23.04,9.10,f,f
+19.0402,Consumer Economics,2019,0.0,2012,,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0403,Consumer Services and Advocacy,2024,1.0,2013,,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0499,"Family and Consumer Economics and Related Services, Other",2024,3.0,2012,0.0,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0501,"Foods, Nutrition, and Wellness Studies, General",2024,582.0,2012,-2.8,"29-1031, 29-2051, 25-1192",3,5.50,4.70,f,f
+19.0504,Human Nutrition,2024,514.0,2012,82.9,"29-1031, 25-1192",2,6.00,5.43,f,f
+19.0505,Foodservice Systems Administration/Management,2024,6.0,2012,50.0,"35-1012, 35-2012, 11-9051",3,133.12,5.15,t,f
+19.0599,"Foods, Nutrition, and Related Services, Other",2024,38.0,2012,58.3,"29-1031, 25-1192",2,6.00,5.43,f,f
+19.0601,"Housing and Human Environments, General",2024,60.0,2012,100.0,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0604,Facilities Planning and Management,2024,22.0,2012,100.0,"13-1121, 11-3013, 27-1025",3,12.92,4.06,f,f
+19.0701,"Human Development and Family Studies, General",2024,566.0,2012,-7.7,25-1192,1,0.20,3.40,f,f
+19.0702,Adult Development and Aging,2024,41.0,2012,78.3,"19-3039, 19-3099, 25-1192",3,3.49,1.81,f,f
+19.0704,Family Systems,2024,30.0,2012,7.1,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0706,Child Development,2024,296.0,2012,28.1,"39-9011, 25-2011, 19-3039",3,121.99,-0.23,f,f
+19.0707,Family and Community Services,2024,117.0,2012,-60.1,25-9021,1,1.10,-2.50,f,f
+19.0708,Child Care and Support Services Management,2024,91.0,2012,102.2,"25-2011, 25-1192",2,65.13,4.10,f,f
+19.0709,Child Care Provider/Assistant,2024,32.0,2012,966.7,39-9011,1,160.20,-2.90,f,f
+19.0710,Developmental Services Worker,2024,8.0,2015,,"21-1093, 21-1099",2,42.74,6.02,f,f
+19.0711,Early Childhood and Family Studies,2024,17.0,2022,466.7,"39-9011, 21-1099, 19-3039",3,137.75,-1.79,f,f
+19.0799,"Human Development, Family Studies, and Related Services, Other",2024,125.0,2012,171.7,,0,,,f,f
+19.0901,"Apparel and Textiles, General",2024,52.0,2012,-30.7,"25-9021, 25-1192",2,0.92,-1.29,f,f
+19.0902,Apparel and Textile Manufacture,2024,6.0,2017,200.0,"27-1022, 25-1192, 51-6092",3,1.91,1.06,f,f
+19.0905,Apparel and Textile Marketing Management,2024,16.0,2012,-61.9,"13-1161, 11-2021",2,71.24,6.67,t,f
+19.0906,Fashion and Fabric Consultant,2013,0.0,2013,,27-1022,1,2.30,2.00,f,f
+19.0999,"Apparel and Textiles, Other",2021,2.0,2012,100.0,,0,,,f,f
+19.9999,"Family and Consumer Sciences/Human Sciences, Other",2024,5.0,2012,-85.7,,0,,,f,f
+22.0000,Legal Studies,2024,356.0,2012,-1.7,"23-2011, 23-2099",2,35.15,0.03,f,t
+22.0001,Pre-Law Studies,2024,42.0,2015,162.5,,0,,,f,f
+22.0099,"Non-Professional Legal Studies, Other",2022,0.0,2021,-100.0,,0,,,f,f
+22.0201,"Advanced Legal Research/Studies, General",2024,3668.0,2012,180.9,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0202,Programs for Foreign Lawyers,2024,1560.0,2012,93.1,23-1011,1,31.50,4.10,f,f
+22.0203,American/U.S. Law/Legal Studies/Jurisprudence,2024,699.0,2012,183.0,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0205,"Banking, Corporate, Finance, and Securities Law",2024,274.0,2012,16.6,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0206,Comparative Law,2024,22.0,2012,-64.5,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0207,"Energy, Environment, and Natural Resources Law",2024,111.0,2012,13.3,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0208,Health Law,2024,301.0,2012,85.8,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0209,International Law and Legal Studies,2024,387.0,2012,16.6,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0210,"International Business, Trade, and Tax Law",2024,288.0,2012,107.2,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0211,Tax Law/Taxation,2024,636.0,2012,-9.7,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0212,Intellectual Property Law,2024,101.0,2012,-15.1,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0213,Patent Law,2024,0.0,2020,-100.0,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0216,Compliance Law,2024,10.0,2021,,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0217,Criminal Law and Procedure,2024,19.0,2021,,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0220,Human Resources Law,2024,95.0,2022,850.0,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0222,Real Estate and Land Development Law,2024,9.0,2020,,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0224,Tribal/Indigenous Law,2024,23.0,2020,109.1,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0299,"Legal Research and Advanced Professional Studies, Other",2024,822.0,2012,44.0,"23-1011, 25-1112",2,30.53,4.04,f,f
+22.0301,Legal Administrative Assistant/Secretary,2024,21.0,2014,,43-6012,1,19.60,-5.80,f,f
+22.0302,Legal Assistant/Paralegal,2024,102.0,2012,-8.1,"23-2011, 23-2093, 23-2099",3,31.63,0.26,f,f
+22.0399,"Legal Support Services, Other",2021,0.0,2012,-100.0,,0,,,f,f
+22.9999,"Legal Professions and Studies, Other",2024,1115.0,2012,-16.7,,0,,,f,f
+23.0101,"English Language and Literature, General",2024,3663.0,2012,-32.7,"25-2031, 25-1123, 43-9081",3,61.80,-1.49,f,f
+23.1301,"Writing, General",2024,79.0,2012,-24.0,"25-1199, 27-3043, 27-3041",3,12.48,2.04,f,f
+23.1302,Creative Writing,2024,3274.0,2012,-2.5,"25-1199, 27-3043, 27-3041",3,12.48,2.04,f,f
+23.1303,"Professional, Technical, Business, and Scientific Writing",2024,299.0,2012,-10.7,"25-1199, 27-3043, 27-3041",3,12.48,2.04,f,f
+23.1304,Rhetoric and Composition,2024,124.0,2012,-64.5,"25-1199, 27-3043, 27-3041",3,12.48,2.04,f,f
+23.1399,"Rhetoric and Composition/Writing Studies, Other",2024,17.0,2012,466.7,"27-3043, 27-3041, 25-1123",3,10.26,1.72,f,f
+23.1401,General Literature,2024,31.0,2012,82.4,"27-3043, 27-3041, 25-1123",3,10.26,1.72,f,f
+23.1402,American Literature (United States),2024,0.0,2012,-100.0,25-1123,1,5.10,0.00,f,f
+23.1404,English Literature (British and Commonwealth),2024,67.0,2012,-62.1,25-1123,1,5.10,0.00,f,f
+23.1405,Children's and Adolescent Literature,2024,14.0,2016,-54.8,"27-3043, 27-3041, 25-1123",3,10.26,1.72,f,f
+23.1499,"Literature, Other",2024,11.0,2012,,"27-3043, 27-3041, 25-1123",3,10.26,1.72,f,f
+23.9999,"English Language and Literature/Letters, Other",2024,131.0,2012,-19.6,25-1123,1,5.10,0.00,f,f
+24.0101,Liberal Arts and Sciences/Liberal Studies,2024,874.0,2012,-60.0,25-1199,1,13.50,1.80,f,f
+24.0102,General Studies,2024,214.0,2012,31.3,25-1199,1,13.50,1.80,f,f
+24.0103,Humanities/Humanistic Studies,2024,457.0,2012,-29.0,25-1199,1,13.50,1.80,f,f
+24.0199,"Liberal Arts and Sciences, General Studies and Humanities, Other",2024,131.0,2012,-83.8,,0,,,f,f
+25.0101,Library and Information Science,2024,5606.0,2012,-22.7,"11-9199, 25-4022, 25-1082",3,97.39,4.23,t,f
+25.0102,Children and Youth Library Services,2024,20.0,2016,25.0,"25-4022, 25-1082",2,13.05,1.75,f,f
+25.0103,Archives/Archival Administration,2024,121.0,2016,3.4,"11-9199, 25-4011",2,105.97,4.50,t,f
+25.9999,"Library Science, Other",2024,135.0,2012,-39.5,,0,,,f,f
+26.0101,"Biology/Biological Sciences, General",2024,3727.0,2012,5.9,"25-2031, 11-9121, 19-4021",3,57.82,-0.84,f,f
+26.0102,"Biomedical Sciences, General",2024,4033.0,2012,296.6,"19-1042, 19-4021, 25-1042",3,8.59,7.04,f,f
+26.0202,Biochemistry,2024,325.0,2012,21.3,"19-1042, 11-9121, 19-4021",3,9.16,6.00,f,f
+26.0203,Biophysics,2024,62.0,2012,31.9,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0204,Molecular Biology,2024,231.0,2012,13.2,"19-1042, 11-9121, 19-4021",3,9.16,6.00,f,f
+26.0205,Molecular Biochemistry,2024,75.0,2012,8.7,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0206,Molecular Biophysics,2024,0.0,2012,-100.0,"11-9121, 25-1042, 19-1021",3,6.54,5.22,f,f
+26.0207,Structural Biology,2024,0.0,2012,-100.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0209,Radiation Biology/Radiobiology,2024,3.0,2012,-66.7,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0210,Biochemistry and Molecular Biology,2024,170.0,2012,142.9,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0299,"Biochemistry, Biophysics and Molecular Biology, Other",2024,36.0,2012,1100.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0301,Botany/Plant Biology,2024,88.0,2012,-7.4,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0305,Plant Pathology/Phytopathology,2024,72.0,2012,7.5,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0307,Plant Physiology,2024,2.0,2012,0.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0308,Plant Molecular Biology,2024,1.0,2012,0.0,"19-1029, 19-1013",2,4.04,2.23,f,f
+26.0399,"Botany/Plant Biology, Other",2024,15.0,2012,50.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0401,Cell/Cellular Biology and Histology,2024,41.0,2012,-12.8,"25-1071, 19-1042, 11-9121",3,18.61,12.22,t,f
+26.0403,Anatomy,2024,168.0,2012,63.1,"25-1071, 19-1042, 11-9121",3,18.61,12.22,t,f
+26.0404,Developmental Biology and Embryology,2024,8.0,2012,-71.4,"25-1071, 19-1042, 25-1042",3,18.96,13.30,t,f
+26.0406,Cell/Cellular and Molecular Biology,2024,310.0,2012,54.2,"19-1042, 11-9121, 19-4021",3,9.16,6.00,f,f
+26.0407,Cell Biology and Anatomy,2024,51.0,2012,410.0,"19-1042, 25-1042, 19-1029",3,7.62,6.77,f,f
+26.0499,"Cell/Cellular Biology and Anatomical Sciences, Other",2024,82.0,2012,-32.2,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0502,"Microbiology, General",2024,232.0,2012,35.7,"11-9121, 19-4021, 25-1042",3,7.89,4.57,f,f
+26.0503,Medical Microbiology and Bacteriology,2024,373.0,2012,176.3,"25-1071, 19-1042, 11-9121",3,18.61,12.22,t,f
+26.0504,Virology,2024,1.0,2012,,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0505,Parasitology,2024,4.0,2012,33.3,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0507,Immunology,2024,26.0,2012,13.0,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0508,Microbiology and Immunology,2024,129.0,2012,316.1,"19-1042, 11-9121, 19-4021",3,9.16,6.00,f,f
+26.0509,Infectious Disease and Global Health,2024,146.0,2021,1227.3,"11-9111, 19-1042, 19-1029",3,47.51,18.71,t,f
+26.0599,"Microbiological Sciences and Immunology, Other",2024,33.0,2012,26.9,"11-9121, 25-1042, 19-1022",3,6.69,4.99,f,f
+26.0701,Zoology/Animal Biology,2024,75.0,2012,-43.6,"11-9121, 19-4021, 25-1042",3,7.89,4.57,f,f
+26.0702,Entomology,2024,147.0,2012,22.5,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0707,Animal Physiology,2024,14.0,2012,-81.1,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0708,Animal Behavior and Ethology,2024,18.0,2012,260.0,"19-4021, 19-1023",2,7.71,3.16,f,f
+26.0709,Wildlife Biology,2024,28.0,2012,180.0,"19-4021, 19-1023",2,7.71,3.16,f,f
+26.0799,"Zoology/Animal Biology, Other",2024,22.0,2012,450.0,"11-9121, 25-1042, 19-1023",3,6.73,4.76,f,f
+26.0801,"Genetics, General",2024,79.0,2012,16.2,"19-4021, 25-1042, 19-1029",3,6.66,3.99,f,f
+26.0802,Molecular Genetics,2024,22.0,2012,22.2,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0804,Animal Genetics,2024,10.0,2012,-52.4,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0805,Plant Genetics,2024,9.0,2012,28.6,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0806,Human/Medical Genetics,2024,267.0,2012,175.3,"19-1042, 25-1042, 29-9092",3,8.26,8.32,f,f
+26.0807,Genome Sciences/Genomics,2024,109.0,2012,3533.3,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0899,"Genetics, Other",2024,0.0,2012,-100.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.0901,"Physiology, General",2024,572.0,2012,34.0,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0902,Molecular Physiology,2024,3.0,2012,-70.0,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0903,Cell Physiology,2024,18.0,2012,350.0,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0904,Endocrinology,2024,1.0,2012,-66.7,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0905,Reproductive Biology,2024,20.0,2012,300.0,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0907,Cardiovascular Science,2024,48.0,2012,182.4,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0908,Exercise Physiology and Kinesiology,2024,1164.0,2012,462.3,"19-1042, 25-1042, 29-1128",3,7.77,8.41,f,f
+26.0909,Vision Science/Physiological Optics,2024,44.0,2012,144.4,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0910,Pathology/Experimental Pathology,2024,118.0,2012,32.6,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0911,Oncology and Cancer Biology,2024,47.0,2012,46.9,"19-1042, 25-1042",2,8.40,8.30,f,f
+26.0912,Aerospace Physiology and Medicine,2024,2.0,2024,,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.0913,Biomechanics,2024,19.0,2020,533.3,"25-1071, 19-1042, 25-1042",3,18.96,13.30,t,f
+26.0999,"Physiology, Pathology, and Related Sciences, Other",2024,27.0,2012,107.7,"25-1071, 19-1042",2,20.93,14.17,t,f
+26.1001,Pharmacology,2024,211.0,2012,80.3,"25-1071, 19-1042, 11-9121",3,18.61,12.22,t,f
+26.1002,Molecular Pharmacology,2024,29.0,2012,262.5,"25-1071, 19-1042",2,20.93,14.17,t,f
+26.1003,Neuropharmacology,2024,35.0,2012,169.2,"25-1071, 19-1042",2,20.93,14.17,t,f
+26.1004,Toxicology,2024,48.0,2012,9.1,"25-1071, 19-1042, 11-9121",3,18.61,12.22,t,f
+26.1005,Molecular Toxicology,2013,0.0,2012,,"25-1071, 19-1042, 19-2041",3,18.87,12.56,t,f
+26.1006,Environmental Toxicology,2024,15.0,2012,-55.9,"25-1071, 19-1042, 19-5011",3,19.58,13.80,t,f
+26.1007,Pharmacology and Toxicology,2024,160.0,2012,196.3,"25-1071, 19-1042",2,20.93,14.17,t,f
+26.1099,"Pharmacology and Toxicology, Other",2024,5.0,2012,,"25-1071, 19-1042",2,20.93,14.17,t,f
+26.1101,Biometry/Biometrics,2024,83.0,2012,336.8,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.1102,Biostatistics,2024,1091.0,2012,177.6,"25-1071, 19-1042, 11-9121",3,18.61,12.22,t,f
+26.1103,Bioinformatics,2024,749.0,2012,157.4,"15-1299, 15-2051, 19-4021",3,26.58,15.49,t,f
+26.1104,Computational Biology,2024,82.0,2012,811.1,"15-1299, 15-2051, 11-9121",3,26.05,15.20,t,f
+26.1199,"Biomathematics, Bioinformatics, and Computational Biology, Other",2024,47.0,2012,161.1,"15-2051, 11-9121, 25-1042",3,16.81,21.88,t,f
+26.1201,Biotechnology,2024,2055.0,2012,81.7,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.1301,Ecology,2024,186.0,2012,-1.6,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.1302,Marine Biology and Biological Oceanography,2024,349.0,2012,91.8,"11-9121, 19-4021, 25-1042",3,7.89,4.57,f,f
+26.1303,Evolutionary Biology,2024,29.0,2012,190.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.1304,Aquatic Biology/Limnology,2024,9.0,2012,80.0,"19-4021, 25-1042, 19-1029",3,6.66,3.99,f,f
+26.1305,Environmental Biology,2024,47.0,2012,-14.5,"25-1042, 19-1029, 19-1031",3,4.64,4.14,f,f
+26.1306,Population Biology,2024,4.0,2012,-66.7,"25-1042, 19-1029",2,5.11,4.30,f,f
+26.1307,Conservation Biology,2024,238.0,2012,290.2,"25-1042, 19-1029, 19-1031",3,4.64,4.14,f,f
+26.1308,Systematic Biology/Biological Systematics,2024,5.0,2013,400.0,"25-1042, 19-1029",2,5.11,4.30,f,f
+26.1309,Epidemiology,2024,2195.0,2012,147.2,"25-1071, 19-1042, 19-1041",3,20.40,14.23,t,f
+26.1310,Ecology and Evolutionary Biology,2024,71.0,2012,108.8,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.1311,Epidemiology and Biostatistics,2024,91.0,2020,,"25-1071, 11-9121, 19-1029",3,19.95,11.96,t,f
+26.1399,"Ecology, Evolution, Systematics and Population Biology, Other",2024,13.0,2012,-38.1,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+26.1401,Molecular Medicine,2024,97.0,2012,1112.5,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.1501,Neuroscience,2024,432.0,2012,200.0,"11-9121, 19-4021, 25-1042",3,7.89,4.57,f,f
+26.1502,Neuroanatomy,2017,0.0,2012,,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.1503,Neurobiology and Anatomy,2024,27.0,2012,42.1,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.1504,Neurobiology and Behavior,2024,11.0,2012,-65.6,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.1599,"Neurobiology and Neurosciences, Other",2024,2.0,2012,,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+26.9999,"Biological and Biomedical Sciences, Other",2024,1810.0,2012,97.4,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+27.0101,"Mathematics, General",2024,2233.0,2012,-22.8,"25-2031, 15-2051, 11-9121",3,54.75,4.76,t,f
+27.0103,Analysis and Functional Analysis,2024,0.0,2023,-100.0,"11-9121, 25-1022, 15-2021",3,6.92,3.14,f,f
+27.0199,"Mathematics, Other",2024,31.0,2012,29.2,"11-9121, 25-1022, 15-2021",3,6.92,3.14,f,f
+27.0301,"Applied Mathematics, General",2024,949.0,2012,22.5,"15-2051, 11-9121, 25-1022",3,16.87,21.41,t,f
+27.0303,Computational Mathematics,2024,9.0,2012,-62.5,"15-2051, 11-9121, 15-2099",3,18.70,24.33,t,f
+27.0304,Computational and Applied Mathematics,2024,377.0,2012,685.4,"15-2051, 11-9121, 25-1022",3,16.87,21.41,t,f
+27.0305,Financial Mathematics,2024,4608.0,2012,1575.6,"13-2051, 15-2051, 13-2099",3,21.84,14.32,t,f
+27.0306,Mathematical Biology,2018,0.0,2012,-100.0,"15-2051, 11-9121, 19-1029",3,16.78,21.02,t,f
+27.0399,"Applied Mathematics, Other",2024,1.0,2012,-99.1,"15-2051, 11-9121, 25-1022",3,16.87,21.41,t,f
+27.0501,"Statistics, General",2024,2725.0,2012,49.8,"15-2051, 11-9121, 25-1022",3,16.87,21.41,t,f
+27.0502,Mathematical Statistics and Probability,2024,171.0,2012,37.9,"15-2051, 25-1022, 15-2011",3,18.01,26.91,t,f
+27.0503,Mathematics and Statistics,2024,549.0,2012,935.8,"15-2051, 11-9121, 25-1022",3,16.87,21.41,t,f
+27.0599,"Statistics, Other",2024,115.0,2012,858.3,"11-9121, 25-1022, 15-2011",3,6.23,6.37,t,f
+27.0601,"Applied Statistics, General",2024,369.0,2020,183.8,"13-1111, 15-2051, 11-9121",3,78.66,12.69,t,f
+27.9999,"Mathematics and Statistics, Other",2024,61.0,2012,27.1,"15-2051, 11-9121, 25-1022",3,16.87,21.41,t,f
+29.0201,"Intelligence, General",2024,439.0,2013,,,0,,,f,f
+29.0202,Strategic Intelligence,2024,85.0,2012,214.8,,0,,,f,f
+29.0203,Signal/Geospatial Intelligence,2024,20.0,2017,300.0,"33-1012, 33-3021, 17-1021",3,9.19,1.61,f,f
+29.0204,"Command & Control (C3, C4I) Systems and Operations",2024,3.0,2023,,,0,,,f,f
+29.0205,Information Operations/Joint Information Operations,2019,9.0,2012,-18.2,,0,,,f,f
+29.0206,Information/Psychological Warfare and Military Media Relations,2024,9.0,2013,0.0,,0,,,f,f
+29.0207,Cyber/Electronic Operations and Warfare,2024,424.0,2014,4611.1,,0,,,f,f
+29.0299,"Intelligence, Command Control and Information Operations, Other",2015,0.0,2012,-100.0,,0,,,f,f
+29.0301,Combat Systems Engineering,2024,13.0,2012,-53.6,,0,,,f,f
+29.0303,Engineering Acoustics,2024,8.0,2012,166.7,17-3029,1,5.70,1.50,f,f
+29.0305,Space Systems Operations,2024,93.0,2012,,,0,,,f,f
+29.0306,Operational Oceanography,2024,0.0,2021,-100.0,17-3029,1,5.70,1.50,f,f
+29.0307,Undersea Warfare,2024,15.0,2015,25.0,17-3029,1,5.70,1.50,f,f
+29.0399,"Military Applied Sciences, Other",2013,2.0,2012,0.0,,0,,,f,f
+29.0402,Air and Space Operations Technology,2024,0.0,2022,,17-3021,1,0.90,8.10,f,f
+29.0405,"Joint Command/Task Force (C3, C4I) Systems",2024,0.0,2012,-100.0,,0,,,f,f
+29.9999,"Military Technologies and Applied Sciences, Other",2024,22.0,2012,-64.5,,0,,,f,f
+30.0000,"Multi-/Interdisciplinary Studies, General",2024,412.0,2012,1229.0,,0,,,f,f
+30.0101,Biological and Physical Sciences,2024,546.0,2012,47.2,"25-2031, 25-1199, 11-9121",3,54.85,-0.75,f,f
+30.0501,Peace Studies and Conflict Resolution,2024,374.0,2012,-36.9,"25-1199, 19-3099, 23-1022",3,11.18,1.29,f,f
+30.0601,Systems Science and Theory,2024,423.0,2012,102.4,"11-9199, 25-1199",2,95.43,4.17,t,f
+30.0801,Mathematics and Computer Science,2024,375.0,2012,733.3,"15-1252, 11-3021, 15-1299",3,87.19,14.39,t,f
+30.1001,Biopsychology,2024,0.0,2012,-100.0,"19-1042, 11-9121, 25-1042",3,8.43,6.87,f,f
+30.1101,Gerontology,2024,266.0,2012,-30.7,"25-1071, 19-1042, 19-3099",3,19.47,12.87,t,f
+30.1201,"Historic Preservation and Conservation, General",2024,173.0,2012,-19.9,"25-1199, 11-3013, 25-4011",3,13.03,2.73,f,f
+30.1202,Cultural Resource Management and Policy Analysis,2024,47.0,2012,62.1,"11-9199, 25-1062, 25-4011",3,104.85,4.47,t,f
+30.1299,"Historic Preservation and Conservation, Other",2024,7.0,2014,16.7,"25-1199, 11-3013, 25-4011",3,13.03,2.73,f,f
+30.1301,Medieval and Renaissance Studies,2024,15.0,2012,-6.3,"25-1125, 19-3093",2,1.53,0.09,f,f
+30.1401,Museology/Museum Studies,2024,506.0,2012,14.5,"25-1199, 25-4013, 25-4012",3,11.82,2.43,f,f
+30.1501,"Science, Technology and Society",2024,82.0,2012,-37.9,"25-1199, 11-9121",2,11.69,2.49,f,f
+30.1601,Accounting and Computer Science,2024,0.0,2012,-100.0,"15-1252, 13-2011, 11-3031",3,110.12,11.32,t,f
+30.1701,Behavioral Sciences,2024,1862.0,2012,2170.7,"11-9151, 21-1099, 19-3039",3,14.88,5.56,f,f
+30.1801,Natural Sciences,2024,69.0,2012,-51.1,"25-1199, 11-9121, 19-2099",3,10.72,2.30,f,f
+30.1901,Nutrition Sciences,2024,1727.0,2012,162.9,"25-1071, 11-9121, 29-1031",3,19.36,12.16,t,f
+30.2001,International/Globalization Studies,2024,827.0,2012,-29.4,"25-1069, 19-3094",2,1.26,0.55,f,f
+30.2101,Holocaust and Related Studies,2024,21.0,2012,250.0,"19-3099, 25-1125, 25-1069",3,2.36,-0.45,f,f
+30.2201,Ancient Studies/Civilization,2024,9.0,2012,350.0,"25-1125, 25-1062, 19-3091",3,1.35,1.30,f,f
+30.2202,"Classical, Ancient Mediterranean, and Near Eastern Studies and Archaeology",2024,3.0,2012,0.0,"25-1125, 25-1062, 25-1061",3,1.34,1.04,f,f
+30.2301,Intercultural/Multicultural and Diversity Studies,2024,133.0,2012,54.7,"19-3099, 25-1062",2,2.65,-0.62,f,f
+30.2501,"Cognitive Science, General",2024,82.0,2012,0.0,"25-1199, 11-9121",2,11.69,2.49,f,f
+30.2601,Cultural Studies/Critical Theory and Analysis,2024,42.0,2012,1300.0,"25-1199, 19-3099, 25-1062",3,10.99,1.24,f,f
+30.2701,Human Biology,2024,40.0,2019,3900.0,"11-9121, 25-1042, 19-1029",3,6.62,4.03,f,f
+30.2801,Dispute Resolution,2024,232.0,2012,5.9,"25-1011, 13-1075, 25-1112",3,6.23,3.26,f,f
+30.2901,Maritime Studies,2024,22.0,2017,2100.0,"25-1199, 19-3093",2,13.26,1.81,f,f
+30.3001,Computational Science,2024,1682.0,2012,6369.2,"15-1299, 15-2051, 25-1199",3,25.52,13.80,t,f
+30.3101,Human Computer Interaction,2024,1261.0,2012,1901.6,"11-3021, 15-1299, 15-1255",3,41.83,11.76,t,f
+30.3201,Marine Sciences,2024,98.0,2012,157.9,"25-1199, 11-9121, 19-2041",3,10.93,2.95,f,f
+30.3301,Sustainability Studies,2024,1850.0,2012,839.1,"25-1199, 11-9121, 19-2041",3,10.93,2.95,f,f
+30.3401,Anthrozoology,2024,23.0,2021,,"11-9013, 39-2021, 25-1199",3,73.12,2.82,f,f
+30.3501,Climate Science,2024,91.0,2022,127.5,"11-9121, 25-1051, 19-2021",3,7.10,3.36,f,f
+30.3801,Earth Systems Science,2024,8.0,2020,33.3,"25-2031, 11-9121, 19-2042",3,59.97,-1.05,f,f
+30.3901,Economics and Computer Science,2024,42.0,2023,40.0,"15-1252, 11-9199, 11-3021",3,101.37,11.61,t,f
+30.4101,Environmental Geosciences,2024,3.0,2020,,"25-2031, 13-1041, 11-9121",3,53.97,-0.07,f,f
+30.4401,Geography and Environmental Studies,2024,186.0,2022,675.0,"11-9121, 19-2041, 19-3099",3,7.58,3.03,f,f
+30.4601,History and Political Science,2024,5.0,2021,25.0,"11-9199, 19-3099, 19-4061",3,100.80,4.32,t,f
+30.4801,Linguistics and Computer Science,2024,7.0,2020,16.7,"15-1252, 15-2051, 25-1123",3,100.03,17.40,t,f
+30.4901,Mathematical Economics,2024,8.0,2023,100.0,"11-9121, 15-2041, 19-3011",3,6.27,4.42,f,f
+30.5202,Digital Humanities,2024,2.0,2024,,"11-9199, 25-1199, 25-1123",3,91.33,3.98,t,f
+30.5301,Thanatology,2024,1.0,2020,,"11-9151, 21-1022, 25-1199",3,16.97,5.41,f,f
+30.7001,"Data Science, General",2024,4322.0,2020,2601.3,"15-1252, 11-3021, 15-2051",3,91.29,17.32,t,f
+30.7099,"Data Science, Other",2024,6.0,2022,-76.0,"15-2051, 25-1199, 11-9121",3,17.08,16.78,t,f
+30.7101,"Data Analytics, General",2024,931.0,2020,958.0,"13-1111, 15-2051, 25-1199",3,75.58,11.98,t,f
+30.7102,Business Analytics,2024,6456.0,2020,2402.3,"13-1111, 13-1161, 15-2051",3,85.45,10.61,t,f
+30.7103,Data Visualization,2024,17.0,2023,70.0,"13-1111, 15-2051, 25-1199",3,75.58,11.98,t,f
+30.7104,Financial Analytics,2024,965.0,2022,984.3,"13-1111, 11-3031, 13-2051",3,77.64,10.56,t,f
+30.7199,"Data Analytics, Other",2024,70.0,2020,,"13-1111, 15-2051, 25-1199",3,75.58,11.98,t,f
+30.9999,"Multi-/Interdisciplinary Studies, Other",2024,2025.0,2012,-20.7,,0,,,f,f
+31.0101,"Parks, Recreation, and Leisure Studies",2024,164.0,2012,-45.7,25-1193,1,1.10,2.40,f,f
+31.0301,"Parks, Recreation, and Leisure Facilities Management, General",2024,283.0,2012,-33.7,"11-1021, 11-3013, 11-9072",3,293.90,4.41,t,f
+31.0302,Golf Course Operation and Grounds Management,2024,5.0,2022,,"37-3011, 37-1012, 11-9072",3,132.91,3.52,f,f
+31.0399,"Parks, Recreation, and Leisure Facilities Management, Other",2014,0.0,2012,,"11-1021, 11-9072",2,305.21,4.44,t,f
+31.0501,"Sports, Kinesiology, and Physical Education/Fitness, General",2024,936.0,2012,-20.3,"39-9031, 27-2022, 27-2021",3,57.95,9.30,f,f
+31.0504,Sport and Fitness Administration/Management,2024,4581.0,2012,52.0,"39-9031, 27-2022, 11-9072",3,56.28,9.31,f,f
+31.0505,Exercise Science and Kinesiology,2024,2684.0,2012,37.2,29-1128,1,1.70,9.50,f,f
+31.0507,Physical Fitness Technician,2024,16.0,2017,33.3,"39-9031, 29-9091",2,68.18,11.83,f,f
+31.0508,Sports Studies,2024,172.0,2012,120.5,25-1193,1,1.10,2.40,f,f
+31.0599,"Sports, Kinesiology, and Physical Education/Fitness, Other",2024,62.0,2012,59.0,,0,,,f,f
+31.0601,Outdoor Education,2024,64.0,2012,128.6,"39-9032, 39-1014",2,53.15,4.70,f,f
+31.9999,"Parks, Recreation, Leisure, Fitness, and Kinesiology, Other",2024,6.0,2012,-25.0,,0,,,f,f
+38.0001,"Philosophy and Religious Studies, General",2024,36.0,2012,1100.0,25-1126,1,2.00,0.70,f,f
+38.0101,Philosophy,2024,722.0,2012,-11.1,25-1126,1,2.00,0.70,f,f
+38.0102,Logic,2024,3.0,2012,-70.0,"11-9121, 25-1022, 15-2021",3,6.92,3.14,f,f
+38.0103,Ethics,2024,50.0,2012,35.1,25-1126,1,2.00,0.70,f,f
+38.0104,Applied and Professional Ethics,2024,44.0,2012,144.4,25-1126,1,2.00,0.70,f,f
+38.0199,"Philosophy, Other",2024,9.0,2012,28.6,25-1126,1,2.00,0.70,f,f
+38.0201,Religion/Religious Studies,2024,331.0,2012,-47.1,25-1126,1,2.00,0.70,f,f
+38.0202,Buddhist Studies,2024,9.0,2012,,25-1126,1,2.00,0.70,f,f
+38.0203,Christian Studies,2024,245.0,2012,-2.8,25-1126,1,2.00,0.70,f,f
+38.0204,Hindu Studies,2021,0.0,2016,-100.0,25-1126,1,2.00,0.70,f,f
+38.0205,Islamic Studies,2024,22.0,2012,69.2,25-1062,1,1.10,2.40,f,f
+38.0206,Jewish/Judaic Studies,2024,99.0,2012,54.7,25-1062,1,1.10,2.40,f,f
+38.0207,Talmudic Studies,2024,579.0,2020,20.4,25-1126,1,2.00,0.70,f,f
+38.0208,Catholic Studies,2024,35.0,2020,400.0,25-1062,1,1.10,2.40,f,f
+38.0299,"Religion/Religious Studies, Other",2024,21.0,2012,-68.2,,0,,,f,f
+38.9999,"Philosophy and Religious Studies, Other",2024,86.0,2012,-30.1,25-1126,1,2.00,0.70,f,f
+39.0201,Bible/Biblical Studies,2024,730.0,2012,41.2,"21-2021, 25-1126",2,11.86,1.87,f,f
+39.0301,Missions/Missionary Studies,2024,343.0,2012,18.7,"21-2021, 25-1126",2,11.86,1.87,f,f
+39.0302,Church Planting,2024,9.0,2021,,21-2099,1,11.10,0.60,f,f
+39.0401,Religious Education,2024,416.0,2012,-31.8,"21-2021, 25-1126",2,11.86,1.87,f,f
+39.0501,Religious/Sacred Music,2024,107.0,2012,-10.1,"27-2041, 25-1126",2,3.46,0.07,f,f
+39.0502,Worship Ministry,2024,10.0,2020,,"21-2021, 27-2041, 25-1126",3,10.19,1.39,f,f
+39.0599,"Religious Music and Worship, Other",2024,1.0,2021,0.0,"21-2021, 21-2099",2,12.75,1.52,f,f
+39.0601,Theology/Theological Studies,2024,3719.0,2012,-9.1,"21-2011, 25-1126",2,21.02,0.97,f,f
+39.0602,Divinity/Ministry,2024,4958.0,2012,-5.1,"21-2011, 25-1126",2,21.02,0.97,f,t
+39.0604,Pre-Theology/Pre-Ministerial Studies,2024,7.0,2012,,"21-2011, 25-1126",2,21.02,0.97,f,f
+39.0605,Rabbinical Studies,2024,91.0,2012,-33.1,"21-2011, 25-1126",2,21.02,0.97,f,f
+39.0699,"Theological and Ministerial Studies, Other",2024,778.0,2012,33.7,"21-2011, 21-2099, 25-1126",3,18.70,0.88,f,f
+39.0701,Pastoral Studies/Counseling,2024,612.0,2012,-21.1,"21-2011, 21-2021, 21-1099",3,18.27,2.12,f,f
+39.0702,Youth Ministry,2024,30.0,2012,-55.9,"21-2011, 21-2021",2,19.81,1.38,f,f
+39.0703,Urban Ministry,2024,10.0,2012,-80.4,"21-2021, 21-2099, 25-1126",3,11.60,1.43,f,f
+39.0704,Women's Ministry,2024,11.0,2012,,"21-2021, 21-2099",2,12.75,1.52,f,f
+39.0705,Lay Ministry,2024,317.0,2012,366.2,"21-2021, 21-2099",2,12.75,1.52,f,f
+39.0706,Chaplain/Chaplaincy Studies,2024,30.0,2020,11.1,"21-2011, 21-2021, 21-2099",3,18.24,1.24,f,f
+39.0799,"Pastoral Counseling and Specialized Ministries, Other",2024,212.0,2012,41.3,"21-2021, 21-1099, 21-2099",3,12.87,2.58,f,f
+39.0801,Religious Institution Administration and Management,2024,39.0,2020,116.7,"11-9199, 13-2099",2,97.71,4.37,t,f
+39.9999,"Theology and Religious Vocations, Other",2024,573.0,2012,4.0,,0,,,f,f
+40.0101,"Physical Sciences, General",2024,36.0,2012,-42.9,"25-2031, 11-9121",2,61.18,-1.14,f,f
+40.0201,Astronomy,2024,128.0,2012,26.7,"11-9121, 25-1051, 19-2011",3,7.50,3.55,f,f
+40.0202,Astrophysics,2024,49.0,2012,226.7,"11-9121, 19-2012, 25-1051",3,6.59,3.64,f,f
+40.0203,Planetary Astronomy and Science,2024,21.0,2012,250.0,"11-9121, 25-1051, 19-2011",3,7.50,3.55,f,f
+40.0299,"Astronomy and Astrophysics, Other",2024,13.0,2012,160.0,"11-9121, 25-1054, 25-1051",3,6.82,3.43,f,f
+40.0401,"Atmospheric Sciences and Meteorology, General",2024,227.0,2012,4.6,"11-9121, 19-4099, 25-1051",3,8.85,3.54,f,f
+40.0402,Atmospheric Chemistry and Climatology,2024,1.0,2023,0.0,"11-9121, 25-1051, 19-2021",3,7.10,3.36,f,f
+40.0403,Atmospheric Physics and Dynamics,2024,0.0,2012,,"11-9121, 25-1051, 19-2021",3,7.10,3.36,f,f
+40.0404,Meteorology,2024,32.0,2012,-37.3,"11-9121, 25-1051, 19-2021",3,7.10,3.36,f,f
+40.0499,"Atmospheric Sciences and Meteorology, Other",2024,8.0,2012,166.7,"11-9121, 25-1051, 19-2021",3,7.10,3.36,f,f
+40.0501,"Chemistry, General",2024,2389.0,2012,3.4,"25-2031, 11-9121, 19-2031",3,57.47,-0.73,f,f
+40.0502,Analytical Chemistry,2024,15.0,2012,-59.5,"11-9121, 19-2031, 19-4031",3,7.32,4.12,f,f
+40.0503,Inorganic Chemistry,2024,0.0,2015,-100.0,"11-9121, 19-2031, 19-4031",3,7.32,4.12,f,f
+40.0504,Organic Chemistry,2024,2.0,2013,0.0,"11-9121, 19-2031, 19-4031",3,7.32,4.12,f,f
+40.0506,Physical Chemistry,2024,0.0,2012,-100.0,"11-9121, 19-2031, 25-1052",3,6.84,4.01,f,f
+40.0507,Polymer Chemistry,2024,49.0,2012,226.7,"11-9121, 19-2031, 25-1052",3,6.84,4.01,f,f
+40.0508,Chemical Physics,2024,2.0,2012,-50.0,"11-9121, 19-2031, 25-1052",3,6.84,4.01,f,f
+40.0509,Environmental Chemistry,2024,4.0,2014,300.0,"11-9121, 19-2041, 19-2031",3,7.82,4.29,f,f
+40.0510,Forensic Chemistry,2024,23.0,2017,2200.0,"11-9121, 19-2031, 25-1052",3,6.84,4.01,f,f
+40.0599,"Chemistry, Other",2024,56.0,2012,-6.7,"11-9121, 19-2031, 25-1052",3,6.84,4.01,f,f
+40.0601,"Geology/Earth Science, General",2024,1173.0,2012,-11.3,"11-9121, 19-2042, 25-1051",3,6.63,3.51,f,f
+40.0602,Geochemistry,2024,11.0,2012,-31.3,"11-9121, 25-1052, 19-2042",3,6.36,3.37,f,f
+40.0603,Geophysics and Seismology,2024,67.0,2012,-35.6,"11-9121, 19-2042, 25-1051",3,6.63,3.51,f,f
+40.0604,Paleontology,2024,3.0,2012,200.0,"11-9121, 19-2042, 25-1051",3,6.63,3.51,f,f
+40.0605,Hydrology and Water Resources Science,2024,99.0,2012,50.0,"11-9121, 25-1051, 19-2043",3,7.25,3.38,f,f
+40.0607,"Oceanography, Chemical and Physical",2024,204.0,2012,28.3,"11-9121, 19-2042, 25-1051",3,6.63,3.51,f,f
+40.0699,"Geological and Earth Sciences/Geosciences, Other",2024,134.0,2012,-13.0,"11-9121, 19-2042, 25-1051",3,6.63,3.51,f,f
+40.0801,"Physics, General",2024,1938.0,2012,14.3,"25-2031, 11-9121, 19-2012",3,59.98,-1.04,f,f
+40.0802,Atomic/Molecular Physics,2024,4.0,2012,-63.6,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0804,Elementary Particle Physics,2024,0.0,2013,-100.0,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0806,Nuclear Physics,2024,1.0,2013,0.0,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0807,Optics/Optical Sciences,2024,120.0,2012,51.9,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0808,Condensed Matter and Materials Physics,2024,0.0,2012,-100.0,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0809,Acoustics,2024,67.0,2012,294.1,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0810,Theoretical and Mathematical Physics,2024,0.0,2023,,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.0899,"Physics, Other",2024,154.0,2012,81.2,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.1001,Materials Science,2024,250.0,2012,36.6,"11-9041, 19-4099, 25-1032",3,12.05,4.35,f,f
+40.1002,Materials Chemistry,2024,5.0,2012,-44.4,"11-9121, 19-2031, 19-4099",3,8.44,4.02,f,f
+40.1099,"Materials Sciences, Other",2024,6.0,2012,500.0,"25-1199, 11-9121, 19-2032",3,11.36,2.56,f,f
+40.1101,Physics and Astronomy,2024,16.0,2020,-56.8,"11-9121, 19-2012, 25-1054",3,6.51,3.61,f,f
+40.9999,"Physical Sciences, Other",2024,132.0,2012,-2.9,"25-1199, 11-9121, 19-2099",3,10.72,2.30,f,f
+41.0000,"Science Technologies/Technicians, General",2024,1.0,2018,-85.7,"19-4099, 19-4043, 19-4044",3,9.32,3.12,f,f
+41.0101,Biology/Biotechnology Technology/Technician,2024,2.0,2019,,19-4021,1,9.10,3.50,f,f
+41.0205,Nuclear/Nuclear Power Technology/Technician,2024,0.0,2012,-100.0,"19-4051, 51-8011",2,0.55,-11.40,f,f
+41.0301,Chemical Technology/Technician,2024,36.0,2012,300.0,"51-9011, 19-4031, 51-8091",3,11.11,2.58,f,f
+41.0303,Chemical Process Technology,2024,3.0,2020,,"51-9011, 19-4099, 19-4031",3,11.59,3.45,f,f
+41.9999,"Science Technologies/Technicians, Other",2024,51.0,2012,88.9,"19-4099, 19-4042, 19-4043",3,8.40,3.50,f,f
+42.0101,"Psychology, General",2024,6999.0,2012,9.3,"11-9199, 19-3033, 19-3039",3,97.51,4.84,t,f
+42.2701,Cognitive Psychology and Psycholinguistics,2024,61.0,2012,510.0,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2702,Comparative Psychology,2024,9.0,2012,80.0,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2703,Developmental and Child Psychology,2024,1007.0,2012,242.5,"11-9199, 21-1021, 19-3033",3,86.58,4.54,t,f
+42.2704,Experimental Psychology,2024,334.0,2012,124.2,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2705,Personality Psychology,2024,4.0,2012,-33.3,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2706,Behavioral Neuroscience,2024,55.0,2012,323.1,"11-9199, 19-1029, 19-3039",3,98.32,4.35,t,f
+42.2707,Social Psychology,2024,55.0,2012,37.5,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2708,Psychometrics and Quantitative Psychology,2024,42.0,2012,180.0,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2709,Psychopharmacology,2024,67.0,2012,81.1,"11-9199, 25-1071, 19-1042",3,84.89,6.96,t,f
+42.2799,"Research and Experimental Psychology, Other",2024,670.0,2013,13300.0,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2801,Clinical Psychology,2024,3156.0,2012,24.5,"11-9199, 19-3033, 25-1066",3,97.70,4.82,t,f
+42.2802,Community Psychology,2024,229.0,2012,-13.9,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2803,Counseling Psychology,2024,10254.0,2012,19.3,"11-9199, 19-3033, 21-1019",3,96.80,5.22,t,f
+42.2804,Industrial and Organizational Psychology,2024,1990.0,2012,76.6,"11-9199, 13-1111, 13-1071",3,96.93,6.36,t,f
+42.2805,School Psychology,2024,2408.0,2012,43.9,"11-9199, 21-1012, 19-3034",3,86.78,4.14,t,f
+42.2806,Educational Psychology,2024,1372.0,2012,-0.3,"11-9199, 19-3034, 19-3039",3,98.05,4.32,t,f
+42.2807,Clinical Child Psychology,2024,26.0,2012,-7.1,"11-9199, 19-3033, 19-3039",3,97.51,4.84,t,f
+42.2808,Environmental Psychology,2024,0.0,2012,-100.0,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2809,Geropsychology,2024,0.0,2012,-100.0,"11-9199, 19-3033, 25-1066",3,97.70,4.82,t,f
+42.2810,Health/Medical Psychology,2024,67.0,2012,19.6,"11-9199, 19-3033, 19-3039",3,97.51,4.84,t,f
+42.2811,Family Psychology,2024,46.0,2012,17.9,"11-9199, 19-3033, 19-3039",3,97.51,4.84,t,f
+42.2812,Forensic Psychology,2024,1587.0,2012,105.0,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2813,Applied Psychology,2024,1258.0,2012,116.9,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.2814,Applied Behavior Analysis,2024,4599.0,2012,2121.7,"11-9199, 19-3033, 19-3039",3,97.51,4.84,t,t
+42.2815,Performance and Sport Psychology,2024,179.0,2020,193.4,"27-2022, 19-3039, 25-1066",3,31.95,5.76,f,f
+42.2817,Transpersonal/Spiritual Psychology,2024,15.0,2020,36.4,"19-3039, 25-1066",2,3.95,3.96,f,f
+42.2899,"Clinical, Counseling and Applied Psychology, Other",2024,347.0,2012,-44.6,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+42.9999,"Psychology, Other",2024,2060.0,2012,120.6,"11-9199, 19-3039, 25-1066",3,99.02,4.46,t,f
+43.0100,"Criminal Justice and Corrections, General",2024,27.0,2020,92.9,"11-9199, 33-3051, 33-3012",3,79.13,2.13,t,f
+43.0102,Corrections,2024,0.0,2012,-100.0,"33-3012, 33-1012, 33-1011",3,22.57,-4.49,f,f
+43.0103,Criminal Justice/Law Enforcement Administration,2024,2605.0,2012,21.7,"11-9199, 33-1012, 25-1111",3,95.37,4.30,t,f
+43.0104,Criminal Justice/Safety Studies,2024,3043.0,2012,8.4,"33-1012, 19-4099, 33-1011",3,9.57,1.98,f,f
+43.0107,Criminal Justice/Police Science,2024,109.0,2012,53.5,"33-3051, 33-3021, 33-9021",3,44.89,2.73,f,f
+43.0109,Security and Loss Prevention Services,2024,20.0,2012,-20.0,"33-9032, 33-1091, 25-1111",3,150.88,0.54,f,f
+43.0110,Juvenile Corrections,2024,30.0,2012,500.0,"21-1021, 33-3012, 25-1111",3,32.01,-2.03,f,f
+43.0112,Securities Services Administration/Management,2024,117.0,2012,-48.2,"33-1091, 33-1099, 25-1111",3,5.18,2.38,f,f
+43.0113,Corrections Administration,2024,7.0,2012,-12.5,"33-1011, 25-1111",2,3.61,-1.74,f,f
+43.0114,Law Enforcement Investigation and Interviewing,2024,97.0,2015,,"33-3051, 33-3021, 25-1111",3,46.18,2.54,f,f
+43.0119,Critical Incident Response/Special Police Operations,2024,0.0,2012,-100.0,"33-3051, 33-1012, 25-1111",3,44.87,3.04,f,f
+43.0120,Protective Services Operations,2024,0.0,2013,-100.0,"33-3051, 33-1012, 33-9021",3,43.68,3.20,f,f
+43.0199,"Corrections and Criminal Justice, Other",2024,482.0,2012,156.4,"33-3012, 25-1111",2,28.94,-7.41,f,f
+43.0201,Fire Prevention and Safety Technology/Technician,2024,0.0,2012,-100.0,"33-2011, 33-1021, 33-2021",3,21.89,3.41,f,f
+43.0202,Fire Services Administration,2024,154.0,2012,294.9,"11-9199, 25-1194, 33-1021",3,92.73,4.13,t,f
+43.0203,Fire Science/Fire-fighting,2024,16.0,2012,,"33-2011, 33-1021, 33-2021",3,21.89,3.41,f,f
+43.0205,Fire/Arson Investigation and Prevention,2024,5.0,2023,-28.6,"33-1021, 33-2021",2,5.84,3.45,f,f
+43.0206,Wildland/Forest Firefighting and Investigation,2019,0.0,2016,,"33-2011, 33-2022",2,26.88,3.49,f,f
+43.0299,"Fire Protection, Other",2024,11.0,2012,,"33-2011, 33-1021",2,22.57,3.40,f,f
+43.0301,Homeland Security,2024,855.0,2012,161.5,"11-9199, 33-1012, 11-9161",3,95.56,4.32,t,f
+43.0302,Crisis/Emergency/Disaster Management,2024,825.0,2012,232.7,"11-9199, 33-1012, 11-9161",3,95.56,4.32,t,f
+43.0303,Critical Infrastructure Protection,2024,169.0,2012,36.3,"11-9199, 33-1012, 11-9161",3,95.56,4.32,t,f
+43.0304,Terrorism and Counterterrorism Operations,2024,46.0,2012,64.3,"11-9199, 25-1199, 33-1012",3,87.33,4.05,t,f
+43.0399,"Homeland Security, Other",2024,60.0,2012,500.0,"33-1091, 33-1099, 25-1111",3,5.18,2.38,f,f
+43.0402,Criminalistics and Criminal Science,2024,63.0,2020,31.3,"33-3051, 33-3021, 19-4099",3,43.70,2.64,f,f
+43.0403,Cyber/Computer Forensics and Counterterrorism,2024,747.0,2020,28.6,"15-1299, 15-1212, 33-3021",3,24.09,11.64,t,f
+43.0404,Cybersecurity Defense Strategy/Policy,2024,300.0,2020,581.8,"11-9199, 33-1012, 33-1099",3,95.06,4.29,t,f
+43.0405,Financial Forensics and Fraud Investigation,2024,149.0,2020,6.4,"13-2011, 33-3021, 13-2061",3,112.04,4.76,t,f
+43.0406,Forensic Science and Technology,2024,895.0,2020,35.4,"19-4099, 19-4092, 25-1111",3,8.00,4.90,f,f
+43.0407,Geospatial Intelligence,2023,0.0,2023,,"33-1012, 33-3021, 25-1111",3,9.13,1.41,f,f
+43.0408,Law Enforcement Intelligence Analysis,2024,51.0,2020,200.0,"33-3021, 25-1111",2,7.00,-0.37,f,f
+43.9999,"Homeland Security, Law Enforcement, Firefighting and Related Protective Services, Other",2024,329.0,2012,-47.9,,0,,,f,f
+44.0000,"Human Services, General",2024,842.0,2012,-52.5,"21-1093, 11-9151, 21-1099",3,36.01,6.13,f,f
+44.0201,Community Organization and Advocacy,2024,472.0,2012,-21.9,"11-9151, 43-4061, 21-1099",3,15.79,4.20,f,f
+44.0401,Public Administration,2024,10493.0,2012,-17.8,"11-1021, 11-9199, 11-1011",3,241.85,4.42,t,f
+44.0403,Transportation and Infrastructure Planning/Studies,2024,4.0,2021,-50.0,"11-3071, 19-3051, 53-6041",3,15.47,5.58,f,f
+44.0499,"Public Administration, Other",2024,25.0,2022,525.0,11-9199,1,106.70,4.50,t,f
+44.0501,"Public Policy Analysis, General",2024,2551.0,2012,-6.7,"19-4061, 11-1031, 25-1065",3,3.41,3.51,f,f
+44.0502,Education Policy Analysis,2024,67.0,2012,346.7,"25-1081, 19-3099, 19-4061",3,4.87,1.71,f,f
+44.0503,Health Policy Analysis,2024,105.0,2012,191.7,"11-9111, 25-1071, 19-3099",3,48.95,20.32,t,f
+44.0504,International Policy Analysis,2024,102.0,2012,155.0,"19-4061, 25-1065, 19-3094",3,3.62,2.93,f,f
+44.0599,"Public Policy Analysis, Other",2024,45.0,2013,2150.0,,0,,,f,f
+44.0701,Social Work,2024,34458.0,2012,54.2,"21-1021, 11-9151, 21-1022",3,26.67,5.23,f,f
+44.0702,Youth Services/Administration,2024,63.0,2012,425.0,"21-1021, 11-9151",2,29.25,4.46,f,f
+44.0799,"Social Work, Other",2024,81.0,2012,-12.0,"21-1021, 11-9151, 21-1022",3,26.67,5.23,f,f
+44.9999,"Public Administration and Social Service Professions, Other",2024,155.0,2012,-87.1,,0,,,f,f
+45.0101,"Social Sciences, General",2024,400.0,2012,-33.6,"11-9199, 25-2031, 19-3099",3,87.04,1.69,t,f
+45.0102,Research Methodology and Quantitative Methods,2024,1549.0,2012,30880.0,"11-9199, 19-3099, 15-2041",3,101.30,4.41,t,f
+45.0103,Survey Research/Methodology,2024,5.0,2024,,"11-9199, 19-3099, 19-4061",3,100.80,4.32,t,f
+45.0201,"Anthropology, General",2024,912.0,2012,-23.0,"11-9199, 19-3091, 25-1061",3,105.50,4.49,t,f
+45.0202,Physical and Biological Anthropology,2024,11.0,2012,-8.3,"11-9199, 19-3091, 25-1061",3,105.50,4.49,t,f
+45.0203,Medical Anthropology,2024,21.0,2018,200.0,"11-9199, 19-3091, 25-1061",3,105.50,4.49,t,f
+45.0204,Cultural Anthropology,2024,12.0,2014,-36.8,"11-9199, 25-1062, 19-3091",3,104.88,4.47,t,f
+45.0205,Forensic Anthropology,2024,10.0,2022,66.7,"11-9199, 19-1042, 19-4092",3,94.72,5.07,t,f
+45.0299,"Anthropology, Other",2024,43.0,2012,19.4,"11-9199, 19-3091, 25-1061",3,105.50,4.49,t,f
+45.0301,Archeology,2024,51.0,2012,10.9,"11-9199, 19-3091, 25-1061",3,105.50,4.49,t,f
+45.0401,Criminology,2024,792.0,2012,6.6,"11-9199, 19-4099, 19-3039",3,97.41,4.44,t,f
+45.0501,Demography and Population Studies,2024,80.0,2012,-20.0,"11-9199, 19-3099, 25-1067",3,102.49,4.29,t,f
+45.0502,Applied Demography,2024,0.0,2021,-100.0,"11-9199, 19-3099, 25-1067",3,102.49,4.29,t,f
+45.0601,"Economics, General",2024,400.0,2012,-86.2,"11-9199, 25-2031, 19-4061",3,87.08,1.79,t,f
+45.0602,Applied Economics,2024,123.0,2012,-53.4,"11-9199, 13-1161, 19-4061",3,96.99,5.39,t,f
+45.0603,Econometrics and Quantitative Economics,2024,4198.0,2012,11245.9,"11-9199, 15-2051, 19-4061",3,91.51,8.90,t,f
+45.0604,Development Economics and International Development,2024,164.0,2012,-58.8,"11-9199, 19-4061, 19-3011",3,102.40,4.46,t,f
+45.0605,International Economics,2024,35.0,2012,-83.6,"11-9199, 19-3011, 25-1063",3,104.12,4.43,t,f
+45.0699,"Economics, Other",2024,49.0,2012,-46.7,"11-9199, 19-3011, 25-1063",3,104.12,4.43,t,f
+45.0701,Geography,2024,349.0,2012,-62.4,"11-9199, 17-3031, 25-1064",3,102.18,4.50,t,f
+45.0702,Geographic Information Science and Cartography,2024,694.0,2012,292.1,"11-9199, 17-3031, 17-1021",3,101.51,4.52,t,f
+45.0799,"Geography, Other",2024,64.0,2012,220.0,"11-9199, 25-1064, 19-3092",3,106.26,4.49,t,f
+45.0901,International Relations and Affairs,2024,3988.0,2012,-13.0,"11-9199, 25-1065, 19-3094",3,104.51,4.42,t,f
+45.0902,National Security Policy Studies,2024,466.0,2012,40.8,"11-9199, 25-1065, 19-3094",3,104.51,4.42,t,f
+45.0999,"International Relations and National Security Studies, Other",2024,354.0,2012,567.9,"11-9199, 25-1065, 19-3094",3,104.51,4.42,t,f
+45.1001,"Political Science and Government, General",2024,1659.0,2012,-25.6,"11-9199, 25-2031, 19-4061",3,87.08,1.79,t,f
+45.1002,American Government and Politics (United States),2024,84.0,2012,-50.9,"11-9199, 25-2031, 25-1065",3,87.67,1.75,t,f
+45.1004,Political Economy,2024,8.0,2013,700.0,"11-9199, 19-4061, 25-1065",3,102.11,4.46,t,f
+45.1099,"Political Science and Government, Other",2024,113.0,2012,1.8,"11-9199, 25-2031, 25-1065",3,87.67,1.75,t,f
+45.1101,"Sociology, General",2024,1199.0,2012,-29.5,"11-9199, 19-4061, 25-1067",3,102.56,4.47,t,f
+45.1102,Applied/Public Sociology,2024,24.0,2020,500.0,"11-9199, 19-4061, 25-1067",3,102.56,4.47,t,f
+45.1103,Rural Sociology,2024,2.0,2024,,"11-9199, 25-1069, 25-1067",3,103.92,4.43,t,f
+45.1201,Urban Studies/Affairs,2024,315.0,2012,-34.2,"11-9199, 19-3051, 25-1069",3,101.84,4.42,t,f
+45.1301,Sociology and Anthropology,2024,2.0,2012,-80.0,"11-9199, 25-1067, 19-3091",3,104.82,4.47,t,f
+45.9999,"Social Sciences, Other",2024,280.0,2012,-42.7,"11-9199, 19-3099, 25-1069",3,102.11,4.28,t,f
+46.0401,Building/Property Maintenance,2024,0.0,2012,-100.0,"49-9071, 47-1011, 37-1011",3,119.77,4.17,t,f
+46.0412,Building/Construction Site Management/Manager,2013,0.0,2012,,"47-1011, 11-3013, 49-9095",3,65.58,5.09,t,f
+46.9999,"Construction Trades, Other",2024,0.0,2024,,,0,,,f,f
+47.0604,Automobile/Automotive Mechanics Technology/Technician,2024,0.0,2022,,"49-3023, 49-2096, 49-2093",3,68.54,3.99,f,f
+47.0608,Aircraft Powerplant Technology/Technician,2024,23.0,2017,,"49-3011, 51-2011",2,9.65,0.41,f,f
+47.0699,"Vehicle Maintenance and Repair Technologies/Technicians, Other",2024,0.0,2022,,,0,,,f,f
+47.0701,Energy Systems Installation and Repair Technology/Technician,2022,0.0,2021,-100.0,"49-1011, 49-9041, 49-9099",3,44.75,7.45,t,f
+48.0702,Furniture Design and Manufacturing,2024,11.0,2012,0.0,"51-7021, 51-7099",2,1.91,-3.81,f,f
+49.0101,"Aeronautics/Aviation/Aerospace Science and Technology, General",2024,707.0,2012,374.5,11-3071,1,18.50,6.10,f,f
+49.0102,Airline/Commercial/Professional Pilot and Flight Crew,2015,0.0,2012,-100.0,"53-2011, 53-2012",2,9.88,4.33,f,f
+49.0104,Aviation/Airway Management and Operations,2024,110.0,2012,-51.5,11-3071,1,18.50,6.10,f,f
+49.0199,"Air Transportation, Other",2024,0.0,2012,-100.0,,0,,,f,f
+49.9999,"Transportation and Materials Moving, Other",2024,0.0,2012,,,0,,,f,f
+50.0101,"Visual and Performing Arts, General",2024,92.0,2012,-37.8,"27-4021, 25-1121, 27-1013",3,10.26,1.49,f,f
+50.0102,Digital Arts,2024,114.0,2012,10.7,"27-1024, 27-4021, 27-1011",3,16.12,2.53,f,f
+50.0201,"Crafts/Craft Design, Folk Art and Artisanry",2024,0.0,2012,-100.0,"25-1121, 27-1019, 27-1012",3,7.64,1.65,f,f
+50.0301,"Dance, General",2024,202.0,2012,-14.8,"25-1121, 27-2031, 27-2032",3,8.09,2.09,f,f
+50.0302,Ballet,2024,2.0,2012,-50.0,"25-1121, 27-2031, 27-2032",3,8.09,2.09,f,f
+50.0399,"Dance, Other",2024,7.0,2012,250.0,"25-1121, 27-2031, 27-2032",3,8.09,2.09,f,f
+50.0401,"Design and Visual Communications, General",2024,396.0,2012,-22.4,"27-1024, 15-1255, 25-1121",3,14.68,3.23,f,f
+50.0402,Commercial and Advertising Art,2024,16.0,2012,-86.1,"27-1024, 27-1021, 27-1019",3,17.43,2.15,f,f
+50.0404,Industrial and Product Design,2024,95.0,2012,-46.9,"27-1024, 25-1121, 27-1021",3,15.50,2.06,f,f
+50.0406,Commercial Photography,2024,6.0,2012,-50.0,"27-4021, 25-1121",2,11.04,1.76,f,f
+50.0407,Fashion/Apparel Design,2024,96.0,2012,-51.0,"25-1121, 27-1022",2,7.84,1.75,f,f
+50.0408,Interior Design,2024,225.0,2012,-49.9,"27-1025, 25-1031",2,6.99,3.06,f,f
+50.0409,Graphic Design,2024,169.0,2012,-34.0,"27-1024, 27-1011, 15-1255",3,15.39,3.83,f,f
+50.0410,Illustration,2024,291.0,2012,117.2,"25-1121, 27-1027, 27-1029",3,6.82,1.85,f,f
+50.0411,Game and Interactive Media Design,2024,50.0,2012,-58.7,"25-1199, 27-1014",2,11.48,1.75,f,f
+50.0499,"Design and Applied Arts, Other",2024,339.0,2012,19.4,,0,,,f,f
+50.0501,"Drama and Dramatics/Theatre Arts, General",2024,820.0,2012,-32.3,"27-2012, 25-1121, 27-2011",3,10.39,3.01,f,f
+50.0502,Technical Theatre/Theatre Design and Technology,2024,150.0,2012,5.6,"25-1121, 27-1027",2,7.68,1.82,f,f
+50.0504,Playwriting and Screenwriting,2024,304.0,2012,65.2,"27-3043, 25-1121",2,11.31,2.70,f,f
+50.0505,"Theatre Literature, History and Criticism",2024,5.0,2012,-37.5,25-1121,1,9.00,1.70,f,f
+50.0506,Acting,2024,151.0,2012,-26.7,"25-1121, 27-2011",2,8.14,1.26,f,f
+50.0507,Directing and Theatrical Production,2024,63.0,2012,-24.1,"27-2012, 25-1121, 27-2011",3,10.39,3.01,f,f
+50.0509,Musical Theatre,2024,7.0,2016,-46.2,"27-2042, 27-2012, 25-1121",3,14.22,2.64,f,f
+50.0510,Costume Design,2024,11.0,2012,266.7,"25-1121, 27-1022",2,7.84,1.75,f,f
+50.0599,"Dramatic/Theatre Arts and Stagecraft, Other",2024,61.0,2012,38.6,"27-2012, 25-1121, 27-2011",3,10.39,3.01,f,f
+50.0601,Film/Cinema/Media Studies,2024,586.0,2012,53.4,"27-2012, 25-1121",2,11.19,3.54,f,f
+50.0602,Cinematography and Film/Video Production,2024,999.0,2012,22.9,"27-2012, 25-1121, 27-4032",3,10.20,3.60,f,f
+50.0605,Photography,2024,188.0,2012,-25.7,"27-4021, 25-1121",2,11.04,1.76,f,f
+50.0607,Documentary Production,2024,36.0,2012,260.0,"27-2012, 25-1121, 27-4032",3,10.20,3.60,f,f
+50.0699,"Film/Video and Photographic Arts, Other",2024,22.0,2012,-76.1,25-1121,1,9.00,1.70,f,f
+50.0701,"Art/Art Studies, General",2024,525.0,2012,-35.2,"25-2031, 27-4021, 25-1121",3,55.16,-0.93,f,f
+50.0702,"Fine/Studio Arts, General",2024,1195.0,2012,-15.5,"25-1121, 27-1013, 27-1019",3,7.23,1.15,f,f
+50.0703,"Art History, Criticism and Conservation",2024,768.0,2012,-15.0,"25-1121, 25-4013, 25-4012",3,7.57,2.60,f,f
+50.0705,Drawing,2024,10.0,2012,-67.7,"25-1121, 27-1014, 27-1013",3,7.02,1.30,f,f
+50.0706,Intermedia/Multimedia,2024,26.0,2012,-25.7,"27-1011, 25-1121, 27-1014",3,9.69,2.75,f,f
+50.0708,Painting,2024,130.0,2012,-44.0,"25-1121, 27-1014, 27-1013",3,7.02,1.30,f,f
+50.0709,Sculpture,2024,55.0,2012,-21.4,"25-1121, 27-1013, 27-1012",3,7.30,1.25,f,f
+50.0710,Printmaking,2024,42.0,2012,-25.0,"25-1121, 27-1013, 27-1012",3,7.30,1.25,f,f
+50.0711,Ceramic Arts and Ceramics,2024,36.0,2012,-30.8,"25-1121, 27-1013, 27-1012",3,7.30,1.25,f,f
+50.0712,"Fiber, Textile and Weaving Arts",2024,17.0,2012,-63.8,"25-1121, 27-1012",2,8.31,1.73,f,f
+50.0713,Jewelry Arts,2024,12.0,2012,-64.7,"25-1121, 51-9071, 27-1012",3,7.42,0.24,f,f
+50.0714,Metal Arts,2024,7.0,2020,,"25-1121, 51-9071, 27-1012",3,7.42,0.24,f,f
+50.0799,"Fine Arts and Art Studies, Other",2024,154.0,2012,-51.7,"25-1121, 27-1013, 27-1019",3,7.23,1.15,f,f
+50.0901,"Music, General",2024,1579.0,2012,-17.4,"25-2031, 27-2042",2,59.91,-1.24,f,f
+50.0902,"Music History, Literature, and Theory",2024,38.0,2012,-17.4,25-1121,1,9.00,1.70,f,f
+50.0903,"Music Performance, General",2024,2115.0,2012,-9.8,"27-2042, 25-1121, 27-2041",3,13.54,1.12,f,f
+50.0904,Music Theory and Composition,2024,298.0,2012,9.2,"25-1121, 27-2041",2,7.69,1.14,f,f
+50.0905,Musicology and Ethnomusicology,2024,53.0,2012,-13.1,"25-1121, 27-2041",2,7.69,1.14,f,f
+50.0906,Conducting,2024,107.0,2012,-7.0,"25-1121, 27-2041",2,7.69,1.14,f,f
+50.0907,Keyboard Instruments,2024,250.0,2012,64.5,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0908,Voice and Opera,2024,293.0,2012,40.2,"27-2042, 25-1121, 27-2041",3,13.54,1.12,f,f
+50.0910,Jazz/Jazz Studies,2024,154.0,2012,1.3,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0911,Stringed Instruments,2024,273.0,2012,40.7,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0912,Music Pedagogy,2024,151.0,2012,202.0,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0913,Music Technology,2024,137.0,2012,705.9,"25-1121, 27-2041, 27-4014",3,7.11,0.89,f,f
+50.0914,Brass Instruments,2024,47.0,2012,88.0,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0915,Woodwind Instruments,2024,88.0,2012,83.3,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0916,Percussion Instruments,2024,15.0,2012,114.3,"27-2042, 25-1121",2,15.04,1.35,f,f
+50.0999,"Music, Other",2024,172.0,2012,-40.7,"27-2042, 25-1121, 27-2041",3,13.54,1.12,f,f
+50.1001,"Arts, Entertainment, and Media Management, General",2024,268.0,2012,68.6,"11-9199, 25-1121, 13-1011",3,97.07,4.33,t,f
+50.1002,Fine and Studio Arts Management,2024,365.0,2012,-22.3,"11-9199, 25-1121, 13-1011",3,97.07,4.33,t,f
+50.1003,Music Management,2024,156.0,2012,,"25-1121, 27-2041",2,7.69,1.14,f,f
+50.1004,Theatre/Theatre Arts Management,2024,70.0,2012,40.0,"11-9199, 27-2012, 25-1121",3,89.65,4.33,t,f
+50.1099,"Arts, Entertainment, and Media Management, Other",2024,146.0,2012,14500.0,"11-9199, 25-1121, 13-1011",3,97.07,4.33,t,f
+50.1101,Community/Environmental/Socially-Engaged Art,2024,0.0,2022,-100.0,"25-1121, 27-1013, 27-1019",3,7.23,1.15,f,f
+50.9999,"Visual and Performing Arts, Other",2024,206.0,2012,-57.0,25-1121,1,9.00,1.70,f,f
+51.0000,"Health Services/Allied Health/Health Sciences, General",2024,902.0,2012,40.1,,0,,,f,f
+51.0001,"Health and Wellness, General",2024,395.0,2012,,"21-1091, 21-1094",2,7.85,7.73,f,f
+51.0201,"Communication Sciences and Disorders, General",2024,2034.0,2012,10.3,"25-1071, 29-1127, 29-1181",3,21.18,16.18,t,f
+51.0202,Audiology/Audiologist,2024,151.0,2012,39.8,"25-1071, 29-1181",2,26.02,16.90,t,f
+51.0203,Speech-Language Pathology/Pathologist,2024,5463.0,2012,120.0,"25-1071, 29-1127",2,21.86,16.40,t,f
+51.0204,Audiology/Audiologist and Speech-Language Pathology/Pathologist,2024,2893.0,2012,12.9,"25-1071, 29-1127, 29-1181",3,21.18,16.18,t,f
+51.0299,"Communication Disorders Sciences and Services, Other",2024,95.0,2012,-2.1,"25-1071, 29-1127, 29-1181",3,21.18,16.18,t,f
+51.0501,"Dental Clinical Sciences, General",2024,278.0,2012,-0.4,"25-1071, 29-1029",2,26.79,16.92,t,f
+51.0502,Advanced General Dentistry,2024,27.0,2012,350.0,"25-1071, 29-1021",2,20.13,13.21,t,f
+51.0503,Oral Biology and Oral and Maxillofacial Pathology,2024,155.0,2012,109.5,29-1029,1,0.20,0.30,f,f
+51.0504,Dental Public Health and Education,2024,16.0,2012,433.3,"25-1071, 21-1091, 29-1029",3,23.11,14.50,t,f
+51.0505,Dental Materials,2024,0.0,2012,-100.0,"25-1071, 29-1029",2,26.79,16.92,t,f
+51.0506,Endodontics/Endodontology,2024,36.0,2012,33.3,"25-1071, 29-1029",2,26.79,16.92,t,f
+51.0507,Oral/Maxillofacial Surgery,2024,1.0,2012,,"25-1071, 29-1022",2,26.84,17.03,t,f
+51.0508,Orthodontics/Orthodontology,2024,120.0,2012,44.6,"25-1071, 29-1023",2,26.86,17.04,t,f
+51.0509,Pediatric Dentistry/Pedodontics,2024,30.0,2012,36.4,"25-1071, 29-1021",2,20.13,13.21,t,f
+51.0510,Periodontics/Periodontology,2024,35.0,2012,-22.2,"25-1071, 29-1029",2,26.79,16.92,t,f
+51.0511,Prosthodontics/Prosthodontology,2024,20.0,2012,-41.2,"25-1071, 29-1024",2,27.32,17.26,t,f
+51.0512,Digital Dentistry,2024,0.0,2024,,"25-1071, 29-1029",2,26.79,16.92,t,f
+51.0599,"Advanced/Graduate Dentistry and Oral Sciences, Other",2024,85.0,2012,80.9,"25-1071, 29-1029",2,26.79,16.92,t,f
+51.0601,Dental Assisting/Assistant,2024,0.0,2016,,"31-9091, 25-1071",2,41.90,11.10,t,f
+51.0602,Dental Hygiene/Hygienist,2024,104.0,2012,44.4,"25-1071, 29-1292",2,22.15,12.84,t,f
+51.0603,Dental Laboratory Technology/Technician,2024,0.0,2012,-100.0,"25-1071, 51-9081",2,24.85,14.92,t,f
+51.0699,"Dental Services and Allied Professions, Other",2024,7.0,2012,-12.5,,0,,,f,f
+51.0701,Health/Health Care Administration/Management,2024,12880.0,2012,112.9,11-9111,1,62.10,23.20,t,f
+51.0702,Hospital and Health Care Facilities Administration/Management,2024,1042.0,2012,26.2,"11-9111, 11-3013, 25-1011",3,47.20,17.75,t,f
+51.0704,Health Unit Manager/Ward Supervisor,2024,0.0,2012,-100.0,11-9111,1,62.10,23.20,t,f
+51.0705,Medical Office Management/Administration,2024,8.0,2022,700.0,43-1011,1,144.50,-0.30,f,f
+51.0706,Health Information/Medical Records Administration/Administrator,2024,523.0,2012,156.4,"11-9111, 29-2072, 29-9021",3,48.27,19.11,t,f
+51.0707,Health Information/Medical Records Technology/Technician,2024,30.0,2012,,"29-2072, 29-9021",2,12.25,8.45,t,f
+51.0711,Medical/Health Management and Clinical Assistant/Specialist,2024,12.0,2012,100.0,"43-1011, 43-6013, 31-9092",3,120.92,4.11,t,f
+51.0714,Medical Insurance Specialist/Medical Biller,2022,0.0,2022,,"43-6013, 31-9099",2,77.73,4.12,f,f
+51.0718,Long Term Care Administration/Management,2024,17.0,2012,70.0,11-9111,1,62.10,23.20,t,f
+51.0719,Clinical Research Coordinator,2024,132.0,2012,97.0,"11-9199, 11-9111, 11-9033",3,84.54,9.50,t,f
+51.0720,Regulatory Science/Affairs,2024,47.0,2021,571.4,"11-9111, 13-1041",2,50.46,15.04,t,f
+51.0722,Healthcare Innovation,2024,93.0,2020,,11-9111,1,62.10,23.20,t,f
+51.0799,"Health and Medical Administrative Services, Other",2024,515.0,2012,46.7,31-9099,1,14.40,3.50,f,f
+51.0801,Medical/Clinical Assistant,2024,0.0,2012,-100.0,"31-9092, 25-1071",2,89.96,13.76,t,f
+51.0803,Occupational Therapist Assistant,2019,32.0,2018,6.7,"25-1071, 31-2011",2,24.47,17.58,t,f
+51.0806,Physical Therapy Assistant,2024,0.0,2022,,31-2021,1,19.80,22.00,t,f
+51.0809,Anesthesiologist Assistant,2024,360.0,2012,287.1,31-9092,1,112.30,12.50,t,f
+51.0811,Pathology/Pathologist Assistant,2024,153.0,2012,168.4,29-2055,1,7.00,4.50,f,f
+51.0814,Radiologist Assistant,2024,13.0,2012,116.7,"29-2099, 31-9099",2,13.90,4.55,f,f
+51.0815,Lactation Consultant,2024,0.0,2021,-100.0,31-9099,1,14.40,3.50,f,f
+51.0816,Speech-Language Pathology Assistant,2024,0.0,2021,,31-9099,1,14.40,3.50,f,f
+51.0899,"Allied Health and Medical Assisting Services, Other",2024,12.0,2012,-88.2,31-9099,1,14.40,3.50,f,f
+51.0901,Cardiovascular Technology/Technologist,2024,31.0,2012,3000.0,"25-1071, 29-2031",2,23.09,14.69,t,f
+51.0903,Electroneurodiagnostic/Electroencephalographic Technology/Technologist,2018,0.0,2018,,"25-1071, 29-2099",2,22.13,12.68,t,f
+51.0904,Emergency Medical Technology/Technician (EMT Paramedic),2024,14.0,2012,27.3,"25-1071, 29-2042, 29-2043",3,19.19,11.25,t,f
+51.0905,Nuclear Medical Technology/Technologist,2024,10.0,2015,,"25-1071, 29-2033",2,25.69,16.38,t,f
+51.0906,Perfusion Technology/Perfusionist,2024,151.0,2012,214.6,"25-1071, 29-2031",2,23.09,14.69,t,f
+51.0907,Medical Radiologic Technology/Science - Radiation Therapist,2024,94.0,2012,91.8,"25-1071, 29-2034, 29-2099",3,19.11,9.94,t,f
+51.0908,Respiratory Care Therapy/Therapist,2024,151.0,2012,694.7,"25-1071, 29-2099, 29-1126",3,19.07,12.55,t,f
+51.0909,Surgical Technology/Technologist,2015,32.0,2013,166.7,"25-1071, 29-2055, 29-9093",3,20.41,13.15,t,f
+51.0910,Diagnostic Medical Sonography/Sonographer and Ultrasound Technician,2024,11.0,2012,-8.3,"25-1071, 29-2032",2,22.28,16.28,t,f
+51.0911,Radiologic Technology/Science - Radiographer,2024,145.0,2012,119.7,"25-1071, 29-2034",2,21.01,11.57,t,f
+51.0912,Physician Assistant,2024,12020.0,2012,121.4,"25-1071, 29-1071",2,21.86,18.42,t,f
+51.0913,Athletic Training/Trainer,2024,2008.0,2012,279.6,"25-1071, 29-9091",2,24.78,16.65,t,f
+51.0916,Radiation Protection/Health Physics Technician,2024,0.0,2012,-100.0,"25-1071, 29-2099, 19-5012",3,20.94,12.41,t,f
+51.0920,Magnetic Resonance Imaging (MRI) Technology/Technician,2024,2.0,2017,-60.0,"25-1071, 29-2035",2,24.12,15.95,t,f
+51.0999,"Allied Health Diagnostic, Intervention, and Treatment Professions, Other",2024,48.0,2012,220.0,"25-1071, 29-2099",2,22.13,12.68,t,f
+51.1001,Blood Bank Technology Specialist,2024,10.0,2013,400.0,25-1071,1,27.40,17.30,t,f
+51.1002,Cytotechnology/Cytotechnologist,2024,54.0,2012,800.0,25-1071,1,27.40,17.30,t,f
+51.1003,Hematology Technology/Technician,2024,8.0,2012,100.0,25-1071,1,27.40,17.30,t,f
+51.1004,Clinical/Medical Laboratory Technician,2024,3.0,2021,,25-1071,1,27.40,17.30,t,f
+51.1005,Clinical Laboratory Science/Medical Technology/Technologist,2024,377.0,2012,144.8,25-1071,1,27.40,17.30,t,f
+51.1007,Histologic Technology/Histotechnologist,2024,11.0,2012,266.7,25-1071,1,27.40,17.30,t,f
+51.1010,Cytogenetics/Genetics/Clinical Genetics Technology/Technologist,2024,12.0,2014,,25-1071,1,27.40,17.30,t,f
+51.1099,"Clinical/Medical Laboratory Science and Allied Professions, Other",2024,75.0,2012,167.9,25-1071,1,27.40,17.30,t,f
+51.1102,Pre-Medicine/Pre-Medical Studies,2024,148.0,2012,150.8,,0,,,f,f
+51.1103,Pre-Pharmacy Studies,2013,10.0,2012,,,0,,,f,f
+51.1105,Pre-Nursing Studies,2019,0.0,2018,,,0,,,f,f
+51.1107,Pre-Occupational Therapy Studies,2024,0.0,2019,-100.0,,0,,,f,f
+51.1199,"Health/Medical Preparatory Programs, Other",2024,258.0,2012,448.9,,0,,,f,f
+51.1401,Medical Science/Scientist,2024,689.0,2012,86.2,"19-1042, 11-9121, 19-1041",3,8.81,7.18,t,f
+51.1402,Clinical and Translational Science,2024,43.0,2020,1333.3,19-1042,1,9.60,8.70,f,f
+51.1499,"Medical Clinical Sciences/Graduate Medical Studies, Other",2024,11.0,2022,,19-1042,1,9.60,8.70,f,f
+51.1501,Substance Abuse/Addiction Counseling,2024,525.0,2012,11.5,25-1071,1,27.40,17.30,t,f
+51.1502,Psychiatric/Mental Health Services Technician,2024,6.0,2012,-64.7,"29-2053, 31-1133",2,13.67,15.71,t,f
+51.1503,Clinical/Medical Social Work,2024,2402.0,2012,395.3,"21-1022, 21-1023, 25-1113",3,15.63,8.22,f,f
+51.1504,Community Health Services/Liaison/Counseling,2024,356.0,2012,47.7,"21-1091, 21-1094",2,7.85,7.73,f,f
+51.1505,Marriage and Family Therapy/Counseling,2024,3976.0,2012,61.0,"21-1013, 25-1066",2,6.21,8.97,f,f
+51.1506,Clinical Pastoral Counseling/Patient Counseling,2024,164.0,2012,209.4,"21-2011, 21-2021, 21-1013",3,17.84,3.20,f,f
+51.1507,Psychoanalysis and Psychotherapy,2024,3.0,2012,-81.3,19-3033,1,4.80,11.20,f,f
+51.1508,Mental Health Counseling/Counselor,2024,9776.0,2012,215.8,,0,,,f,f
+51.1509,Genetic Counseling/Counselor,2024,375.0,2012,200.0,29-9092,1,0.30,9.30,f,f
+51.1513,Trauma Counseling,2024,4.0,2021,300.0,,0,,,f,f
+51.1599,"Mental and Social Health Services and Allied Professions, Other",2024,1290.0,2012,1002.6,,0,,,f,f
+51.1899,"Ophthalmic and Optometric Support Services and Allied Professions, Other",2024,14.0,2012,-88.5,,0,,,f,f
+51.2001,Pharmacy,2024,27.0,2012,17.4,"11-9111, 29-1051, 25-1071",3,41.07,16.80,t,f
+51.2002,Pharmacy Administration and Pharmacy Policy and Regulatory Affairs,2024,105.0,2012,-74.5,"11-9111, 25-1071",2,51.01,21.31,t,f
+51.2003,Pharmaceutics and Drug Design,2024,239.0,2012,171.6,"25-1071, 19-1042, 19-1021",3,19.62,13.57,t,f
+51.2004,Medicinal and Pharmaceutical Chemistry,2024,72.0,2012,33.3,"25-1071, 19-1042, 19-2031",3,18.59,12.69,t,f
+51.2005,Natural Products Chemistry and Pharmacognosy,2024,137.0,2012,4466.7,"25-1071, 19-1042",2,20.93,14.17,t,f
+51.2006,Clinical and Industrial Drug Development,2024,166.0,2012,16.1,"25-1071, 11-3051, 11-9121",3,20.38,9.21,t,f
+51.2007,Pharmacoeconomics/Pharmaceutical Economics,2024,105.0,2012,5150.0,"11-9111, 25-1071, 19-3011",3,50.05,20.93,t,f
+51.2008,"Clinical, Hospital, and Managed Care Pharmacy",2024,10.0,2012,66.7,"11-9111, 29-1051, 25-1071",3,41.07,16.80,t,f
+51.2009,Industrial and Physical Pharmacy and Cosmetic Sciences,2024,954.0,2012,6260.0,"11-9199, 25-1071, 11-3051",3,82.77,6.15,t,f
+51.2010,Pharmaceutical Sciences,2024,487.0,2012,309.2,"25-1071, 19-1042",2,20.93,14.17,t,f
+51.2011,Pharmaceutical Marketing and Management,2024,28.0,2012,1300.0,"11-2022, 11-9111, 11-2021",3,50.27,12.11,t,f
+51.2099,"Pharmacy, Pharmaceutical Sciences, and Administration, Other",2024,364.0,2012,20.1,25-1071,1,27.40,17.30,t,f
+51.2201,"Public Health, General",2024,11934.0,2012,69.4,"11-9111, 25-1071, 21-1091",3,47.84,20.08,t,f
+51.2202,Environmental Health,2024,706.0,2012,30.5,"25-1071, 19-1042, 19-5011",3,19.58,13.80,t,f
+51.2205,Health/Medical  Physics,2024,201.0,2012,154.4,"25-1071, 19-2012, 25-1054",3,24.14,15.55,t,f
+51.2206,Occupational Health and Industrial Hygiene,2024,119.0,2012,17.8,"25-1071, 19-5011, 19-5012",3,22.08,15.28,t,f
+51.2207,Public Health Education and Promotion,2024,747.0,2012,-5.1,"25-1071, 21-1091, 21-1094",3,21.13,14.23,t,f
+51.2208,Community Health and Preventive Medicine,2024,320.0,2012,160.2,"11-9111, 25-1071, 21-1094",3,48.11,20.64,t,f
+51.2209,Maternal and Child Health,2024,52.0,2012,-54.8,"25-1071, 21-1091, 21-1094",3,21.13,14.23,t,f
+51.2210,International Public Health/International Health,2024,419.0,2012,3.5,"11-9111, 21-1091",2,56.44,21.25,t,f
+51.2211,Health Services Administration,2024,1112.0,2012,51.1,11-9111,1,62.10,23.20,t,f
+51.2212,Behavioral Aspects of Health,2024,120.0,2012,2900.0,"25-1071, 21-1091, 21-1094",3,21.13,14.23,t,f
+51.2213,Patient Safety and Healthcare Quality,2024,45.0,2020,-18.2,"11-9111, 13-1041, 25-1071",3,45.42,15.53,t,f
+51.2299,"Public Health, Other",2024,911.0,2012,7.2,"11-9111, 25-1071",2,51.01,21.31,t,f
+51.2300,"Rehabilitation and Therapeutic Professions, General",2024,19.0,2021,,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2301,Art Therapy/Therapist,2024,514.0,2012,20.7,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2302,Dance Therapy/Therapist,2024,44.0,2012,91.3,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2305,Music Therapy/Therapist,2024,154.0,2012,92.5,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2306,Occupational Therapy/Therapist,2024,5737.0,2012,18.3,"25-1071, 29-1122",2,21.28,16.05,t,f
+51.2307,Orthotist/Prosthetist,2024,233.0,2012,348.1,"25-1071, 51-9082, 29-2091",3,25.54,16.65,t,f
+51.2308,Physical Therapy/Therapist,2024,37.0,2012,-91.4,"25-1071, 29-1123",2,20.59,14.23,t,f
+51.2309,Therapeutic Recreation/Recreational Therapy,2024,58.0,2012,-3.3,"25-1071, 29-1125",2,26.03,16.56,t,f
+51.2310,Vocational Rehabilitation Counseling/Counselor,2024,700.0,2012,-35.1,"25-1071, 21-1015",2,23.21,13.47,t,f
+51.2311,Kinesiotherapy/Kinesiotherapist,2024,34.0,2012,209.1,"29-1123, 29-1128",2,12.26,10.79,f,f
+51.2312,Assistive/Augmentative Technology and Rehabilitation Engineering,2024,71.0,2014,610.0,"17-2199, 21-1015, 51-9082",3,9.19,1.93,f,f
+51.2313,Animal-Assisted Therapy,2024,0.0,2013,-100.0,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2314,Rehabilitation Science,2024,35.0,2012,-67.6,"25-1071, 21-1015, 19-1099",3,22.75,13.27,t,f
+51.2317,Play Therapy/Therapist,2024,0.0,2024,,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2399,"Rehabilitation and Therapeutic Professions, Other",2024,165.0,2012,-51.0,"25-1071, 29-1129",2,23.62,16.36,t,f
+51.2703,Medical Illustration/Medical Illustrator,2024,47.0,2012,51.6,27-1013,1,2.20,-1.20,f,f
+51.2706,Medical Informatics,2024,2517.0,2012,1018.7,"15-1299, 25-1199, 29-9021",3,24.93,6.91,t,t
+51.2799,"Medical Illustration and Informatics, Other",2024,1.0,2015,-75.0,,0,,,f,f
+51.3101,Dietetics/Dietitian,2024,960.0,2012,140.0,"29-1031, 29-2051",2,5.64,4.74,f,f
+51.3102,Clinical Nutrition/Nutritionist,2024,711.0,2012,464.3,29-1031,1,6.20,5.50,f,f
+51.3103,Dietetic Technician,2024,0.0,2013,-100.0,29-2051,1,4.00,2.50,f,f
+51.3199,"Dietetics and Clinical Nutrition Services, Other",2024,229.0,2012,990.5,29-1031,1,6.20,5.50,f,f
+51.3201,Bioethics/Medical Ethics,2024,432.0,2012,89.5,"21-2021, 29-9099, 25-1126",3,10.00,2.22,f,f
+51.3202,Health Professions Education,2024,30.0,2020,,"25-1071, 11-9033, 25-1081",3,19.92,9.39,t,f
+51.3203,Nursing Education,2024,3449.0,2020,17.0,"11-9033, 25-1072",2,13.23,6.05,t,f
+51.3204,Medical/Health Humanities,2024,38.0,2020,5.6,"25-1199, 19-3099, 25-1069",3,10.77,1.21,f,f
+51.3299,"Health Professions Education, Ethics, and Humanities, Other",2024,0.0,2020,-100.0,"11-9111, 25-1199",2,50.95,18.29,t,f
+51.3300,"Alternative and Complementary Medicine and Medical Systems, General",2024,34.0,2012,161.5,29-1299,1,2.40,2.00,f,f
+51.3301,Acupuncture and Oriental Medicine,2024,878.0,2012,-32.0,"29-1299, 29-1291",2,1.99,3.30,f,f
+51.3302,Traditional Chinese Medicine and Chinese Herbology,2024,70.0,2012,-64.6,29-9099,1,2.60,3.60,f,f
+51.3303,Naturopathic Medicine/Naturopathy,2024,10.0,2016,,29-1299,1,2.40,2.00,f,f
+51.3305,Ayurvedic Medicine/Ayurveda,2024,87.0,2013,,29-1299,1,2.40,2.00,f,f
+51.3306,Holistic/Integrative Health,2024,28.0,2012,600.0,29-1299,1,2.40,2.00,f,f
+51.3399,"Alternative and Complementary Medicine and Medical Systems, Other",2024,5.0,2012,-75.0,29-1299,1,2.40,2.00,f,f
+51.3401,Direct Entry Midwifery,2024,5.0,2012,-16.7,29-1299,1,2.40,2.00,f,f
+51.3499,"Alternative and Complementary Medical Support Services, Other",2024,29.0,2013,,29-1299,1,2.40,2.00,f,f
+51.3601,Movement Therapy and Movement Education,2024,16.0,2012,0.0,29-1129,1,4.10,11.50,f,f
+51.3602,Yoga Teacher Training/Yoga Therapy,2024,35.0,2014,,39-9031,1,74.20,11.90,f,f
+51.3701,Aromatherapy,2024,8.0,2020,,29-1299,1,2.40,2.00,f,f
+51.3702,Herbalism/Herbalist,2024,28.0,2012,27.3,"29-9099, 29-1299",2,2.50,2.80,f,f
+51.3801,Registered Nursing/Registered Nurse,2024,20091.0,2012,71.7,"29-1141, 25-1072",2,184.35,5.21,t,t
+51.3802,Nursing Administration,2024,6133.0,2012,156.5,"29-1141, 11-9111, 29-1171",3,159.20,10.11,t,f
+51.3803,Adult Health Nurse/Nursing,2024,1814.0,2012,112.7,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3804,Nurse Anesthetist,2024,362.0,2012,-79.1,"25-1072, 29-1151",2,6.42,13.77,t,f
+51.3805,Family Practice Nurse/Nursing,2024,12710.0,2012,246.8,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3806,Maternal/Child Health and Neonatal Nurse/Nursing,2024,125.0,2012,-41.9,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3807,Nurse Midwife/Nursing Midwifery,2024,481.0,2012,122.7,"25-1072, 29-1161",2,7.90,16.31,t,f
+51.3808,Nursing Science,2024,1095.0,2012,-45.4,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,t
+51.3809,Pediatric Nurse/Nursing,2024,353.0,2012,34.7,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3810,Psychiatric/Mental Health Nurse/Nursing,2024,1779.0,2012,708.6,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3811,Public Health/Community Nurse/Nursing,2024,204.0,2012,-1.0,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3812,Perioperative/Operating Room and Surgical Nurse/Nursing,2024,109.0,2012,172.5,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3813,Clinical Nurse Specialist,2024,252.0,2012,-4.2,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3814,Critical Care Nursing,2024,431.0,2012,197.2,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3815,Occupational and Environmental Health Nursing,2024,8.0,2012,14.3,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3816,Emergency Room/Trauma Nursing,2024,24.0,2012,-11.1,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3818,Nursing Practice,2024,527.0,2012,63.2,"29-1141, 11-9111, 29-1171",3,159.20,10.11,t,t
+51.3819,Palliative Care Nursing,2024,0.0,2012,-100.0,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3820,Clinical Nurse Leader,2024,413.0,2012,61.3,"29-1141, 11-9111, 29-1171",3,159.20,10.11,t,f
+51.3821,Geriatric Nurse/Nursing,2024,446.0,2012,291.2,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3822,Women's Health Nurse/Nursing,2024,300.0,2012,96.1,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3824,Forensic Nursing,2024,19.0,2020,216.7,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3899,"Registered Nursing, Nursing Administration, Nursing Research and Clinical Nursing, Other",2024,1213.0,2012,4.7,"29-1141, 29-1171, 25-1072",3,171.31,8.15,t,f
+51.3901,Licensed Practical/Vocational Nurse Training,2013,0.0,2013,,29-2061,1,54.40,2.60,f,f
+51.3999,"Practical Nursing, Vocational Nursing and Nursing Assistants, Other",2022,0.0,2012,-100.0,"31-1131, 29-2061",2,157.51,2.39,f,f
+51.9999,"Health Professions and Related Clinical Sciences, Other",2024,954.0,2012,31.0,,0,,,f,f
+52.0101,"Business/Commerce, General",2024,8023.0,2012,-31.3,"11-1021, 11-9199, 13-1111",3,227.71,5.19,t,f
+52.0201,"Business Administration and Management, General",2024,97150.0,2012,-4.4,"11-1021, 11-9199, 13-1199",3,226.95,4.15,t,f
+52.0202,"Purchasing, Procurement/Acquisitions and Contracts Management",2024,296.0,2012,-46.0,"11-3012, 11-3013, 25-1011",3,17.36,4.59,f,f
+52.0203,"Logistics, Materials, and Supply Chain Management",2024,1223.0,2012,102.8,"11-3051, 13-1081, 11-3071",3,20.74,8.30,t,f
+52.0204,Office Management and Supervision,2024,60.0,2012,-84.0,"43-1011, 11-3012",2,126.52,0.43,f,f
+52.0205,Operations Management and Supervision,2024,608.0,2012,-35.3,"51-1011, 11-3021, 49-1011",3,58.87,6.50,t,f
+52.0206,Non-Profit/Public/Organizational Management,2024,1297.0,2012,-15.8,"11-1021, 11-9199, 11-9111",3,234.29,6.47,t,f
+52.0207,Customer Service Management,2024,18.0,2012,800.0,"43-1011, 11-3012",2,126.52,0.43,f,f
+52.0208,E-Commerce/Electronic Commerce,2024,58.0,2012,-72.8,"43-1011, 41-1011, 13-1199",3,127.45,-0.96,f,f
+52.0209,Transportation/Mobility Management,2024,101.0,2012,119.6,11-3071,1,18.50,6.10,f,f
+52.0210,Research and Development Management,2024,210.0,2012,707.7,"11-9199, 11-9111, 11-9121",3,88.34,10.07,t,f
+52.0211,Project Management,2024,1405.0,2012,121.6,"11-9199, 13-1082, 25-1011",3,90.60,5.01,t,f
+52.0212,Retail Management,2024,81.0,2014,710.0,"11-1021, 41-1011, 25-1011",3,252.68,1.86,t,f
+52.0213,Organizational Leadership,2024,6770.0,2012,311.6,"11-9199, 13-1111, 11-3121",3,95.70,6.30,t,t
+52.0215,Risk Management,2024,3.0,2023,,"11-1021, 11-3031, 13-2053",3,257.41,6.13,t,f
+52.0216,Science/Technology Management,2024,97.0,2020,4.3,"11-9199, 13-1082, 11-9111",3,87.58,8.73,t,f
+52.0299,"Business Administration, Management and Operations, Other",2024,3392.0,2012,-31.4,,0,,,f,f
+52.0301,Accounting,2024,12504.0,2012,-19.6,"13-2011, 25-1011, 13-2082",3,111.64,4.66,t,f
+52.0302,Accounting Technology/Technician and Bookkeeping,2020,1.0,2012,,"43-3031, 43-3051, 13-2082",3,148.69,-6.24,f,f
+52.0303,Auditing,2024,54.0,2012,80.0,"13-2011, 25-1011, 13-2061",3,112.94,5.18,t,f
+52.0304,Accounting and Finance,2024,541.0,2012,9.7,"13-2011, 11-3031, 13-2051",3,95.94,7.89,t,f
+52.0305,Accounting and Business/Management,2024,289.0,2012,-3.3,"13-2011, 11-3031, 13-2051",3,95.94,7.89,t,f
+52.0399,"Accounting and Related Services, Other",2024,97.0,2012,-72.8,,0,,,f,f
+52.0401,"Administrative Assistant and Secretarial Science, General",2018,1.0,2012,,"43-6014, 43-1011, 43-6011",3,160.93,-1.09,f,f
+52.0402,Executive Assistant/Executive Secretary,2016,1.0,2016,,"43-6014, 43-1011, 43-6011",3,160.93,-1.09,f,f
+52.0407,Business/Office Automation/Technology/Data Entry,2016,4.0,2016,,"43-9021, 43-4161",2,9.30,-18.34,f,f
+52.0409,"Parts, Warehousing, and Inventory Management Operations",2013,6.0,2012,20.0,43-5061,1,34.10,-1.80,f,f
+52.0499,"Business Operations Support and Secretarial Services, Other",2019,0.0,2012,-100.0,13-1199,1,108.20,3.00,f,f
+52.0501,"Business/Corporate Communications, General",2024,90.0,2012,-47.1,"27-3031, 27-3043, 27-3041",3,20.57,3.66,f,f
+52.0599,"Business/Corporate Communications, Other",2024,12.0,2021,,"27-3031, 27-3043, 27-3041",3,20.57,3.66,f,f
+52.0601,Business/Managerial Economics,2024,37.0,2012,-90.7,"13-1111, 13-2054, 19-3011",3,91.72,8.56,t,f
+52.0701,Entrepreneurship/Entrepreneurial Studies,2024,1031.0,2012,24.2,"11-1021, 11-9199, 11-1011",3,241.85,4.42,t,f
+52.0703,Small Business Administration/Management,2024,0.0,2012,-100.0,"11-9199, 11-9179",2,104.77,4.54,t,f
+52.0704,Social Entrepreneurship,2024,3.0,2020,,"11-1021, 11-9199, 11-1011",3,241.85,4.42,t,f
+52.0799,"Entrepreneurial and Small Business Operations, Other",2024,103.0,2012,90.7,,0,,,f,f
+52.0801,"Finance, General",2024,3153.0,2012,-49.7,"11-1021, 11-3031, 13-2051",3,246.51,6.32,t,f
+52.0803,Banking and Financial Support Services,2024,14.0,2012,-88.9,"43-3071, 43-4131, 43-3011",3,21.68,-9.60,f,f
+52.0804,Financial Planning and Services,2024,234.0,2012,-18.2,"41-3031, 13-2052, 25-1011",3,29.99,5.74,f,f
+52.0806,International Finance,2024,2.0,2012,-94.1,"11-3031, 13-2051, 25-1011",3,55.87,11.60,t,f
+52.0807,Investments and Securities,2024,19.0,2012,-90.2,"41-3031, 13-2051, 25-1011",3,30.11,4.45,f,f
+52.0808,Public Finance,2024,20.0,2012,,"11-3031, 13-2051, 25-1011",3,55.87,11.60,t,f
+52.0810,Financial Risk Management,2024,0.0,2020,-100.0,"11-1021, 11-3031, 13-2051",3,246.51,6.32,t,f
+52.0899,"Finance and Financial Management Services, Other",2024,109.0,2012,-44.1,11-3031,1,74.60,14.80,t,f
+52.0901,"Hospitality Administration/Management, General",2024,784.0,2012,82.3,"11-9051, 11-9081, 11-9072",3,34.23,6.18,f,f
+52.0903,Tourism and Travel Services Management,2024,54.0,2012,-68.6,"11-9199, 11-9179",2,104.77,4.54,t,f
+52.0904,Hotel/Motel Administration/Management,2024,125.0,2012,15.7,"13-1199, 11-9051, 11-3013",3,86.13,3.77,f,f
+52.0905,Restaurant/Food Services Management,2024,51.0,2013,2450.0,"11-9051, 11-9081",2,37.30,6.01,f,f
+52.0906,Resort Management,2021,0.0,2015,,"11-9081, 11-9072",2,5.45,5.35,f,f
+52.0907,Meeting and Event Planning,2024,71.0,2015,7000.0,13-1121,1,15.50,4.80,f,f
+52.0908,Casino Management,2022,0.0,2019,-100.0,"39-1013, 11-9071",2,2.93,1.89,f,f
+52.0910,Brewery/Brewpub Operations/Management,2024,3.0,2022,,11-9051,1,42.00,6.40,f,f
+52.0999,"Hospitality Administration/Management, Other",2024,34.0,2012,-73.2,"11-9199, 11-9051, 11-9081",3,90.54,4.85,t,f
+52.1001,"Human Resources Management/Personnel Administration, General",2024,5218.0,2012,57.0,"13-1071, 13-1151, 13-1041",3,61.18,6.61,t,f
+52.1002,Labor and Industrial Relations,2024,446.0,2012,-40.3,"13-1041, 11-3121, 25-1011",3,25.20,3.97,f,f
+52.1003,Organizational Behavior Studies,2024,914.0,2012,-65.2,"13-1071, 11-3121, 25-1011",3,64.64,5.95,t,f
+52.1004,Labor Studies,2024,52.0,2012,136.4,"11-3121, 25-1011, 13-1075",3,13.17,4.33,f,f
+52.1005,Human Resources Development,2024,819.0,2012,-22.9,13-1151,1,43.90,10.80,f,f
+52.1006,Executive/Career Coaching,2024,29.0,2021,141.7,"13-1071, 13-1151, 21-1012",3,61.35,6.80,t,f
+52.1099,"Human Resources Management and Services, Other",2024,570.0,2012,-63.2,"13-1071, 43-4161",2,75.13,4.98,t,f
+52.1101,International Business/Trade/Commerce,2024,1249.0,2012,-57.9,"11-1021, 13-1199, 11-1011",3,245.50,4.07,t,f
+52.1201,"Management Information Systems, General",2024,1162.0,2012,-46.3,"11-3021, 15-1251, 15-1243",3,44.46,11.69,t,f
+52.1206,Information Resources Management,2024,916.0,2012,106.3,"11-3021, 25-1021",2,52.32,14.58,t,f
+52.1207,Knowledge Management,2024,59.0,2012,-1.7,"11-3021, 25-1021",2,52.32,14.58,t,f
+52.1299,"Management Information Systems and Services, Other",2024,27.0,2012,-79.2,"11-3021, 25-1021",2,52.32,14.58,t,f
+52.1301,Management Science,2024,23761.0,2012,1797.8,"11-1021, 13-1111, 11-1011",3,246.89,5.32,t,f
+52.1302,Business Statistics,2024,3993.0,2012,5950.0,"15-2051, 25-1011, 25-1022",3,16.79,21.97,t,f
+52.1304,Actuarial Science,2024,232.0,2012,-34.6,"13-2053, 25-1011, 13-2054",3,7.46,2.24,f,f
+52.1399,"Management Sciences and Quantitative Methods, Other",2024,16905.0,2012,7380.1,,0,,,f,f
+52.1401,"Marketing/Marketing Management, General",2024,1929.0,2012,-1.2,"13-1161, 11-2022, 11-2021",3,64.24,6.05,t,f
+52.1402,Marketing Research,2024,66.0,2012,-38.3,"13-1161, 11-2021, 25-1011",3,66.75,6.60,t,f
+52.1403,International Marketing,2024,288.0,2012,176.9,"13-1161, 11-2021, 25-1011",3,66.75,6.60,t,f
+52.1404,Digital Marketing,2024,357.0,2020,,"13-1161, 11-2021, 15-1255",3,65.82,6.70,t,f
+52.1499,"Marketing, Other",2024,299.0,2012,78.0,"13-1161, 11-2021, 25-1011",3,66.75,6.60,t,f
+52.1501,Real Estate,2024,1079.0,2012,37.3,"11-9141, 41-9022, 41-9021",3,34.72,3.36,f,f
+52.1601,Taxation,2024,850.0,2012,-54.2,"13-2011, 13-2082, 13-2061",3,113.81,5.12,t,f
+52.1701,Insurance,2024,48.0,2012,-56.4,"41-3021, 13-1031, 13-2053",3,33.55,-0.04,f,f
+52.1801,"Sales, Distribution, and Marketing Operations, General",2024,503.0,2012,138.4,"41-4012, 25-1011",2,107.02,0.69,f,f
+52.1802,Merchandising and Buying Operations,2024,0.0,2012,-100.0,,0,,,f,f
+52.1803,Retailing and Retail Operations,2024,1.0,2012,-75.0,"41-1011, 41-3091, 41-9099",3,119.37,-1.04,f,f
+52.1804,Selling Skills and Sales Operations,2024,1.0,2020,-80.0,"41-1011, 41-3091, 41-1012",3,113.46,-1.13,f,f
+52.1899,"General Merchandising, Sales, and Related Marketing Operations, Other",2024,0.0,2012,,"41-1011, 41-4012, 41-1012",3,110.22,-2.21,f,f
+52.1902,Fashion Merchandising,2024,27.0,2012,350.0,41-4012,1,114.80,0.30,f,f
+52.1904,Apparel and Accessories Marketing Operations,2024,30.0,2012,275.0,"41-4012, 13-1161",2,103.26,2.98,t,f
+52.1909,Special Products Marketing Operations,2024,14.0,2012,7.7,"41-1011, 41-4012, 13-1161",3,111.75,-0.12,t,f
+52.1999,"Specialized Merchandising, Sales, and Marketing Operations, Other",2024,66.0,2012,83.3,,0,,,f,f
+52.2001,"Construction Management, General",2024,310.0,2012,18.3,11-9021,1,46.80,8.70,f,f
+52.2101,Telecommunications Management,2024,16.0,2012,433.3,"11-9199, 11-3021, 25-1011",3,85.67,7.95,t,f
+52.9999,"Business, Management, Marketing, and Related Support Services, Other",2024,946.0,2012,-22.5,,0,,,f,f
+54.0101,"History, General",2024,3009.0,2012,-16.0,"11-9199, 25-2031, 25-1125",3,87.57,1.73,t,f
+54.0102,American  History (United States),2024,229.0,2012,332.1,"11-9199, 25-2031, 25-1125",3,87.57,1.73,t,f
+54.0103,European History,2024,1.0,2012,-80.0,"11-9199, 25-1125, 19-3093",3,104.54,4.41,t,f
+54.0104,History and Philosophy of Science and Technology,2024,35.0,2012,-5.4,"11-9199, 11-9121, 25-1125",3,97.93,4.36,t,f
+54.0105,Public/Applied History,2024,109.0,2012,-40.1,"11-9199, 25-1125, 25-4013",3,103.62,4.43,t,f
+54.0108,Military History,2024,121.0,2012,-29.2,"11-9199, 25-1125, 19-3093",3,104.54,4.41,t,f
+54.0199,"History, Other",2024,138.0,2012,-8.0,"11-9199, 25-1125, 19-3093",3,104.54,4.41,t,f
