@@ -122,6 +122,57 @@ dependency and why it was left as-is).
 
 ---
 
+## SQL terms (analysts, students new to SQL)
+
+**DDL** — Data Definition Language: the part of SQL that defines a table's shape
+(`CREATE TABLE`, column types, primary keys) before any data is loaded, as opposed to
+**DML** (Data Manipulation Language — `SELECT`/`INSERT`/`UPDATE`), which reads or
+changes the data itself.
+
+**CTE (Common Table Expression)** — a named, temporary result set defined with
+`WITH name AS (...)` and used later in the same query, like a well-named variable for
+SQL. `sql/04_build_derived_candidates.sql` chains several CTEs together (e.g.
+`ipeds_latest`, `ranked_socs`, `labor_weighted`) so each step is readable and testable
+on its own, instead of one unreadable nested query.
+
+**Window function** — a calculation performed *within* each group of rows without
+collapsing them into one row per group (unlike `GROUP BY`, which does collapse them).
+`ROW_NUMBER() OVER (PARTITION BY cip2020_code ORDER BY year DESC)` numbers each CIP's
+years newest-to-oldest while keeping every row — filtering to `rn = 1` then picks each
+group's most recent year. This is how `derived_candidates` finds each CIP's latest and
+earliest available year, and each CIP's top-3 SOCs by employment.
+
+**Weighted average** — an average where some values count more than others, computed
+as `SUM(value × weight) / SUM(weight)`. This project's locked join rule uses each
+matched SOC's 2024 employment as the weight, so a large occupation pulls a CIP's demand
+score toward itself more than a small one does — deliberate, not incidental.
+
+**`NULLIF(x, 0)`** — turns a value into `NULL` if it equals 0, most often used to guard
+a division (`SUM(a) / NULLIF(SUM(b), 0)`) so dividing by zero produces an honest
+"unknown" (`NULL`) instead of crashing the query.
+
+**Honest NULL vs. meaningful zero** — a recurring design choice in this project's SQL:
+`NULL` means "we don't know" (e.g. a completions trend when only one year of data
+exists), while `0` means "we checked, and the real answer is zero" (e.g. `n_socs_used`
+when a CIP genuinely has no labor-market match). Conflating the two — e.g. filling an
+unknown trend with a fake `0%` — would misrepresent the data as more complete than it
+is.
+
+**`LEFT JOIN` vs. `INNER JOIN`** — an `INNER JOIN` keeps only rows that match on both
+sides; a `LEFT JOIN` keeps every row from the left (first-named) table even when
+nothing matches on the right, filling the unmatched columns with `NULL`. `derived_candidates`
+is built starting `FROM` the IPEDS base table with `LEFT JOIN`s onto the labor-demand
+CTEs — an `INNER JOIN` there would have silently deleted every CIP with no labor-market
+match instead of keeping it with `NULL` metrics, a classic and easy-to-miss join bug.
+
+**Primary key (PK) as an enforced grain guarantee** — declaring `PRIMARY KEY` on a
+table's grain column(s) doesn't just label what a row means, it makes the database
+*reject* any insert or query result that would produce a duplicate — turning a
+documented assumption about grain into something the database actively guarantees,
+rather than something that could silently drift wrong.
+
+---
+
 ## Diagramming & process terms (technical hiring managers, engineers)
 
 **ERD** — Entity-Relationship Diagram: a diagram showing each table in a data model, its

@@ -9,53 +9,86 @@ version that actually worked — not the messy first draft. Numbered by phase (0
 >    Remove any "teach me / I'm learning / walk me through" language. That's fine while
 >    building, but the final artifact a hiring manager reads should read like a
 >    methodology, not a lesson.
-> 2. **Reusability** — templatize. Replace the specific university, sources, and numbers
->    with placeholders (`{UNIVERSITY}`, `{PROBLEM_STATEMENT}`, `{DATA_SOURCES}`) and add a
->    short "how to adapt this to another school/sources" note, so someone else can run the
->    same method on their own case without reading the whole history. (Standard approach:
->    parameterize the prompts + a one-page adapt guide.)
+> 2. **Reusability — done for Phases 0–2, 2026-08-02.** Every Phase 0–2 prompt is now
+>    templatized (placeholders like `{TABLE_NAME}`, `{PROBLEM_STATEMENT}`, `{SOURCE}`;
+>    project-specific numbers/facts kept only as explicitly-labeled worked examples, never
+>    stated as requirements) and carries a short "how to adapt" note where relevant.
+>    Apply the same standard to each new phase's prompts as they're written, rather than
+>    batching this at the very end — item 1 (tone) is still a genuine end-of-project pass,
+>    since "teach me" language is fine mid-build and only needs stripping for the final
+>    published voice.
 
 ---
 
 ## Phase 0 — Kickoff
 
-### 0.1 — Create the project
-> I found a Data Analyst job description at a university — a market-research role that
-> assesses whether and which new online / professional programs the university should
-> launch. Build a data-analysis project modeled on that role. Read the JD for context,
-> act as the office's director, and propose the problem statement the role would actually
-> answer. Then scope a realistic end-to-end project around it (collect → clean → SQL →
-> visualize → recommend).
+### 0.1 — Kickoff a new data project (reusable)
+*Two proven ways to seed the problem statement: from a real job description in a role
+you're targeting (this project's actual origin — a legitimate way to practice a specific
+role's real workflow, not just a narrative device), or from a self-defined business
+question. Either way, the AI asks before assuming scope — it does not draft a problem
+statement or folder structure unprompted.*
+> Starting a new data-analysis portfolio project. {CONTEXT}: for example, "modeled on
+> this job description — {paste or describe the role}, which does {what the role
+> actually does}" or "the business question is {QUESTION}."
+>
+> Before proposing anything — problem statement, scope, or folder structure — ask me the
+> clarifying questions you actually need to set this up properly. At minimum I'd expect
+> questions covering: what decision or question this should answer; what data sources I
+> already have in mind versus want you to help discover; any deadline or time budget;
+> which tools I want practice with (SQL warehouse, visualization tool); whether this repo
+> is public/real-identity (changes what stays private, e.g. in a git-ignored `planning/`
+> folder); and how hands-on I want to be (execute autonomously vs. walk me through each
+> step and wait for my approval before continuing).
+>
+> Once we've talked through those, propose: (1) a one- or two-sentence problem statement,
+> stated as a real, answerable question; (2) a realistic phase plan (collect → clean →
+> analyze/SQL → visualize → recommend, or whatever phases actually fit this project); and
+> (3) a starting folder structure — create the actual folders once I approve the plan,
+> don't just describe them. Adjust the structure to what this project actually needs;
+> don't copy another project's folders wholesale.
+>
+> *(On this project, the seed was a real Vanderbilt Office of the Deputy Provost Data
+> Analyst job posting — a market-research role assessing which new online/professional
+> programs the university should launch — used as the origin for the problem statement
+> below, not copied verbatim as the project's own goal.)*
 
 ---
 
 ## Phase 1 — Data collection
 
-### 1.1 — Source exploration (report-first)
-> Context: a project deciding which new online graduate program the university should
-> launch, by comparing fields on labor-market demand, national student demand / market
-> size, and competition. The university's current online catalog is in
-> `data/raw/vanderbilt_current_programs.csv`; the problem statement is in
-> `docs/landscape-scan.md`.
+### 1.1 — Map the data landscape (report-first — do not pull full datasets yet)
+*Reusable. Don't hand the AI a fixed source list — ask it to help identify what signal
+categories the decision actually needs and propose real sources for each, then verify
+every recommendation is actually reachable before it goes in the report.*
+> Context: {PROBLEM_STATEMENT} — read `{PROBLEM_STATEMENT_DOC}` (e.g. a landscape-scan or
+> project-brief doc from Phase 0) for the full framing, and `{BASELINE_DATA}` (e.g. an
+> existing-state catalog, if this project has one) for what's already known or already
+> offered.
 >
-> Explore the data landscape — do NOT pull full datasets, just report what's available
-> and how to get it:
-> 1. BLS Employment Projections (fastest-growing / most-openings tables).
-> 2. IPEDS completions by CIP (datausa.io API + nces.ed.gov/ipeds).
-> 3. Program aggregators (US News / OnlineU) for online-program pricing.
+> Help me map the data landscape before pulling anything: what categories of signal does
+> this decision actually need (e.g. demand-side, supply-side, competitive landscape,
+> audience size — whatever genuinely applies to this specific question, not a fixed
+> checklist), and for each category, what real, publicly available sources could provide
+> it. I don't already have a fixed list in mind — use your judgment, and explain *why*
+> each source actually fits the category, not just that it's topically related.
 >
-> Then use your judgment — flag any other credible source relevant to the problem
-> (including a replacement for Google Trends, which is unreliable). Return a short report
-> per source (what data, format, how to pull, how it feeds the analysis) and recommend
-> the best 2–3 datasets to build on.
+> For every source you recommend, confirm it's actually reachable with one small live
+> test call before writing it into the report — don't take a source's reputation on
+> faith. Note which access method actually worked (a direct API, a scrape, a manual
+> export), since that affects how much collection work each one will take. Return a
+> short report per source (what data, format, how to pull it, how it would feed the
+> analysis) and recommend the best 2–3 to build on — not the longest list you can
+> generate.
 >
-> For every source, confirm it's actually reachable with one small live test call before
-> writing it into the report — don't take a source's reputation on faith. Note which
-> access method actually worked: some government sites (e.g. bls.gov) block plain HTTP but
-> scrape cleanly via Firecrawl; ranking/aggregator sites should have their exact URL
-> confirmed by search, never guessed from the slug pattern.
+> *(On this project, that process surfaced BLS Employment Projections, IPEDS completions
+> via datausa.io, and program-ranking aggregators like US News as the three worth
+> building on — included here only as a worked example of the output, not as sources
+> every project should assume.)*
 
 ### 1.2 — Validate the recommendation against the decision
+*Reusable. The two failure modes below are general; the specific examples are this
+project's — substitute your own once you hit a real one.*
 > Before pulling any full dataset, stress-test the sources recommended in 1.1 against
 > the actual decision — not just whether each is topically related, but whether it
 > measures the right variable at the right granularity for *this* decision, and whether
@@ -63,37 +96,45 @@ version that actually worked — not the messy first draft. Numbered by phase (0
 >
 > Two concrete failure modes to check for, not just acknowledge in the abstract:
 > - **Granularity/fit-for-purpose gaps.** A source can be directionally on-topic but
->   silently wrong for the decision — e.g. IPEDS grad tuition data is by CIP code and
->   university, but not broken out by delivery mode (online vs. in-person), so it can't
->   be the primary "online competitor pricing" source even though it looks like a clean,
->   scrape-free substitute for one.
+>   silently wrong for the decision — e.g., on this project, IPEDS grad tuition data is
+>   by CIP code and university, but not broken out by delivery mode (online vs.
+>   in-person), so it couldn't be the primary "online competitor pricing" source even
+>   though it looked like a clean, scrape-free substitute for one.
 > - **Fragile dependencies.** Anything with no official client, an unofficial/reverse-
 >   engineered API, or known rate limits should be live-tested now, not assumed to work
->   — e.g. Google Trends failed with a 429 the moment it was actually queried, despite
->   being the originally planned source.
+>   — e.g., on this project, Google Trends failed with a 429 the moment it was actually
+>   queried, despite being the originally planned source (see 1.4 for how that got
+>   resolved).
 >
-> Also confirm the join path: name the bridge/crosswalk table needed to connect the
-> recommended sources on a shared key, and flag it as a pull item if it isn't already on
-> the list. End by locking a single, final list of exactly what gets collected in the
-> next step — a failure caught here is cheap; one discovered mid-pull means coming back
-> for another table later.
+> Also confirm the join path: name the bridge/crosswalk table (if one is needed) to
+> connect the recommended sources on a shared key, and flag it as a pull item if it
+> isn't already on the list. End by locking a single, final list of exactly what gets
+> collected in the next step — a failure caught here is cheap; one discovered mid-pull
+> means coming back for another table later.
 
 ### 1.3 — Data collection, broad pull (only after 1.2 locks the list)
+*Reusable. Pull exactly what 1.2 locked — never re-litigate or expand the list at
+collection time.*
 > Read the whole repo for context first (`README.md`, then `docs/`, then `data/raw/` and
 > `scripts/`).
 >
-> Candidates are NOT pre-chosen — they must be DERIVED from the data. Pull the structured
-> sources needed to derive and rank them; save clean raw files to `data/raw/` and log each
-> in `docs/data-sources.md`:
-> 1. BLS Employment Projections — Table 1.10 (openings, all occupations) + Tables 1.3/1.4
->    (fastest-growing, most new jobs). SOC-keyed.
-> 2. IPEDS completions by CIP via datausa.io — masters, multi-year. CIP-keyed.
-> 3. NCES CIP↔SOC crosswalk — to join BLS (SOC) ↔ IPEDS (CIP) later.
+> Candidates/units of analysis are NOT pre-chosen — they must be DERIVED from the data,
+> not hand-picked. Pull exactly the sources locked in 1.2 (no more, no fewer) — save
+> clean raw files to `data/raw/` and log each one in `docs/data-sources.md` with its
+> provenance.
 >
-> Do NOT pull competitor pricing yet — it needs a per-field URL per program, and the
-> programs aren't known until the data derives them (a later, per-candidate pull). Flag,
-> don't pull, any other useful source. Deliver a short report: what you pulled, each
-> table's schema + row counts, data-quality issues, and how the tables join on CIP/SOC.
+> Hold off on any source that depends on already knowing the candidates (e.g. a
+> per-candidate pricing or ranking pull) — that has to wait until the data itself
+> derives the candidate set; pulling it now would mean guessing the list instead of
+> deriving it. Flag, don't pull, any other source you notice along the way that looks
+> useful but wasn't part of the locked list. Deliver a short report: what you pulled,
+> each table's schema and row counts, data-quality issues found, and exactly how the
+> tables are meant to join to each other.
+>
+> *(On this project, the locked list was BLS Employment Projections — openings plus two
+> pre-ranked tables — IPEDS completions via datausa.io, and the NCES CIP↔SOC crosswalk —
+> a worked example of what "exactly what 1.2 locked" looked like here, not a fixed
+> requirement.)*
 
 *Lesson: when a report ends with a multi-item pull-list, restate the proposed execution
 order explicitly before running it — sequencing across a multi-source pull is a judgment
@@ -101,25 +142,32 @@ call, not a default to assume. (This got corrected mid-session: the AI proposed 
 2 of 3 approved sources first and holding the third; the right call was all three
 together.)*
 
-### 1.4 — Demand-direction signal (Google Trends replacement)
-> Google Trends is the planned search-interest signal, but confirm it's still failing
-> before assuming so (it was 429-rate-limiting at last check). If it is: research and
-> live-test alternatives — a page-view API (e.g. Wikipedia Pageviews), a job-posting-
-> volume feed (e.g. Indeed Hiring Lab's public index), a news-volume/sentiment API (e.g.
-> GDELT, or a connected trend-aggregator MCP if one's available) — one small test call
-> per candidate, not a full pull. Compare them on: cost/rate-limits, what signal they
-> actually give (search interest vs. hiring volume vs. news attention — these are
-> different things, not interchangeable), and how cleanly the response converts to a
-> tidy table. Recommend a primary + optional secondary; don't default to the first one
-> that works.
+### 1.4 — Handling a fragile or failed data source (pattern, not a fixed template)
+*Recurring pattern — use any time a source recommended in 1.1/1.2 turns out to be
+rate-limited, deprecated, or otherwise unreliable once actually tested against the real
+service, not just assumed reliable because it's well-known.*
+> A planned source, `{SOURCE}`, is failing. Confirm it's still failing before assuming so
+> — re-test it live, don't rely on a memory of it failing once. If it is: research and
+> live-test real alternatives that could serve the same signal, one small test call per
+> candidate, not a full pull. Compare them on cost/rate-limits, what signal each one
+> actually measures (these are often NOT interchangeable even when they sound similar —
+> e.g. search interest vs. hiring volume vs. news attention are three different things),
+> and how cleanly each response converts into a tidy table. Recommend a primary and an
+> optional secondary; don't default to whichever one happens to work first.
 >
-> If the source is queried per-topic rather than pulled in bulk, hold the actual pull
-> until candidates are derived (Phase 2) — collecting data and choosing *which* source to
-> use are two different decisions; don't collapse them into one step.
+> If the replacement source is queried per-topic rather than pulled in bulk, hold the
+> actual pull until the candidates/units of analysis are derived — collecting data and
+> choosing which source to use are two different decisions; don't collapse them into one
+> step.
+>
+> *(On this project, the failing source was Google Trends — a 429 on the first real
+> test — and IPEDS's own multi-year completions data ended up covering the same "demand
+> trend" need well enough that no replacement was even required. Worth checking whether
+> a failing source is still actually necessary before spending effort replacing it.)*
 
 ### 1.5 — Inspect & explain a collected file
-*New pattern, not tied to a single source — use this any time a collected file's purpose
-or structure isn't self-evident (a crosswalk, a lookup table, an opaque ID scheme), before
+*Reusable, not tied to a single source — use any time a collected file's purpose or
+structure isn't self-evident (a crosswalk, a lookup table, an opaque ID scheme), before
 relying on it in the next phase.*
 > Open the file and report: its actual internal structure (sheets/columns, not just the
 > filename), concrete numbers that reveal its shape (e.g. how many-to-many a join key
@@ -135,23 +183,28 @@ relying on it in the next phase.*
 
 ### 2.1 — EDA + plan (explore & discuss FIRST — no cleaning yet)
 > Read these first for context: `docs/START-HERE.md`, `docs/project-journal.md`,
-> `docs/landscape-scan.md`, `docs/data-sources.md`.
+> `docs/landscape-scan.md` (or whatever this project's problem-statement doc is called),
+> `docs/data-sources.md`.
 >
 > We're starting Phase 2, and I want to do EDA first — understand the data before any
 > cleaning. Act as my senior analyst: profile the tables, explain what you find in plain
 > terms, and discuss the decisions with me. **Do NOT clean, join, or write any files
-> yet.** The 6 raw tables are in `data/raw/`.
+> yet.** Work with whatever raw tables currently exist in `data/raw/` — don't assume a
+> fixed count.
 >
 > Step 1 — Profile each table and report back: shape (rows × cols), columns + data types,
 > a few sample rows, null/missing counts, and distinct-value counts for key columns.
-> Confirm the known gotchas live in the data: BLS Table 1.10 category rollups vs
-> `Line item`; IPEDS suppressed (missing) years; CIP↔SOC crosswalk many-to-many.
+> Cross-check against any data-quality issues already flagged in `docs/data-sources.md`
+> or prior notes — discover and confirm whatever actually applies to *this* project's
+> sources (on this project, that turned out to be BLS rollup-vs-detail rows, IPEDS
+> suppressed years, and a many-to-many crosswalk; a different project's sources will
+> have their own version of this, not necessarily these).
 >
 > Step 2 — Discuss the plan with me (don't execute): what's messy in each table and what
-> cleaning it needs; how to handle the many-to-many CIP↔SOC join (walk me through the
-> options and trade-offs); and what the final joined "analysis" table should look like —
-> its columns and its grain (one row per what?). Explain the concepts as they come up
-> (keys, grain, join cardinality, schema) so I actually learn them.
+> cleaning it needs; how to handle any many-to-many joins the data actually has (walk me
+> through the options and trade-offs); and what the final joined "analysis" table should
+> look like — its columns and its grain (one row per what?). Explain the concepts as
+> they come up (keys, grain, join cardinality, schema) so I actually learn them.
 >
 > Ask me where a decision is mine to make. Only after we agree on the plan do we move to
 > execution (2.2). I'm using you as a senior analyst who guides me and does the hands-on
@@ -174,10 +227,12 @@ the result back to the main chat for review. Written to be re-run later in the p
 > market background, a fellow data/business analyst unfamiliar with this specific domain,
 > a non-technical executive skimming the README, a student new to data work. Scan the
 > actual docs and data for what needs defining rather than working off a fixed checklist
-> — but make sure these are covered if they appear anywhere in the repo: CIP / CIP6, SOC,
-> the CIP↔SOC crosswalk / junction (bridge) table, ODP, IPEDS, BLS, "Line item" vs
-> "Summary", Go/Test/Pass, grain, join cardinality, staging vs. mart tables, TAM, ERD,
-> Mermaid, CRISP-DM (if referenced elsewhere in the docs).
+> — the list below is *this project's* actual domain vocabulary (CIP / CIP6, SOC, the
+> CIP↔SOC crosswalk / junction (bridge) table, ODP, IPEDS, BLS, "Line item" vs "Summary",
+> Go/Test/Pass, grain, join cardinality, staging vs. mart tables, TAM, ERD, Mermaid,
+> CRISP-DM), included only as an example of the kind of term worth catching. A different
+> project will have its own jargon instead — scan for whatever that project's docs and
+> data actually use, don't assume this exact list applies.
 >
 > Each definition: 1–3 plain-English sentences, no jargon explaining jargon. Group or tag
 > entries by likely audience if that helps readability — your call. Documentation only —
@@ -212,12 +267,15 @@ as new tables or keys are added.*
 > If `docs/erd.md` already exists, update it to reflect the current state rather than
 > starting over. Otherwise create it, with a Mermaid `erDiagram` code block showing each
 > table, its key column(s), and the relationship between tables (one-to-one, one-to-many,
-> many-to-many) — e.g. right now: `ipeds_completions_masters` (CIP6) → `cip_soc_crosswalk`
-> (the CIP-SOC junction/bridge table, many-to-many) → `bls_occupational_openings` (SOC),
-> plus `vanderbilt_current_programs` as currently unkeyed pending a CIP-coding decision.
-> Above the diagram, add 2–3 plain-English sentences on what a junction/bridge table is
-> and why the crosswalk plays that role here. Documentation only — do not modify any
-> data files.
+> many-to-many). Base the diagram entirely on whatever tables and keys actually exist
+> right now — the specific example below is this project's current shape at time of
+> writing, not a required structure (`ipeds_completions_masters` (CIP6) →
+> `cip_soc_crosswalk` (the CIP-SOC junction/bridge table, many-to-many) →
+> `bls_occupational_openings` (SOC), plus `vanderbilt_current_programs` as currently
+> unkeyed pending a CIP-coding decision) — a different project's diagram will look
+> nothing like this. If the tables relate through a many-to-many junction/bridge table,
+> add 2–3 plain-English sentences above the diagram on what that is and why it's needed
+> here. Documentation only — do not modify any data files.
 
 *Lesson: write documentation-generation prompts to scan-and-update rather than hardcode a
 file count or term list. A rigid prompt ("these 6 tables," "at minimum these terms")
@@ -226,10 +284,16 @@ project long unchanged.*
 
 ### 2.2 — Execute clean + join (only after the 2.1 plan is agreed)
 > Following the plan we agreed in 2.1, clean the tables **step by step** — I'm following
-> each operation in Data Wrangler, so explain each step, don't batch it all silently.
-> Then join and derive the candidates. Write cleaned outputs to `data/clean/`, a
-> `derived_candidates` table, and log the cleaning + join decisions (esp. the crosswalk
-> rule) in `docs/decisions-log.md`. Deferred: competitor pricing, search-trend.
+> each operation in Data Wrangler (or reading along in this chat), so explain each step,
+> don't batch it all silently. Then join and derive the analysis table we agreed on.
+> Write cleaned outputs to `data/clean/`, the joined/derived table wherever we agreed it
+> belongs, and log the cleaning + join decisions (especially any join rule locked in 2.1)
+> in `docs/decisions-log.md`. Explicitly note anything deferred out of this pass, so it
+> reads as a deliberate choice later, not a gap someone forgot.
+
+*In practice on this project, the "join and derive" half of this prompt grew into its
+own dedicated step and prompt — 2.3 below — once it moved into SQL against a real
+database. Use 2.2 for the cleaning pass, 2.3 for the join/derive.*
 
 ### 2.2a — Reusable single-table cleaning prompt
 *v2, revised 2026-08-01 after all 6 tables were actually cleaned (v1 was written after
@@ -270,8 +334,8 @@ which some tables need and a single-table tool can't do.*
 > prompt, 2.2b, since it needs a different kind of source-verification step.
 >
 > Explain each cleaning step as you apply it — what changed, how many rows or values
-> were affected — don't batch it silently. Before saving, sanity-check: does the row
-> count make sense, and did any step silently introduce new missing values that weren't
+> were affected — don't batch it silently. Before saving, run a verification check: does
+> the row count make sense, and did any step silently introduce new missing values that weren't
 > there before? Never modify or overwrite anything in `data/raw/`. After saving, say
 > whether this table's cleaning involved a judgment call worth adding to
 > `docs/decisions-log.md`, or was purely mechanical and doesn't need its own entry.
@@ -329,29 +393,135 @@ looks like.*
 
 ---
 
-## Phase 3 — SQL (Postgres) — join/derive step (2026-08-02)
+### 2.3 — Join/derive: build the analysis mart in SQL (reusable — closes Phase 2)
 
-**Context prompt that started the phase** (fresh Cowork chat, paraphrased): pasted the
-previous chat's 5-step join plan and asked Claude to (1) verify it against the repo
-before executing — the old chat's context was long enough to distrust, (2) execute it,
-and (3) explain where SQL fits, since none had been written yet.
+*Written 2026-08-02, after this step was executed once end-to-end (this project's
+worked example: `sql/01`–`05`, `scripts/run_sql_pipeline.sh`, `docs/sql-walkthrough.md`,
+producing `derived_candidates`). Needs full repo context plus access to the machine
+where the database runs — a sandboxed chat can plan this step but not execute it
+against a local database. The verify-the-previous-plan opening earned its place: on
+this project it caught three real gaps in an earlier session's otherwise-sound plan
+(a distinct-count discrepancy in the catalog-overlap list, floating-point join keys,
+suppressed-year trend handling) before any of them could become bugs.*
 
-> I'm at the end of the cleaning phase and now joining the CSVs into a derived table.
-> This plan came from my previous chat, which is getting long and may be hallucinating
-> — go check the repo and verify it before doing anything. Also: I thought once tables
-> are clean you load them into Postgres and use SQL for insights — I haven't written
-> any SQL yet. When do I actually do that?
+> I'm completing the final step of the data-preparation phase of a project that scores
+> and ranks candidate options (academic programs, products, market segments — whatever
+> this repo's unit of analysis is) toward a decision recommendation: joining the
+> cleaned source tables into a single analysis mart. Collection and per-table cleaning
+> are already done — read `docs/START-HERE.md` first for orientation, then
+> `docs/decisions-log.md` for which design rules are already locked, and the data
+> dictionary's Clean section for each table's actual columns, grain, and known gaps.
+> Don't carry table names, row counts, join keys, or coverage assumptions over from
+> another project — discover them here and verify them against the live files.
+>
+> If a build plan for this step already exists from an earlier session, treat it as
+> unverified input, not instructions: re-check every factual claim in it (row counts,
+> distinct-key counts, column names, documented coverage gaps) against the actual data
+> before acting on it, and report what held, what didn't, and what it missed.
+>
+> Before building anything:
+>
+> 1. Separate this step's design decisions into already-locked (cite the decision-log
+>    entry) and still-open. For each open one — the mart's grain, any rule for
+>    collapsing a many-to-many mapping into per-row metrics, whether sparsely-covered
+>    reference data may enter the metrics at all, how the catalog-overlap comparison
+>    matches — present the options with tradeoffs and a recommendation. These are mine
+>    to approve or reject before you proceed, not defaults to fall back on.
+> 2. Propose the mart's target schema: one row per unit of analysis, each column tied
+>    to its source table(s) and the exact rule that computes it, including what a NULL
+>    in that column will mean.
+>
+> Execute only after I approve, in SQL against a real database rather than in the
+> cleaning language, as numbered, versioned `.sql` files that run in order (set up a
+> local database first if none exists, and document the connection details).
+> Requirements — and for each, state the reasoning so I can verify the choice rather
+> than take it on trust:
+>
+> - Column types that make joins exact: identifier codes stored as text or exact
+>   decimals, never floating point. Declare each staging table's primary key so its
+>   documented grain is enforced by the database, not assumed.
+> - After loading, a verification-check script comparing expected vs. actual — row
+>   counts, distinct-key counts, and the *known* imperfections (unmatched codes,
+>   documented gaps) pinned as numbers — reported PASS/FAIL, so neither the data nor
+>   its flaws can drift silently.
+> - Build the mart from the base table outward with join directions that cannot
+>   silently drop rows: every candidate row survives; a metric that can't be computed
+>   is NULL (unknown), never a fake zero; meaningful zeros stay zeros; and a per-row
+>   count records how much source data backs the derived metrics.
+> - Independently re-verify at least one row: recompute its derived numbers from the
+>   raw source values outside the pipeline and show both results side by side.
+> - A deterministic export (stable ordering) so reruns diff cleanly; every mart column
+>   documented in the data dictionary; every decision and its reasoning logged in the
+>   decision log.
+>
+> For each technique used (window functions, weighted aggregation, join direction,
+> type choices), state the concept and why it applies to this data plainly enough that
+> I can check the choice myself — assume every claim will be independently verified
+> before it's accepted. Flag anywhere the data is ambiguous or the reasoning is
+> uncertain instead of smoothing it over with confident language.
 
-*Why this worked / what to reuse:* asking for **verification before execution** caught
-three real gaps in the old plan (14-vs-15 distinct VU CIPs, float join keys,
-suppressed-year trend handling) while confirming the rest was sound — cheap insurance
-against long-context drift, worth doing at every phase handoff. The follow-up
-questions ("what am I actually getting into, when does the analysis happen, why is
-scoring parked?") turned the plan review into the learning session the project is for.
-Decisions locked from this exchange (Postgres over pandas; CIP6 grain; wage flag only;
-exact VU match; explain-as-we-go pacing) are in `decisions-log.md` 2026-08-02.
-Artifacts: `sql/01`–`05`, `scripts/run_sql_pipeline.sh`, `docs/sql-walkthrough.md`,
-`data/derived/derived_candidates.csv`.
+*How to adapt: the prompt deliberately names no tables, counts, or institutions — the
+repo docs it points at carry all of that, which is what makes it portable. The real
+dependency is that the orientation doc, decision log, and data dictionary exist and
+are current; a project without them needs those first (prompts 2.1a–c). The SQL
+dialect is also unspecified — Postgres here, but nothing in the step depends on it.
+Outcome on this project: `derived_candidates`, 1,268 rows, decisions in
+`decisions-log.md` 2026-08-02.*
+
+---
+
+## Phase 3 — SQL analysis & scoring
+
+### 3.1 — Score and rank the analysis mart (reusable)
+
+*Continues from 2.3's output, in a fresh chat — this is genuinely new analysis work, not
+a continuation of data prep. Framed for verification, not learning: every claim needs
+stated evidence, since the point is that it can be independently checked, not taken on
+faith. Environment note: if the mart lives in a local database, a sandboxed chat can
+profile the exported CSV and draft the queries, but running SQL against the live
+database happens on the machine that hosts it.*
+
+> I'm turning the analysis mart from a project that scores and ranks candidate options
+> (academic programs, products, market segments — whatever this repo's unit of analysis
+> is) into an actual composite score and a banded recommendation (e.g. Go/Test/Pass, or
+> whatever categorical verdict this project uses). Data collection, cleaning, and the
+> join/derive step are already done — read `docs/START-HERE.md` first for orientation,
+> then the most recent relevant entries in `docs/decisions-log.md`, and the data
+> dictionary's Analysis Marts section for the mart's actual columns and grain. Don't
+> carry over another project's column names, row counts, or metrics — discover and
+> verify this project's own.
+>
+> **Don't build anything yet — profile the mart first and present a plan.** For every
+> claim or recommendation, state the evidence behind it (the actual numbers found by
+> querying/profiling, not a general description) — assume I will independently check
+> each one before accepting it, and don't move to the next step until the reasoning for
+> the current one is stated plainly enough for me to verify it myself.
+>
+> 1. Identify the mart's actual metric columns and report their real distributions —
+>    min/max/median/percentiles — and null counts per column with a plain-language
+>    reason for each null pattern found (e.g. "no match in a reference table,"
+>    "insufficient historical data"). Discover and report this project's real numbers;
+>    don't assume which columns matter or how many rows are affected.
+> 2. Propose a normalization method for putting these metrics onto comparable scales,
+>    given whatever mix of units they actually turn out to be. State the tradeoffs of
+>    each option considered and why one is recommended over the others.
+> 3. Propose composite-score weights, with reasoning for each weight spelled out. This is
+>    my decision to approve or reject, not a default to finalize on your own.
+> 4. State exactly how every null pattern found in step 1 is handled in the score, and
+>    defend that choice against at least one alternative (excluding affected rows vs.
+>    scoring on partial data vs. a neutral placeholder), rather than picking one silently.
+> 5. Only after the score is computed, report its actual distribution and propose band
+>    cutoffs from that real distribution — not round numbers decided in advance.
+>
+> Flag explicitly anywhere the data is ambiguous or the reasoning is uncertain, rather
+> than smoothing over it with confident-sounding language. Discuss and agree on the plan
+> first; execute only after I approve it.
+
+*How to adapt: the prompt names no columns, weights, or cutoffs — the data dictionary
+and the mart itself carry all of that, discovered fresh each run. The real dependency is
+that the mart already exists with documented columns; a project without one needs 2.3
+first. Outcome on this project: scoring not yet run as of this entry — see
+`docs/decisions-log.md` for whatever gets decided once it is.*
+
 ## Phase 4 — Tableau dashboard — *placeholder*
 ## Phase 5 — One-page recommendation — *placeholder*
-## Phase 6 — Rehearse the project story — *placeholder*

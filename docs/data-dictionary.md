@@ -6,9 +6,9 @@ not carried over from memory). See [data-sources.md](data-sources.md) for where 
 file came from and [source-inventory.md](source-inventory.md) for the sourcing
 rationale.
 
-**Pipeline stage:** all 6 raw tables have been cleaned (see the **Clean** section
-below); `data/clean/` holds the output. A **mart** section will be added once the
-join/derive step produces `derived_candidates`.
+**Pipeline stage:** all 6 raw tables are cleaned (**Clean** section below) and joined
+into one analysis mart, `derived_candidates` (**Analysis marts** section, end of this
+doc). Built in Postgres — see `docs/sql-walkthrough.md` for the SQL itself.
 
 ---
 

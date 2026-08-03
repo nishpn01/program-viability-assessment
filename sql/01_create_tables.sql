@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 01_create_tables.sql
--- Phase 3, step 1: define the six staging tables that mirror data/clean/*.csv
+-- Join/derive (Phase 2, final step) — 1 of 5: define the six staging tables that mirror data/clean/*.csv
 --
 -- Run with:  psql -p 5433 -d program_viability -f sql/01_create_tables.sql
 --

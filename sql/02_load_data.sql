@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 02_load_data.sql
--- Phase 3, step 2: load the six cleaned CSVs into the staging tables.
+-- Join/derive (Phase 2, final step) — 2 of 5: load the six cleaned CSVs into the staging tables.
 --
 -- Run from the REPO ROOT (paths below are relative):
 --   psql -p 5433 -d program_viability -f sql/02_load_data.sql

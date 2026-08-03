@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 03_verification_checks.sql
--- Phase 3, step 3: verification checks — confirm the loaded data matches the
+-- Join/derive (Phase 2, final step) — 3 of 5: verification checks — confirm the loaded data matches the
 -- known facts from the Phase 2 data dictionary before building anything on it.
 --
 -- Run with:  psql -p 5433 -d program_viability -f sql/03_verification_checks.sql

@@ -1,10 +1,11 @@
 # Entity-Relationship Diagram
 
-*Updated 2026-08-01. All 6 tables are now cleaned (`data/clean/`) and `vanderbilt_current_programs`
-has its `cip2020_code` key assigned — this diagram reflects the post-cleaning keys and
-grain, ahead of the join/derive step (Phase 2.2, still pending). For the original
-raw-only diagram (before any cleaning), see `erd-raw-snapshot.md` — kept separately, not
-overwritten.*
+*Updated 2026-08-02. All 6 source tables are cleaned (`data/clean/`) and now joined into
+one analysis mart, `derived_candidates` — built in Postgres per `docs/sql-walkthrough.md`,
+exported to `data/derived/derived_candidates.csv`. This is a living diagram, updated in
+place as the project progresses (not versioned per phase) — for the original raw-only
+diagram (before any cleaning), see `erd-raw-snapshot.md`, kept separately as a historical
+snapshot rather than overwritten.*
 
 *Note on field types below: `string`/`int`/`float` are Mermaid's conceptual field labels
 for diagram readability, not literal pandas dtypes. Actual profiled dtypes (e.g. pandas
@@ -78,11 +79,29 @@ erDiagram
         string median_pay
     }
 
+    derived_candidates {
+        float cip2020_code PK "same code space as ipeds_completions_masters — 1,268 rows, one per candidate"
+        string cip2020_title
+        int latest_year
+        float completions_latest_year
+        int trend_earliest_year
+        float completions_trend_pct "NULL for 126 rows — single-year CIPs, not a real 0 percent"
+        string matched_soc_codes "top-3 by employment; NULL for 77 rows with no labor-market match at all"
+        int n_socs_used "0-3"
+        float employment_weighted_openings
+        float employment_weighted_growth_pct
+        string in_bls_top30_flag "bonus signal only — wages never blended in, only 60 of 832 SOCs have wage data"
+        string already_offered_by_vanderbilt "14 of 1268 rows TRUE — flagged, never dropped"
+    }
+
     ipeds_completions_masters ||--o{ cip_soc_crosswalk : "CIP6 (normalize format first)"
     vanderbilt_current_programs ||--o{ cip_soc_crosswalk : "cip2020_code — subtracted out of the candidate universe, not a demand signal"
     cip_soc_crosswalk }o--|| bls_occupational_openings : "SOC2018Code"
     cip_soc_crosswalk }o--|| bls_fastest_growing : "SOC2018Code (ranked subset)"
     cip_soc_crosswalk }o--|| bls_most_new_jobs : "SOC2018Code (ranked subset)"
+    ipeds_completions_masters ||--|| derived_candidates : "base table — every CIP gets exactly one row"
+    cip_soc_crosswalk }o--|| derived_candidates : "top-3 SOC by employment feed the weighted metrics"
+    vanderbilt_current_programs ||--|| derived_candidates : "already_offered_by_vanderbilt flag"
 ```
 
 ## Notes
@@ -116,3 +135,17 @@ erDiagram
   crosswalk match — 7 are "broad group" codes the crosswalk instead maps at a more
   detailed sub-code level (e.g. `31-1120` → `31-1121`/`31-1122`), the other 5 are
   genuine small gaps. Same treatment: dropped with a documented note.
+- **`derived_candidates`** is the analysis mart (built 2026-08-02 as Phase 2's final
+  step; the SQL analysis/scoring phase starts from it), not a simple
+  foreign-key join like the edges above — it's a CTE-built table in Postgres that
+  aggregates each CIP's top-3 matched SOCs into a weighted score. The three edges into it
+  are a simplification for readability; the real logic (window functions, weighted
+  averages, `LEFT JOIN`s that preserve CIPs with no labor match) is in
+  `sql/04_build_derived_candidates.sql`, walked through plainly in `docs/sql-walkthrough.md`.
+  No Go/Test/Pass score exists yet — this table is the scoring step's input, not its
+  output.
+- **These six source tables now also exist as real tables in a local Postgres database**
+  (`program_viability`, port 5433), not just CSVs — with enforced types (`NUMERIC(7,4)`
+  for `cip2020_code`, matching the float-precision concern raised in this diagram's
+  history) and primary keys that guarantee each table's documented grain. DDL:
+  `sql/01_create_tables.sql`.

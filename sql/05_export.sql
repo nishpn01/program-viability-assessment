@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 05_export.sql
--- Phase 3, step 5: export the analysis mart to CSV for downstream use
+-- Join/derive (Phase 2, final step) — 5 of 5: export the analysis mart to CSV for downstream use
 -- (docs/data-dictionary.md "Analysis marts" layer; Tableau input in Phase 4).
 --
 -- Run from the REPO ROOT:

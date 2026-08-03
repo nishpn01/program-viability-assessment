@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 04_build_derived_candidates.sql
--- Phase 3, step 4: build the analysis mart — one row per candidate CIP program,
+-- Join/derive (Phase 2, final step) — 4 of 5: build the analysis mart — one row per candidate CIP program,
 -- combining student demand (IPEDS) and labor demand (BLS via the crosswalk).
 --
 -- Run with:  psql -p 5433 -d program_viability -f sql/04_build_derived_candidates.sql
