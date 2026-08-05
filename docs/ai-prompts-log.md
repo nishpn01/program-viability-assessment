@@ -402,7 +402,10 @@ where the database runs — a sandboxed chat can plan this step but not execute 
 against a local database. The verify-the-previous-plan opening earned its place: on
 this project it caught three real gaps in an earlier session's otherwise-sound plan
 (a distinct-count discrepancy in the catalog-overlap list, floating-point join keys,
-suppressed-year trend handling) before any of them could become bugs.*
+suppressed-year trend handling) before any of them could become bugs. The design
+itself lives in a standalone spec in the planning folder, written as the analyst's
+logic with the SQL as its AI-assisted implementation — so the provenance of the design
+is checkable separately from the code.*
 
 > I'm completing the final step of the data-preparation phase of a project that scores
 > and ranks candidate options (academic programs, products, market segments — whatever
@@ -414,15 +417,21 @@ suppressed-year trend handling) before any of them could become bugs.*
 > Don't carry table names, row counts, join keys, or coverage assumptions over from
 > another project — discover them here and verify them against the live files.
 >
-> If a build plan for this step already exists from an earlier session, treat it as
-> unverified input, not instructions: re-check every factual claim in it (row counts,
-> distinct-key counts, column names, documented coverage gaps) against the actual data
-> before acting on it, and report what held, what didn't, and what it missed.
+> The design for this step is mine, documented as a standalone spec in the planning
+> folder ({DESIGN_SPEC} — on this project: `docs/planning/phase2-mart-design-spec.md`):
+> the mart's construction steps, integrity rules, and target columns. Read it after
+> the orientation docs and implement THAT design — but treat it the way you'd treat
+> any plan written outside this session: re-check every factual claim in it (row
+> counts, distinct-key counts, column names, documented coverage gaps) against the
+> actual data, and assess the design itself independently — if you see a better
+> construction or a real gap, propose the improvement with your reasoning for my
+> approval. Don't silently deviate from the spec, and don't rubber-stamp it either.
+> Report what held, what didn't, and what it missed.
 >
 > Before building anything:
 >
-> 1. Separate this step's design decisions into already-locked (cite the decision-log
->    entry) and still-open. For each open one — the mart's grain, any rule for
+> 1. Separate this step's design decisions into already settled (cite the decision-log
+>    entry or the design spec) and still-open. For each open one — the mart's grain, any rule for
 >    collapsing a many-to-many mapping into per-row metrics, whether sparsely-covered
 >    reference data may enter the metrics at all, how the catalog-overlap comparison
 >    matches — present the options with tradeoffs and a recommendation. These are mine
@@ -432,10 +441,13 @@ suppressed-year trend handling) before any of them could become bugs.*
 >    in that column will mean.
 >
 > Execute only after I approve, in SQL against a real database rather than in the
-> cleaning language, as numbered, versioned `.sql` files that run in order (set up a
-> local database first if none exists, and document the connection details).
-> Requirements — and for each, state the reasoning so I can verify the choice rather
-> than take it on trust:
+> cleaning language, as numbered, versioned `.sql` files that run in order. The
+> database itself is part of the plan, not an assumption — propose what to run this
+> on (engine, local vs. hosted, how connection and authentication will work) based on
+> what's actually installed on this machine and what the project's docs call for; set
+> it up only once that's agreed, and document the connection details. Requirements —
+> and for each, state the reasoning so I can verify the choice rather than take it on
+> trust:
 >
 > - Column types that make joins exact: identifier codes stored as text or exact
 >   decimals, never floating point. Declare each staging table's primary key so its
@@ -462,9 +474,12 @@ suppressed-year trend handling) before any of them could become bugs.*
 
 *How to adapt: the prompt deliberately names no tables, counts, or institutions — the
 repo docs it points at carry all of that, which is what makes it portable. The real
-dependency is that the orientation doc, decision log, and data dictionary exist and
-are current; a project without them needs those first (prompts 2.1a–c). The SQL
-dialect is also unspecified — Postgres here, but nothing in the step depends on it.
+dependencies are (a) that the orientation doc, decision log, and data dictionary exist
+and are current — a project without them needs those first (prompts 2.1a–c) — and
+(b) the design spec, which is per-project and written by the analyst *before* this
+prompt runs: the prompt implements and stress-tests a documented design, it does not
+invent one from scratch. The SQL dialect and database engine are also unspecified —
+Postgres here, but choosing them is part of the prompt's own plan step.
 Outcome on this project: `derived_candidates`, 1,268 rows, decisions in
 `decisions-log.md` 2026-08-02.*
 
