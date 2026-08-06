@@ -1,5 +1,7 @@
-# --- Private planning / application materials (never publish) ---
-planning/
+# --- Private application materials (never publish) ---
+# Note: docs/planning/ is intentionally tracked (planning notes + AI-generated
+# reports live there on purpose). These filename patterns still protect the
+# actual resume/cover-letter/screenshot files by name, wherever they land.
 *.docx
 *Cover Letter*
 *Resume*
@@ -12,6 +14,9 @@ docs/landscape-scan.md
 docs/project-brief.md
 docs/START-HERE.md
 docs/recap/
+
+# --- Personal-only material (study notes, not project deliverables) ---
+personal/
 
 # --- Python ---
 __pycache__/

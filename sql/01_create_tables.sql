@@ -13,7 +13,7 @@
 --     total, 4 after the decimal point — exactly fits CIP codes like 51.2706.
 --   * PRIMARY KEY: enforces the table's grain (what one row means). A duplicate
 --     key on load is an error, so the grain documented in the data dictionary
---     is guaranteed by the database, not just assumed.
+--     is enforced by the database.
 --   * DROP TABLE IF EXISTS ... CASCADE: makes this script re-runnable from
 --     scratch (idempotent). CASCADE also drops anything built on top.
 -- ============================================================================

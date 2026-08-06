@@ -173,6 +173,38 @@ rather than something that could silently drift wrong.
 
 ---
 
+## Statistics terms (introduced in Phase 3 scoring)
+
+**Percentile** — the value at a given position in a sorted list, stated as "X% of the
+way up." The p90 of `completions_latest_year` is the value where 90% of programs have
+fewer completions and 10% have more; the median is just the 50th percentile.
+
+**Skew** — how lopsided a distribution is around its center; 0 is symmetric, and a
+larger positive number means a small number of large outliers are stretching the
+distribution's tail. `completions_latest_year` (skew 17.5) is far more skewed than
+`employment_weighted_growth_pct` (skew 0.8) — see `decisions-log.md`, 2026-08-04 entry.
+No single formula is universal; different tools' skew functions can disagree slightly
+on the same data.
+
+**Correlation coefficient (Pearson's r)** — how strongly two numeric columns move
+together, from -1 (perfectly inverse) through 0 (no linear relationship) to +1
+(perfectly proportional). Used here to confirm the mart's four continuous metrics are
+independent enough (all pairwise r between 0.04–0.20) that combining them in a
+composite score adds real signal rather than double-counting one thing twice.
+
+**Min-max scaling** — rescaling a column so its smallest value becomes 0 and largest
+becomes 100, everything else stretched proportionally between. Simple, but one extreme
+outlier defines the whole scale for everyone else — rejected for this project's most
+skewed metrics (`decisions-log.md`, 2026-08-04).
+
+**Percentile-rank scaling** — rescaling a column by each value's percentile position
+instead of its raw magnitude, so a giant outlier can't compress the rest of the
+distribution toward 0. The normalization method recommended in
+`docs/planning/phase3-scoring-findings.md`, verified against real rows in
+`notebooks/phase3_ai_report_verification.ipynb`.
+
+---
+
 ## Diagramming & process terms (technical hiring managers, engineers)
 
 **ERD** — Entity-Relationship Diagram: a diagram showing each table in a data model, its

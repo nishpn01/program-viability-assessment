@@ -25,7 +25,7 @@
 --     is NULL, i.e. "unknown", which is honest.
 --   * LEFT JOIN from the IPEDS base: keeps all 1,268 candidates even when a
 --     CIP has no labor-market match (metrics become NULL, row survives).
---     An INNER JOIN here would silently delete candidates — the classic bug.
+--     An INNER JOIN here would silently delete candidates. Classic join bug.
 --   * STRING_AGG: collapses a group's values into one comma-separated string.
 --   * BOOL_OR: TRUE if any row in the group is TRUE (like Python's any()).
 -- ============================================================================
@@ -120,7 +120,7 @@ top3_socs AS (
 -- Collapse the top-3 into one row per CIP:
 --   weighted openings  = SUM(openings * employment) / SUM(employment)
 --   weighted growth %  = SUM(growth%  * employment) / SUM(employment)
--- Bigger occupations pull the average toward themselves — that is the point.
+-- Bigger occupations pull the average toward themselves (the locked design).
 labor_weighted AS (
     SELECT cip2020_code,
            STRING_AGG(soc_code, ', ' ORDER BY soc_rank)                  AS matched_soc_codes,

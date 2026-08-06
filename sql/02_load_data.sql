@@ -7,9 +7,9 @@
 --
 -- Concepts in this file:
 --   * \copy is a psql CLIENT command: it reads the file from this machine and
---     streams rows to the server. (Plain SQL COPY reads from the SERVER's
---     filesystem instead — matters on remote databases.) BigQuery's equivalent
---     is `bq load`.
+--     streams rows to the server. Plain SQL COPY reads from the SERVER's own
+--     filesystem, which matters on remote databases. BigQuery's equivalent is
+--     `bq load`.
 --   * WITH (FORMAT csv, HEADER true): parse as CSV (handles quoted commas)
 --     and skip the first (header) row.
 --   * TRUNCATE first so the script is re-runnable without duplicating rows.

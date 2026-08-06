@@ -538,5 +538,41 @@ that the mart already exists with documented columns; a project without one need
 first. Outcome on this project: scoring not yet run as of this entry — see
 `docs/decisions-log.md` for whatever gets decided once it is.*
 
+### 3.2 — Independently verify a scoring findings report (reusable)
+
+*Continues from 3.1's output — run in a separate notebook/session so the check isn't
+influenced by the same reasoning that produced the report. Framed for verification:
+recompute from the raw data, never from the report's own numbers, and report
+MATCH/MISMATCH explicitly rather than adjusting silently. Outcome on this project:
+`notebooks/phase3_ai_report_verification.ipynb`, every claim in
+`docs/planning/phase3-scoring-findings.md` matched on first run.*
+
+> Read {FINDINGS_REPORT} (the report to verify) and {DATA_FILE} (the underlying data it
+> was computed from). Recompute every numeric claim in the report directly from
+> {DATA_FILE} — never assume the report's own numbers are correct.
+>
+> Build a notebook, one claim per section, that: states the claim from the report in a
+> markdown cell; computes it independently from {DATA_FILE} in the next cell; and
+> reports MATCH or MISMATCH explicitly, not just a number left to speak for itself.
+>
+> Cover at minimum: every distribution statistic named in the report for each numeric
+> column, null/missing counts per column including any overlap the report claims
+> between them, and any other specific number stated as fact (row counts, correlation
+> coefficients, category breakdowns). For a normalization or methodology recommendation
+> specifically, don't just recompute the summary statistic — demonstrate the tradeoff
+> empirically on a few real, representative rows so the claim is visible in actual
+> output, not taken on faith.
+>
+> Explain each technique in a short note the first time it's used, at whatever depth
+> matches who's actually going to read this. End with a summary table built from the
+> individual checks (claim | report's value | notebook's value | match) rather than
+> retyped by hand, and flag anything that doesn't match rather than adjusting the report
+> to fit.
+
+*(Each verification-check section in the resulting notebook also carries its own small
+"starter prompt" — a claim-scoped, adaptable version of this same idea — for anyone who
+wants to regenerate or adjust a single check rather than the whole notebook. Those live
+inline in the notebook itself, not here.)*
+
 ## Phase 4 — Tableau dashboard — *placeholder*
 ## Phase 5 — One-page recommendation — *placeholder*
