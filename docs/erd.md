@@ -1,7 +1,8 @@
 # Entity-Relationship Diagram
 
 *Updated 2026-08-02. All 6 source tables are cleaned (`data/clean/`) and now joined into
-one analysis mart, `derived_candidates` — built in Postgres per `docs/sql-walkthrough.md`,
+one analysis mart, `derived_candidates` — built in Postgres per `sql/01`–`05` (inline
+comments carry the explanations a standalone walkthrough doc used to hold),
 exported to `data/derived/derived_candidates.csv`. This is a living diagram, updated in
 place as the project progresses (not versioned per phase) — for the original raw-only
 diagram (before any cleaning), see `erd-raw-snapshot.md`, kept separately as a historical
@@ -111,7 +112,7 @@ erDiagram
   `cip_soc_crosswalk` the same way `ipeds_completions_masters` does. Its role in the
   pipeline is to be *subtracted out* of the CIP universe (Vanderbilt already offers
   these — candidates are what's left). 13 of 15 codes came from Vanderbilt's own
-  official Registrar CIP list (`planning/CIP_Codes.pdf`); the other 2 came from an
+  official Registrar CIP list (`docs/planning/CIP_Codes.pdf`); the other 2 came from an
   algorithmic word-overlap shortlist (`scripts/suggest_vanderbilt_cip_codes.py`) since
   the official list doesn't cover them.
 - **`bls_labor_demand`** is the original 12-candidate hand-picked table from before the
@@ -141,7 +142,7 @@ erDiagram
   aggregates each CIP's top-3 matched SOCs into a weighted score. The three edges into it
   are a simplification for readability; the real logic (window functions, weighted
   averages, `LEFT JOIN`s that preserve CIPs with no labor match) is in
-  `sql/04_build_derived_candidates.sql`, walked through plainly in `docs/sql-walkthrough.md`.
+  `sql/04_build_derived_candidates.sql`, walked through plainly in that file's own inline comments.
   No Go/Test/Pass score exists yet — this table is the scoring step's input, not its
   output.
 - **These six source tables now also exist as real tables in a local Postgres database**

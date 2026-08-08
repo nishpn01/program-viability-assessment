@@ -22,7 +22,7 @@ Steps (see docs/decisions-log.md for the reasoning behind each):
 4. Assign a `cip2020_code` (+ `cip2020_code_source`) to every row — this is what
    lets this table join into the rest of the pipeline and be subtracted out of the
    candidate universe. 13 of 15 codes come from Vanderbilt's own official CIP list
-   (`planning/CIP_Codes.pdf`); 2 come from the algorithmic shortlist
+   (`docs/planning/CIP_Codes.pdf`); 2 come from the algorithmic shortlist
    (`scripts/suggest_vanderbilt_cip_codes.py`) because the official list doesn't
    cover them (one program is newer than the list's review date, one has no exact
    name match). See docs/decisions-log.md for the full mapping and reasoning.
@@ -38,8 +38,10 @@ CLEAN_PATH = Path("data/clean/vanderbilt_current_programs_clean.csv")
 CREDITS_RE = re.compile(r"(\d+)\s*Credits?", re.IGNORECASE)
 
 # CIP2020 codes assigned per program. Source is either (a) Vanderbilt's official
-# Registrar CIP list (planning/CIP_Codes.pdf, reviewed August 2025 — not tracked in
-# git, but the CIP codes pulled from it are), matched by exact or near-exact program
+# Registrar CIP list (docs/planning/CIP_Codes.pdf, reviewed August 2025 — the codes
+# pulled from it are quoted throughout this pipeline; the PDF itself is now tracked in
+# git too, see decisions-log.md 2026-08-08 for a flag on whether that's actually
+# intended), matched by exact or near-exact program
 # name, or (b) the algorithmic shortlist (scripts/suggest_vanderbilt_cip_codes.py),
 # used only where the official list has no entry. See docs/decisions-log.md for the
 # full reasoning and match-rate against the official source.

@@ -108,7 +108,7 @@ CREATE TABLE bls_most_new_jobs (
 -- Vanderbilt's current online graduate catalog (Master's + Doctorate).
 -- Grain: one row per program. 15 rows expected — note only 14 DISTINCT
 -- cip2020_code values: two M.Ed. programs legitimately share 13.0401
--- (verified against the official registrar list in planning/CIP_Codes.pdf).
+-- (verified against the official registrar list in docs/planning/CIP_Codes.pdf).
 -- That is why cip2020_code is NOT the primary key here.
 -- ----------------------------------------------------------------------------
 CREATE TABLE vanderbilt_current_programs (

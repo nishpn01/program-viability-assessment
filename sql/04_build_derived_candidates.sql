@@ -147,7 +147,7 @@ bls_top30_flag AS (
 ),
 
 -- The 14 distinct CIP codes Vanderbilt already offers (15 programs; two M.Ed.s
--- legitimately share 13.0401 — verified against planning/CIP_Codes.pdf).
+-- legitimately share 13.0401 — verified against docs/planning/CIP_Codes.pdf).
 vanderbilt_cips AS (
     SELECT DISTINCT cip2020_code FROM vanderbilt_current_programs
 )

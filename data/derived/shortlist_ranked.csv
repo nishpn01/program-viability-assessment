@@ -1,0 +1,61 @@
+cip2020_code,cip2020_title,score,algo_cluster_id,algo_cluster_size,no_labor_data,has_soc_11_1021
+52.1301,Management Science,95.1,cluster-7,3,f,t
+30.7001,"Data Science, General",93.9,single-30.7001,1,f,f
+11.0104,Informatics,92.3,cluster-8,3,f,f
+45.0603,Econometrics and Quantitative Economics,92.0,single-45.0603,1,f,f
+30.7102,Business Analytics,91.6,cluster-9,3,f,f
+11.0401,Information Science/Studies,90.3,single-11.0401,1,f,f
+14.0903,Computer Software Engineering,89.1,cluster-18,2,f,f
+51.0701,Health/Health Care Administration/Management,88.9,cluster-3,5,f,f
+45.0102,Research Methodology and Quantitative Methods,88.6,single-45.0102,1,f,f
+9.0702,Digital Communication and Media/Multimedia,88.6,single-9.0702,1,f,f
+11.1005,Information Technology Project Management,88.5,cluster-10,3,f,f
+11.0802,Data Modeling/Warehousing and Database Administration,88.3,cluster-19,2,f,f
+51.0809,Anesthesiologist Assistant,87.3,single-51.0809,1,f,f
+51.2009,Industrial and Physical Pharmacy and Cosmetic Sciences,87.1,cluster-11,3,f,f
+11.0201,"Computer Programming/Programmer, General",86.3,cluster-20,2,f,f
+42.2799,"Research and Experimental Psychology, Other",86.2,cluster-12,3,f,f
+30.0801,Mathematics and Computer Science,86.2,single-30.0801,1,f,f
+13.0601,Educational Evaluation and Research,85.5,cluster-13,3,f,f
+42.2804,Industrial and Organizational Psychology,85.3,cluster-2,7,f,f
+51.2201,"Public Health, General",85.3,cluster-4,5,f,f
+42.9999,"Psychology, Other",85.3,single-42.9999,1,f,f
+45.0702,Geographic Information Science and Cartography,85.1,single-45.0702,1,f,f
+30.3101,Human Computer Interaction,85.0,single-30.3101,1,f,f
+27.0305,Financial Mathematics,84.7,cluster-21,2,f,f
+52.0201,"Business Administration and Management, General",84.7,cluster-5,5,f,t
+52.0101,"Business/Commerce, General",84.2,single-52.0101,1,f,t
+30.3001,Computational Science,84.2,single-30.3001,1,f,f
+44.0401,Public Administration,84.0,single-44.0401,1,f,t
+45.0999,"International Relations and National Security Studies, Other",83.6,cluster-14,3,f,f
+52.0701,Entrepreneurship/Entrepreneurial Studies,83.5,single-52.0701,1,f,t
+42.0101,"Psychology, General",83.4,single-42.0101,1,f,f
+52.0301,Accounting,83.4,cluster-15,3,f,f
+52.1001,"Human Resources Management/Personnel Administration, General",83.2,single-52.1001,1,f,f
+51.0912,Physician Assistant,83.2,cluster-22,2,f,f
+43.0302,Crisis/Emergency/Disaster Management,83.1,cluster-23,2,f,f
+27.0601,"Applied Statistics, General",82.8,single-27.0601,1,f,f
+52.0801,"Finance, General",82.7,single-52.0801,1,f,t
+51.0203,Speech-Language Pathology/Pathologist,82.2,cluster-16,3,f,f
+52.1206,Information Resources Management,82.1,single-52.1206,1,f,f
+43.0103,Criminal Justice/Law Enforcement Administration,80.9,single-43.0103,1,f,f
+43.0404,Cybersecurity Defense Strategy/Policy,80.5,single-43.0404,1,f,f
+52.1404,Digital Marketing,79.9,cluster-6,4,f,f
+26.1103,Bioinformatics,79.7,cluster-24,2,f,f
+26.1309,Epidemiology,79.5,single-26.1309,1,f,f
+25.0101,Library and Information Science,79.4,single-25.0101,1,f,f
+30.0601,Systems Science and Theory,79.2,single-30.0601,1,f,f
+50.1099,"Arts, Entertainment, and Media Management, Other",79.2,cluster-25,2,f,f
+26.0509,Infectious Disease and Global Health,79.1,single-26.0509,1,f,f
+45.0201,"Anthropology, General",78.8,single-45.0201,1,f,f
+45.1101,"Sociology, General",78.7,single-45.1101,1,f,f
+27.0503,Mathematics and Statistics,78.5,cluster-26,2,f,f
+45.0401,Criminology,78.5,single-45.0401,1,f,f
+51.2306,Occupational Therapy/Therapist,78.4,cluster-27,2,f,f
+30.1901,Nutrition Sciences,78.3,single-30.1901,1,f,f
+51.1005,Clinical Laboratory Science/Medical Technology/Technologist,78.3,single-51.1005,1,f,f
+52.1101,International Business/Trade/Commerce,78.0,single-52.1101,1,f,t
+52.1601,Taxation,77.7,single-52.1601,1,f,f
+43.0202,Fire Services Administration,76.7,single-43.0202,1,f,f
+51.1508,Mental Health Counseling/Counselor,76.2,cluster-17,3,t,
+44.0503,Health Policy Analysis,75.5,single-44.0503,1,f,f

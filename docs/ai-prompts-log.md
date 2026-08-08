@@ -396,8 +396,9 @@ looks like.*
 ### 2.3 — Join/derive: build the analysis mart in SQL (reusable — closes Phase 2)
 
 *Written 2026-08-02, after this step was executed once end-to-end (this project's
-worked example: `sql/01`–`05`, `scripts/run_sql_pipeline.sh`, `docs/sql-walkthrough.md`,
-producing `derived_candidates`). Needs full repo context plus access to the machine
+worked example: `sql/01`–`05`, `scripts/run_sql_pipeline.sh` — explanations now live in
+those files' own inline comments, not a separate walkthrough doc — producing
+`derived_candidates`). Needs full repo context plus access to the machine
 where the database runs — a sandboxed chat can plan this step but not execute it
 against a local database. The verify-the-previous-plan opening earned its place: on
 this project it caught three real gaps in an earlier session's otherwise-sound plan

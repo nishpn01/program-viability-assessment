@@ -8,7 +8,9 @@ rationale.
 
 **Pipeline stage:** all 6 raw tables are cleaned (**Clean** section below) and joined
 into one analysis mart, `derived_candidates` (**Analysis marts** section, end of this
-doc). Built in Postgres — see `docs/sql-walkthrough.md` for the SQL itself.
+doc), which is then scored and shortlisted (`sql/06`–`10`). Built in Postgres — see the
+inline comments in `sql/01`–`10` for the SQL itself (the standalone walkthrough doc this
+used to point to was retired once its explanations were folded into those comments).
 
 ---
 
@@ -132,7 +134,7 @@ Note: the literal `<br>` in five header names comes straight from the scraped HT
 ---
 
 ### `cip_soc_crosswalk.xlsx`
-NCES's official CIP2020↔SOC2018 crosswalk, distributed as one workbook with 8 sheets serving different lookup directions. Not yet used in any pipeline script — profiled here for the first time since it was pulled unparsed per `data-sources.md`.
+NCES's official CIP2020↔SOC2018 crosswalk, distributed as one workbook with 8 sheets serving different lookup directions. Not used in any pipeline script *at the time this section was profiled* — since then, the cleaned version (`cip_soc_crosswalk_clean.csv`) became the join table `sql/04_build_derived_candidates.sql` runs on. Left as originally written since it's an accurate record of the raw file at profiling time; see the Analysis marts section for how it's actually used now.
 
 **`File Guide`** — 7 rows × 2 cols (`File Name`, `Description`): a human-readable index of the other 7 sheets. Not data itself.
 
@@ -240,7 +242,7 @@ Missing years (IPEDS suppression) are left missing, not filled with 0 — see th
 | `program_url` | object | Unchanged from raw | 0/15 |
 | `total_price_estimated` | float64 | Parsed single-number price: already-total values used directly, per-credit rates × parsed credit count, `"Fully Funded"` → `0` (real zero cost), `"NR"` → missing. See `scripts/clean_vanderbilt_current_programs.py` for the exact per-row rule. | 4/15 (3 per-credit rows with no parseable credit count — "Semesters"/"Years"/"Varies" duration; 1 "NR" row) |
 | `cip2020_code` | float64 | CIP2020 code assigned per program, joins this table into `cip_soc_crosswalk` the same way `ipeds_completions_masters_clean.csv` does | 0/15 |
-| `cip2020_code_source` | object | Provenance of the `cip2020_code` value: `"official"` (13 rows — matched against Vanderbilt's own Registrar CIP list, `planning/CIP_Codes.pdf`) or `"algorithmic shortlist"` / `"algorithmic/inferred"` (2 rows — used only where the official list has no entry). Full per-row mapping and reasoning in `decisions-log.md`. | 0/15 |
+| `cip2020_code_source` | object | Provenance of the `cip2020_code` value: `"official"` (13 rows — matched against Vanderbilt's own Registrar CIP list, `docs/planning/CIP_Codes.pdf`) or `"algorithmic shortlist"` / `"algorithmic/inferred"` (2 rows — used only where the official list has no entry). Full per-row mapping and reasoning in `decisions-log.md`. | 0/15 |
 
 ## Analysis marts
 
