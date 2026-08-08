@@ -10,3 +10,5 @@
 -- ============================================================================
 
 \copy (SELECT * FROM scored_candidates ORDER BY score DESC, cip2020_code) TO 'data/derived/scored_candidates.csv' WITH (FORMAT csv, HEADER true);
+
+-- Run from terminal - repo root: psql -p 5433 -d program_viability -f sql/07_export_scored.sql

@@ -76,3 +76,6 @@ SET band = CASE
     ELSE 'Pass'
 END
 WHERE NOT already_offered_by_vanderbilt;
+
+--query check
+SELECT band, count(*) FROM scored_candidates GROUP BY band;

@@ -535,8 +535,9 @@ database happens on the machine that hosts it.*
 *How to adapt: the prompt names no columns, weights, or cutoffs — the data dictionary
 and the mart itself carry all of that, discovered fresh each run. The real dependency is
 that the mart already exists with documented columns; a project without one needs 2.3
-first. Outcome on this project: scoring not yet run as of this entry — see
-`docs/decisions-log.md` for whatever gets decided once it is.*
+first. Outcome on this project: method locked and scored 2026-08-05 — see
+`docs/decisions-log.md`'s 2026-08-05 entries. Cutoffs (step 5) ended up needing their own
+follow-up prompt, `3.3` below, once the score actually existed.*
 
 ### 3.2 — Independently verify a scoring findings report (reusable)
 
@@ -573,6 +574,68 @@ MATCH/MISMATCH explicitly rather than adjusting silently. Outcome on this projec
 "starter prompt" — a claim-scoped, adaptable version of this same idea — for anyone who
 wants to regenerate or adjust a single check rather than the whole notebook. Those live
 inline in the notebook itself, not here.)*
+
+### 3.3 — Derive band cutoffs from a real score distribution (starter prompt)
+
+*Continues from 3.1/3.2, once a composite score exists on every row. A checklist-style
+starting point for deriving categorical bands from a continuous score as a sequence of
+standalone, checkable queries rather than one script written all at once — each step
+verifiable on its own before it's folded into the final file. Outcome on this project:
+`sql/08_score_bands.sql`, cutoffs at the 90th percentile and the median (the
+distribution had no natural break), band counts 126/502/626.*
+
+> Derive [Go/Test/Pass, or whatever categorical bands this project uses] cutoffs from
+> the real score distribution on [the scored table]. Work through this as a sequence of
+> standalone, checkable queries:
+>
+> 1. Define the population — which rows actually belong in this analysis, and why that
+>    has to be settled before computing any statistic.
+> 2. Five-number summary + a spread of percentiles (10th/25th/75th/90th/95th/99th) on
+>    the score column.
+> 3. Sanity-check the extremes — pull the actual top and bottom rows by score, not just
+>    the summary numbers.
+> 4. Look at the shape — bucket the score into ranges and count rows per bucket. Is
+>    there a natural cliff/gap, or is the distribution smooth?
+> 5. Set the cutoffs: cite a real break if one exists; if the distribution is smooth,
+>    use a named, defensible convention instead (e.g. top-decile / median split) rather
+>    than an invented number, and say plainly that's what's happening.
+>
+> Consolidate into one clean, well-commented SQL script once all five hold up
+> individually, matching this repo's existing CTE-per-step style. Log the final cutoffs
+> and the reasoning in the decision log, cited against the real numbers from step 2–4.
+
+*How to adapt: names no specific bands, table, or column — works for any categorical
+banding decision once a continuous score exists. The core reusable part isn't the SQL,
+it's the four-step framework and the "teach one step at a time" pacing.*
+
+### 3.4 — Cluster near-duplicate titles within a shortlist (starter prompt)
+
+*Continues from 3.1–3.3, once a shortlist of scored candidates exists. Groups
+near-duplicate entries (same real program, different code) as a first pass for human
+review — not a final answer.*
+
+> Given a CSV of shortlisted candidates (code + title + score), write a script that
+> groups titles likely to represent the same real program under different codes, as a
+> first pass for human review.
+>
+> 1. Score every pair of titles by (a) count of shared significant words after removing
+>    generic terms (degree types, "general," "other," etc.) and (b) a character-level
+>    similarity ratio as a secondary signal.
+> 2. Pick a conservative threshold for what counts as "linked" — validate it against a
+>    sample before trusting it. A softer rule (fewer shared words plus a high similarity
+>    ratio) is prone to false positives on short, generically worded titles, which can
+>    chain unrelated items into one oversized cluster through transitive grouping —
+>    check for this failure mode specifically before trusting the result.
+> 3. If the codes carry a hierarchical structure (e.g. a shared prefix), use it as an
+>    independent, authoritative signal alongside text similarity — it catches
+>    near-duplicates that text alone might miss or wrongly merge.
+> 4. Group linked titles into clusters (e.g. via union-find / connected components).
+> 5. Export the original data with a cluster ID column added, sorted by cluster, for
+>    manual review.
+
+*How to adapt: swap the CSV path and column names; adjust the "generic terms" stopword
+list to your domain; tune the linking threshold against a sample of your own data
+rather than assuming a fixed number will transfer.*
 
 ## Phase 4 — Tableau dashboard — *placeholder*
 ## Phase 5 — One-page recommendation — *placeholder*
