@@ -638,5 +638,57 @@ review — not a final answer.*
 list to your domain; tune the linking threshold against a sample of your own data
 rather than assuming a fixed number will transfer.*
 
-## Phase 4 — Tableau dashboard — *placeholder*
+## Phase 4 — Tableau dashboard
+
+### 4.1 — Build a dashboard's CSV extracts from a locked design spec (starter prompt)
+
+*Continues from the scoring/analysis phase, once a BI dashboard's content is already
+designed and locked — this prompt is not for deciding what the dashboard shows, only
+for building the data behind it. Assumes the design already exists as its own written
+spec, same pattern as 2.3: the design is the analyst's, documented separately, and this
+prompt implements and stress-tests it rather than inventing one. Tableau Public
+specifically can't connect live to a database, so every dashboard needs its data
+pre-extracted to CSV regardless of how the design decisions got made — a different tool
+(Power BI, Looker, a live Tableau Server connection) might not need this step at all.*
+
+> I'm building the CSV extract(s) a BI dashboard will read directly. The dashboard's
+> content and structure are already locked in {DESIGN_SPEC} — read it first, along with
+> {DECISION_LOG} for the reasoning behind it. Don't invent or adjust the design here;
+> implement exactly what's specified, and treat every factual claim in the spec (column
+> names, expected row counts, filter logic) the way you'd treat any plan from outside
+> this session — verify it against the live database rather than assuming it's still
+> accurate.
+>
+> Write one numbered SQL file (matching this repo's existing style: numbered steps, a
+> preview `SELECT` before each export, comments explaining why each step exists) that
+> produces every extract the spec calls for. For each extract:
+>
+> 1. State the expected row count and what population/filter defines it, before writing
+>    the export — something to check the actual result against, not just eyeball after
+>    the fact.
+> 2. If the extract needs a value that doesn't already exist on any table (a label, a
+>    flag, a name mapped from a small fixed list), build it as its own small lookup
+>    table joined in — not hardcoded inline across the query — so the mapping is
+>    visible and reusable in one place.
+> 3. If the extract could plausibly have missing rows (a filtered date range, a category
+>    that isn't guaranteed complete), check for gaps before exporting: build the full
+>    expected combination set and compare it against what actually exists, rather than
+>    just reporting a row count that came in lower than expected. If gaps are found,
+>    work out whether the cause is a real, explainable pattern (e.g. a category that
+>    didn't exist yet for part of the date range) or a genuine data-quality problem, and
+>    say which it looks like and why.
+>
+> Run every export against the real database and report the actual row counts back
+> against what step 1 predicted — don't assume a query is correct just because it ran
+> without an error. Don't commit or push anything.
+
+*How to adapt: names no tables, columns, or extract count — the design spec (written
+per-project, before this prompt runs) supplies all of that. The gap-check step (3) only
+applies when an extract could plausibly be incomplete; skip it for extracts where
+completeness isn't in question. Outcome on this project: `sql/11_dashboard_extracts.sql`,
+two extracts — a 1,254-row scored population and a 49-row completions trend (16 of an
+expected 65 rows missing, traced to two CIP codes with no completions data anywhere
+before 2020, consistent with them being new codes added in the CIP2020 taxonomy
+revision rather than a data-quality problem).*
+
 ## Phase 5 — One-page recommendation — *placeholder*

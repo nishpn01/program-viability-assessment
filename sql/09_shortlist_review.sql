@@ -76,4 +76,17 @@ WHERE s.band = 'Go'
 ORDER BY s.cip2020_title;
 
 -- STEP 5 -- export the score-sorted view for manual clustering in a spreadsheet.
-\copy (SELECT s.cip2020_code, s.cip2020_title, s.score, d.completions_latest_year, d.employment_weighted_openings, d.n_socs_used, (d.n_socs_used = 0) AS no_labor_data, d.matched_soc_codes LIKE '%11-1021%' AS has_soc_11_1021, d.matched_soc_codes FROM scored_candidates s JOIN derived_candidates d USING (cip2020_code) WHERE s.band = 'Go' ORDER BY s.score DESC) TO 'data/derived/shortlist_review.csv' WITH (FORMAT csv, HEADER true);
+\copy 
+(SELECT s.cip2020_code, 
+        s.cip2020_title, 
+        s.score, 
+        d.completions_latest_year, 
+        d.employment_weighted_openings, 
+        d.n_socs_used, (d.n_socs_used = 0) AS no_labor_data, 
+        d.matched_soc_codes LIKE '%11-1021%' AS has_soc_11_1021, 
+        d.matched_soc_codes 
+        FROM scored_candidates s 
+        JOIN derived_candidates d USING (cip2020_code) 
+        WHERE s.band = 'Go' 
+        ORDER BY s.score DESC) 
+        TO 'data/derived/shortlist_review.csv' WITH (FORMAT csv, HEADER true);
