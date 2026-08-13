@@ -109,6 +109,9 @@ ORDER BY e.proposed_name, e.year;
 -- GROUP BY cip2020_code, proposed_name
 -- ORDER BY proposed_name;
 
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
 -- Confirmed 2026-08-09: 16 of the 65 expected (CIP, year) combos are missing --
 -- MSc. in Data Science (30.7001) and MSc. in Business Analytics (30.7102),
 -- 2012-2019 each, 8 years apart. Clean, identical boundary across both CIPs
