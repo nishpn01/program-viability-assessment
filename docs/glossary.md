@@ -26,8 +26,8 @@ like it meant a person, not a field, so it was renamed everywhere. See
 **Go / Test / Pass** — The three-tier verdict every program gets ranked into, based on
 a 0–100 composite score: **Go** (strong launch case), **Test** (worth a smaller pilot
 or further validation), **Pass** (not worth pursuing now). It's a standard stage-gate /
-traffic-light structure — the specific score cutoffs are still being decided (see
-`decisions-log.md`).
+traffic-light structure. Cutoffs are locked at Go ≥75.3, Test 45.7–75.3, Pass <45.7 — a
+top-decile/median split, not an invented threshold (see `decisions-log.md`).
 
 **TAM** — Total Addressable Market: the realistic audience size for a program, estimated
 as (students completing similar programs nationally per year) × (a stated capture %).
@@ -205,6 +205,37 @@ distribution toward 0. The normalization method recommended in
 
 ---
 
+## Tableau & dashboard terms (introduced in Phase 4)
+
+**Parameter** — a stored value that isn't tied to any row of data. On its own it does
+nothing; a calculated field or chart has to reference it. Drives `Select Finalist`
+here, so the KPI row and comparison table can respond to one control even though they
+pull from two extracts with no shared join key.
+
+**Filter** — narrows which rows a chart shows. Different from a parameter: a filter
+subtracts data, a parameter just stores a value for something else to read.
+
+**Parameter action** — a click or hover on a chart element that sets a parameter's
+value automatically, instead of a viewer picking from a dropdown.
+
+**Reference band** — a shaded region behind a chart marking the space between two
+fixed values, used here for the Go/Test/Pass score cutoffs on the distribution chart,
+so the threshold is visible on the chart instead of only stated in a caption.
+
+**KPI** — one of the four headline numbers (score, annual openings, completions,
+growth) shown at the top of the dashboard for whichever finalist is selected.
+
+**Log scale** — an axis where equal distances represent equal ratios instead of equal
+differences. Used on the scatter chart because the underlying data is heavily skewed;
+a linear scale would compress almost every point into one corner.
+
+**Forecast / prediction interval** — Tableau's built-in projection of a time series
+beyond its known data. Considered for the completions trend chart and not used: two of
+the five finalists have 5 years of history against 13 for the other three, and a
+forecast would have shown equal confidence in unequal projections.
+
+---
+
 ## Diagramming & process terms (technical hiring managers, engineers)
 
 **ERD** — Entity-Relationship Diagram: a diagram showing each table in a data model, its
@@ -234,8 +265,9 @@ network access.
 (filtering, renaming, type conversion) with a preview of each step, used for this
 project's Phase 2 cleaning work.
 
-**BigQuery** — Google's cloud SQL data warehouse, the planned home for this project's
-SQL phase (joins, window functions, aggregations) once the cleaned tables are ready.
+**BigQuery** — Google's cloud SQL data warehouse. The SQL phase ran on local Postgres
+instead; porting to BigQuery is parked as a future exercise, not something this
+project used.
 
 **Tableau Public** — The free, publicly-hosted version of Tableau, used for this
 project's dashboard. It can't connect live to BigQuery, so query results are exported

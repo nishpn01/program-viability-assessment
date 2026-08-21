@@ -1,5 +1,8 @@
 # Phase 3 — Scoring Findings Report
 
+*Superseded — the method proposed here was approved and implemented; see
+`decisions-log.md` and `sql/06`–`08` for what actually shipped.*
+
 *Written 2026-08-04. Claude's analysis of `derived_candidates` (1,268 rows, one per
 candidate CIP program — see `docs/data-dictionary.md`'s Analysis Marts section for the
 mart's full column reference) and a proposed method for turning it into a 0–100

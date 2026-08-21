@@ -1,12 +1,14 @@
 # Entity-Relationship Diagram
 
-*Updated 2026-08-02. All 6 source tables are cleaned (`data/clean/`) and now joined into
-one analysis mart, `derived_candidates` — built in Postgres per `sql/01`–`05` (inline
-comments carry the explanations a standalone walkthrough doc used to hold),
-exported to `data/derived/derived_candidates.csv`. This is a living diagram, updated in
-place as the project progresses (not versioned per phase) — for the original raw-only
-diagram (before any cleaning), see `erd-raw-snapshot.md`, kept separately as a historical
-snapshot rather than overwritten.*
+*Updated 2026-08-20. All 6 source tables are cleaned (`data/clean/`) and joined into one
+analysis mart, `derived_candidates` — built in Postgres per `sql/01`–`05` (inline
+comments carry the explanations a standalone walkthrough doc used to hold). From there,
+`derived_candidates` feeds a chain of scoring/shortlisting/dashboard-extract tables
+(`scored_candidates` through `dashboard_completions_trend`, below) that now feed a
+published Tableau dashboard. This is a living diagram, updated in place as the project
+progresses (not versioned per phase) — for the original raw-only diagram (before any
+cleaning), see `erd-raw-snapshot.md`, kept separately as a historical snapshot rather
+than overwritten.*
 
 *Note on field types below: `string`/`int`/`float` are Mermaid's conceptual field labels
 for diagram readability, not literal pandas dtypes. Actual profiled dtypes (e.g. pandas
@@ -95,6 +97,38 @@ erDiagram
         string already_offered_by_vanderbilt "14 of 1268 rows TRUE — flagged, never dropped"
     }
 
+    scored_candidates {
+        float cip2020_code PK "same code space as derived_candidates"
+        float score "0-100 composite, percentile-rank normalized"
+        string band "Go / Test / Pass — NULL for the 14 already-offered rows"
+    }
+
+    shortlist_review {
+        float cip2020_code PK "126 rows — the Go band only"
+        boolean has_soc_11_1021 "generic-occupation caveat"
+        boolean no_labor_data "zero labor-market signal caveat"
+    }
+
+    shortlist_review_clustered {
+        float cip2020_code PK "same 126 rows, adds cluster assignment"
+        string algo_cluster_id "27 multi-member clusters + 34 singles"
+    }
+
+    shortlist_ranked {
+        string cip2020_code PK "60 rows — one per cluster/single, cluster-1 (Nursing) excluded"
+        float score "cluster's max-scoring member"
+    }
+
+    dashboard_population {
+        float cip2020_code PK "1,254 rows — the full Go/Test/Pass population"
+        boolean is_finalist "5 rows TRUE"
+    }
+
+    dashboard_completions_trend {
+        float cip2020_code PK "49 of 65 expected rows — 2 finalists have no data before 2020"
+        int year PK
+    }
+
     ipeds_completions_masters ||--o{ cip_soc_crosswalk : "CIP6 (normalize format first)"
     vanderbilt_current_programs ||--o{ cip_soc_crosswalk : "cip2020_code — subtracted out of the candidate universe, not a demand signal"
     cip_soc_crosswalk }o--|| bls_occupational_openings : "SOC2018Code"
@@ -103,6 +137,12 @@ erDiagram
     ipeds_completions_masters ||--|| derived_candidates : "base table — every CIP gets exactly one row"
     cip_soc_crosswalk }o--|| derived_candidates : "top-3 SOC by employment feed the weighted metrics"
     vanderbilt_current_programs ||--|| derived_candidates : "already_offered_by_vanderbilt flag"
+    derived_candidates ||--|| scored_candidates : "same grain, adds the composite score + band"
+    scored_candidates ||--o| shortlist_review : "Go band only (126 of 1,254 scored rows)"
+    shortlist_review ||--|| shortlist_review_clustered : "adds algo_cluster_id via a Python clustering script, not SQL"
+    shortlist_review_clustered }o--|| shortlist_ranked : "one ranked row per cluster (max-scoring member)"
+    scored_candidates ||--o{ dashboard_population : "Go/Test/Pass population, Tableau extract"
+    derived_candidates ||--o{ dashboard_completions_trend : "completions history for the 5 finalists, Tableau extract"
 ```
 
 ## Notes
@@ -143,8 +183,14 @@ erDiagram
   are a simplification for readability; the real logic (window functions, weighted
   averages, `LEFT JOIN`s that preserve CIPs with no labor match) is in
   `sql/04_build_derived_candidates.sql`, walked through plainly in that file's own inline comments.
-  No Go/Test/Pass score exists yet — this table is the scoring step's input, not its
-  output.
+  This table is the scoring step's input, not its output — the score itself lives on
+  `scored_candidates`, below.
+- **Everything downstream of `derived_candidates`** (`scored_candidates` through the two
+  dashboard extracts) is scoring/shortlisting output, not new source data — added
+  2026-08-20 so the diagram doesn't stop at the Phase 2 boundary. Same simplification as
+  above: these are mostly 1:1 derivations off the mart (one row in, one row out,
+  sometimes filtered to a subset), not new joins against outside data. Full column
+  detail and grain for each lives in `data-dictionary.md`'s Analysis Marts section.
 - **These six source tables now also exist as real tables in a local Postgres database**
   (`program_viability`, port 5433), not just CSVs — with enforced types (`NUMERIC(7,4)`
   for `cip2020_code`, matching the float-precision concern raised in this diagram's

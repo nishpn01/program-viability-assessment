@@ -8,9 +8,10 @@ rationale.
 
 **Pipeline stage:** all 6 raw tables are cleaned (**Clean** section below) and joined
 into one analysis mart, `derived_candidates` (**Analysis marts** section, end of this
-doc), which is then scored and shortlisted (`sql/06`–`10`). Built in Postgres — see the
-inline comments in `sql/01`–`10` for the SQL itself (the standalone walkthrough doc this
-used to point to was retired once its explanations were folded into those comments).
+doc), which is then scored, shortlisted, and ranked (`sql/06`–`10`), with `sql/11`
+building the two Tableau dashboard extracts on top. Built in Postgres — see the inline
+comments in `sql/01`–`11` for the SQL itself (the standalone walkthrough doc this used
+to point to was retired once its explanations were folded into those comments).
 
 ---
 
@@ -249,10 +250,10 @@ Missing years (IPEDS suppression) are left missing, not filled with 0 — see th
 ### `derived_candidates` (`data/derived/derived_candidates.csv`)
 
 Built 2026-08-02 by `sql/04_build_derived_candidates.sql` (Postgres; full pipeline
-`scripts/run_sql_pipeline.sh`, concept walkthrough `docs/sql-walkthrough.md`).
+`scripts/run_sql_pipeline.sh`).
 **Grain: one row per CIP6 candidate program — 1,268 rows, PK-enforced.** Combines
 student demand (IPEDS) and labor demand (BLS via the crosswalk, locked top-3-SOC
-employment-weighted rule). No scoring yet — that's the next task.
+employment-weighted rule). Scoring is layered on top in `scored_candidates` below.
 
 | Column | Type | Nulls | Meaning |
 |--------|------|-------|---------|
@@ -268,3 +269,123 @@ employment-weighted rule). No scoring yet — that's the next task.
 | `employment_weighted_growth_pct` | NUMERIC | 77 | Projected employment growth % 2024–34, same weighting |
 | `in_bls_top30_flag` | BOOLEAN | 0 | TRUE if any top-3 SOC appears on BLS's fastest-growing or most-new-jobs top-30 lists (wage-adjacent signal; wages themselves never blended — only 60/832 SOCs have wage data) |
 | `already_offered_by_vanderbilt` | BOOLEAN | 0 | Exact CIP6 match against VU's **14 distinct** codes (15 programs; two M.Ed.s legitimately share 13.0401 per the Registrar PDF). Exactly 14 rows TRUE; rows flagged, never dropped |
+
+### `scored_candidates` (`data/derived/scored_candidates.csv`)
+
+Built 2026-08-05 by `sql/06_score_candidates.sql` (band column added by
+`sql/08_score_bands.sql`). **Grain: one row per CIP6 candidate program — 1,268 rows,
+same grain and PK as `derived_candidates`.** Turns `derived_candidates`'s four
+continuous metrics into 0–100 percentile ranks, combines them via the locked
+30/30/15/15/10 weighted average (partial reweight when a metric is missing), and bands
+the result into Go/Test/Pass.
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `cip2020_code` | NUMERIC(7,4) | 0 | Candidate program's CIP code (primary key) |
+| `cip2020_title` | TEXT | 0 | Official CIP 2020 title |
+| `already_offered_by_vanderbilt` | BOOLEAN | 0 | Carried through from `derived_candidates` |
+| `pct_completions_latest_year` | NUMERIC | 0 | Percentile rank (0–100) on completions level |
+| `pct_completions_trend_pct` | NUMERIC | 126 | Percentile rank on completions trend; NULL where the underlying trend is unknown (same 126 rows as `derived_candidates`) |
+| `pct_employment_weighted_openings` | NUMERIC | 77 | Percentile rank on labor openings; NULL where no labor-market match exists (same 77 rows as `derived_candidates`) |
+| `pct_employment_weighted_growth_pct` | NUMERIC | 77 | Percentile rank on labor growth, same NULL pattern as openings |
+| `pct_bls_top30_flag` | NUMERIC | 0 | 100 if the BLS top-30 flag is TRUE, else 0 — never NULL |
+| `n_metrics_used` | INTEGER | 0 | How many of the 5 weighted components had real data for this row (range 2–5); the denominator partial-reweight rescaled against |
+| `score` | NUMERIC | 0 | 0–100 composite score — `weighted_sum / weight_used`, rounded to 1 decimal |
+| `band` | TEXT | 14 | `Go` (126) / `Test` (502) / `Pass` (626); NULL for the 14 rows already offered by Vanderbilt, which are excluded from banding entirely |
+
+### `shortlist_review` (`data/derived/shortlist_review.csv`)
+
+Built 2026-08-07 by `sql/09_shortlist_review.sql`, joining `scored_candidates`'s Go
+band back to `derived_candidates` for SOC-level detail. **Grain: one row per Go-band
+candidate — 126 rows.** Read-only review output, not a rebuild step; computes the two
+shortlist-stage caveat flags directly in SQL instead of leaving them for manual
+re-checking.
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `cip2020_code` | NUMERIC(7,4) | 0 | Candidate program's CIP code |
+| `cip2020_title` | TEXT | 0 | Official CIP 2020 title |
+| `score` | NUMERIC | 0 | Composite score, carried from `scored_candidates` |
+| `completions_latest_year` | NUMERIC | 0 | National completions, most recent year |
+| `employment_weighted_openings` | NUMERIC | 4 | NULL for the 4 candidates with zero labor-market match (`no_labor_data`) |
+| `n_socs_used` | INTEGER | 0 | How many SOCs back the labor metrics (0–3) |
+| `no_labor_data` | BOOLEAN | 0 | TRUE when `n_socs_used = 0` — no crosswalk-backed labor signal at all, not "checked and found no demand" (4/126 TRUE) |
+| `has_soc_11_1021` | BOOLEAN | 4 | TRUE if the matched SOC list includes 11-1021 ("General and Operations Managers," the generic-occupation caveat); NULL (not FALSE) for the 4 `no_labor_data` rows, since there's no SOC list to check (8/126 TRUE among the 122 checkable rows) |
+| `matched_soc_codes` | TEXT | 4 | Comma-separated top-≤3 SOC codes, same NULL pattern as `employment_weighted_openings` |
+
+### `shortlist_review_clustered` (`data/derived/shortlist_review_clustered.csv`)
+
+Built 2026-08-07 by `scripts/cluster_shortlist_titles.py` (Python, not SQL — near-
+duplicate title detection is a text-similarity problem the pipeline hands off to
+Python for this one step, then rejoins to SQL in `sql/10`). **Grain: same 126 rows as
+`shortlist_review`**, with two columns added identifying which of the 61 distinct
+real-world program candidates (27 multi-member clusters + 34 singles) each row belongs
+to.
+
+Same 9 columns as `shortlist_review` above, plus:
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `algo_cluster_id` | TEXT | 0 | `cluster-N` for the 27 multi-member groups, `single-{cip2020_code}` for the 34 singles |
+| `algo_cluster_size` | INTEGER | 0 | Row count sharing that `algo_cluster_id` (2–13 for clusters, 1 for singles) |
+
+### `shortlist_ranked` (`data/derived/shortlist_ranked.csv`, `shortlist_ranked_clean.csv`)
+
+Built 2026-08-08 by `sql/10_shortlist_ranked.sql`, picking each cluster's max-scoring
+representative from `shortlist_review_clustered` (Nursing cluster excluded — see
+decisions-log.md, 2026-08-08). **Grain: one row per surviving cluster — 60 rows in
+`shortlist_ranked.csv`** (the full ranking); **52 rows in `shortlist_ranked_clean.csv`**
+(the 8 clusters flagged `has_soc_11_1021` removed, for a side-by-side comparison).
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `cip2020_code` | NUMERIC(7,4) | 0 | Cluster representative's CIP code |
+| `cip2020_title` | TEXT | 0 | Official CIP 2020 title of the representative |
+| `score` | NUMERIC | 0 | Composite score, carried from `scored_candidates` |
+| `algo_cluster_id` | TEXT | 0 | Which cluster this row represents |
+| `algo_cluster_size` | INTEGER | 0 | How many near-duplicate titles that cluster groups |
+| `no_labor_data` | BOOLEAN | 0 | Carried from `shortlist_review`, never NULL |
+| `has_soc_11_1021` | BOOLEAN | 1 (full) / 0 (clean) | NULL only in the full file, for the one representative with `no_labor_data = TRUE`; absent entirely from the clean file since that row is filtered out |
+
+### `dashboard_population.csv` (`data/derived/dashboard_population.csv`)
+
+Built 2026-08-09 by `sql/11_dashboard_extracts.sql` from
+`scored_candidates JOIN derived_candidates USING (cip2020_code) LEFT JOIN finalist_programs`.
+**Grain: one row per candidate that cleared into a band — 1,254 rows, 5 flagged as
+finalists.** The 14 rows already offered by Vanderbilt are dropped upstream by
+`WHERE s.band IS NOT NULL`, not by a filter in this extract. Feeds the KPI row, ranked
+bar, scatter, distribution chart, and the finalist comparison table on the Tableau
+dashboard.
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `cip2020_title` | text | 0 | Program title from the federal CIP2020 taxonomy |
+| `score` | numeric | 0 | 0–100 composite score |
+| `band` | text | 0 | Go / Test / Pass |
+| `employment_weighted_openings` | numeric | 0 | Annual openings, employment-weighted across matched SOCs |
+| `employment_weighted_growth_pct` | numeric | some | Projected growth %, employment-weighted across matched SOCs |
+| `completions_latest_year` | numeric | some | National completions, most recent IPEDS year |
+| `pct_completions_latest_year` | numeric | 0 | Percentile rank on completions level |
+| `pct_employment_weighted_openings` | numeric | 0 | Percentile rank on labor openings |
+| `pct_completions_trend_pct` | numeric | 0 | Percentile rank on completions trend |
+| `pct_employment_weighted_growth_pct` | numeric | 0 | Percentile rank on labor growth |
+| `pct_bls_top30_flag` | numeric | 0 | Percentile-scaled contribution of the BLS top-30 flag |
+| `in_bls_top30_flag` | boolean | 0 | Whether the program's matched SOC appears in a BLS top-30 list |
+| `is_finalist` | boolean | 0 | True for the 5 finalists |
+| `proposed_name` | text | 1,249 | Vanderbilt-branded program name, finalists only |
+
+### `dashboard_completions_trend.csv` (`data/derived/dashboard_completions_trend.csv`)
+
+Built 2026-08-09 by `sql/11_dashboard_extracts.sql` from
+`ipeds_completions_masters JOIN finalist_programs`. **Grain: one row per finalist ×
+year, 2012–2024 — 49 of an expected 65 rows.** The 16 missing rows are Data Science,
+General (30.7001) and Business Analytics (30.7102), both absent before 2020 — a
+CIP2020 taxonomy revision, not a data quality gap (confirmed in `decisions-log.md`,
+2026-08-19). Feeds the completions trend chart only.
+
+| Column | Type | Nulls | Meaning |
+|--------|------|-------|---------|
+| `cip2020_code` | numeric | 0 | Finalist's CIP6 code |
+| `proposed_name` | text | 0 | Vanderbilt-branded program name |
+| `year` | integer | 0 | IPEDS reporting year, 2012–2024 |
+| `completions` | numeric | 0 | National completions that year |

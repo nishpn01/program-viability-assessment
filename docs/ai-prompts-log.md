@@ -691,4 +691,52 @@ expected 65 rows missing, traced to two CIP codes with no completions data anywh
 before 2020, consistent with them being new codes added in the CIP2020 taxonomy
 revision rather than a data-quality problem).*
 
-## Phase 5 — One-page recommendation — *placeholder*
+## Phase 5 — Written recommendation (full report) + deck
+
+### 5.1 — Contribute your phase's findings to the shared Phase 5 report draft (reusable across all four phases)
+
+*Run this same prompt, unmodified, in any of the Phase 0–4 chats once the shared draft
+exists at `docs/planning/phase5-report-draft.md`. It's deliberately generic — it
+doesn't name a phase number or tell the chat which section to write in, because each
+phase chat already knows its own history and is better placed than a fresh Phase 5
+session to judge what from its own work actually belongs in the final report.
+Structure was locked 2026-08-21 (see `decisions-log.md`, same date): answer-first,
+grouped by evidence pillar, with a first-class Methodology & Limitations section — not
+a straight copy of the original Build Spec's one-page SCQA plan.*
+
+> We're assembling the final Phase 5 report. A shared draft skeleton lives at
+> `docs/planning/phase5-report-draft.md` — read it first, along with this repo's
+> `decisions-log.md` and `project-journal.md` for the reasoning you'll need.
+>
+> Before editing: check `git status` and `git log` on this repo. If the draft file has
+> uncommitted changes from another session, read them first — don't overwrite another
+> phase's contribution.
+>
+> Using your own phase's actual work (its recap doc if one exists, its planning specs,
+> its decisions-log and project-journal entries, its real output files) — not general
+> knowledge about the project — add whatever findings, numbers, decisions,
+> corrections, or honest caveats from your phase are relevant to the report, in
+> whichever section(s) of the draft they actually belong. Use your own judgment about
+> what's relevant; don't feel confined to one section, and don't feel obligated to
+> fill every section — leave a section alone if your phase has nothing to add to it.
+>
+> Ground rules:
+> - Don't rewrite, delete, or "clean up" another phase's existing contribution — if
+>   you think something another phase wrote is wrong or should change, leave a
+>   visible inline comment instead of editing it directly.
+> - Don't fill in the Executive Answer section — that gets synthesized last, once
+>   every phase's findings are in.
+> - Write it the way this repo's other docs are written: factual, specific numbers
+>   over vague claims, decisions attributed to whoever actually made them. Not
+>   marketing copy, not a generic AI summary.
+> - If something is genuinely ambiguous or needs Pranish's sign-off before it can be
+>   stated as fact, say so directly in the draft rather than guessing.
+>
+> Don't commit or push — leave the changes for review first.
+
+*How to adapt: nothing project-specific to swap — the prompt is intentionally silent
+on phase number, section names, and file paths beyond the one shared draft, since
+those are either already known to whichever chat runs it or spelled out inside the
+draft skeleton itself. Reusable as-is on a future project's own multi-phase report
+pass, provided that project also keeps a decisions-log/project-journal pair and a
+shared draft skeleton to point at.*

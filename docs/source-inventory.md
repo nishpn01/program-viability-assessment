@@ -3,6 +3,16 @@
 *Verified live on 2026-07-23 (small test queries only — no full datasets pulled yet).
 Endpoints, cube names, and URL patterns below were confirmed working, not guessed.*
 
+> **Reconciliation note (later):** this is a 2026-07-23 exploration snapshot, kept as-is.
+> Two things it treats as planned changed later. Google Trends was dropped: it failed a
+> live test with a 429, and IPEDS's multi-year completions already covers the demand-trend
+> signal it would have provided. The TAM / capture-rate formula was never used, because
+> the locked scoring reads IPEDS completions straight off as the market-size metric, with
+> no capture rate to assume. The student-demand signal itself stayed: IPEDS completions is
+> the largest single input to the score, about 45% of it. Competitor pricing is deferred
+> to future scope. For what was actually collected and used, see `data-sources.md` and
+> `README.md`.
+
 ## 1. BLS — labor demand (bls.gov)
 
 | Dataset | What it gives | Format | Use |
@@ -62,6 +72,9 @@ tables so the `candidate_program` bridge key in Phase 2 cleaning can actually co
 labor demand to completions/tuition, instead of relying on manual field-name matching.
 
 ## Recommendation — best 2–3 datasets to build on
+
+*Superseded — this was a Phase 1 exploratory recommendation. See `data-sources.md` and
+`decisions-log.md` (2026-08-01) for what was actually collected and why.*
 
 1. **BLS Employment Projections Table 1.10** (+ 1.3/1.4 for candidate nomination) —
    one structured pull, every occupation, the correct "openings" metric.

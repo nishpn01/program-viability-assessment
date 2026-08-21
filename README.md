@@ -38,8 +38,10 @@ market, and aren't already offered survive as candidates. Full reasoning trail:
 - **Scoring and shortlisting** — done. A 0–100 composite score, Go/Test/Pass bands set
   from the real score distribution, and near-duplicate CIP codes within the Go band
   clustered into ~60 distinct candidate programs (e.g. 13 separate Nursing-specialty
-  codes read as one cluster). Five finalists selected; naming/branding in progress.
-- **Dashboard and final recommendation** — not started.
+  codes read as one cluster). Five finalists selected and named —
+  `docs/planning/phase3-finalist-program-naming-recommendations.md`.
+- **Dashboard** — done, published to Tableau Public.
+- **Final written recommendation** — not started.
 
 This project is being built openly as a learning exercise — the docs in `docs/` capture
 the actual decisions, corrections, and dead ends along the way, not just the final
@@ -55,7 +57,7 @@ numbers.
 | `scripts/` | Collection, cleaning, and pipeline scripts (reproducible) |
 | `sql/` | The staging DDL, load, verification, scoring, and shortlisting queries |
 | `notebooks/` | Independent verification of AI-generated analysis (e.g. re-deriving a findings report's numbers from source data, cell by cell) |
-| `dashboard/` | Tableau workbook + exported chart images (Phase 4, pending) |
+| `dashboard/` | Tableau workbook + exported chart images |
 | `docs/` | Problem statement, provenance, decisions, glossary, and the final recommendation |
 
 ## Data sources (all public, all free)

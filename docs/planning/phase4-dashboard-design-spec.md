@@ -122,3 +122,23 @@ gets settled in the build step, not here — this spec fixes what goes on the da
 and why, not pixel placement. Whether the KPI row should default to the #1 finalist or
 to an average across all five is worth a second look once the row actually exists and
 can be looked at, not decided from a description alone.
+
+## Build reconciliation (2026-08-19)
+
+Three points where the shipped dashboard differs from what's locked above.
+
+**Details on demand.** The spec calls for the five weighted pillars to surface as a
+hover tooltip on the ranked bar, not a permanent chart. The build instead added a
+fifth, always-visible element — a comparison table showing all five pillars and the
+final score for all five finalists side by side. Decided during the build: a static,
+inspectable breakdown holds up better under scrutiny than a tooltip a viewer might not
+think to check.
+
+**Filters.** Two were locked: Select Finalist and Labor-Signal Corroboration. Five
+shipped: Select Finalist, Band, an annual-openings range, a national-completions
+range, and Year. Labor-Signal Corroboration, one of the two originally locked, was not
+built this pass — deferred, not dropped.
+
+**KPI row default.** The spec left open whether the KPI row should default to the
+top-ranked finalist or an average across all five. Resolved during the build: it
+defaults to the top-ranked finalist.
