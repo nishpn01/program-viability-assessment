@@ -61,7 +61,7 @@ search` per candidate field to find the real ranking-page URL, then scrape that.
 | Source | What it gives | Format | Why it matters |
 |--------|---------------|--------|-----------------|
 | **College Scorecard API** (`api.data.gov/ed/collegescorecard/v1`) | Program-level (CIP + credential level, per institution) **earnings and debt outcomes**, plus completions | Free JSON API — confirmed live with `DEMO_KEY`, no signup strictly required for light testing (a real key is one-click free for sustained use) | The one source that answers "if a student completes *this* program, what do they actually earn?" — an ROI angle none of BLS/IPEDS/aggregators give directly. Bridges labor-market payoff to the program level instead of the occupation level |
-| Google Trends | National search interest by term, 5-yr trend | `pytrends` / manual export | Already the planned `student_demand.csv` search-interest layer per `docs/project-brief.md` — not new, just confirming it's still the right call, no live check done this pass |
+| Google Trends | National search interest by term, 5-yr trend | `pytrends` / manual export | Already the planned `student_demand.csv` search-interest layer in this project's original scope (later cut — see `docs/decisions-log.md`) — not new, just confirming it's still a valid option for a future pass |
 
 ## The join gotcha (flag now, fix in Phase 2 cleaning)
 

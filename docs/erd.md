@@ -6,9 +6,9 @@ comments carry the explanations a standalone walkthrough doc used to hold). From
 `derived_candidates` feeds a chain of scoring/shortlisting/dashboard-extract tables
 (`scored_candidates` through `dashboard_completions_trend`, below) that now feed a
 published Tableau dashboard. This is a living diagram, updated in place as the project
-progresses (not versioned per phase) — for the original raw-only diagram (before any
-cleaning), see `erd-raw-snapshot.md`, kept separately as a historical snapshot rather
-than overwritten.*
+progresses (not versioned per phase) — an original raw-only diagram (before any
+cleaning) was kept as a historical snapshot rather than overwritten, filed privately
+alongside other retired working docs.*
 
 *Note on field types below: `string`/`int`/`float` are Mermaid's conceptual field labels
 for diagram readability, not literal pandas dtypes. Actual profiled dtypes (e.g. pandas

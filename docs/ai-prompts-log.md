@@ -183,8 +183,7 @@ relying on it in the next phase.*
 
 ### 2.1 — EDA + plan (explore & discuss FIRST — no cleaning yet)
 > Read these first for context: `docs/START-HERE.md`, `docs/project-journal.md`,
-> `docs/landscape-scan.md` (or whatever this project's problem-statement doc is called),
-> `docs/data-sources.md`.
+> `README.md` (or wherever this project's problem-statement doc lives), `docs/data-sources.md`.
 >
 > We're starting Phase 2, and I want to do EDA first — understand the data before any
 > cleaning. Act as my senior analyst: profile the tables, explain what you find in plain
