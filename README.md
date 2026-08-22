@@ -41,11 +41,12 @@ market, and aren't already offered survive as candidates. Full reasoning trail:
   codes read as one cluster). Five finalists selected and named —
   `docs/planning/phase3-finalist-program-naming-recommendations.md`.
 - **Dashboard** — done, published to Tableau Public.
-- **Final written recommendation** — not started.
+- **Final written recommendation and presentation deck** — done. Both are in
+  `deliverables/`, alongside the dashboard.
 
-This project is being built openly as a learning exercise — the docs in `docs/` capture
-the actual decisions, corrections, and dead ends along the way, not just the final
-numbers.
+All five phases are now complete. This project was built openly as a learning
+exercise — the docs in `docs/` capture the actual decisions, corrections, and dead
+ends along the way, not just the final numbers.
 
 ## Repo structure
 
@@ -56,8 +57,8 @@ numbers.
 | `data/derived/` | The joined analysis table (`derived_candidates`) and every downstream scoring/shortlist export, all from SQL |
 | `scripts/` | Collection, cleaning, and pipeline scripts (reproducible) |
 | `sql/` | The staging DDL, load, verification, scoring, and shortlisting queries |
-| `notebooks/` | Independent verification of AI-generated analysis (e.g. re-deriving a findings report's numbers from source data, cell by cell) |
-| `dashboard/` | Tableau workbook + exported chart images |
+| `notebooks/` | Independent verification of AI-generated analysis (e.g. re-deriving a findings report's numbers from source data, cell by cell) and the Phase 5 report figures |
+| `deliverables/` | The final, shareable outputs: the Tableau workbook, the feasibility report PDF, and the presentation deck |
 | `docs/` | Problem statement, provenance, decisions, glossary, and the final recommendation |
 
 ## Data sources (all public, all free)
