@@ -694,8 +694,8 @@ revision rather than a data-quality problem).*
 
 ### 5.1 — Contribute your phase's findings to the shared Phase 5 report draft (reusable across all four phases)
 
-*Run this same prompt, unmodified, in any of the Phase 0–4 chats once the shared draft
-exists at `docs/planning/phase5-report-draft.md`. It's deliberately generic — it
+*Run this same prompt, unmodified, in any of the Phase 0–4 chats once a shared draft
+skeleton exists. It's deliberately generic — it
 doesn't name a phase number or tell the chat which section to write in, because each
 phase chat already knows its own history and is better placed than a fresh Phase 5
 session to judge what from its own work actually belongs in the final report.
@@ -703,9 +703,9 @@ Structure was locked 2026-08-21 (see `decisions-log.md`, same date): answer-firs
 grouped by evidence pillar, with a first-class Methodology & Limitations section — not
 a straight copy of the original Build Spec's one-page SCQA plan.*
 
-> We're assembling the final Phase 5 report. A shared draft skeleton lives at
-> `docs/planning/phase5-report-draft.md` — read it first, along with this repo's
-> `decisions-log.md` and `project-journal.md` for the reasoning you'll need.
+> We're assembling the final Phase 5 report. A shared draft skeleton exists for this
+> purpose — read it first, along with this repo's `decisions-log.md` and
+> `project-journal.md` for the reasoning you'll need.
 >
 > Before editing: check `git status` and `git log` on this repo. If the draft file has
 > uncommitted changes from another session, read them first — don't overwrite another
