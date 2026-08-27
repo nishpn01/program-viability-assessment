@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Convert the raw datausa.io ipeds_completions JSON pull (CIP6 x Year, Degree=Masters)
-into a tidy CSV."""
+into a tidy CSV.
+
+Generated with AI assistance, as part of the Phase 1 data-collection pull
+(docs/ai-prompts-log.md, 1.3).
+"""
 import csv
 import json
 from pathlib import Path

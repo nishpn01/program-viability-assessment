@@ -2,6 +2,8 @@
 """Clean data/raw/bls_fastest_growing.csv (BLS Table 1.3) into
 data/clean/bls_fastest_growing_clean.csv.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
+
 Steps (see docs/decisions-log.md for the reasoning behind each):
 1. Drop the "Total, all occupations" row (SOC 00-0000) — a baseline reference row,
    not a real occupation; would skew any ranking math if left in.

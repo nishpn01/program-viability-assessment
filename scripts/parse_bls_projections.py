@@ -2,6 +2,9 @@
 """Parse BLS Employment Projections tables 1.10, 1.3, 1.4 (scraped by Firecrawl as
 markdown in data/raw/bls_projections_raw/) into tidy CSVs in data/raw/.
 
+Generated with AI assistance, as part of the Phase 1 data-collection pull
+(docs/ai-prompts-log.md, 1.3).
+
 Each BLS page renders as one big markdown pipe-table plus site nav/footer noise.
 Data rows are identified by a SOC code (NN-NNNN) in the second column — nav/footer
 lines never match that pattern, so no manual line-number boundaries are needed.

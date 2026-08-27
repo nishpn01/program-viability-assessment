@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Parse BLS OOH Quick Facts tables (scraped by scripts/scrape_labor_demand.sh) into labor_demand.csv."""
+"""Parse BLS OOH Quick Facts tables (scraped by scripts/scrape_labor_demand.sh) into
+labor_demand.csv.
+
+Generated with AI assistance, as part of the Phase 1 data-collection pull
+(docs/ai-prompts-log.md, 1.3).
+"""
 import csv
 import re
 from pathlib import Path

@@ -2,6 +2,8 @@
 # ============================================================================
 # run_sql_pipeline.sh — rebuild the Phase 3 SQL pipeline end to end.
 #
+# Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
+#
 # Usage (from anywhere):  bash scripts/run_sql_pipeline.sh
 #
 # Prereqs: Homebrew postgresql@18 running on port 5433 (starts on login via

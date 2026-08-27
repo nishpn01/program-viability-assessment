@@ -2,6 +2,8 @@
 """Group near-duplicate CIP program titles within one candidate list, for a human to
 manually review and confirm — NOT an automated final grouping.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.4).
+
 Sibling script to `scripts/suggest_cip_codes_generic.py` (same word-overlap + char-
 similarity scoring method, reused here almost unchanged), but that script matches
 PROGRAM NAMES against a CIP reference list; this one matches CIP TITLES against each

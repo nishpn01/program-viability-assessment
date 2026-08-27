@@ -2,6 +2,8 @@
 """Clean data/raw/bls_occupational_openings.csv (BLS Table 1.10) into
 data/clean/bls_occupational_openings_clean.csv.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
+
 Steps (see docs/decisions-log.md for the reasoning behind each):
 1. Filter to Occupation type == "Line item" — drops the 281 category-rollup rows
    that would double-count the detail occupations under them.

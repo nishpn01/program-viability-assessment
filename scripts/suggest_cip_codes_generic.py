@@ -2,6 +2,8 @@
 """Suggest candidate CIP codes for a university's program catalog, for a human to
 manually review and pick from — NOT an automated fuzzy-match assignment.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2b).
+
 Generic / reusable version of `scripts/suggest_vanderbilt_cip_codes.py` (that file is
 the worked example this was generalized from — same method, run on Vanderbilt's 15
 online Master's/Doctorate programs). See `docs/ai-prompts-log.md`, entry 2.2b, for the

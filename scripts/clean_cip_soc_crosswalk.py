@@ -2,6 +2,8 @@
 """Clean data/raw/cip_soc_crosswalk.xlsx (CIP-SOC sheet only) into
 data/clean/cip_soc_crosswalk_clean.csv.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
+
 The workbook has 8 sheets; only CIP-SOC is used going forward (see
 docs/data-dictionary.md for what the other 7 contain and why they're unused).
 

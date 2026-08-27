@@ -2,6 +2,8 @@
 """Clean data/raw/vanderbilt_current_programs.csv into
 data/clean/vanderbilt_current_programs_clean.csv.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
+
 Steps (see docs/decisions-log.md for the reasoning behind each):
 1. Filter to level in {Master's, Doctorate} — certificates are add-on credentials
    that require existing Vanderbilt enrollment, not standalone programs comparable
@@ -38,13 +40,12 @@ CLEAN_PATH = Path("data/clean/vanderbilt_current_programs_clean.csv")
 CREDITS_RE = re.compile(r"(\d+)\s*Credits?", re.IGNORECASE)
 
 # CIP2020 codes assigned per program. Source is either (a) Vanderbilt's official
-# Registrar CIP list (docs/planning/CIP_Codes.pdf, reviewed August 2025 — the codes
-# pulled from it are quoted throughout this pipeline; the PDF itself is now tracked in
-# git too, see decisions-log.md 2026-08-08 for a flag on whether that's actually
-# intended), matched by exact or near-exact program
-# name, or (b) the algorithmic shortlist (scripts/suggest_vanderbilt_cip_codes.py),
-# used only where the official list has no entry. See docs/decisions-log.md for the
-# full reasoning and match-rate against the official source.
+# Registrar CIP list (docs/planning/CIP_Codes.pdf, reviewed August 2025 and tracked in
+# this repo — see decisions-log.md, Step 17, on why keeping it public is deliberate),
+# matched by exact or near-exact program name, or (b) the algorithmic shortlist
+# (scripts/suggest_vanderbilt_cip_codes.py), used only where the official list has no
+# entry. See docs/decisions-log.md for the full reasoning and match-rate against the
+# official source.
 CIP_CODE_ASSIGNMENTS = {
     "Master of Science in Applied Clinical Informatics": ("51.2706", "official"),
     "Doctor of Nursing Practice": ("51.3818", "official"),

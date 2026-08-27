@@ -2,6 +2,8 @@
 """Clean data/raw/ipeds_completions_masters.csv into
 data/clean/ipeds_completions_masters_clean.csv.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
+
 Depends on data/clean/cip_soc_crosswalk_clean.csv already existing (run
 clean_cip_soc_crosswalk.py first) — used to determine which CIP6 codes actually
 have a crosswalk match, rather than hardcoding a fixed list of codes to drop.
@@ -33,6 +35,8 @@ COLUMN_RENAME = {
 
 
 def to_cip2020_code(cip6_id: int) -> float:
+    # Matches the crosswalk's CIP2020Code format: zero-pad to 6 digits, decimal
+    # after the first 2 (10101 -> 1.0101). Same code, different representation.
     s = str(cip6_id).zfill(6)
     return float(f"{s[:2]}.{s[2:]}")
 
@@ -50,6 +54,7 @@ def main():
 
     before_codes = df["cip6_id"].nunique()
     before_rows = len(df)
+    # Codes with no crosswalk match can't join to anything downstream anyway.
     df = df[df["cip2020_code"].isin(valid_codes)].copy()
     after_codes = df["cip6_id"].nunique()
     dropped = before_codes - after_codes
@@ -59,6 +64,8 @@ def main():
         f"{before_rows} -> {len(df)} rows)"
     )
 
+    # IPEDS suppresses low counts rather than reporting 0 — filling these with
+    # 0 would misrepresent suppressed data as a real zero.
     n_missing = df["completions"].isna().sum()
     print(f"Step 4 — missing-year rows left as-is (not filled): {n_missing}")
 

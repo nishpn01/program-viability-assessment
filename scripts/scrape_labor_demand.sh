@@ -2,6 +2,9 @@
 # Labor-demand scrape (Phase 1a) — RUN THIS IN YOUR OWN TERMINAL.
 # Firecrawl works on your machine (it can't reach the internet from Claude's sandbox).
 #
+# Generated with AI assistance, as part of the Phase 1 data-collection pull
+# (docs/ai-prompts-log.md, 1.3).
+#
 # Prereqs:
 #   export FIRECRAWL_API_KEY=fc-...        # your key, do NOT commit it
 #   (CLI optional — the script falls back to npx if `firecrawl` isn't installed)

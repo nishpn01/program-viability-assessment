@@ -2,6 +2,8 @@
 """Clean data/raw/bls_most_new_jobs.csv (BLS Table 1.4) into
 data/clean/bls_most_new_jobs_clean.csv.
 
+Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
+
 Identical shape and treatment to bls_fastest_growing.csv (same 7 columns, same
 "Total, all occupations" baseline row) — see docs/decisions-log.md.
 """
