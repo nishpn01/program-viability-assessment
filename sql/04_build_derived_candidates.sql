@@ -3,6 +3,8 @@
 -- Join/derive (Phase 2, final step) — 4 of 5: build the analysis mart — one row per candidate CIP program,
 -- combining student demand (IPEDS) and labor demand (BLS via the crosswalk).
 --
+-- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
+--
 -- Run with:  psql -p 5433 -d program_viability -f sql/04_build_derived_candidates.sql
 --
 -- Locked rules implemented here (docs/decisions-log.md):

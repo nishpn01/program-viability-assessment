@@ -3,6 +3,8 @@
 -- Join/derive (Phase 2, final step) — 3 of 5: verification checks — confirm the loaded data matches the
 -- known facts from the Phase 2 data dictionary before building anything on it.
 --
+-- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
+--
 -- Run with:  psql -p 5433 -d program_viability -f sql/03_verification_checks.sql
 --
 -- Concepts in this file:

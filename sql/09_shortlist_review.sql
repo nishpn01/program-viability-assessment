@@ -2,6 +2,9 @@
 -- 09_shortlist_review.sql
 -- Phase 3 -- shortlist stage: prepare Go/Test candidates for manual clustering
 -- and the SOC 11-1021 hand-check. Read-only review, not a rebuild step.
+--
+-- Generated with AI assistance, as part of the Phase 3 scoring/shortlist work
+-- (docs/ai-prompts-log.md, 3.1).
 -- ============================================================================
 
 -- STEP 0 -- band counts, to decide the review population (Go only, or Go + Test).

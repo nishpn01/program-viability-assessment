@@ -3,7 +3,9 @@
 -- Phase 4 -- build the two CSV extracts the Tableau dashboard reads directly.
 -- Design locked in
 -- docs/planning/phase4-dashboard-design-spec.md (see also docs/decisions-log.md,
--- 2026-08-09).
+-- Step 18).
+--
+-- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (4.1).
 --
 -- Run from the REPO ROOT:
 --   psql -p 5433 -d program_viability -f sql/11_dashboard_extracts.sql
@@ -112,7 +114,7 @@ ORDER BY e.proposed_name, e.year;
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
--- Confirmed 2026-08-09: 16 of the 65 expected (CIP, year) combos are missing --
+-- Confirmed directly (see docs/decisions-log.md Step 19): 16 of the 65 expected (CIP, year) combos are missing --
 -- MSc. in Data Science (30.7001) and MSc. in Business Analytics (30.7102),
 -- 2012-2019 each, 8 years apart. Clean, identical boundary across both CIPs
 -- (not scattered individual cells) -- consistent with both being newer CIP6

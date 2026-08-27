@@ -4,6 +4,9 @@
 -- the ranking with vs. without the two flagged caveats. Read-only review, not a
 -- rebuild step.
 --
+-- Generated with AI assistance, downstream of the clustering step
+-- (docs/ai-prompts-log.md, 3.4).
+--
 -- PREREQUISITE: data/derived/shortlist_review_clustered.csv must already exist
 -- (built by `scripts/cluster_shortlist_titles.py`, which itself runs on the output
 -- of `sql/09_shortlist_review.sql`). This file loads that CSV back into Postgres --
@@ -33,7 +36,7 @@ CREATE TABLE shortlist_clustered (
 
 \copy shortlist_clustered FROM 'data/derived/shortlist_review_clustered.csv' WITH (FORMAT csv, HEADER true);
 
--- PATCH, added 2026-08-08 -- cluster-1 (the 13-member Nursing cluster) is excluded
+-- PATCH -- cluster-1 (the 13-member Nursing cluster) is excluded
 -- below via `algo_cluster_id != 'cluster-1'`, added to every `representatives` CTE.
 -- Found while naming the finalists: Family Practice Nurse/Nursing (51.3805, the #2
 -- finalist at the time) is actually "Family Nurse Practitioner," an existing named
@@ -49,10 +52,10 @@ CREATE TABLE shortlist_clustered (
 --
 -- This is a shortlist-stage patch, not a real fix -- the actual fix belongs upstream,
 -- in the raw Vanderbilt catalog data and a full rebuild of sql/04 through this file.
--- Logged as future scope (docs/decisions-log.md, 2026-08-08) rather than done tonight.
+-- Logged as future scope (docs/decisions-log.md, Step 17) rather than done immediately.
 
--- STEP 1 -- representative row per cluster: the max-scoring member. Decision (locked
--- 2026-08-07): a cluster's ranking unit is its single strongest specific program, not
+-- STEP 1 -- representative row per cluster: the max-scoring member. Decision (locked,
+-- see docs/decisions-log.md Step 16): a cluster's ranking unit is its single strongest specific program, not
 -- an average across the cluster -- the cluster's mean/min are kept as supporting
 -- narrative evidence, not the ranking number itself. See decisions-log.md.
 WITH ranked_within_cluster AS (

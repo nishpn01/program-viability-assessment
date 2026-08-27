@@ -2,6 +2,8 @@
 -- 01_create_tables.sql
 -- Join/derive (Phase 2, final step) — 1 of 5: define the six staging tables that mirror data/clean/*.csv
 --
+-- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
+--
 -- Run with:  psql -p 5433 -d program_viability -f sql/01_create_tables.sql
 --
 -- Concepts in this file:

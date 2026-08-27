@@ -6,8 +6,10 @@
 -- Run with:  psql -p 5433 -d program_viability -f sql/06_score_candidates.sql
 -- (requires derived_candidates to already exist — run sql/01-05 first if not)
 --
+-- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.1).
+--
 -- Locked rules implemented here (docs/phase3-scoring-findings.md,
--- docs/decisions-log.md 2026-08-04):
+-- docs/decisions-log.md Step 9):
 --   * Normalization: PERCENTILE RANK, not min-max. Two of the four metrics are
 --     extremely right-skewed (completions_latest_year skew 17.5,
 --     completions_trend_pct skew 13.9) -- min-max would let one outlier

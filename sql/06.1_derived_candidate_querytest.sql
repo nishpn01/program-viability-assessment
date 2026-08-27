@@ -1,3 +1,13 @@
+-- ============================================================================
+-- 06.1_derived_candidate_querytest.sql
+-- Ad-hoc exploration queries against derived_candidates, written after 05_export
+-- while getting familiar with the mart before building the scoring step (06).
+-- Not part of the automated pipeline -- run individually in DBeaver or psql to
+-- explore the data, not with the rest of the numbered files.
+--
+-- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
+-- ============================================================================
+
 -- 1. Feel the mart: biggest fields Vanderbilt doesn't offer
 SELECT cip2020_title, completions_latest_year, employment_weighted_openings
 FROM derived_candidates
