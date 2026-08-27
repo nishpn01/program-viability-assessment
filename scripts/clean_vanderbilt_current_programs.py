@@ -41,7 +41,7 @@ CREDITS_RE = re.compile(r"(\d+)\s*Credits?", re.IGNORECASE)
 
 # CIP2020 codes assigned per program. Source is either (a) Vanderbilt's official
 # Registrar CIP list (docs/planning/CIP_Codes.pdf, reviewed August 2025 and tracked in
-# this repo — see decisions-log.md, Step 17, on why keeping it public is deliberate),
+# this repo — see decisions-log-detailed.md, Step 17, on why keeping it public is deliberate),
 # matched by exact or near-exact program name, or (b) the algorithmic shortlist
 # (scripts/suggest_vanderbilt_cip_codes.py), used only where the official list has no
 # entry. See docs/decisions-log.md for the full reasoning and match-rate against the

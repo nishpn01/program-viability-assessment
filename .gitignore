@@ -8,8 +8,11 @@
 *Vanderbilt University*.png
 
 # --- Private working docs (never publish) ---
+# docs/decisions-log.md itself is PUBLIC on purpose (the reporting-style summary) --
+# the detailed working record with the full AI-collaboration trail lives at
+# decisions-log-detailed.md instead, and stays private here.
 docs/project-journal.md
-docs/decisions-log.md
+docs/decisions-log-detailed.md
 docs/landscape-scan.md
 docs/project-brief.md
 docs/START-HERE.md
