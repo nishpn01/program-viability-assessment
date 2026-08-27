@@ -128,17 +128,21 @@ near-synonyms in one portfolio. The names above are drawn to be mutually disting
 governance program, which is roughly how NCES separates the two codes). Whether both
 should launch at all is a portfolio question, not a naming one. If only one proceeds,
 Information Science is the more differentiated of the two against Vanderbilt's existing
-informatics footprint.
+informatics footprint. Done: both proceeded to the final five-finalist shortlist; see
+`docs/decisions-log.md`.
 
 **Economics is the finding to escalate.** It is the only finalist with an exact CIP6
 match to a named Vanderbilt graduate program. It is not the 51.3805 situation (GPED is
 residential and development-focused, so an online quantitative M.S. is a genuinely
 different product), but it deserves the same explicit sign-off rather than passing
-silently.
+silently. Done: it proceeded to the final shortlist under this name; see
+`docs/decisions-log.md`.
 
 **Data Science needs a positioning decision, not a naming one.** Extension of the DSI
 residential degree, or a separately branded online program? The CS precedent says
-Vanderbilt is comfortable with the former, and the recommendation assumes it.
+Vanderbilt is comfortable with the former, and the recommendation assumes it. Done: the
+final report and dashboard use "Master of Science in Data Science," so the
+DSI-extension positioning held.
 
 **Nothing here reflects program design.** These names assume each program's content
 matches its CIP definition. If a curriculum drifts, for example if Business Analytics

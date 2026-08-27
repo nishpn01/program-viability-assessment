@@ -119,9 +119,12 @@ together.
 
 Exact Tableau canvas layout (horizontal preferred over the vertical NotebookLM mockup)
 gets settled in the build step, not here; this spec fixes what goes on the dashboard
-and why, not pixel placement. Whether the KPI row should default to the #1 finalist or
-to an average across all five is worth a second look once the row actually exists and
-can be looked at, not decided from a description alone.
+and why, not pixel placement. Done: the shipped dashboard uses a horizontal 1280×720
+canvas.
+
+Whether the KPI row should default to the #1 finalist or to an average across all five
+is worth a second look once the row actually exists and can be looked at. Done: see
+Build reconciliation below; it defaults to the top-ranked finalist.
 
 ## Build reconciliation (2026-08-19)
 

@@ -138,14 +138,18 @@ completions trend (`completions_trend_pct` NULL), 11 candidates hit both, 192 to
 
 **Recommended: option 2, partial reweight**, paired with a visible `n_metrics_used`
 column in the scored output so any Go/Test/Pass call resting on partial data is visible
-at a glance, not hidden inside a single clean-looking score.
+at a glance.
 
 ## 5. Not yet done
 
 Go/Test/Pass band cutoffs are intentionally not proposed here. Per the plan agreed
 before this analysis started, cutoffs get set from the real score distribution once the
-score is actually computed, not decided in advance. That's the next step after this
-report is verified and the method above is approved.
+score is actually computed. That's the next step after this report is verified and the
+method above is approved.
+
+Done: the cutoffs were set from the real distribution in `sql/06` (Go at the top
+decile, score ≥ 75.3; Test above the median, 45.7 to 75.3; Pass below the median). See
+`docs/decisions-log.md`.
 
 ## Status
 
@@ -153,3 +157,5 @@ Nothing in sections 2 through 4 is implemented in SQL. This is a findings report
 recommendation, written to be checked, not a locked decision. See
 `docs/decisions-log.md` for what's been logged as considered-but-not-adopted, and
 `docs/project-journal.md` for why independent verification came before approval.
+
+Done: the method above was approved and implemented in `sql/06` through `sql/08`.

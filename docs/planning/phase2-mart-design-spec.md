@@ -62,18 +62,22 @@ already-offered-by-Vanderbilt flag.
   dictionary's known counts, including the known gaps, before anything is built on top
   of it.
 
-## Amendments found during build verification (kept, not hidden)
+## Amendments found during build verification
 
 - Vanderbilt's 15 programs map to **14 distinct** CIP codes: two M.Ed. programs
   legitimately share 13.0401, confirmed against the Registrar's official PDF (in this
   folder). The flag matches on the 14.
-- The float join-key risk flagged in the ERD got a structural fix (`NUMERIC(7,4)`),
-  not just a warning comment.
-- The suppressed-years trend rule (per-CIP year window; NULL for single-year CIPs) was
-  made explicit rather than left implied.
+- The float join-key risk flagged in the ERD got a structural fix: `NUMERIC(7,4)`
+  column types enforce it at the database level.
+- The suppressed-years trend rule (per-CIP year window; NULL for single-year CIPs) is
+  stated explicitly in the SQL.
 
 ## Out of scope by design
 
-Scoring and Go/Test/Pass cutoffs (Phase 3; cutoffs wait for the real score
-distribution); CIP clustering (shortlist stage only); BigQuery port (post-call
-exercise).
+- **Scoring and Go/Test/Pass cutoffs.** Deferred to Phase 3, where cutoffs get set
+  from the real score distribution. Done: see `phase3-scoring-findings.md` and
+  `sql/06` through `sql/08`.
+- **CIP clustering.** Deferred to the shortlist stage. Done: see `docs/decisions-log.md`,
+  126 Go-band candidates reduced to 27 clusters plus 34 singles.
+- **BigQuery port.** Planned as a post-call exercise. Not done; parked as future scope
+  (see `README.md`).
