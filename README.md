@@ -26,8 +26,8 @@ Candidate programs are **derived from the data**, not hand-selected. National
 labor-market demand (BLS Employment Projections) and national student demand (IPEDS
 completions by field) are joined through the official CIP↔SOC crosswalk, then checked
 against Vanderbilt's current catalog. Fields that are in demand, have a real student
-market, and aren't already offered survive as candidates. Full reasoning trail:
-`docs/decisions-log.md`.
+market, and aren't already offered survive as candidates. Every non-obvious decision
+along the way is recorded in a working decision log kept alongside this repo.
 
 ## Where this stands today
 
@@ -59,7 +59,7 @@ ends along the way, not just the final numbers.
 | `sql/` | The staging DDL, load, verification, scoring, and shortlisting queries |
 | `notebooks/` | Independent verification of AI-generated analysis (e.g. re-deriving a findings report's numbers from source data, cell by cell) and the Phase 5 report figures |
 | `deliverables/` | The final, shareable outputs: the Tableau workbook, the feasibility report PDF, and the presentation deck |
-| `docs/` | Problem statement, provenance, decisions, glossary, and the final recommendation |
+| `docs/` | Problem statement, provenance, glossary, and the final recommendation |
 
 ## Data sources (all public, all free)
 
@@ -101,18 +101,16 @@ Full provenance, pull dates, and access notes: `docs/data-sources.md`.
 - **Competitor pricing** — tuition/format benchmarking against peer online programs.
 - **A search-interest / demand-trend signal** (e.g. Google Trends) — IPEDS already
   gives a completions trend, so this would be an enrichment, not a blocker.
-- **Porting the SQL layer to BigQuery** (currently local Postgres) — a planned exercise
-  once the deadline has passed.
+- **Porting the SQL layer to BigQuery** (currently local Postgres) — a planned
+  follow-up exercise, not done as part of this build.
 - **Extending the method** to more than one university.
 
 ## Method note
 
-Built with AI assistance (Claude) for the mechanical work — scraping, parsing,
-cleaning, and SQL — while the framing, judgment calls, and final recommendation are my
-own. Every source is logged in `docs/data-sources.md`, and every non-obvious decision
-(including places where I corrected the AI, or it caught something I'd missed) is
-logged in `docs/decisions-log.md` — the goal is a project that's fully reproducible and
-auditable, not a black box.
+Built with AI assistance for the mechanical work — scraping, parsing, cleaning, and
+SQL. Every source is logged in `docs/data-sources.md`, and every non-obvious decision
+is recorded in a working decision log kept alongside this repo — the goal is a project
+that's fully reproducible and auditable, not a black box.
 
 ---
 
