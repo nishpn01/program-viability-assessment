@@ -114,7 +114,7 @@ ORDER BY e.proposed_name, e.year;
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
 
--- Confirmed directly (see docs/decisions-log-detailed.md Step 19): 16 of the 65 expected (CIP, year) combos are missing --
+-- Confirmed directly against the source data: 16 of the 65 expected (CIP, year) combos are missing --
 -- MSc. in Data Science (30.7001) and MSc. in Business Analytics (30.7102),
 -- 2012-2019 each, 8 years apart. Clean, identical boundary across both CIPs
 -- (not scattered individual cells) -- consistent with both being newer CIP6

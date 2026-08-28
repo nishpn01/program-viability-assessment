@@ -166,9 +166,9 @@ an opaque ID scheme), before relying on it in the next phase.
 Profiles the raw tables and proposes a cleaning plan before writing anything. The AI
 reports findings, discusses the join/grain decisions, and waits for sign-off before
 execution (2.2).
-> Read these first for context: `docs/START-HERE.md`, `docs/project-journal.md`,
-> `README.md` (or wherever this project's problem-statement doc lives), and
-> `docs/data-sources.md`.
+> Read these first for context: `{ORIENTATION_DOC}` and `{DECISIONS_LOG}` (whatever
+> this project uses to track prior decisions), `README.md` (or wherever this project's
+> problem-statement doc lives), and `docs/data-sources.md`.
 >
 > Do EDA before any cleaning. Profile the tables, report what you find in plain terms,
 > and discuss the decisions before touching any file. Work with whatever raw tables
@@ -378,7 +378,7 @@ so the design's provenance is checkable separately from the code.
 > and ranks candidate options (academic programs, products, market segments, whatever
 > this repo's unit of analysis is) toward a decision recommendation: joining the
 > cleaned source tables into a single analysis mart. Collection and per-table cleaning
-> are already done. Read `docs/START-HERE.md` first for orientation, then
+> are already done. Read `{ORIENTATION_DOC}` first for orientation, then
 > `docs/decisions-log.md` for which design rules are already locked, and the data
 > dictionary's Clean section for each table's actual columns, grain, and known gaps.
 > Discover table names, row counts, join keys, and coverage from the live files here,
@@ -444,7 +444,7 @@ spec, per-project, written by the analyst before this prompt runs. The prompt
 implements and stress-tests a documented design.
 The SQL dialect and database engine are also unspecified (Postgres here), since
 choosing them is part of the prompt's own plan step. Outcome on this project:
-`derived_candidates`, 1,268 rows; full build notes in `docs/decisions-log-detailed.md`.*
+`derived_candidates`, 1,268 rows, built by `sql/04_build_derived_candidates.sql`.*
 
 ---
 
@@ -463,7 +463,7 @@ queries, but running SQL against the live database happens on the machine that h
 > (academic programs, products, market segments, whatever this repo's unit of analysis
 > is) into an actual composite score and a banded recommendation (Go/Test/Pass, or
 > whatever categorical verdict this project uses). Data collection, cleaning, and the
-> join/derive step are already done. Read `docs/START-HERE.md` first for orientation,
+> join/derive step are already done. Read `{ORIENTATION_DOC}` first for orientation,
 > then the most recent relevant entries in `docs/decisions-log.md`, and the data
 > dictionary's Analysis Marts section for the mart's actual columns and grain. Discover
 > and verify this project's own column names, row counts, and metrics.
@@ -494,9 +494,9 @@ queries, but running SQL against the live database happens on the machine that h
 *How to adapt: the prompt names no columns, weights, or cutoffs; the data dictionary
 and the mart itself carry all of that, discovered fresh each run. The real dependency
 is that the mart already exists with documented columns (a project without one needs
-2.3 first). Outcome on this project: method locked and scored, full build notes in
-`docs/decisions-log-detailed.md`. Cutoffs (step 5) needed their own follow-up prompt,
-3.3 below, once the score existed.*
+2.3 first). Outcome on this project: method locked and scored in `sql/06`, with the
+reasoning in `docs/planning/phase3-scoring-findings.md`. Cutoffs (step 5) needed their
+own follow-up prompt, 3.3 below, once the score existed.*
 
 ### 3.2: Independently verify a scoring findings report (reusable)
 
@@ -647,19 +647,18 @@ skeleton exists. It's deliberately generic: it doesn't name a phase number or te
 chat which section to write in, since each phase chat already knows its own history and
 is better placed than a fresh Phase 5 session to judge what from its own work belongs
 in the final report. Structure locked before this prompt runs: answer-first, grouped by
-evidence pillar, with a first-class Methodology and Limitations section. Full reasoning
-in `docs/decisions-log-detailed.md`.
+evidence pillar, with a first-class Methodology and Limitations section.
 
 > We're assembling the final Phase 5 report. A shared draft skeleton exists for this
-> purpose; read it first, along with this repo's `docs/decisions-log.md` and
-> `project-journal.md` for the reasoning needed.
+> purpose; read it first, along with this repo's `docs/decisions-log.md` and whatever
+> working notes it keeps, for the reasoning needed.
 >
 > Before editing: check `git status` and `git log` on this repo. If the draft file has
 > uncommitted changes from another session, read them first so nothing overwrites
 > another phase's contribution.
 >
 > Using your own phase's actual work (its recap doc if one exists, its planning specs,
-> its decisions-log and project-journal entries, its real output files), add whatever
+> its decisions-log and working-note entries, its real output files), add whatever
 > findings, numbers, decisions, corrections, or honest caveats from your phase belong in
 > the report, in whichever section(s) of the draft they actually fit. Use your own
 > judgment about what's relevant; don't feel confined to one section, and leave a
@@ -680,5 +679,5 @@ in `docs/decisions-log-detailed.md`.
 phase number, section names, and file paths beyond the one shared draft, since those
 are either already known to whichever chat runs it or spelled out inside the draft
 skeleton itself. Reusable as-is on a future project's own multi-phase report pass,
-provided that project also keeps a decisions-log/project-journal pair and a shared
-draft skeleton to point at.*
+provided that project also keeps a decisions log, some form of running working notes,
+and a shared draft skeleton to point at.*

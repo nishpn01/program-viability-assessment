@@ -2,8 +2,7 @@
 
 Profiled directly from the files in `data/raw/` and `data/clean/` (pandas `shape`,
 `dtype`, `nunique`, `isna().sum()`, re-derived each time this doc is regenerated). See
-[data-sources.md](data-sources.md) for where each file came from and
-[source-inventory.md](source-inventory.md) for the sourcing rationale.
+[data-sources.md](data-sources.md) for where each file came from and why.
 
 **Pipeline stage:** all 6 raw tables are cleaned (**Clean** section below) and joined
 into one analysis mart, `derived_candidates` (**Analysis marts** section, end of this
@@ -17,16 +16,20 @@ inline comments in `sql/01` through `sql/11` for the SQL itself.
 
 ### Structured raw scrapes (parsed into CSV/JSON below)
 
-`data/raw/labor_raw/*.md` (12 files: `accounting`, `business_analytics`,
-`cybersecurity`, `data_science`, `finance`, `healthcare_admin`, `marketing`,
-`project_management`, `public_administration`, `public_health`, `social_work`,
-`supply_chain`) and `data/raw/bls_projections_raw/*.md` (3 files: `table_1_10_openings`,
+`data/raw/bls_projections_raw/*.md` (3 files: `table_1_10_openings`,
 `table_1_3_fastest_growing`, `table_1_4_most_new_jobs`) are full Firecrawl page-scrape
 dumps of BLS.gov pages (site nav/boilerplate plus the actual content table), one file
-per occupation page or per BLS table. Each is the unparsed source a downstream script
-(`scripts/scrape_labor_demand.sh`, `scripts/parse_bls_projections.py`) reads to produce
-the corresponding CSV below, so they aren't pandas-profiled here. Grain: one file, one
-scraped web page.
+per BLS table. Each is the unparsed source `scripts/parse_bls_projections.py` reads to
+produce the corresponding CSV below, so they aren't pandas-profiled here. Grain: one
+file, one scraped web page.
+
+A second scrape set, `data/raw/labor_raw/*.md` (12 files, one per candidate program:
+`accounting`, `business_analytics`, `cybersecurity`, `data_science`, `finance`,
+`healthcare_admin`, `marketing`, `project_management`, `public_administration`,
+`public_health`, `social_work`, `supply_chain`), feeds `bls_labor_demand.csv` the same
+way via `scripts/scrape_labor_demand.sh`. **These 12 files are not published in this
+repo.** They belong to the superseded first-pass sample described below, and the scrape
+is reproducible from the script, which lists the same 12 pages.
 
 ---
 
@@ -137,7 +140,7 @@ NCES's official CIP2020↔SOC2018 crosswalk, distributed as one workbook with 8 
 
 **`File Guide`**, 7 rows × 2 cols (`File Name`, `Description`): a human-readable index of the other 7 sheets, not data itself.
 
-**`CIP-SOC`**, grain: one row is one CIP2020×SOC2018 match, ordered by CIP code. 6,097 rows, 2,143 distinct CIP codes to 868 distinct SOC codes (many-to-many, as flagged in `source-inventory.md`).
+**`CIP-SOC`**, grain: one row is one CIP2020×SOC2018 match, ordered by CIP code. 6,097 rows, 2,143 distinct CIP codes to 868 distinct SOC codes (many-to-many, which is what makes the crosswalk a bridge table rather than a simple lookup).
 
 **`SOC-CIP`**, same underlying matches as `CIP-SOC`, reordered/keyed by SOC code first. 6,093 rows, 4 fewer than `CIP-SOC` (worth reconciling which 4 CIP-SOC pairs drop out before treating the two sheets as interchangeable).
 
@@ -160,8 +163,7 @@ Common columns across the CIP-keyed sheets: `CIP2020Code` (float64, e.g. `1.0101
 All 6 raw tables were cleaned in a single pass. Cleaning scripts (one per table, in
 `scripts/clean_*.py`) are the source of truth for exactly what each step did; this
 section documents the resulting shape, not the transformation logic. See
-`docs/decisions-log.md` for the methodology and `docs/decisions-log-detailed.md` for
-the full per-table build notes.
+`docs/decisions-log.md` for the methodology behind each cleaning choice.
 
 ### `bls_fastest_growing_clean.csv`
 **Grain:** one row is one occupation (30 rows; the "Total, all occupations" baseline row from the raw file was dropped).
@@ -242,7 +244,7 @@ Missing years (IPEDS suppression) are left missing, not filled with 0; suppressi
 | `program_url` | object | Unchanged from raw | 0/15 |
 | `total_price_estimated` | float64 | Parsed single-number price: already-total values used directly, per-credit rates × parsed credit count, `"Fully Funded"` becomes `0` (a real zero cost), `"NR"` becomes missing. See `scripts/clean_vanderbilt_current_programs.py` for the exact per-row rule. | 4/15 (3 per-credit rows with no parseable credit count, "Semesters"/"Years"/"Varies" duration; 1 "NR" row) |
 | `cip2020_code` | float64 | CIP2020 code assigned per program, joins this table into `cip_soc_crosswalk` the same way `ipeds_completions_masters_clean.csv` does | 0/15 |
-| `cip2020_code_source` | object | Provenance of the `cip2020_code` value: `"official"` (13 rows, matched against Vanderbilt's own Registrar CIP list, `docs/planning/CIP_Codes.pdf`) or `"algorithmic shortlist"` / `"algorithmic/inferred"` (2 rows, used only where the official list has no entry). Full per-row mapping and reasoning in `docs/decisions-log-detailed.md`. | 0/15 |
+| `cip2020_code_source` | object | Provenance of the `cip2020_code` value: `"official"` (13 rows, matched against Vanderbilt's own Registrar CIP list, `docs/planning/CIP_Codes.pdf`) or `"algorithmic shortlist"` / `"algorithmic/inferred"` (2 rows, used only where the official list has no entry, produced by `scripts/suggest_vanderbilt_cip_codes.py` and confirmed by hand). | 0/15 |
 
 ## Analysis marts
 
@@ -329,8 +331,9 @@ Same 9 columns as `shortlist_review` above, plus:
 ### `shortlist_ranked` (`data/derived/shortlist_ranked.csv`, `shortlist_ranked_clean.csv`)
 
 Built by `sql/10_shortlist_ranked.sql`, picking each cluster's max-scoring
-representative from `shortlist_review_clustered` (the Nursing cluster is excluded; see
-`docs/decisions-log-detailed.md`). **Grain: one row per surviving cluster, 60 rows in
+representative from `shortlist_review_clustered` (the Nursing cluster is excluded
+because Vanderbilt's catalog data proved incomplete for that program family; see
+`docs/decisions-log.md`). **Grain: one row per surviving cluster, 60 rows in
 `shortlist_ranked.csv`** (the full ranking); **52 rows in `shortlist_ranked_clean.csv`**
 (the 8 clusters flagged `has_soc_11_1021` removed, for a side-by-side comparison).
 
@@ -377,8 +380,9 @@ Built by `sql/11_dashboard_extracts.sql` from
 `ipeds_completions_masters JOIN finalist_programs`. **Grain: one row per finalist ×
 year, 2012 to 2024, 49 of an expected 65 rows.** The 16 missing rows are Data Science,
 General (30.7001) and Business Analytics (30.7102), both absent before 2020: a CIP2020
-taxonomy revision, not a data-quality gap (confirmed in `docs/decisions-log-detailed.md`).
-Feeds the completions trend chart only.
+taxonomy revision, not a data-quality gap. Both codes are new in the CIP2020 revision,
+and the gap is a clean 2012 to 2019 boundary across both, rather than scattered
+individual cells the way suppression appears. Feeds the completions trend chart only.
 
 | Column | Type | Nulls | Meaning |
 |--------|------|-------|---------|

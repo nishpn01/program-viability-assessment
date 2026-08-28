@@ -8,8 +8,8 @@
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.1).
 --
--- Locked rules implemented here (docs/phase3-scoring-findings.md,
--- docs/decisions-log-detailed.md Step 9):
+-- Locked rules implemented here (docs/planning/phase3-scoring-findings.md,
+-- docs/decisions-log.md):
 --   * Normalization: PERCENTILE RANK, not min-max. Two of the four metrics are
 --     extremely right-skewed (completions_latest_year skew 17.5,
 --     completions_trend_pct skew 13.9) -- min-max would let one outlier

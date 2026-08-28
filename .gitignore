@@ -46,3 +46,6 @@ Thumbs.db
 
 # --- Local Claude Code permissions (machine-specific, not project content) ---
 .claude/settings.local.json
+
+# --- Scaffold placeholders (kept on disk, untracked; every folder has real files now) ---
+.gitkeep

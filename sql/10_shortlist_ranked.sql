@@ -52,12 +52,13 @@ CREATE TABLE shortlist_clustered (
 --
 -- This is a shortlist-stage patch, not a real fix -- the actual fix belongs upstream,
 -- in the raw Vanderbilt catalog data and a full rebuild of sql/04 through this file.
--- Logged as future scope (docs/decisions-log-detailed.md, Step 17) rather than done immediately.
+-- Logged as future scope (docs/decisions-log.md) rather than done immediately.
 
 -- STEP 1 -- representative row per cluster: the max-scoring member. Decision (locked,
--- see docs/decisions-log-detailed.md Step 16): a cluster's ranking unit is its single strongest specific program, not
--- an average across the cluster -- the cluster's mean/min are kept as supporting
--- narrative evidence, not the ranking number itself. See decisions-log.md.
+-- see docs/decisions-log.md): a cluster's ranking unit is its single strongest specific
+-- program, not an average across the cluster -- most clusters group genuinely different
+-- credentials, and averaging would blur the distinction the ranking exists to make. The
+-- cluster's mean/min are kept as supporting narrative evidence, not the ranking number.
 WITH ranked_within_cluster AS (
     SELECT
         *,

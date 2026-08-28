@@ -28,17 +28,6 @@ traffic-light structure. Cutoffs are locked at Go ≥75.3, Test 45.7 to 75.3, Pa
 a top-decile/median split derived from the real score distribution (see
 `docs/decisions-log.md`).
 
-**TAM** (Total Addressable Market): the realistic audience size for a program, estimated
-as (students completing similar programs nationally per year) times (a stated capture
-%). Standard business-planning shorthand, borrowed here to size the student-demand side
-of each program.
-
-**SCQA**: Situation / Complication / Question / Answer, a standard consulting
-structure for a one-page recommendation: state the situation, the problem that
-complicates it, the question that follows, then the answer. This project's original
-scope planned the final report in SCQA form; the actual final report uses a different
-structure, documented in `docs/decisions-log-detailed.md`.
-
 ---
 
 ## Data and methodology terms (analysts, students new to data work)
@@ -102,24 +91,6 @@ A mart table is the single joined table built specifically to answer the project
 question (e.g., `derived_candidates`), combining multiple staging tables via their
 shared keys.
 
-**Many-to-many**: A relationship where a single record on one side can match multiple
-records on the other side, and the reverse also holds (as opposed to one-to-one or
-one-to-many). See "join cardinality" above; this is the specific cardinality the
-CIP↔SOC crosswalk has.
-
-**Normal forms (1NF / 2NF / 3NF)**: A standard scale for how "clean" a table's
-structure is, relative to its own key. **1NF** just means each cell holds one atomic
-value (no comma-packed lists inside a single field). **2NF** additionally requires that,
-when a table's key is made of more than one column, every other column depends on the
-*whole* key, and a violation here is called a **partial dependency**. **3NF**
-additionally requires that no column depends on another non-key column rather than the
-key itself. Higher normal forms trade some duplication-proofing for more tables and
-more joins: a system with live inserts/updates usually wants full normalization to
-avoid update anomalies, while a read-only, rebuilt-from-source analytics table can
-reasonably stay lower-normalized as a documented tradeoff (as `ipeds_completions_masters`
-does here; see `docs/decisions-log-detailed.md` for the specific partial dependency and
-why it was left as-is).
-
 ---
 
 ## SQL terms (analysts, students new to SQL)
@@ -179,9 +150,10 @@ fewer completions and 10% have more; the median is just the 50th percentile.
 **Skew**: how lopsided a distribution is around its center. 0 is symmetric, and a
 larger positive number means a small number of large outliers are stretching the
 distribution's tail. `completions_latest_year` (skew 17.5) is far more skewed than
-`employment_weighted_growth_pct` (skew 0.8); see `docs/decisions-log-detailed.md`. No
-single formula is universal, and different tools' skew functions can disagree slightly
-on the same data.
+`employment_weighted_growth_pct` (skew 0.8), which is why the two were normalized by
+percentile rank instead of min-max. Full distribution profile in
+`docs/planning/phase3-scoring-findings.md`. No single formula is universal, and different
+tools' skew functions can disagree slightly on the same data.
 
 **Correlation coefficient (Pearson's r)**: how strongly two numeric columns move
 together, from -1 (perfectly inverse) through 0 (no linear relationship) to +1
@@ -192,7 +164,7 @@ composite score adds real signal without double-counting one thing twice.
 **Min-max scaling**: rescaling a column so its smallest value becomes 0 and largest
 becomes 100, with everything else stretched proportionally between. Simple, but one
 extreme outlier defines the whole scale for everyone else, which is why it was rejected
-for this project's most skewed metrics (`docs/decisions-log-detailed.md`).
+for this project's most skewed metrics (`docs/decisions-log.md`).
 
 **Percentile-rank scaling**: rescaling a column by each value's percentile position
 rather than its raw magnitude, so a giant outlier can't compress the rest of the
@@ -242,12 +214,6 @@ many-to-many). This project's ERD lives in `docs/erd.md`.
 **Mermaid**: A plain-text syntax for drawing diagrams (flowcharts, ER diagrams, etc.)
 that GitHub renders automatically from a code block, with no separate diagramming tool
 or export step needed. Used for this project's ERD.
-
-**CRISP-DM** (Cross-Industry Standard Process for Data Mining): a widely used six-step
-lifecycle for data projects (business understanding, data understanding, data
-preparation, modeling, evaluation, deployment). Referenced here as a check on this
-project's own phase numbering: this project's "Phase 2" bundles CRISP-DM's "data
-understanding" (EDA) and "data preparation" (cleaning/joining) steps together.
 
 ---
 

@@ -13,19 +13,16 @@ snapshot, filed privately alongside other retired working docs.*
 for diagram readability, not literal pandas dtypes. Actual profiled dtypes (pandas
 reports every text column as `object`, for example) are in `data-dictionary.md`.*
 
-## What a junction/bridge table is
+## The crosswalk's role
 
-A junction (or bridge) table connects two tables whose real-world relationship is
-many-to-many, where a plain foreign key can't express it, since each row on one side
-can match many rows on the other side, and the reverse also holds. Instead of a direct
-link, both tables point *into* the junction table, which stores one row per valid
-pairing.
-
-`cip_soc_crosswalk` plays exactly this role here: a CIP6 academic program (e.g.
-"Cybersecurity") typically maps to several SOC occupations (avg 2.8 SOC codes per CIP,
-max 180), and a SOC occupation is typically fed by several CIP programs (avg 7 CIP codes
-per SOC, max 337). Without the crosswalk, there would be no principled way to connect
-IPEDS completions data (CIP-keyed) to BLS labor-demand data (SOC-keyed).
+`cip_soc_crosswalk` is a junction (bridge) table, and it is the hinge the whole pipeline
+turns on. A CIP6 academic program like "Cybersecurity" typically maps to several SOC
+occupations (avg 2.8 SOC codes per CIP, max 180), and a SOC occupation is typically fed
+by several CIP programs (avg 7 CIP codes per SOC, max 337). That many-to-many shape is
+why a plain foreign key can't express the relationship: both tables point into the
+crosswalk instead, which stores one row per valid pairing. Without it there would be no
+principled way to connect IPEDS completions data (CIP-keyed) to BLS labor-demand data
+(SOC-keyed). Definition in `glossary.md` if the term is unfamiliar.
 
 ## Diagram
 
@@ -73,7 +70,7 @@ erDiagram
         string format
         float total_price_estimated "parsed from price_raw; 4/15 missing (unparseable or NR)"
         float cip2020_code FK "13/15 from Vanderbilt's official Registrar CIP list, 2/15 from the algorithmic shortlist"
-        string cip2020_code_source "official vs. algorithmic, see docs/decisions-log-detailed.md"
+        string cip2020_code_source "official (13/15, Registrar list) vs. algorithmic (2/15, where the official list has no entry)"
     }
 
     bls_labor_demand {

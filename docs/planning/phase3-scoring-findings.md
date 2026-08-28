@@ -155,7 +155,9 @@ decile, score ≥ 75.3; Test above the median, 45.7 to 75.3; Pass below the medi
 
 Nothing in sections 2 through 4 is implemented in SQL. This is a findings report and
 recommendation, written to be checked, not a locked decision. See
-`docs/decisions-log.md` for what's been logged as considered-but-not-adopted, and
-`docs/project-journal.md` for why independent verification came before approval.
+`docs/decisions-log.md` for what's been logged as considered-but-not-adopted. Every
+number in this report was independently recomputed from
+`data/derived/derived_candidates.csv` in `notebooks/phase3_ai_report_verification.ipynb`
+before the method was approved.
 
 Done: the method above was approved and implemented in `sql/06` through `sql/08`.
