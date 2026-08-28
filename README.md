@@ -2,9 +2,9 @@
 
 **Which new online graduate program should Vanderbilt launch next?**
 
-Every graduate field in the national completions data gets scored against student demand
-and labor-market demand, checked against what Vanderbilt already offers online, and
-sorted into a Go / Test / Pass verdict. 1,254 candidate fields in, five finalists out.
+This scores every graduate field in the national completions data on student demand and
+labor-market demand, then ranks the ones Vanderbilt does not already offer online.
+1,254 fields in, five finalists out.
 
 [![Online program viability dashboard: KPI row, ranked finalists, score distribution, and completions trend](deliverables/dashboard/dashboard-screenshot.png)](https://public.tableau.com/app/profile/pranish.p7454/viz/OnlineProgramViabilityAssessment/Program_Overview_Dashboard2)
 
@@ -66,12 +66,13 @@ how many metrics backed each score travels with it.
 
 **Banding and shortlisting.** Cutoffs come from the real score distribution once it
 existed: Go is the top decile (score ≥ 75.3), Test runs from the median up to that cutoff
-(45.7 to 75.2), Pass falls below the median. That produces 126 Go, 502 Test, 626 Pass. Within the Go band, near-identical
-CIP codes were grouped by shared title words and 4-digit CIP prefix, reducing 126 codes
-to 61 distinct program ideas, 60 of which were ranked once the Nursing cluster was
-excluded (see Limitations). Each group is ranked by its strongest single member, since
-most clusters group genuinely different credentials and averaging would blur the
-distinction the ranking exists to make.
+(45.7 to 75.2), Pass falls below the median. That produces 126 Go, 502 Test, 626 Pass.
+
+Within the Go band, near-identical CIP codes were grouped by shared title words and
+4-digit CIP prefix, reducing 126 codes to 61 distinct program ideas. 60 of those were
+ranked once the Nursing cluster was excluded (see Limitations). Each group is ranked by
+its strongest single member, since most clusters group genuinely different credentials
+and averaging would blur the distinction the ranking exists to make.
 
 Decisions, tradeoffs, and the data-quality problems found along the way:
 [`docs/decisions-log.md`](docs/decisions-log.md).
@@ -150,10 +151,18 @@ here, since no survey data was collected and the analysis ran in SQL and Python.
 
 ## Limitations
 
-- **Single university.** The method transfers; the numbers do not, without re-pulling another school's catalog.
-- **Thin wage coverage.** Median pay exists for 60 of 832 occupations, too sparse to blend into the score, so it is used as a flag.
-- **One generic occupation code inflates some scores.** SOC 11-1021, "General and Operations Managers," is large enough to lift several unrelated management-adjacent fields. Flagged per candidate, since excluding generic codes would need a defensible definition of "generic."
-- **Vanderbilt's catalog data is incomplete for one program family.** Nursing was recorded as a single row instead of one row per specialty track, so the exclusion logic missed specialties already offered online. Caught at the shortlist stage and patched by excluding the whole cluster.
+- **Single university.** The method transfers; the numbers do not, without re-pulling
+  another school's catalog.
+- **Thin wage coverage.** Median pay exists for 60 of 832 occupations, too sparse to
+  blend into the score, so it is used as a flag.
+- **One generic occupation code inflates some scores.** SOC 11-1021, "General and
+  Operations Managers," is large enough to lift several unrelated management-adjacent
+  fields. Flagged per candidate, since excluding generic codes would need a defensible
+  definition of "generic."
+- **Vanderbilt's catalog data is incomplete for one program family.** Nursing was
+  recorded as a single row instead of one row per specialty track, so the exclusion logic
+  missed specialties already offered online. Caught at the shortlist stage and patched by
+  excluding the whole cluster.
 - **No primary research.** Every signal is public secondary data.
 - **Nothing here is specific to Vanderbilt beyond the catalog subtraction.** The labor
   and completions data is public and national, so the same analysis would produce nearly
@@ -163,10 +172,10 @@ here, since no survey data was collected and the analysis ran in SQL and Python.
 - **Percentile rank discards magnitude.** A field with a market three times larger scores
   the same as one that wins narrowly. That is the cost of being immune to the outliers
   described above, and it was accepted deliberately.
-- **The band cutoffs are a convention applied to a smooth distribution.** The score
-  distribution is smooth and roughly unimodal with no natural break anywhere, so top
-  decile and median were used rather than an invented threshold. A field at 75.2 and one
-  at 75.3 are not meaningfully different.
+- **The band cutoffs are a convention applied to a smooth distribution.** The scores are
+  roughly unimodal with no natural break anywhere, so top decile and median were used
+  rather than an invented threshold. A field at 75.2 and one at 75.3 are not
+  meaningfully different.
 - **Scores rest on unequal amounts of evidence.** Fields missing a metric are scored on
   what they have. Four of the 126 Go candidates have no labor-market signal at all, and
   their Go status rests entirely on completions and the corroborating flag.
@@ -185,9 +194,9 @@ here, since no survey data was collected and the analysis ran in SQL and Python.
   different but adjacent code is invisible to it, which is exactly how the residential
   Data Science master's was missed until the naming check caught it by hand.
 
-The first four are worked through in full in
-[`docs/decisions-log.md`](docs/decisions-log.md), including what it would take to fix the
-two that were flagged instead of solved.
+The wage coverage, generic occupation code, and Nursing catalog items are worked through
+in full in [`docs/decisions-log.md`](docs/decisions-log.md), including what it would take
+to fix the two that were flagged instead of solved.
 
 ## Future scope
 
@@ -245,5 +254,5 @@ numbers attached, along with the practices that caught them.
 
 ---
 
-*Modeled on a Vanderbilt Office of the Deputy Provost Data
-Analyst posting, using only public data.*
+*Modeled on a Vanderbilt Office of the Deputy Provost Data Analyst posting,
+using only public data.*
