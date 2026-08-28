@@ -46,6 +46,110 @@ clarifying questions before drafting anything.
 
 ---
 
+### 0.2: Create the project orientation doc (reusable)
+Produces the file every future AI session reads first. A project run across many sessions
+and more than one AI tool has no shared memory: each new session starts cold, re-derives
+context from whatever it happens to read, and that is where wrong assumptions get in. The
+orientation doc is the fix. It is what makes a project portable between agents instead of
+dependent on one tool's chat history. Expect a filled-in document, not an empty skeleton,
+opening with a paragraph written directly to whichever agent picks the project up next.
+> Create an orientation doc for this project at `{PATH}` (suggested:
+> `docs/ORIENTATION.md`). Its job is to let any AI agent, in any tool, pick this project
+> up cold and work on it correctly without asking me to re-explain the project.
+>
+> Before writing anything, read the repo and establish what is actually true right now:
+> the folder structure, what has been built, what the conventions are, what is in git and
+> what is deliberately ignored. Discover this from the files rather than asking me, and
+> tell me anything you could not determine.
+>
+> Write it as a filled-in document with real content in every section, not a template
+> with placeholders for me to complete. Structure:
+>
+> 1. **Recalibration paragraph, first thing on the page, addressed to an incoming AI
+>    agent.** What this project is, what question it answers, what phase it is in right
+>    now, and what to read next before touching anything. Someone should be able to read
+>    only this paragraph and not make a beginner's mistake.
+> 2. **Current state.** What is done, what is in progress, what has not started.
+> 3. **Locked decisions.** Choices already made, with a one-line reason each, and an
+>    explicit note that these are settled and should not be reopened without my say-so.
+>    This section exists because agents re-litigate settled decisions when they cannot
+>    see why they were made.
+> 4. **Conventions.** File naming, folder purposes, doc structure, commit style, and
+>    anything else a new agent would otherwise guess at and guess wrong.
+> 5. **Environment.** What runs where, and why. Note anything that cannot run in a
+>    sandboxed session, such as a local database, an API key, or a tool that needs
+>    network access, so an agent does not silently fake a step it cannot actually
+>    perform.
+> 6. **Known traps.** Mistakes already made on this project, so they are not repeated.
+>    Be specific about what went wrong, not just what to do.
+> 7. **Out of scope.** What was deliberately not done, so an agent does not helpfully
+>    build it.
+>
+> Then add a short maintenance note at the end covering when this doc gets updated, and
+> stating the standing rule that an agent re-reads it and checks `git status` before
+> editing anything, since more than one session can be open on this repo at once.
+>
+> Keep it scannable. An agent reading it should reach working knowledge in a couple of
+> minutes.
+
+*How to adapt: nothing to swap, since the prompt discovers the project's actual facts at
+run time. On a brand-new project with little history, sections 3 and 6 will be thin, and
+that is correct; they fill in as the project accumulates decisions and mistakes. Pair
+this with 0.3 below. The orientation doc holds what is settled; the handoff doc holds
+what happens next.*
+
+---
+
+### 0.3: Create and maintain the agent handoff doc (reusable)
+The rolling companion to 0.2, and a different file from both the orientation doc and the
+public README. The orientation doc answers "what has happened and what is settled." This
+one answers "what is the next task, and what does the agent picking it up need to know."
+Without it, every new session begins by asking the human to re-explain what comes next,
+which makes the human the only memory in the system. Expect a short, current document
+with an append-only log underneath it.
+> Create a handoff doc for this project at `{PATH}` (suggested: `docs/HANDOFF.md`), and
+> follow the protocol below on every session from now on.
+>
+> **What the file is for.** It is a baton passed between AI sessions. An agent starting
+> work reads it and finds its task already written, with the context and constraints
+> attached. Before finishing, that agent writes the next entry for whoever comes after.
+>
+> **Structure:**
+>
+> 1. **Current task**, at the top. What to do, why it matters now, the constraints, the
+>    files involved, and what "done" looks like concretely enough to check.
+> 2. **In flight.** Anything started and not finished, including anything left in a
+>    broken or half-migrated state. Say so plainly here rather than leaving it to be
+>    discovered.
+> 3. **Handoff log**, append-only, newest entry first. Each entry records what was
+>    completed, what changed in the repo, anything discovered that changes the next step,
+>    what is still open, and a written prompt the next agent can act on directly.
+>
+> **Protocol, every session:**
+>
+> - Read this file first, then the orientation doc.
+> - Run `git status` and `git log` before writing anything. More than one session can be
+>   open on this repo at once, and two agents editing this file without seeing each other
+>   produces a conflict that has to be untangled by hand.
+> - Never write that a step is done without verifying it against the repo. A claim that
+>   something was committed is not the same as a commit existing. Check, then write.
+> - Never rewrite or tidy an old log entry. What a previous agent believed it was doing
+>   is exactly what you need when something turns out to be wrong.
+> - Keep the current-task block short. When a decision is settled for good, move it into
+>   the orientation doc and out of here, so this file stays about what is next rather
+>   than turning into a second history.
+>
+> Write the file now with the current task filled in from the actual state of the repo,
+> and tell me if you are unsure what the next task should be rather than inventing one.
+
+*How to adapt: nothing project-specific to swap. The one thing worth tuning is how much
+detail each log entry carries. On a solo project with one agent at a time, two or three
+lines per entry is enough. On a project where several sessions run in parallel, entries
+need to be specific about which files were touched, since that is what makes a collision
+visible before it becomes a conflict.*
+
+---
+
 ## Phase 1: Data collection
 
 ### 1.1: Map the data landscape (report-first, do not pull full datasets yet)
