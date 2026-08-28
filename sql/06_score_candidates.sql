@@ -1,10 +1,10 @@
 -- ============================================================================
 -- 06_score_candidates.sql
--- Phase 3 — 1 of 2: turn derived_candidates' raw metrics into a 0-100 composite
+-- Phase 3, 1 of 2: turn derived_candidates' raw metrics into a 0-100 composite
 -- score per candidate CIP program.
 --
 -- Run with:  psql -p 5433 -d program_viability -f sql/06_score_candidates.sql
--- (requires derived_candidates to already exist — run sql/01-05 first if not)
+-- (requires derived_candidates to already exist; run sql/01-05 first if not)
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.1).
 --

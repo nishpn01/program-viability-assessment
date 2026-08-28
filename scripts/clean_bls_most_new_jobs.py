@@ -5,7 +5,7 @@ data/clean/bls_most_new_jobs_clean.csv.
 Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
 
 Identical shape and treatment to bls_fastest_growing.csv (same 7 columns, same
-"Total, all occupations" baseline row) — see docs/decisions-log.md.
+"Total, all occupations" baseline row). See docs/decisions-log.md.
 """
 from pathlib import Path
 
@@ -37,23 +37,23 @@ def main():
     before = len(df)
 
     df = df[df["2024 National Employment Matrix code"] != "00-0000"].copy()
-    print(f"Step 1 — dropped 'Total, all occupations': {before} -> {len(df)} rows")
+    print(f"Step 1: dropped 'Total, all occupations': {before} -> {len(df)} rows")
     assert len(df) == 30, f"expected 30 rows after dropping the total row, got {len(df)}"
 
     df = df.rename(columns=COLUMN_RENAME)
-    print(f"Step 2 — renamed {len(COLUMN_RENAME)} columns to snake_case")
+    print(f"Step 2: renamed {len(COLUMN_RENAME)} columns to snake_case")
 
     before_na = df[COMMA_NUMERIC_COLUMNS].isna().sum().sum()
     for col in COMMA_NUMERIC_COLUMNS:
         df[col] = df[col].astype(str).str.replace(",", "", regex=False).astype(float)
     after_na = df[COMMA_NUMERIC_COLUMNS].isna().sum().sum()
     print(
-        f"Step 3 — stripped commas + cast to float on {len(COMMA_NUMERIC_COLUMNS)} "
+        f"Step 3: stripped commas + cast to float on {len(COMMA_NUMERIC_COLUMNS)} "
         f"columns (NaNs before: {before_na}, after: {after_na})"
     )
-    assert after_na == before_na, "comma-strip introduced new NaNs — investigate"
+    assert after_na == before_na, "comma-strip introduced new NaNs, investigate"
 
-    print(f"Step 4 — final shape: {df.shape}")
+    print(f"Step 4: final shape: {df.shape}")
     print(df.head(3).to_string())
 
     CLEAN_PATH.parent.mkdir(parents=True, exist_ok=True)

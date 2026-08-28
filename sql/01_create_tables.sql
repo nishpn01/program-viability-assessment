@@ -1,18 +1,18 @@
 -- ============================================================================
 -- 01_create_tables.sql
--- Join/derive (Phase 2, final step) — 1 of 5: define the six staging tables that mirror data/clean/*.csv
+-- Join/derive (Phase 2, final step), 1 of 5: define the six staging tables that mirror data/clean/*.csv
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
 --
 -- Run with:  psql -p 5433 -d program_viability -f sql/01_create_tables.sql
 --
 -- Concepts in this file:
---   * DDL (Data Definition Language): CREATE/DROP TABLE — defines table shape.
+--   * DDL (Data Definition Language): CREATE/DROP TABLE, which defines table shape.
 --   * Types: TEXT (string), INTEGER (whole number), NUMERIC (exact decimal).
 --     NUMERIC is used instead of FLOAT/REAL everywhere because floats cannot
 --     represent most decimals exactly (51.2706 becomes 51.27059999…), which
 --     makes equality joins silently drop rows. NUMERIC(7,4) = up to 7 digits
---     total, 4 after the decimal point — exactly fits CIP codes like 51.2706.
+--     total, 4 after the decimal point, exactly fitting CIP codes like 51.2706.
 --   * PRIMARY KEY: enforces the table's grain (what one row means). A duplicate
 --     key on load is an error, so the grain documented in the data dictionary
 --     is enforced by the database.
@@ -45,7 +45,7 @@ CREATE TABLE ipeds_completions_masters (
 
 -- ----------------------------------------------------------------------------
 -- Crosswalk: which occupations (SOC) each field of study (CIP) feeds into.
--- This is a junction table — a many-to-many mapping.
+-- This is a junction table, a many-to-many mapping.
 -- Grain: one row per CIP–SOC pair. 6,097 rows expected.
 -- ----------------------------------------------------------------------------
 CREATE TABLE cip_soc_crosswalk (
@@ -59,7 +59,7 @@ CREATE TABLE cip_soc_crosswalk (
 -- ----------------------------------------------------------------------------
 -- BLS Table 1.10: employment projections for every detailed occupation.
 -- Grain: one row per SOC code. 832 rows expected. NOTE: no wage column exists
--- in this table — wages only exist in the two 30-row ranked tables below.
+-- in this table; wages only exist in the two 30-row ranked tables below.
 -- ----------------------------------------------------------------------------
 CREATE TABLE bls_occupational_openings (
     occupation_title                    TEXT     NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE bls_most_new_jobs (
 
 -- ----------------------------------------------------------------------------
 -- Vanderbilt's current online graduate catalog (Master's + Doctorate).
--- Grain: one row per program. 15 rows expected — note only 14 DISTINCT
+-- Grain: one row per program. 15 rows expected, but only 14 DISTINCT
 -- cip2020_code values: two M.Ed. programs legitimately share 13.0401
 -- (verified against the official registrar list in docs/planning/CIP_Codes.pdf).
 -- That is why cip2020_code is NOT the primary key here.

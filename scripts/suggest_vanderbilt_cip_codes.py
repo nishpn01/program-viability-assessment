@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Suggest candidate CIP codes for each of Vanderbilt's 15 (cleaned) programs, for
-manual review and pick from — NOT an automated fuzzy-match assignment.
+manual review and pick from. NOT an automated fuzzy-match assignment.
 
 Generated with AI assistance. This script came first; the approach here was later
 generalized into the reusable prompt at docs/ai-prompts-log.md (2.2b).

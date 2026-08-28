@@ -6,7 +6,7 @@ Generated with AI assistance, as part of the Phase 1 data-collection pull
 (docs/ai-prompts-log.md, 1.3).
 
 Each BLS page renders as one big markdown pipe-table plus site nav/footer noise.
-Data rows are identified by a SOC code (NN-NNNN) in the second column — nav/footer
+Data rows are identified by a SOC code (NN-NNNN) in the second column. Nav/footer
 lines never match that pattern, so no manual line-number boundaries are needed.
 """
 import csv
@@ -51,17 +51,17 @@ def write_csv(out_path: Path, header, rows):
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Table 1.10 — occupational openings (14 columns, includes Occupation type)
+    # Table 1.10: occupational openings (14 columns, includes Occupation type)
     header, rows = parse_table(RAW_DIR / "table_1_10_openings.md", expected_cols=14)
     line_items = [r for r in rows if r[2] == "Line item"]
     write_csv(OUT_DIR / "bls_occupational_openings.csv", header, rows)
     print(f"  of which {len(line_items)} are 'Line item' (non-summary) rows")
 
-    # Table 1.3 — fastest growing (7 columns, no Occupation type column)
+    # Table 1.3: fastest growing (7 columns, no Occupation type column)
     header, rows = parse_table(RAW_DIR / "table_1_3_fastest_growing.md", expected_cols=7)
     write_csv(OUT_DIR / "bls_fastest_growing.csv", header, rows)
 
-    # Table 1.4 — most new jobs (7 columns, same shape as 1.3)
+    # Table 1.4: most new jobs (7 columns, same shape as 1.3)
     header, rows = parse_table(RAW_DIR / "table_1_4_most_new_jobs.md", expected_cols=7)
     write_csv(OUT_DIR / "bls_most_new_jobs.csv", header, rows)
 

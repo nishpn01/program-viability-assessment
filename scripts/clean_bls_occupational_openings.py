@@ -5,10 +5,10 @@ data/clean/bls_occupational_openings_clean.csv.
 Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
 
 Steps (see docs/decisions-log.md for the reasoning behind each):
-1. Filter to Occupation type == "Line item" — drops the 281 category-rollup rows
+1. Filter to Occupation type == "Line item", which drops the 281 category-rollup rows
    that would double-count the detail occupations under them.
 2. Rename every column to snake_case, and strip the literal "<br>" that 5 column
-   names inherited from the scraped HTML header — SQL doesn't like spaces/commas
+   names inherited from the scraped HTML header. SQL doesn't like spaces/commas
    in column names, so this is fixed once here instead of again in Phase 3.
 3. Strip commas from the numeric-but-text columns and cast to float. SOC code and
    title stay as text (SOC codes have a leading zero / dash that must be preserved).
@@ -52,7 +52,7 @@ COMMA_NUMERIC_COLUMNS = [
     "occupational_openings_2024_34",
 ]
 
-# Already-numeric percent/rate columns — no comma-stripping needed, just renamed
+# Already-numeric percent/rate columns, no comma-stripping needed, just renamed
 ALREADY_NUMERIC_COLUMNS = [
     "employment_change_percent_2024_34",
     "labor_force_exit_rate_2024_34",
@@ -67,12 +67,12 @@ def main():
 
     # Step 1: filter to detail occupations only
     df = df[df["Occupation type"] == "Line item"].copy()
-    print(f"Step 1 — filtered to 'Line item': {raw_rows} -> {len(df)} rows")
+    print(f"Step 1: filtered to 'Line item': {raw_rows} -> {len(df)} rows")
     assert len(df) == 832, f"expected 832 Line item rows, got {len(df)}"
 
     # Step 2: rename columns
     df = df.rename(columns=COLUMN_RENAME)
-    print(f"Step 2 — renamed {len(COLUMN_RENAME)} columns to snake_case")
+    print(f"Step 2: renamed {len(COLUMN_RENAME)} columns to snake_case")
 
     # Step 3: strip commas + cast to float on the comma-formatted numeric columns
     before_na = df[COMMA_NUMERIC_COLUMNS].isna().sum().sum()
@@ -82,15 +82,15 @@ def main():
         )
     after_na = df[COMMA_NUMERIC_COLUMNS].isna().sum().sum()
     print(
-        f"Step 3 — stripped commas + cast to float on {len(COMMA_NUMERIC_COLUMNS)} "
+        f"Step 3: stripped commas + cast to float on {len(COMMA_NUMERIC_COLUMNS)} "
         f"columns (NaNs before: {before_na}, after: {after_na})"
     )
-    assert after_na == before_na, "comma-strip introduced new NaNs — investigate"
+    assert after_na == before_na, "comma-strip introduced new NaNs, investigate"
 
     # occupation_type / occupation_title / soc_code stay as text (object) as-is
 
     # Step 4: verification check + save
-    print(f"Step 4 — final shape: {df.shape}")
+    print(f"Step 4: final shape: {df.shape}")
     print(df.head(3).to_string())
 
     CLEAN_PATH.parent.mkdir(parents=True, exist_ok=True)

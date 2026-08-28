@@ -5,7 +5,7 @@ data/clean/vanderbilt_current_programs_clean.csv.
 Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
 
 Steps (see docs/decisions-log.md for the reasoning behind each):
-1. Filter to level in {Master's, Doctorate} — certificates are add-on credentials
+1. Filter to level in {Master's, Doctorate}. Certificates are add-on credentials
    that require existing Vanderbilt enrollment, not standalone programs comparable
    to the Masters-level IPEDS completions data driving the rest of this project.
    27 -> 15 rows.
@@ -16,12 +16,12 @@ Steps (see docs/decisions-log.md for the reasoning behind each):
    - "X/credit"      -> multiply by the credit count parsed from
                         `credits_or_duration` when it's expressed as "NN Credits";
                         left blank when duration is Semesters/Years/"Varies"
-                        (no reliable multiplier — not guessed).
+                        (no reliable multiplier available).
    - "Fully Funded"  -> 0 (real zero net cost, not missing).
    - "NR"            -> left missing (genuinely not reported).
    Original `price_raw` and `credits_or_duration` are kept unchanged alongside the
    new column so every estimate is traceable back to its source value.
-4. Assign a `cip2020_code` (+ `cip2020_code_source`) to every row — this is what
+4. Assign a `cip2020_code` (+ `cip2020_code_source`) to every row. This is what
    lets this table join into the rest of the pipeline and be subtracted out of the
    candidate universe. 13 of 15 codes come from Vanderbilt's own official CIP list
    (`docs/planning/CIP_Codes.pdf`); 2 come from the algorithmic shortlist
@@ -54,7 +54,7 @@ CIP_CODE_ASSIGNMENTS = {
     "Master of Legal Studies": ("22.0000", "official"),
     "Master of Engineering in Engineering Management": ("14.0101", "official"),
     "Master of Science in Computer Science": ("11.0701", "official"),
-    "Master of Science in Artificial Intelligence": ("11.0102", "algorithmic shortlist (program launched after the official list's Aug 2025 review — not yet covered by it)"),
+    "Master of Science in Artificial Intelligence": ("11.0102", "algorithmic shortlist (program launched after the official list's Aug 2025 review, not yet covered by it)"),
     "Doctor of Ministry in Integrative Chaplaincy": ("39.0602", "official"),
     "Doctor of Education in Leadership and Learning in Organizations": ("52.0213", "official"),
     "Master of Education in Independent School Leadership": ("13.0401", "official"),
@@ -79,7 +79,7 @@ def parse_price(price_raw: str, credits_or_duration: str):
         m = CREDITS_RE.search(str(credits_or_duration))
         if m:
             return rate * int(m.group(1))
-        return float("nan")  # e.g. "5 Semesters", "4 Years", "Varies" — no multiplier
+        return float("nan")  # e.g. "5 Semesters", "4 Years", "Varies", no multiplier
     # Not expected among Master's/Doctorate rows, but handle defensively
     digits = re.sub(r"[^\d.]", "", price_raw)
     return float(digits) if digits else float("nan")
@@ -91,13 +91,13 @@ def main():
 
     # Step 1: drop certificates
     df = df[df["level"].isin(["Master's", "Doctorate"])].copy()
-    print(f"Step 1 — dropped certificates: {before} -> {len(df)} rows")
+    print(f"Step 1: dropped certificates: {before} -> {len(df)} rows")
     assert len(df) == 15, f"expected 15 rows (11 Master's + 4 Doctorate), got {len(df)}"
 
     # Step 2: fix dual-affiliation school value
     n_fixed = df["school"].str.contains(r"\|").sum()
     df["school"] = df["school"].str.split(r"\s*\|\s*").str[0]
-    print(f"Step 2 — normalized {n_fixed} dual-affiliation school value(s)")
+    print(f"Step 2: normalized {n_fixed} dual-affiliation school value(s)")
 
     # Step 3: parse price into one total_price_estimated column
     df["total_price_estimated"] = df.apply(
@@ -115,7 +115,7 @@ def main():
     n_funded = (df["price_raw"] == "Fully Funded").sum()
     n_nr = (df["price_raw"] == "NR").sum()
     print(
-        f"Step 3 — priced {n_total} already-total, {n_credit_converted} converted "
+        f"Step 3: priced {n_total} already-total, {n_credit_converted} converted "
         f"from per-credit, {n_credit_unconverted} left blank (no credit-count "
         f"multiplier available), {n_funded} fully-funded (-> 0), {n_nr} not-reported "
         f"(-> missing)"
@@ -126,7 +126,7 @@ def main():
     df["cip2020_code_source"] = df["program_name"].map(lambda n: CIP_CODE_ASSIGNMENTS[n][1])
     n_official = df["cip2020_code_source"].str.startswith("official").sum()
     n_other = len(df) - n_official
-    print(f"Step 4 — assigned cip2020_code to all {len(df)} rows ({n_official} from the official Vanderbilt CIP list, {n_other} from the algorithmic shortlist)")
+    print(f"Step 4: assigned cip2020_code to all {len(df)} rows ({n_official} from the official Vanderbilt CIP list, {n_other} from the algorithmic shortlist)")
     assert df["cip2020_code"].notna().all(), "every row must have a cip2020_code assigned"
 
     print(f"\nFinal shape: {df.shape}")

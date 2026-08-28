@@ -5,7 +5,7 @@ data/clean/ipeds_completions_masters_clean.csv.
 Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2a).
 
 Depends on data/clean/cip_soc_crosswalk_clean.csv already existing (run
-clean_cip_soc_crosswalk.py first) — used to determine which CIP6 codes actually
+clean_cip_soc_crosswalk.py first), used to determine which CIP6 codes actually
 have a crosswalk match, rather than hardcoding a fixed list of codes to drop.
 
 Steps:
@@ -14,8 +14,8 @@ Steps:
    the first 2 (e.g. 10101 -> 01.0101 -> 1.0101), matching the crosswalk's format.
 3. Drop rows whose cip2020_code has no match anywhere in the cleaned crosswalk
    (confirmed during EDA to be ~22 ultra-niche CIP6 codes with no crosswalk entry
-   at all — see docs/decisions-log.md).
-4. Leave missing years as missing (IPEDS suppression) — do not fill with 0.
+   at all, see docs/decisions-log.md).
+4. Leave missing years as missing (IPEDS suppression). Do not fill with 0.
 5. Sanity-check distinct CIP6 count before/after the drop.
 """
 from pathlib import Path
@@ -44,10 +44,10 @@ def to_cip2020_code(cip6_id: int) -> float:
 def main():
     df = pd.read_csv(RAW_PATH)
     df = df.rename(columns=COLUMN_RENAME)
-    print(f"Step 1 — loaded + renamed {len(COLUMN_RENAME)} columns: {df.shape}")
+    print(f"Step 1: loaded + renamed {len(COLUMN_RENAME)} columns: {df.shape}")
 
     df["cip2020_code"] = df["cip6_id"].apply(to_cip2020_code)
-    print("Step 2 — derived cip2020_code join key from cip6_id")
+    print("Step 2: derived cip2020_code join key from cip6_id")
 
     crosswalk = pd.read_csv(CROSSWALK_CLEAN_PATH)
     valid_codes = set(crosswalk["cip2020_code"].unique())
@@ -59,17 +59,17 @@ def main():
     after_codes = df["cip6_id"].nunique()
     dropped = before_codes - after_codes
     print(
-        f"Step 3 — dropped CIP6 codes with no crosswalk match: "
+        f"Step 3: dropped CIP6 codes with no crosswalk match: "
         f"{before_codes} -> {after_codes} distinct codes ({dropped} dropped, "
         f"{before_rows} -> {len(df)} rows)"
     )
 
-    # IPEDS suppresses low counts rather than reporting 0 — filling these with
+    # IPEDS suppresses low counts rather than reporting 0, so filling these with
     # 0 would misrepresent suppressed data as a real zero.
     n_missing = df["completions"].isna().sum()
-    print(f"Step 4 — missing-year rows left as-is (not filled): {n_missing}")
+    print(f"Step 4: missing-year rows left as-is (not filled): {n_missing}")
 
-    print(f"Step 5 — final shape: {df.shape}, {df['cip6_id'].nunique()} distinct CIP6 codes")
+    print(f"Step 5: final shape: {df.shape}, {df['cip6_id'].nunique()} distinct CIP6 codes")
 
     CLEAN_PATH.parent.mkdir(parents=True, exist_ok=True)
     df.to_csv(CLEAN_PATH, index=False)

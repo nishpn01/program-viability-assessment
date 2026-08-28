@@ -31,18 +31,18 @@ COLUMN_RENAME = {
 
 def main():
     df = pd.read_excel(RAW_PATH, sheet_name="CIP-SOC")
-    print(f"Step 1 — loaded CIP-SOC sheet: {df.shape}")
+    print(f"Step 1: loaded CIP-SOC sheet: {df.shape}")
     assert len(df) == 6097, f"expected 6,097 rows, got {len(df)}"
 
     df = df.rename(columns=COLUMN_RENAME)
-    print(f"Step 2 — renamed {len(COLUMN_RENAME)} columns to snake_case")
+    print(f"Step 2: renamed {len(COLUMN_RENAME)} columns to snake_case")
 
     df["cip2020_title"] = df["cip2020_title"].str.rstrip(".")
-    print("Step 3 — stripped trailing period from cip2020_title values")
+    print("Step 3: stripped trailing period from cip2020_title values")
 
     n_cip = df["cip2020_code"].nunique()
     n_soc = df["soc2018_code"].nunique()
-    print(f"Step 4 — sanity check: {len(df)} rows, {n_cip} distinct CIP codes, {n_soc} distinct SOC codes")
+    print(f"Step 4: sanity check: {len(df)} rows, {n_cip} distinct CIP codes, {n_soc} distinct SOC codes")
     assert (n_cip, n_soc) == (2143, 868), f"expected (2143, 868), got ({n_cip}, {n_soc})"
 
     CLEAN_PATH.parent.mkdir(parents=True, exist_ok=True)

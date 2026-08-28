@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 03_verification_checks.sql
--- Join/derive (Phase 2, final step) — 3 of 5: verification checks — confirm the loaded data matches the
+-- Join/derive (Phase 2, final step), 3 of 5: verification checks: confirm the loaded data matches the
 -- known facts from the Phase 2 data dictionary before building anything on it.
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
@@ -12,7 +12,7 @@
 --   * CASE WHEN ... THEN ... ELSE ... END: SQL's if/else, used here to print
 --     PASS/FAIL instead of making a human compare numbers.
 --   * UNION ALL: stacks the result rows of many SELECTs into one report.
---     (UNION without ALL would also de-duplicate — unnecessary work here.)
+--     (UNION without ALL would also de-duplicate, which is unnecessary work here.)
 --   * Scalar subquery: (SELECT COUNT(*) FROM t) used as a single value.
 -- Every check states its expected value from docs/data-dictionary.md.
 -- ============================================================================

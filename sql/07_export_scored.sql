@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 07_export_scored.sql
--- Phase 3 — 2 of 2: export the scored mart to CSV.
+-- Phase 3, 2 of 2: export the scored mart to CSV.
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.1).
 --

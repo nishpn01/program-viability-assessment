@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Labor-demand scrape (Phase 1a) — RUN THIS IN YOUR OWN TERMINAL.
+# Labor-demand scrape (Phase 1a). RUN THIS IN YOUR OWN TERMINAL.
 # Firecrawl works on your machine (it can't reach the internet from Claude's sandbox).
 #
 # Generated with AI assistance, as part of the Phase 1 data-collection pull
@@ -7,7 +7,7 @@
 #
 # Prereqs:
 #   export FIRECRAWL_API_KEY=fc-...        # your key, do NOT commit it
-#   (CLI optional — the script falls back to npx if `firecrawl` isn't installed)
+#   (CLI optional; the script falls back to npx if `firecrawl` isn't installed)
 #
 # Run from the repo root:
 #   bash scripts/scrape_labor_demand.sh
@@ -29,7 +29,7 @@ command -v firecrawl >/dev/null 2>&1 || FC="npx -y firecrawl-cli@latest"
 OUT="data/raw/labor_raw"
 mkdir -p "$OUT"
 
-# candidate_label | BLS Occupational Outlook Handbook URL (edit freely — add/remove lines)
+# candidate_label | BLS Occupational Outlook Handbook URL (edit freely, add/remove lines)
 ROWS=(
   "cybersecurity|https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm"
   "business_analytics|https://www.bls.gov/ooh/business-and-financial/management-analysts.htm"
@@ -52,4 +52,4 @@ for row in "${ROWS[@]}"; do
   $FC scrape "$url" -o "$OUT/$label.md" || echo "   FAILED: $label ($url)"
 done
 
-echo "Done. Files in $OUT/  — tell Claude and it will parse them into labor_demand.csv"
+echo "Done. Files in $OUT/. Tell Claude and it will parse them into labor_demand.csv"

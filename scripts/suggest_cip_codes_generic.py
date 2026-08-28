@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """Suggest candidate CIP codes for a university's program catalog, for a human to
-manually review and pick from — NOT an automated fuzzy-match assignment.
+manually review and pick from. NOT an automated fuzzy-match assignment.
 
 Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.2b).
 
 Generic / reusable version of `scripts/suggest_vanderbilt_cip_codes.py` (that file is
-the worked example this was generalized from — same method, run on Vanderbilt's 15
+the worked example this was generalized from. Same method, run on Vanderbilt's 15
 online Master's/Doctorate programs). See `docs/ai-prompts-log.md`, entry 2.2b, for the
 full 3-stage prompt this script is Stage 1 of (algorithmic shortlist -> tiering ->
 official-source verification -> fallback to human judgment if no official source
 exists).
 
-HOW TO ADAPT — edit the CONFIG block below, nothing else needs to change:
+HOW TO ADAPT: edit the CONFIG block below, nothing else needs to change:
 1. INPUT_PATH        -> your cleaned program-catalog CSV (must have a program-name
                          column).
 2. CROSSWALK_PATH     -> any CSV with a CIP-code column + CIP-title column. The
                          CIP-SOC crosswalk's cleaned CIP-SOC sheet works (it has every
                          CIP2020 code at least once), but a plain CIP-code reference
-                         list works just as well — this script only reads those two
+                         list works just as well; this script only reads those two
                          columns.
 3. PROGRAM_NAME_COL, CIP_CODE_COL, CIP_TITLE_COL -> match your actual column names.
 4. STOPWORDS          -> optional; strip whatever generic words (degree types,
@@ -27,7 +27,7 @@ HOW TO ADAPT — edit the CONFIG block below, nothing else needs to change:
 Method (unchanged from the Vanderbilt version): score every (program name, CIP title)
 pair by (a) count of shared significant words and (b) a character-level similarity
 ratio as a tiebreak, then print the top N CIP candidates per program. This is a
-SHORTLISTING aid only — it narrows thousands of possible codes down to a handful worth
+SHORTLISTING aid only. It narrows thousands of possible codes down to a handful worth
 a human look. The human (or an official university CIP source, if one exists) picks
 the final match; on the project this was built for, 4 of 11 "confident" algorithmic
 picks turned out to be wrong once checked against an official source, so treat every

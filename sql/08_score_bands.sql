@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 08_score_bands.sql
--- Phase 3 — 3 of 3: set Go/Test/Pass band cutoffs from the real score
+-- Phase 3, 3 of 3: set Go/Test/Pass band cutoffs from the real score
 -- distribution, then write the band back onto scored_candidates.
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.3).

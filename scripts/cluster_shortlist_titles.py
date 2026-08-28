@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Group near-duplicate CIP program titles within one candidate list, for a human to
-manually review and confirm — NOT an automated final grouping.
+manually review and confirm. NOT an automated final grouping.
 
 Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (3.4).
 
@@ -11,7 +11,7 @@ other, to find candidates in the same shortlist that are really the same program
 under different codes (e.g. five nursing-specialty codes that Vanderbilt would launch
 as one program, not five).
 
-HOW TO ADAPT — edit the CONFIG block below, nothing else needs to change:
+HOW TO ADAPT: edit the CONFIG block below, nothing else needs to change:
 1. INPUT_PATH      -> your shortlist CSV (must have a CIP-code column + CIP-title
                        column; score/other columns are carried through if present).
 2. CIP_CODE_COL, CIP_TITLE_COL, SCORE_COL -> match your actual column names.
@@ -145,7 +145,7 @@ def main():
             print(f"  {c:>10}  {titles[c]:<65} {score_str}")
         print()
 
-    print(f"=== Singles ({len(singles)}) — no near-duplicate found in this list ===")
+    print(f"=== Singles ({len(singles)}): no near-duplicate found in this list ===")
     for c in sorted(singles, key=lambda c: -scores.get(c, 0)):
         s = scores.get(c)
         score_str = f"score={s:.1f}" if s is not None else ""

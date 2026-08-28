@@ -1,6 +1,6 @@
 -- ============================================================================
 -- 04_build_derived_candidates.sql
--- Join/derive (Phase 2, final step) — 4 of 5: build the analysis mart — one row per candidate CIP program,
+-- Join/derive (Phase 2, final step), 4 of 5: build the analysis mart, one row per candidate CIP program,
 -- combining student demand (IPEDS) and labor demand (BLS via the crosswalk).
 --
 -- Generated with AI assistance; starter prompt in docs/ai-prompts-log.md (2.3).
@@ -15,7 +15,7 @@
 --   * Wages: never blended (no wage data for 772 of 832 SOCs). Only a boolean
 --     flag: does a top-3 SOC appear in BLS's own top-30 lists?
 --   * Vanderbilt overlap: exact CIP6 match against the 14 distinct VU codes,
---     kept as a flag — rows are never dropped.
+--     kept as a flag; rows are never dropped.
 --
 -- Concepts in this file:
 --   * CTEs (WITH name AS (...)): named intermediate results, like variables
@@ -100,7 +100,7 @@ cip_titles AS (
 -- 2024 employment. soc_code as a tie-breaker makes reruns deterministic.
 -- INNER JOIN is correct here: a SOC with no BLS row contributes no data.
 -- (The 12 SOCs missing from the crosswalk and 48 crosswalk SOCs missing from
--- BLS simply drop out of this CTE — the LEFT JOIN at the end keeps their CIPs.)
+-- BLS simply drop out of this CTE; the LEFT JOIN at the end keeps their CIPs.)
 ranked_socs AS (
     SELECT x.cip2020_code,
            o.soc_code,
@@ -149,7 +149,7 @@ bls_top30_flag AS (
 ),
 
 -- The 14 distinct CIP codes Vanderbilt already offers (15 programs; two M.Ed.s
--- legitimately share 13.0401 — verified against docs/planning/CIP_Codes.pdf).
+-- legitimately share 13.0401, verified against docs/planning/CIP_Codes.pdf).
 vanderbilt_cips AS (
     SELECT DISTINCT cip2020_code FROM vanderbilt_current_programs
 )

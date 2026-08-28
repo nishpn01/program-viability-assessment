@@ -6,7 +6,7 @@ handled along the way, so the reasoning behind each number is checkable.
 ## Method: candidates are derived from data
 
 The candidate universe is every CIP6 field of study in IPEDS's national completions
-data — 1,268 fields — cross-referenced against national labor-market demand (BLS
+data, 1,268 fields, cross-referenced against national labor-market demand (BLS
 Employment Projections) and Vanderbilt's own online catalog. A field survives as a
 candidate because the data places it there: real student demand, real labor demand,
 and not already offered by Vanderbilt.
@@ -19,7 +19,7 @@ Three source-data issues came up during cleaning and got handled explicitly:
   CIP6 codes are missing at least one of the 13 years (2012–2024). Missing years stay
   missing.
 - **Unmatched CIP codes.** 22 of 1,290 IPEDS CIP6 codes have no match anywhere in the
-  official CIP↔SOC crosswalk — all ultra-niche programs (Taxidermy, Talmudic Studies).
+  official CIP↔SOC crosswalk. All are ultra-niche programs (Taxidermy, Talmudic Studies).
   These are dropped from the candidate pool, with the reason documented.
 - **Unmatched SOC codes.** 12 of 832 BLS occupation codes have no crosswalk match. 7
   are broad occupational groups the crosswalk maps at a more detailed level instead
@@ -30,21 +30,21 @@ Three source-data issues came up during cleaning and got handled explicitly:
 
 Every field of study connects to multiple occupations. The rule: for each CIP code,
 take its top 3 matched occupations by 2024 employment, then combine each labor-demand
-metric across those 3 using an employment-weighted average — the largest occupation
-among the three counts most, but all three contribute. A field with fewer than 3
+metric across those 3 using an employment-weighted average, so the largest occupation
+among the three counts most while all three still contribute. A field with fewer than 3
 matches uses however many it has. This captures more of a field's real career breadth
 than a single primary occupation would, while avoiding the distortion of exploding
 every match (some CIP codes have over 100).
 
 ## Scoring methodology
 
-Four continuous metrics feed the composite score — current completions, completions
-trend, employment-weighted job openings, and employment-weighted job growth — plus one
-flag (whether a matched occupation appears on BLS's own fastest-growing or
-most-new-jobs lists). Three methodology choices:
+Four continuous metrics feed the composite score: current completions, completions
+trend, employment-weighted job openings, and employment-weighted job growth. A fifth
+input is a flag for whether a matched occupation appears on BLS's own fastest-growing or
+most-new-jobs lists. Three methodology choices:
 
 **Normalization: percentile rank.** Two of the four metrics are extremely
-right-skewed — a handful of catch-all fields (Business Administration, with 97,150
+right-skewed. A handful of catch-all fields (Business Administration, with 97,150
 national completions against a median of 64.5) dwarf everything else. Min-max scaling
 would let that single outlier define the top of the scale and crush every other
 field's score toward zero. Percentile rank uses relative position, so outlier
@@ -52,9 +52,9 @@ magnitude has no effect on it.
 
 **Weights: 30% current completions, 30% job openings, 15% completions trend, 15% job
 growth, 10% the BLS top-30 flag.** Current size outweighs trend on purpose. Given the
-skew above, a huge trend percentage is often a small-base artifact — one field goes
-from 1 completion to 331 over the period, a 33,000% increase — and current size is the
-sturdier signal.
+skew above, a huge trend percentage is often a small-base artifact. One field goes from
+1 completion to 331 over the period, a 33,000% increase, which says more about the
+starting base than about the market. Current size is the sturdier signal.
 
 **Missing data: partial reweight.** A candidate missing a metric (77 fields have no
 labor-market match at all, 126 have no usable completions trend) is scored on whatever
@@ -77,14 +77,15 @@ Two limitations are carried forward as explicit flags. Fixing either would mean
 redefining a rule the entire pipeline depends on:
 
 - **A generic occupation code inflates some labor-demand scores.** The top 5 fields by
-  job-openings score all share SOC 11-1021, "General and Operations Managers" — a
-  broad catch-all occupation that pulls the score up without reflecting demand
-  specific to the field. Excluding generic occupation codes from the join rule would
+  job-openings score all share SOC 11-1021, "General and Operations Managers," a broad
+  catch-all occupation that pulls the score up without reflecting demand specific to
+  the field. Excluding generic occupation codes from the join rule would
   need a defensible definition of "generic," which wasn't in scope to design here, so
   this is flagged per-candidate instead.
 - **Wage data covers a small slice of occupations.** Median-pay figures exist for only
-  60 of 832 occupations (BLS's two pre-ranked top-30 lists) — too sparse to blend into
-  the scoring metrics honestly, so it's used only as the boolean flag noted above.
+  60 of 832 occupations (BLS's two pre-ranked top-30 lists). That is too sparse to
+  blend into the scoring metrics honestly, so it's used only as the boolean flag noted
+  above.
 
 ## The Vanderbilt Nursing-catalog gap
 
@@ -104,7 +105,7 @@ source catalog data at the correct grain, is logged as future scope.
 ## Clustering near-duplicate programs
 
 Within the Go-band candidates, many CIP codes describe near-identical program ideas
-under different codes — multiple Nursing-specialty variants, for example. These were
+under different codes, multiple Nursing-specialty variants being the clearest case. These were
 grouped using two signals: shared significant words in the program title, and matching
 4-digit CIP prefixes (the government's own taxonomy grain). 126 Go-band candidates
 reduced to 27 clusters of 2–13 members plus 34 unclustered singles, roughly 60
