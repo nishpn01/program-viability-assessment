@@ -46,6 +46,58 @@ clarifying questions before drafting anything.
 
 ---
 
+### 0.1a: Write the project as a company-issued case study brief (reusable)
+Turns a project's problem statement into the kind of document a real company hands a
+candidate for a take-home case study: a stated business tension, a named ask, the
+qualities a strong response would show, the facts you're allowed to assume, and a few
+lines of tactical advice, in a company's actual voice rather than a project's own
+narration. Expect a single markdown file with no data-schema tables and no FAQ section,
+since those depend on materials a specific case study hands over and don't belong in a
+project's own problem statement.
+> Rewrite `{PROBLEM_STATEMENT_DOC}` as though {COMPANY_NAME} were issuing it as a real
+> case study brief to a new hire, in {COMPANY_NAME}'s voice, not the project's own voice
+> narrating what it did.
+>
+> Structure it in this order, adapting section names to fit the domain rather than
+> copying them literally:
+>
+> 1. **Background.** The business context and the specific tension at the center of the
+>    problem, stated the way an insider would explain it to someone new. Two sides with
+>    different incentives is usually the shape of it; name both sides and what each one
+>    wants.
+> 2. **The ask.** Frame it as an assignment: "imagine you are the newest {ROLE} on the
+>    team, and your first task is to..." State the one question the work needs to
+>    answer, and what a finished response has to include.
+> 3. **What a strong response looks like.** A short list of qualities the response
+>    should demonstrate, specific to this problem rather than generic ("curiosity" means
+>    something different for a marketplace-reliability problem than for a pricing
+>    problem). Ground each one in what the reader will actually check for.
+> 4. **Facts you can assume.** Whatever domain context the recipient would need but
+>    couldn't derive themselves. State these as given facts, not as data sources; do not
+>    name specific datasets, tables, or methods here, since working those out is the
+>    point of the exercise.
+> 5. **A few lines of tactical advice.** The kind of guidance a hiring manager adds
+>    because they've read a hundred of these and know where people go wrong: state your
+>    assumptions, work backwards from the outcome, make it specific enough that someone
+>    else could execute against it.
+>
+> Leave out anything that depends on materials a real case study would hand over but
+> this project doesn't have: a supporting-materials section with data-schema tables, and
+> any FAQ or interview-logistics section. This is the brief a project would have
+> received, not a facsimile of the whole case-study packet.
+>
+> Close with one or two sentences in the same voice, the kind of sign-off that makes it
+> read as a real document rather than a template.
+
+*How to adapt: `{COMPANY_NAME}` and `{ROLE}` are the only required substitutions; without
+them the sections above default to generic phrasing that doesn't commit to a voice. If
+the project has no real job posting behind it, invent a plausible company and frame the
+ask around the actual business question instead. The five sections are a shape, not a
+checklist: a project with a single stakeholder rather than two competing sides should
+say so in Background rather than forcing a tension that isn't there.*
+
+---
+
 ### 0.2: Create the project orientation doc (reusable)
 Produces the file every future AI session reads first. A project run across many sessions
 and more than one AI tool has no shared memory: each new session starts cold, re-derives

@@ -1,133 +1,102 @@
-# Problem statement
+# Case study: program viability assessment
 
-The brief below is the ask this project answers, stated as it stood before any analysis
-began. It names no data sources and no method, because a brief would not. Working out
-what to measure, where to get it, and what counts as a good answer is the analyst's job,
-and that work is what the rest of this repo documents.
+*Generated using the case-study-brief prompt in [`ai-prompts-log.md`](ai-prompts-log.md)
+(0.1a). This is the brief as it would have arrived on day one, not a summary of the
+work that followed.*
 
-## The brief
+## Background
 
-Vanderbilt has been expanding its online and professional program portfolio, and the
-expansion has concentrated in a few areas. Education, computing, and nursing are well
-covered online. Most other professional fields are absent from the online catalog
-entirely.
+Vanderbilt has moved quickly into online and professional education over the past
+several years, and the growth has followed wherever a school pushed hardest for it:
+Peabody in education, the College of Connected Computing in AI, a scattering of
+certificates elsewhere. Each push came with an internal case built by people who
+understand their own field very well and the broader market considerably less.
 
-The office responsible for new program development has to decide where to expand next.
-That decision currently risks being driven by whichever school makes the strongest
-internal case, or by whichever peer institution moved most recently, neither of which is
-evidence about whether a program would find students or lead anywhere for them.
+Think of it the way you'd think about a regional manager proposing a new store
+location. That manager can always make the internal case for their own neighborhood:
+foot traffic looks promising, the lease is favorable, no competitor has moved in yet.
+What they usually can't tell you is whether the same math looks better two
+neighborhoods over, or whether four other regional managers are making an equally
+confident case for four other locations that same week.
 
-The ask:
+That is roughly the position the Office of the Deputy Provost is in. A new academic
+program is a multi-year commitment of faculty time, curriculum design, and marketing
+spend before a single student enrolls, and by the time the market's real appetite is
+clear, most of that spend is already sunk. The office needs a way to compare proposals
+against each other, and against fields nobody inside the university has proposed at
+all, using evidence a dean's enthusiasm can't supply on its own.
 
-> **Which new online graduate program should Vanderbilt launch next, and what is the
-> case for it?**
+## The ask
 
-What the office needs back:
+Imagine you have just joined ODP as a Data Analyst. Your first assignment: of the
+graduate fields Vanderbilt does not currently offer online, which one should the
+university launch next, and what is the case for it?
 
-- One recommendation, named, with the reasoning behind it.
-- The shortlist it came from, ranked, so the runners-up stay visible and the choice can
-  be argued with.
-- A verdict on every option that was considered, including the ones that did not make
-  the shortlist. A field that is not right this year may be right in two, and that only
-  stays available if it was assessed rather than dropped from consideration.
-- Reasoning a director can follow, question, and defend to leadership without taking any
-  step on faith.
-- Something interactive for exploring the options, and a written document that can be
-  circulated on its own.
+Your deliverable is a recommendation the director can carry into a conversation with
+academic leadership: one named program, ranked against the shortlist it beat and the
+full field it was drawn from, built on evidence that would survive being challenged by
+someone who knows the university better than you do.
 
-Constraints:
+## What a strong response looks like
 
-- Public data only. No access to internal enrollment, financial, or faculty systems.
-- Every number has to be traceable back to a source, since the recommendation will be
-  challenged.
-- Scoped to a few working sessions, so depth in one area matters more than covering
-  everything at once.
+- **Derived, not proposed.** The candidate set comes from evidence, not from a list of
+  fields that sounded plausible walking in. If a shortlist could have been written
+  before looking at any data, that's a sign it wasn't actually derived from it.
+- **Ranked, not binary.** Every field considered gets a verdict, not just the winner.
+  A field that isn't right this cycle may be right in two, and that only stays visible
+  if it was scored rather than quietly dropped.
+- **Intellectually honest.** State plainly where a signal is thin, where a join is a
+  proxy rather than an exact match, and what evidence would change the recommendation
+  if it existed.
+- **Metrics-driven.** Success is a number, defined before the analysis produces one,
+  not a number chosen afterward because it happened to support the conclusion.
+- **Executable.** Enough specificity that a director could hand this to three
+  different people and get the same next step from each of them.
+- **Held to a high standard.** Original, specific, and concise. Written for someone
+  who is going to act on it, not admire it.
 
-Audience: the office director and academic leadership.
+## Facts you can assume
 
-## What the brief leaves open
+- A program only succeeds if two things are true at once: enough students want to
+  study the field, and it leads somewhere for them afterward. Neither alone is
+  sufficient, and neither substitutes for the other.
+- Competitive positioning and pricing against peer programs matter, but are out of
+  scope for this assignment. Treat that as a question for a later round, not something
+  this recommendation needs to resolve.
+- Only public information is available. There is no access to Vanderbilt's internal
+  enrollment, financial, or faculty-capacity systems.
+- Assume a single national market for each field. You do not need to adjust for
+  Nashville specifically, or account for regional variation in demand.
+- The recommendation will be read by people with far more institutional knowledge
+  than you have, and it needs to hold up to that.
 
-Deliberately, almost everything about how to answer it.
+## Other advice
 
-The brief does not say what demand means, or how to measure whether a field is worth
-entering, or what makes one candidate stronger than another. It does not say which
-programs to consider, or how many. It does not name a single dataset.
+- **Make your assumptions explicit.** An unstated assumption is a hidden risk. State
+  each one, and say what happens to the recommendation if it turns out to be wrong.
+- **Work backwards.** Start from the decision the director actually has to make, and
+  let that decide what you measure, not the other way around.
+- **Ground every claim in evidence.** A confident sentence is not the same thing as a
+  correct one. If a number can be traced back to a source, show the trace.
+- **Write for execution, not approval.** The test is whether someone could start
+  tomorrow, not whether the document reads well in a meeting.
+- **Bias for action.** A named recommendation with an honest caveat beats a framework
+  that never commits to one.
 
-Those decisions are the actual work, and they are where this project spent most of its
-effort. Each one is recorded in [`decisions-log.md`](decisions-log.md), including the
-options that were considered and rejected.
+This is the assignment as it would have arrived. What follows in the rest of this
+repository is the work it produced.
 
-## Turning the brief into something answerable
+## About this document
 
-A program is worth launching if enough people want to study the field, the field leads
-somewhere for them afterward, and Vanderbilt is not already offering it. Stated that
-way, the ask decomposes into four questions:
+This project is independent and self-directed. It is not affiliated with,
+commissioned by, endorsed by, reviewed by, or compensated by Vanderbilt University,
+and the brief above was written to frame the exercise rather than issued by anyone at
+the university. No non-public institutional information was used at any point; every
+input is a public dataset or public web page, documented with pull dates in
+[`data-sources.md`](data-sources.md). The recommendation that follows was never
+delivered to Vanderbilt or acted on by it.
 
-1. **Is there student demand?** How many people nationally complete a degree in this
-   field each year, and is that number rising or falling?
-2. **Is there labor demand?** Do the jobs this field feeds have openings, and are those
-   occupations growing?
-3. **Is it already covered?** Does Vanderbilt offer this field online today?
-4. **How does it compare?** Given all of the above, where does this field rank against
-   every other field the university could offer?
-
-Nothing in the brief points to a dataset for any of these. Identifying which public
-sources could answer them, testing whether those sources were actually reachable, and
-establishing what each one could not answer was the first phase of the project. The
-sources that survived that pass are listed with pull dates in
-[`data-sources.md`](data-sources.md).
-
-Two decisions from that phase shaped everything after it. The candidate set was derived
-from the data rather than chosen in advance, after an earlier draft that started from a
-hand-picked list of fields was abandoned for reproducing assumptions instead of testing
-them. And the fourth question, comparison, forced a scoring method, which is the single
-most consequential methodology choice in the project.
-
-## Scope that was cut
-
-The brief as originally framed also asked for competitive saturation and pricing
-benchmarks against peer online programs. Both were cut and carried forward as future
-scope. No data was collected for either, and neither feeds the recommendation. What
-shipped answers the four questions above and stops there.
-
-## The role this models
-
-The project is built to the shape of a Data Analyst posting in Vanderbilt's Office of
-the Deputy Provost, an office that supports decisions about which new academic and
-professional programs the university should pursue. Summarizing that posting rather than
-reproducing it, the role covers three areas:
-
-**Strategic insights and market research.** Market assessments for proposed new
-programs, covering labor-market demand, learner audience sizing, competitive landscape,
-pricing benchmarks, and program viability. Findings go to executive-level audiences
-through briefing materials and presentations.
-
-**Data analysis and visualization.** Analysis across financial, platform, and academic
-program data, and dashboards tracking KPIs for executives. The posting names Tableau as
-the preferred reporting system.
-
-**Data reporting strategy.** Documenting collection and reporting processes, protecting
-data integrity, and raising data literacy across the office.
-
-The stated qualifications include a quantitative background, at least two years in data
-analysis or strategic research, experience with Tableau, Qualtrics, and R, and the
-ability to work through ambiguity and turn market complexity into recommendations
-someone can act on.
-
-This project exercises the first two areas. Qualtrics and R were not used, since no
-survey data was collected and the analysis ran in SQL and Python.
-
-## Disclaimer
-
-This is an independent, self-directed practice project.
-
-It is not affiliated with, commissioned by, endorsed by, reviewed by, or compensated by
-Vanderbilt University. No non-public institutional information was used at any point.
-Every input is a public dataset or a public web page, documented with pull dates in
-[`data-sources.md`](data-sources.md).
-
-The brief above was written for this exercise. No such request was made by the
-university, and the recommendation was never delivered to it or acted on by it.
-Vanderbilt was chosen as the subject because its online catalog is public and the
-question is one universities genuinely face, which makes it a fair test of whether the
-method produces a defensible answer.
+The project models a real Data Analyst posting inside Vanderbilt's Office of the
+Deputy Provost. Vanderbilt was chosen as the subject because its online catalog is
+public and the underlying question, where to expand next, is one universities
+genuinely face.

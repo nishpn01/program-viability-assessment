@@ -10,7 +10,7 @@ written from what's actually in this project's data and docs.
 
 ---
 
-## The project, in one breath (everyone)
+## The project, in one breath 
 
 **ODP**: Office of the Deputy Provost, the Vanderbilt office whose real Data Analyst
 job posting this project is modeled on. That role does market research to decide which
@@ -30,7 +30,7 @@ a top-decile/median split derived from the real score distribution (see
 
 ---
 
-## Data and methodology terms (analysts, students new to data work)
+## Data and methodology terms 
 
 **CIP** (Classification of Instructional Programs): the federal government's code
 system for academic fields of study (e.g., "Data Science" has its own CIP code).
@@ -66,8 +66,7 @@ BLS Employment Projections as the labor-demand signal.
 individual occupations ("Line item," e.g., "Data Scientists") with category rollups that
 sum up a group of occupations ("Summary," e.g., "Computer and Mathematical
 Occupations," or the "Total, all occupations" row). Of the 1,113 rows, 832 are Line
-item and 281 are Summary. Any aggregate math must filter to `Occupation type ==
-Line item` first, or rollup rows will double-count the detail rows underneath them.
+item and 281 are Summary. Any aggregate math must filter to `Occupation type == Line item` first, or rollup rows will double-count the detail rows underneath them.
 
 **Grain**: What a single row of a table represents (e.g., "one row per CIP6 per
 year," or "one row per program"). A separate decision from the Go/Test/Pass scoring:
@@ -93,7 +92,7 @@ shared keys.
 
 ---
 
-## SQL terms (analysts, students new to SQL)
+## SQL terms
 
 **DDL** (Data Definition Language): the part of SQL that defines a table's shape
 (`CREATE TABLE`, column types, primary keys) before any data is loaded. **DML** (Data
@@ -234,8 +233,7 @@ porting to BigQuery is parked as a future exercise.
 project's dashboard. It can't connect live to a database, so query results are exported
 to CSV and loaded into Tableau Public directly.
 
-**datausa.io**: A free public API (built on a "Tesseract" data-cube backend) that
-re-publishes IPEDS and other federal datasets in a simpler JSON format than the raw
+**datausa.io**: A free public API that re-publishes IPEDS and other federal datasets in a simpler JSON format than the raw
 IPEDS Data Center; this project's IPEDS completions table was pulled from it.
 
 ---
