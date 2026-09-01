@@ -1,198 +1,173 @@
 # Working with AI on this project
 
-This project was built with heavy AI assistance across five phases. It also produced a
-running record of where that assistance failed, what the failures cost, and which
-habits caught them. Those notes are collected here.
+I used AI throughout this project for research support, code drafts, data preparation,
+verification, and document production. The arrangement saved time, but it also created
+errors that looked credible until I checked the underlying files and sources.
 
-Every entry below is a real incident from this build, with the numbers and files
-attached. Nothing here is general advice about prompting.
+This is a record of those failures and the practices I kept. Each example comes from this
+repository and includes the relevant number, file, or artifact.
 
----
+## Errors found in the output
 
-## Where the output was wrong
+### Four high-confidence CIP matches were wrong
 
-### Confidence and correctness are unrelated
+A word-overlap script suggested CIP codes for Vanderbilt's 15 online programs. Eleven
+suggestions were marked high confidence and initially accepted. Vanderbilt's official
+Registrar CIP list later showed that only 7 of the 11 were correct.
 
-A word-overlap script was used to suggest CIP codes for Vanderbilt's 15 online programs.
-Eleven of those suggestions were rated high confidence and accepted before Vanderbilt's
-official Registrar CIP list was found. Checking them against that list afterward: 7 of
-11 correct, 4 of 11 wrong. Each of the four had a plausible top-scoring candidate that
-was simply the wrong code.
+The low-confidence matches were already waiting for review. The larger risk came from the
+four plausible answers that the script labeled with confidence. I now treat a fuzzy match
+as a candidate list. When an authoritative source exists, every proposed match must be
+checked against it. The warning is also recorded in
+[`scripts/suggest_cip_codes_generic.py`](../scripts/suggest_cip_codes_generic.py).
 
-An error rate of 36% on the picks the script was most sure about is the useful number.
-The low-confidence cases were already flagged for review; the damage was concentrated in
-the ones nobody thought needed checking.
+### One clustering rule connected 94 of 126 titles
 
-**Rule now:** a fuzzy match is a shortlist, never an answer. When an authoritative source
-exists, find it and check every row against it, including the ones that look settled.
-`scripts/suggest_cip_codes_generic.py` says this in its own header.
+The first attempt to group similar program titles required a shared significant word and
+a high `SequenceMatcher.ratio()` score. The string-similarity rule connected 94 of the
+126 Go-band titles into one cluster.
 
-### A reasonable-looking threshold collapsed the whole result
+Short, generic program names can receive high similarity scores even when they describe
+different fields. Connected-component clustering made the problem worse because one bad
+edge joined every group it touched. Removing that rule left 10 edges under the stricter
+test, and inspection confirmed that all 10 represented genuine duplicates.
 
-The first clustering pass grouped near-duplicate program titles using two rules: share at
-least one significant word, and score a high whole-string similarity ratio. That second
-rule chained 94 of 126 titles into a single false cluster.
+This changed how I review grouping methods. A very large cluster is now a reason to
+inspect the individual edges and the matching rule before interpreting the group.
 
-`SequenceMatcher.ratio()` runs high on short, generically worded titles even when they
-are unrelated, and clustering by connected components means one bad edge transitively
-merges every group it touches. Isolating the stricter rule showed 10 edges, every one a
-genuine duplicate.
+### The Tableau check examined icons instead of values
 
-**Rule now:** when a grouping step produces one enormous cluster, the threshold is the
-suspect, not the data. Inspect the edges directly instead of tuning the number.
+A review of Tableau field types was reported as complete after checking the icons beside
+the field names. The displayed values still contained two errors. A Year field formatted
+as a number showed a date serial, and a numeric CIP field shortened 11.0104 to 11.01.
 
-### "I checked" and "I checked the right thing" are different claims
+The lesson was specific: a field-type review must include the values rendered in the
+worksheet. Verifying that a check occurred is not enough if the check examined the wrong
+part of the artifact.
 
-A question about Tableau field types came back confirmed as fine. The check had looked at
-the type icons beside the field names rather than the values rendered on screen. Two real
-problems were sitting in plain view: a Year field toggled to Number was showing a date
-serial count, and a CIP code under a numeric format was truncating 11.0104 to 11.01.
+### A dashboard mockup contained unverified numbers
 
-**Rule now:** ask what was actually inspected, not whether it was inspected. The answer
-distinguishes a real check from a plausible one.
+A generated wireframe showed 128 Go candidates out of 1,268. The verified result was 126
+out of a 1,254-candidate population. The mockup was used only to evaluate layout, so the
+incorrect values did not enter the analysis or final dashboard.
 
-### A mockup is not a data source
+I now treat every number in a layout mockup as placeholder text until it is connected to
+the pipeline or copied from a verified result.
 
-A generated dashboard wireframe displayed a Go-band count of 128 out of 1,268. The
-verified figures are 126 out of a 1,254-candidate population. The image was only ever a
-layout study, so the wrong numbers went nowhere, but they were presented with the same
-confidence as the layout.
+### Report research stopped at methodology pages
 
-**Rule now:** anything generated for layout gets treated as layout. Numbers inside a
-mockup are placeholder text until they come from the pipeline.
+Early research on report structure cited methodology pages from two consulting firms. A
+later review found that no finished client report had been examined. Neither firm made
+those reports public, but the research summary did not make that limitation clear.
 
-### Research can be shallower than its summary suggests
-
-Earlier work on report structure cited two consulting firms' methodologies. Asked
-directly whether an actual finished report had been read or only pages describing the
-approach, the answer was the second one. Neither firm publishes client deliverables, so
-the gap was structural rather than careless.
-
-**Rule now:** ask what was read, not what was concluded. "Find real examples" and "find
-pages about real examples" produce very different work.
-
----
-
-## Where the process was wrong
-
-### Being told to do something is not evidence it happened
-
-An instruction to commit and push was relayed onward and reported as complete. Checking
-`git status` directly showed nothing committed: three SQL files and every CSV they
-produced were still sitting as uncommitted changes.
-
-A related version of the same failure: an export script was not rerun after a later
-script added a column, so the CSV in the repo was one column behind the database. Found
-by reading the file rather than trusting the log entry that described it.
-
-**Rule now:** verify state against the repo, never against a summary of the repo. A
-status claim is a claim.
-
-### Work computed invisibly cannot be reviewed
-
-Analysis that fed a real decision was built inside a sandbox and reported back as prose
-figures, with no file produced. It happened three times before the rule changed.
-
-The output may well have been correct. The problem is that correctness was unverifiable,
-and the artifact could not be rerun, inspected, or committed.
-
-**Rule now:** anything informing a decision gets built as a real file in the repo,
-matching the project's conventions, and gets run locally. A number in a chat is not a
+When reviewing research now, I check the underlying material that was actually read. A
+page describing how reports are written is different from a completed report showing the
 result.
 
-### Stale docs are instructions to the next agent
+## Process failures
 
-After the method changed from a hand-picked list of 12 fields to a fully data-derived
-candidate set, the old list stayed in the README and the scoping notes. A later session
-read those files, took the 12 as fixed, and proceeded on the wrong basis.
+### Repository status was reported incorrectly
 
-The public cost was separate and larger: the README sat on a public repo describing two
-data sources that had been cut, misrepresenting the project's actual scope to anyone
-reading it.
+An instruction to commit and push was passed to another session and then reported as
+complete. A direct `git status` check showed three SQL files and all resulting CSV files
+still uncommitted.
 
-**Rule now:** a changed decision is not done until every document reflecting it is
-updated. When documents are what the next agent reads, a stale one actively misinforms
-it.
+A similar problem left an exported CSV one column behind the database because the export
+script had not been rerun after the schema changed. Reading the repository state and the
+file itself caught both problems.
 
-### Two sessions on one repo will collide
+For this project, completion claims involving Git were checked against `git status` and
+the commit history. Generated outputs were also reopened after the pipeline ran.
 
-Two chats were open on this repository at once and both rewrote the same section of the
-prompt log without knowing about the other. The conflict had to be reconciled by hand. It
-was caught only because the file was re-read fresh before editing rather than assumed
-unchanged.
+### Three analyses existed only in chat
 
-**Rule now:** re-read a file and check `git status` before editing it, every time. Memory
-of a file's contents from earlier in a session is not the file.
+Three pieces of analysis that informed decisions were calculated inside a sandbox and
+returned as prose. No notebook, query, or output file was created. The numbers may have
+been correct, but there was no way to rerun or inspect them.
 
----
+After that, decision-relevant calculations had to produce a file in the repository and
+run locally. The independent scoring check in
+[`notebooks/phase3_ai_report_verification.ipynb`](../notebooks/phase3_ai_report_verification.ipynb)
+is one result of that change.
 
-## What actually worked
+### Stale documentation redirected later work
 
-### Verify the plan before executing it
+The method changed from a hand-selected list of 12 fields to a candidate universe derived
+from national completions data. The earlier list remained in the README and scoping notes.
+A later session read those files and continued with the obsolete list.
 
-A join plan drafted in one session was checked against the repo in a fresh pass before
-any of it ran. Every factual claim held, and three real gaps surfaced: Vanderbilt's 15
-programs map to 14 distinct CIP codes rather than 15, the float join-key risk needed a
-structural fix rather than a warning comment, and the suppressed-year completions data
-needed an actual rule for computing a trend.
+The public README also continued to name two sources that had been removed from the
+analysis. From then on, a methodology change included a search for every document that
+described the old decision.
 
-All three were cheap to fix at plan stage. Two of them would have silently corrupted the
-mart.
+### Concurrent sessions edited the same file
 
-### Verification has a boundary, and it is worth knowing where
+Two sessions rewrote the same prompt-log section without knowing about each other. The
+conflict had to be reconciled manually. It was caught because the file was read again
+immediately before editing.
 
-Every number in the Phase 3 scoring report was independently recomputed from the mart CSV
-in `notebooks/phase3_ai_report_verification.ipynb`. That settled whether the report's
-facts were right.
+The practical rule for this repository became one active editing session per file. Before
+changing a file, the session rereads it and checks `git status` for work produced elsewhere.
 
-It settled nothing about the normalization method, the composite weights, or the
-NULL-handling approach, because those are judgment calls with no number to check them
-against. Recomputing more figures would not have helped. Recognizing that boundary is
-what stopped the verification pass from becoming an excuse to avoid deciding.
+## Practices that held up
 
-### Write the design first, then have it implemented
+### Review the design before implementation
 
-The SQL that builds the analysis mart is AI-assisted code implementing a design written
-beforehand as a separate spec, `docs/planning/phase2-mart-design-spec.md`. The spec
-exists so the provenance is checkable rather than merely asserted.
+A fresh review of the proposed join plan found three problems before any SQL ran:
 
-The prompt that implements it is explicit about the collaboration: implement the
-documented design, verify its factual claims against the real data, and propose
-improvements for approval. No silent deviation, and no rubber-stamping either.
+- Vanderbilt's 15 listed programs represented 14 distinct CIP codes.
+- The float join key needed a structural fix.
+- Suppressed completions years required an explicit trend rule.
 
-### Two independent reads converging is real evidence
+The first two could have silently changed the analysis mart. Resolving them in the design
+spec was cheaper than tracing them after the join.
 
-Dashboard design was researched twice in parallel and without coordination, once through
-AI research and once by reading two data visualization books through NotebookLM. Both
-arrived at close to the same structure. That agreement was treated as a signal worth
-trusting, and the two plans were reconciled rather than one being picked over the other.
+### Recompute results independently
 
-### Charts belong in the analysis phase
+Every number in the Phase 3 scoring report was recomputed from the mart CSV in
+[`notebooks/phase3_ai_report_verification.ipynb`](../notebooks/phase3_ai_report_verification.ipynb).
+That established whether the reported figures matched the data.
 
-Every chart in this project was deferred to the dashboard phase by default. The
-Go/Test/Pass cutoffs were derived by reading percentile numbers off a table, never by
-looking at a histogram, even though a notebook was already open at that moment for
-independent verification.
+The notebook could not decide whether percentile ranking, the composite weights, or the
+NULL-handling rule were appropriate. Those were methodology choices. Separating arithmetic
+verification from judgment prevented additional calculations from being mistaken for a
+decision.
 
-By the time the visualization phase started, zero chart artifacts existed, when several
-were a few lines of code away during analysis that had already happened.
+### Write the design before generating the code
 
-**Rule now:** any EDA or verification step produces and saves at least one chart as a
-matter of course. It does not need to be presentation quality. It needs to exist.
+The SQL analysis mart implements
+[`docs/planning/phase2-mart-design-spec.md`](planning/phase2-mart-design-spec.md), which was
+written before the query. The implementation prompt instructed the coding session to
+verify the specification against the data and raise proposed changes for review.
 
----
+This gave the join logic a record separate from the generated SQL and made later changes
+easier to evaluate.
 
-## The division of labor
+### Use a second review when the design choice is subjective
 
-The framing, the decisions, the judgment calls, and the recommendation are the analyst's.
-AI did the mechanical work: scraping, parsing, cleaning, drafting SQL, and generating
-documents.
+The dashboard structure was researched twice. One pass used AI research; the other used
+NotebookLM to review two data-visualization books. Both suggested a similar layout. Their
+agreement did not prove that the design was correct, but it provided useful corroboration
+before the plans were reconciled.
 
-Two things kept that boundary real rather than stated. Design specs were written before
-the code that implements them, so the logic has a separate paper trail. And AI-produced
-analysis was recomputed independently before it was accepted, so a claim about the data
-could be defended by pointing at a notebook instead of at a chat.
+### Create exploratory charts while the analysis is active
 
-Related reading: [`decisions-log.md`](decisions-log.md) for the methodology decisions
-themselves, and [`ai-prompts-log.md`](ai-prompts-log.md) for the starter prompts each
-phase ran on.
+The first analysis pass derived the Go, Test, and Pass cutoffs from percentile tables. No
+histogram was saved, even though a notebook was already open for verification. By the time
+dashboard work began, the project had no chart showing the score distribution.
+
+For later work, I would create a chart when it helps test a distribution, relationship,
+or anomaly during analysis. It can remain rough. The point is to inspect the pattern while
+the analytical context is still fresh.
+
+## Division of labor
+
+I owned the framing, methodology choices, interpretation, and final recommendation. AI
+handled much of the scraping, parsing, cleaning, SQL drafting, and document production.
+
+Two controls made that division visible in the repository. Design specifications record
+the intended logic before implementation, and independent notebooks recompute material
+AI-produced results before they are accepted.
+
+The methodology decisions are in [`decisions-log.md`](decisions-log.md). The starter
+prompts used in each phase are in [`ai-prompts-log.md`](ai-prompts-log.md).
