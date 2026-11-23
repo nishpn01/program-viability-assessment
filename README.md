@@ -1,173 +1,123 @@
 # Program Viability Assessment
 
-**Which new online graduate program should Vanderbilt launch next?**
+Program Viability Assessment is an end-to-end data pipeline for one decision: which online graduate program should Vanderbilt launch next? I integrated IPEDS and BLS data through the NCES CIP-to-SOC crosswalk, modeled it in PostgreSQL, and applied a weighted scoring model. The pipeline starts with 1,268 graduate fields, holds out 14 distinct CIP codes already represented in Vanderbilt's online catalog, scores the remaining 1,254 candidates, and produces five finalists.
 
-This scores every graduate field in the national completions data on student demand and
-labor-market demand, then ranks the ones Vanderbilt does not already offer online.
-1,254 fields in, five finalists out.
+**[Open the Tableau dashboard](https://public.tableau.com/app/profile/pranish.p7454/viz/OnlineProgramViabilityAssessment/Program_Overview_Dashboard2)** or read the [feasibility report](deliverables/phase5-feasibility-report.pdf).
 
 [![Online program viability dashboard: KPI row, ranked finalists, score distribution, and completions trend](deliverables/dashboard/dashboard-screenshot.png)](https://public.tableau.com/app/profile/pranish.p7454/viz/OnlineProgramViabilityAssessment/Program_Overview_Dashboard2)
 
-[Open the interactive dashboard on Tableau Public](https://public.tableau.com/app/profile/pranish.p7454/viz/OnlineProgramViabilityAssessment/Program_Overview_Dashboard2)
+## What this demonstrates
 
-## Deliverables
+| Concept | How it is implemented | Where to look |
+| --- | --- | --- |
+| PostgreSQL relational modeling | Six source tables feed a one-row-per-CIP analysis mart; the CIP-to-SOC crosswalk is a many-to-many bridge with documented grain. | [`docs/erd.md`](docs/erd.md), [`docs/data-dictionary.md`](docs/data-dictionary.md), [`sql/01_create_tables.sql`](sql/01_create_tables.sql) |
+| End-to-end data pipeline | Raw, clean, and derived layers are separate; typed loads and repeatable scripts move public IPEDS/BLS inputs through the PostgreSQL model. | [`scripts/`](scripts/), [`sql/02_load_data.sql`](sql/02_load_data.sql), [`sql/04_build_derived_candidates.sql`](sql/04_build_derived_candidates.sql) |
+| Validation and methodology documentation | Row-count, key, year-range, and join-readiness checks sit beside the decisions log, data dictionary, ERD, and method notes. | [`sql/03_verification_checks.sql`](sql/03_verification_checks.sql), [`docs/decisions-log.md`](docs/decisions-log.md), [`docs/`](docs/) |
+| Weighted scoring model | CTEs, window functions, `LEFT JOIN`s, employment-weighted aggregates, percentile ranks, and documented score bands build the shortlist. | [`sql/04_build_derived_candidates.sql`](sql/04_build_derived_candidates.sql), [`sql/06_score_candidates.sql`](sql/06_score_candidates.sql), [`sql/08_score_bands.sql`](sql/08_score_bands.sql) |
+| Tableau decision dashboard | A five-signal score, title clustering, catalog review, and Tableau extracts turn a large candidate set into a bounded shortlist. | [`docs/decisions-log.md`](docs/decisions-log.md), [`sql/11_dashboard_extracts.sql`](sql/11_dashboard_extracts.sql), [`deliverables/dashboard/`](deliverables/dashboard/) |
+| Reproducible analysis | The repository includes source files, derived exports, the dashboard workbook, and verification notebooks. | [`data/`](data/), [`deliverables/dashboard/`](deliverables/dashboard/), [`notebooks/`](notebooks/) |
 
-- [Feasibility report (PDF)](deliverables/phase5-feasibility-report.pdf), the full
-  written recommendation with methodology and limitations
-- [Presentation deck (PPTX)](deliverables/phase5-presentation-deck.pptx), 11 slides
-- [Tableau workbook (TWBX)](deliverables/dashboard/OnlineProgramViabilityAssessment_v1.twbx),
-  the packaged dashboard with its data extracts
+## How the analysis works
 
-## The result
+### 1. Data architecture
 
-Five programs cleared every check. Scores are 0 to 100 composites built from five
-weighted signals.
+```mermaid
+flowchart TB
+  I[IPEDS completions] --> P[PostgreSQL source tables]
+  B[BLS openings and growth] --> P
+  X[NCES CIP-to-SOC crosswalk] --> P
+  V[Vanderbilt online-program catalog] --> P
+  P --> M[derived_candidates: one row per CIP]
+  M --> S[Scored candidates]
+  S --> T[Tableau extracts and dashboard]
+```
 
-| Proposed program               | CIP code | Score |
-| ------------------------------ | -------- | ----- |
-| MSc. in Data Science           | 30.7001  | 93.9  |
-| MSc. in Applied Informatics    | 11.0104  | 92.3  |
-| MSc. in Quantitative Economics | 45.0603  | 92.0  |
-| MSc. in Business Analytics     | 30.7102  | 91.6  |
-| MSc. in Information Science    | 11.0401  | 90.3  |
+The CIP academic-program codes and SOC occupation codes do not share a key. The crosswalk bridge has many-to-many relationships, so the mart retains each CIP's three highest-2024-employment matched occupations and calculates employment-weighted openings and growth. `LEFT JOIN`s retain fields with no labor-market match as missing evidence instead of silently dropping them.
 
-Program names are proposals. Federal CIP titles are a statistical classification for
-reporting and would never appear on a diploma, so each finalist was renamed against
-Vanderbilt's own catalog conventions and checked for collisions with existing programs.
-That check caught a real problem: a residential Data Science master's exists under a
-different CIP code than the one this analysis matched on, which a pure code join would
-have missed. Full reasoning in
-[`docs/planning/phase3-finalist-program-naming-recommendations.md`](docs/planning/phase3-finalist-program-naming-recommendations.md).
+### 2. Data flow from source to recommendation
 
-## Methodology
+```mermaid
+flowchart TB
+  R[Raw source files] --> C[Clean and typed tables]
+  C --> Q[Row-count, key, range, and join checks]
+  Q --> M[1,268-row candidate mart]
+  M --> E[Hold out 14 distinct Vanderbilt CIP codes]
+  E --> S[Score 1,254 candidates]
+  S --> B[Go, Test, and Pass bands]
+  B --> H[Title clustering and catalog review]
+  H --> F[Five finalists, report, and Tableau dashboard]
+```
 
-The candidate universe is every CIP6 field of study in IPEDS national completions, all
-1,268 of them, cross-referenced against BLS Employment Projections. The 14 fields
-Vanderbilt already offers online are flagged and held out, leaving 1,254 to score.
-The initial candidate set and score bands were derived from the data. Manual review came
-later, when the finalists were checked against Vanderbilt's catalog and naming conventions.
+### 3. Scoring method
 
-**Joining student demand to labor demand.** IPEDS is keyed on CIP program codes and BLS
-on SOC occupation codes, and the two do not share a code space. The official NCES
-crosswalk bridges them, but the relationship is many-to-many: one field averages 2.8
-matched occupations and can reach 180. The rule locked here takes each field's top 3
-occupations by 2024 employment and combines their metrics with an employment-weighted
-average, so a field's career breadth counts without letting a long tail of loose matches
-dominate.
+| Signal | Weight | Why it is included |
+| --- | ---: | --- |
+| Current completions | 30% | A measure of the current student-demand base. |
+| Employment-weighted job openings | 30% | A measure of current labor-market opportunity across matched occupations. |
+| Completions trend | 15% | The direction of student demand, weighted below current size. |
+| Employment-weighted job growth | 15% | The direction of labor demand, weighted below current size. |
+| BLS top-30 flag | 10% | A corroborating, narrower signal rather than a primary driver. |
 
-**Scoring.** Four continuous metrics plus one corroborating flag, weighted 30% current
-completions, 30% job openings, 15% completions trend, 15% job growth, 10% appearance on
-a BLS top-30 list. Normalization is percentile rank rather than min-max, because two
-metrics are heavily right-skewed: Business Administration alone reports 97,150
-completions against a median of 64.5, and min-max scaling would let that single field
-define the top of the scale and crush everything else toward zero. Fields missing a
-metric are scored on what they have, with the remaining weights rescaled, and a count of
-how many metrics backed each score travels with it.
+```mermaid
+flowchart TB
+  A[Five available signals] --> P[Percentile rank each continuous signal]
+  P --> W[Apply documented weights]
+  W --> N[Partially reweight rows with missing evidence]
+  N --> G[Composite score and n_metrics_used]
+  G --> B[Go: top decile; Test: above median; Pass: below median]
+```
 
-**Banding and shortlisting.** Cutoffs come from the real score distribution once it
-existed: Go is the top decile (score ≥ 75.3), Test runs from the median up to that cutoff
-(45.7 to 75.2), Pass falls below the median. That produces 126 Go, 502 Test, 626 Pass.
+Percentile ranks prevent one extreme value from dominating the score. Partial reweighting keeps missing evidence visible through `n_metrics_used` instead of treating it as a zero. The top decile contains 126 candidates; title-word and four-digit CIP-prefix clustering reduces those to 61 distinct program ideas. After manual review excludes the Nursing cluster, 60 are ranked for shortlist review.
 
-Within the Go band, near-identical CIP codes were grouped by shared title words and
-4-digit CIP prefix, reducing 126 codes to 61 distinct program ideas. 60 of those were
-ranked once the Nursing cluster was excluded (see Limitations). Each group is ranked by
-its strongest single member, since most clusters group genuinely different credentials
-and averaging would blur the distinction the ranking exists to make.
+## Recommendation output
 
-Key decisions, tradeoffs, and the data-quality problems found along the way:
-[`docs/decisions-log.md`](docs/decisions-log.md).
+| Proposed program | CIP code | Score |
+| --- | ---: | ---: |
+| MSc. in Data Science | 30.7001 | 93.9 |
+| MSc. in Applied Informatics | 11.0104 | 92.3 |
+| MSc. in Quantitative Economics | 45.0603 | 92.0 |
+| MSc. in Business Analytics | 30.7102 | 91.6 |
+| MSc. in Information Science | 11.0401 | 90.3 |
 
-## Repository guide
+These are proposed program names, not official degree titles. Catalog review caught a residential Data Science master's under a different CIP code than the algorithmic match; a code-only join would have missed that collision.
 
-| Path              | What lives here                                                                                    |
-| ----------------- | -------------------------------------------------------------------------------------------------- |
-| `data/raw/`     | Source tables as collected, never edited after collection                                          |
-| `data/clean/`   | Analysis-ready tables, typed and standardized                                                      |
-| `data/derived/` | The joined analysis mart and every downstream scoring and shortlist export                         |
-| `scripts/`      | Collection, cleaning, and pipeline scripts                                                         |
-| `sql/`          | Staging DDL, load, verification, scoring, banding, and shortlisting, numbered in run order         |
-| `notebooks/`    | Independent verification of the scoring analysis, and the report figures                           |
-| `deliverables/` | Tableau workbook, feasibility report PDF, presentation deck                                        |
-| `docs/`         | Problem statement, provenance, decisions, data dictionary, ERD, glossary, and phase planning specs |
+## Reproduce the pipeline
 
-### Key files
+The repository includes the source files, clean tables, SQL stages, derived exports, and Tableau workbook. The SQL scripts document their expected `psql` order.
 
-If you only open a few things, open these.
+```bash
+createdb program_viability
+psql -d program_viability -f sql/01_create_tables.sql
+psql -d program_viability -f sql/02_load_data.sql
+psql -d program_viability -f sql/03_verification_checks.sql
+psql -d program_viability -f sql/04_build_derived_candidates.sql
+psql -d program_viability -f sql/05_export.sql
+psql -d program_viability -f sql/06_score_candidates.sql
+```
 
-| File                                                                                              | Why open it                                                                                              |
-| ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [`docs/problem-statement.md`](docs/problem-statement.md)                                         | The question, what was in and out of scope, the role this models, and the independent-project disclaimer |
-| [`docs/decisions-log.md`](docs/decisions-log.md)                                                 | Key methodology decisions, plus the data-quality problems found and what was done about each              |
-| [`docs/erd.md`](docs/erd.md)                                                                     | The data model as a rendered diagram: 14 tables from raw source through dashboard extract                |
-| [`docs/data-sources.md`](docs/data-sources.md)                                                   | Provenance for every table, with pull dates and URLs, so any number can be traced back                   |
-| [`sql/04_build_derived_candidates.sql`](sql/04_build_derived_candidates.sql)                     | The join that produces the analysis mart, with the reasoning in inline comments                          |
-| [`notebooks/phase3_ai_report_verification.ipynb`](notebooks/phase3_ai_report_verification.ipynb) | Every number in the scoring findings recomputed from source data before the method was approved          |
-| [`docs/planning/phase2-mart-design-spec.md`](docs/planning/phase2-mart-design-spec.md)           | The mart design written before any SQL, which the SQL then implements                                    |
-| [`docs/working-with-ai.md`](docs/working-with-ai.md)                                             | Where AI assistance failed on this build, what it cost, and the checks that caught it                    |
+Continue through `sql/11_dashboard_extracts.sql` for score bands, shortlisting, and Tableau extracts. The scripts were developed against a local PostgreSQL instance; adjust the documented connection flags if needed.
 
-New to the domain? [`docs/glossary.md`](docs/glossary.md) defines CIP, SOC, and the rest
-in plain language. [`docs/data-dictionary.md`](docs/data-dictionary.md) profiles every
-column in every table.
+## Repository map
 
-## Data sources
+| Path | Purpose |
+| --- | --- |
+| [`data/raw/`](data/raw/) | Collected source tables |
+| [`data/clean/`](data/clean/) | Standardized, typed analysis inputs |
+| [`data/derived/`](data/derived/) | Analysis mart, scores, shortlist, and Tableau extracts |
+| [`sql/`](sql/) | DDL, loads, checks, mart construction, scoring, and exports |
+| [`scripts/`](scripts/) | Collection, cleaning, parsing, and clustering scripts |
+| [`deliverables/`](deliverables/) | Dashboard workbook, report, and presentation |
+| [`docs/`](docs/) | Sources, ERD, data dictionary, decisions, and method notes |
 
-All public, all free.
+## Interview notes: limits that shaped the method
 
-- **BLS Employment Projections**, occupational demand, growth, and annual openings
-- **IPEDS** via the datausa.io API, national completions by field, 2012 to 2024
-- **NCES CIP to SOC crosswalk**, the official mapping between fields of study and occupations
-- **Vanderbilt's online program catalog** and its Registrar CIP code list
+- Inputs are national. Faculty capacity, pricing, regional demand, curriculum fit, and enrollment economics are outside this analysis.
+- Median pay covers 60 of 832 occupations, so it is a corroborating flag rather than a scored metric.
+- General and Operations Managers (SOC 11-1021) can inflate management-adjacent scores; affected candidates remain flagged for review.
+- Missing and suppressed IPEDS observations lead to unequal trend windows and partial-evidence scores.
 
-Full provenance with pull dates and URLs: [`docs/data-sources.md`](docs/data-sources.md).
+## Ownership
 
-## Tools
+I framed the decision, designed the data model and scoring method, and reviewed material results before they entered the recommendation.
 
-PostgreSQL 18 handles the joins, scoring, banding, and shortlisting. Python with pandas
-collects and cleans the source data; matplotlib, NumPy, and SciPy support verification and
-report figures. Tableau Public presents the final dashboard.
-
-## Limitations
-
-- The labor and completions signals are national. Vanderbilt-specific faculty capacity,
-  curriculum fit, regional demand, pricing, and enrollment economics are not available.
-- Median pay exists for only 60 of 832 occupations, so wage is a flag instead of a scored
-  metric.
-- SOC 11-1021, "General and Operations Managers," can inflate labor-demand scores for
-  management-adjacent fields. The analysis flags affected candidates but does not remove
-  the occupation without a defensible rule for doing so.
-- Vanderbilt's source catalog records Nursing at a coarser level than its specialty
-  offerings. The full Nursing cluster was excluded after manual review found seven direct
-  specialty matches.
-- Percentile scoring preserves rank but discards magnitude. Score bands are conventions
-  applied to a smooth distribution, not natural breaks in the data.
-- Missing and suppressed IPEDS observations leave candidates with unequal trend windows
-  and, in some cases, fewer metrics supporting the composite score.
-
-[`docs/decisions-log.md`](docs/decisions-log.md) documents these limitations, their effect
-on the analysis, and the work needed to resolve them.
-
-## Future scope
-
-The next pass would rebuild Vanderbilt's catalog at specialty-level grain, define and
-test a rule for generic occupation codes, and add competitor pricing and program format.
-Those changes address the largest known weaknesses in the current recommendation.
-
-The dashboard could then add filters for labor corroboration and data-quality flags. A
-school or college filter depends on mapping each finalist to its likely academic owner.
-
-## AI assistance and verification
-
-AI assisted with scraping, parsing, cleaning, SQL drafts, and document production. The
-analytical framing, methodology decisions, and recommendation remained the analyst's
-responsibility. Design specifications were written before implementation, and material
-AI-produced results were checked against the source data before acceptance.
-
-[`docs/working-with-ai.md`](docs/working-with-ai.md) records the failures that shaped this
-process, including incorrect high-confidence matches, false clustering, incomplete visual
-checks, and unverified repository status. Starter prompts are preserved in
-[`docs/ai-prompts-log.md`](docs/ai-prompts-log.md).
-
----
-
-*Modeled on a Vanderbilt Office of the Deputy Provost Data Analyst posting,
-using only public data.*
+MIT License.
